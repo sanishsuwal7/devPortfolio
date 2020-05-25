@@ -27,6 +27,7 @@ collections:
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
+          - { label: "Internal", name: "internal", widget: "hidden" }
 
       - file: "src/pages/about/index.md"
         label: "About"
@@ -34,3 +35,4 @@ collections:
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
+          - { label: "Internal", name: "internal", widget: "hidden" }

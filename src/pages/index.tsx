@@ -55,11 +55,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
               <small>{node.frontmatter.date}</small>
             </header>
             <section>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
+              <p>{node.frontmatter.description || node.excerpt}</p>
             </section>
           </article>
         )
