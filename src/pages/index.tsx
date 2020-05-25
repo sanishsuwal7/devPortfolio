@@ -21,6 +21,7 @@ type Data = {
           title: string
           date: string
           description: string
+          internal: boolean
         }
         fields: {
           slug: string
@@ -39,6 +40,9 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
       <SEO title="All posts" />
       <Bio />
       {posts.map(({ node }) => {
+        if (node.frontmatter.internal) {
+          return null
+        }
         const title = node.frontmatter.title || node.fields.slug
         return (
           <article key={node.fields.slug}>
@@ -83,6 +87,7 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
+            internal
             description
           }
         }
