@@ -1,10 +1,8 @@
-// Gatsby supports TypeScript natively!
 import React from "react"
-import { PageProps, Link, graphql } from "gatsby"
-
 import Layout from "../templates/layout"
+import { graphql } from "gatsby"
 
-const Index = ({ data }) => {
+export default function about({ data }) {
   const {
     allMarkdownRemark: {
       nodes: [fileAbsolutePath],
@@ -20,11 +18,9 @@ const Index = ({ data }) => {
   )
 }
 
-export default Index
-
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/landing/" } }) {
+    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/about/" } }) {
       nodes {
         fileAbsolutePath
         frontmatter {
