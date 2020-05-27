@@ -1,7 +1,9 @@
 import React from "react"
-import styled from "styled-components"
+import "../styles/styles.css"
+
 import Bio from "../components/bio"
-import { Header, Wrapper } from "../styles/components"
+import { Wrapper } from "../styles/components"
+import Navbar from "../components/Navbar"
 import { Link, graphql, useStaticQuery } from "gatsby"
 
 export default function Layout({ children }) {
@@ -29,22 +31,7 @@ export default function Layout({ children }) {
 
   return (
     <Wrapper>
-      <Link className="inh" to="/">
-        <Header>{siteMetadata.title}</Header>
-        <ul>
-          {nodes.map(node => {
-            const path = node.path
-            if (path.includes("404") || path === "/") {
-              return null
-            }
-            return (
-              <Link to={path}>
-                <li>{path.replace("/", "")}</li>
-              </Link>
-            )
-          })}
-        </ul>
-      </Link>
+      <Navbar />
       <Bio />
       {children}
       <footer>

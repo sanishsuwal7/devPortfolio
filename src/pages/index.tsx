@@ -1,6 +1,7 @@
 // Gatsby supports TypeScript natively!
-import React from "react"
+import React, { useEffect } from "react"
 import { PageProps, Link, graphql } from "gatsby"
+import { Section, Hero } from "../styles/components"
 
 import Layout from "../templates/layout"
 
@@ -10,12 +11,15 @@ const Index = ({ data }) => {
       nodes: [fileAbsolutePath],
     },
   } = data
-  console.log(fileAbsolutePath)
+
   const content = fileAbsolutePath.frontmatter
   return (
     <Layout>
-      <h3>{content.title}</h3>
-      <p>{fileAbsolutePath.excerpt}</p>
+      <Section>
+        <Hero>{content.title}</Hero>
+        <p>{fileAbsolutePath.excerpt}</p>
+        <p>{fileAbsolutePath.html}</p>
+      </Section>
     </Layout>
   )
 }
@@ -31,6 +35,7 @@ export const pageQuery = graphql`
           title
         }
         excerpt
+        html
       }
     }
   }
