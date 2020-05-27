@@ -13,12 +13,14 @@ const Index = ({ data }) => {
   } = data
 
   const content = fileAbsolutePath.frontmatter
+  const { title, subtitle, action } = content.mainpitch
   return (
     <Layout>
       <Section>
-        <Hero>{content.title}</Hero>
-        <p>{fileAbsolutePath.excerpt}</p>
-        <p>{fileAbsolutePath.html}</p>
+        <Hero>{title}</Hero>
+        <p>{subtitle}</p>
+        <button>{action}</button>
+        <section dangerouslySetInnerHTML={{ __html: fileAbsolutePath.html }} />
       </Section>
     </Layout>
   )
@@ -31,11 +33,15 @@ export const pageQuery = graphql`
     allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/landing/" } }) {
       nodes {
         fileAbsolutePath
+        html
         frontmatter {
           title
+          mainpitch {
+            title
+            subtitle
+            action
+          }
         }
-        excerpt
-        html
       }
     }
   }

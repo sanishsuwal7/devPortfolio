@@ -1,13 +1,11 @@
 ---
 title: Landing page title from local markdown
 internal: true
+mainpitch:
+  title: Hi, I’m Alejandro, Software Engineer and Web Developer
+  subtitle: I build beautiful websites for businesses around the world. If you need a modern and powerful website, book a call below.
+  action: Book a call
 ---
-
-# Hi, I’m Alejandro, Software Engineer and Web Developer
-
-I build beautiful websites for businesses around the world. If you need a modern and powerful website, book a call below.
-
-Book a call
 
 # What I do
 
