@@ -14,14 +14,57 @@ const Index = ({ data }) => {
 
   const content = fileAbsolutePath.frontmatter
   const { title, subtitle, action } = content.mainpitch
+
+  //console.log(content.projects)
+
+  const getBio = bio => {
+    const { title, features } = bio
+    console.log(features)
+    return (
+      <div>
+        <h1>{title}</h1>
+        {features.map(feature => {
+          console.log(feature)
+          return (
+            <div>
+              <h3>{feature.header}</h3>
+              <p>{feature.body}</p>
+            </div>
+          )
+        })}
+      </div>
+    )
+  }
+  const getProjects = projects => {
+    return projects.map(project => {
+      const { action, body, link, tags, title, image } = project
+      return (
+        <div>
+          <h1>{title}</h1>
+          <ul>
+            {tags.map(li => (
+              <li>{li}</li>
+            ))}
+          </ul>
+          <p>{body}</p>
+          <a href={link}>
+            <button>{action}</button>
+          </a>
+          <img src={image} />
+        </div>
+      )
+    })
+  }
+
   return (
     <Layout>
       <Section>
         <Hero>{title}</Hero>
         <p>{subtitle}</p>
         <button>{action}</button>
-        <section dangerouslySetInnerHTML={{ __html: fileAbsolutePath.html }} />
       </Section>
+      <Section>{getBio(content.bio)}</Section>
+      <Section>{getProjects(content.projects)}</Section>
     </Layout>
   )
 }
@@ -33,13 +76,27 @@ export const pageQuery = graphql`
     allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/landing/" } }) {
       nodes {
         fileAbsolutePath
-        html
         frontmatter {
           title
           mainpitch {
             title
             subtitle
             action
+          }
+          projects {
+            action
+            body
+            link
+            tags
+            title
+            image
+          }
+          bio {
+            title
+            features {
+              header
+              body
+            }
           }
         }
       }

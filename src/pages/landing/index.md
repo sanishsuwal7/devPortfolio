@@ -7,7 +7,7 @@ mainpitch:
     need a modern and powerful website, book a call below.
   action: Book a call
 bio:
-  title: Design
+  title: What I do
   features:
     - header: Design
       body: >+
@@ -28,7 +28,8 @@ bio:
         a time.
 projects:
   - title: Visit Geneva Homepage
-    body: Homepage design + development for a personal project (concept) Switzerland
+    body:
+      Homepage design + development for a personal project (concept) Switzerland
       Tourism page.
     tags:
       - Website Design
