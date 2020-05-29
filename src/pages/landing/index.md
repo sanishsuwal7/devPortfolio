@@ -6,6 +6,9 @@ mainpitch:
   subtitle: I build beautiful websites for businesses around the world. If you
     need a modern and powerful website, book a call below.
   action: Book a call
+  highlight:
+    - Software Engineer
+    - Web Developer
 bio:
   title: What I do
   features:
@@ -26,10 +29,11 @@ bio:
         My projects are built towards what's important; conversions. Bringing
         more leads, more sales, and a driven ROI to your business. One pixel at
         a time.
+  highlight:
+    - I do
 projects:
   - title: Visit Geneva Homepage
-    body:
-      Homepage design + development for a personal project (concept) Switzerland
+    body: Homepage design + development for a personal project (concept) Switzerland
       Tourism page.
     tags:
       - Website Design
@@ -38,6 +42,11 @@ projects:
     link: https://agustincarozo.webflow.io/project/visit-geneva-homepage
     action: see this project
     image: /img/5ece6758ed7fb5184711539d_thumbnail.jpg
+contact:
+  title: Ready to start your own Project?
+  action: Contact me
+  highlight:
+    - Project
 ---
 
 # What I do
