@@ -63,10 +63,28 @@ collections:
                     widget: list,
                     fields:
                       [
-                        { label: Image, name: image, widget: image },
-                        { label: Text, name: text, widget: text },
+                        { label: Header, name: header, widget: text },
+                        { label: Body, name: body, widget: text },
                       ],
                   },
+                ],
+            }
+          - {
+              label: Projects,
+              name: projects,
+              widget: list,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  {
+                    label: Title,
+                    name: title,
+                    widget: list,
+                    fields: [{ label: Tags, name: tags, widget: string }],
+                  },
+                  { label: Body, name: body, widget: string },
+                  { label: Action, name: action, widget: string },
+                  { label: Link, name: link, widget: string },
                 ],
             }
 
