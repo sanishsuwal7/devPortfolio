@@ -9,10 +9,23 @@ mainpitch:
 bio:
   title: Design
   features:
-    - text: I design beautiful and powerful websites for modern businesses. These are
-        essential to build customer loyalty and help drive conversions. I make
-        sure your website looks and feels great.
-      image: /img/headshotSmall.jpg
+    - header: Design
+      body: >+
+        I design beautiful and powerful websites for modern businesses. These
+        are essential to build customer loyalty and help drive conversions. I
+        make sure your website looks and feels great.
+
+    - header: Develop
+      body: >+
+        I build custom software tools that fit your needs. Plus, I deliver a
+        powerful content editor so you and your team can make edits quickly and
+        easily.
+
+    - header: Deliver
+      body: >+
+        My projects are built towards what's important; conversions. Bringing
+        more leads, more sales, and a driven ROI to your business. One pixel at
+        a time.
 ---
 
 # What I do
