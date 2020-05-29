@@ -26,6 +26,7 @@ bio:
         My projects are built towards what's important; conversions. Bringing
         more leads, more sales, and a driven ROI to your business. One pixel at
         a time.
+projects:
 ---
 
 # What I do
