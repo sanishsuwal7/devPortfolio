@@ -76,15 +76,17 @@ collections:
               fields:
                 [
                   { label: Title, name: title, widget: string },
-                  {
-                    label: Title,
-                    name: title,
-                    widget: list,
-                    fields: [{ label: Tags, name: tags, widget: string }],
-                  },
                   { label: Body, name: body, widget: string },
+                  { label: Tags, name: tags, widget: list },
                   { label: Action, name: action, widget: string },
                   { label: Link, name: link, widget: string },
+                  {
+                    label: Tags,
+                    name: tags,
+                    widget: list,
+                    field:
+                      { label: Tagelement, name: tagelement, widget: string },
+                  },
                 ],
             }
 
