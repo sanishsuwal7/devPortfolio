@@ -3,8 +3,16 @@ title: Landing page title from local markdown
 internal: true
 mainpitch:
   title: Hi, I’m Alejandro, Software Engineer and Web Developer
-  subtitle: I build beautiful websites for businesses around the world. If you need a modern and powerful website, book a call below.
+  subtitle: I build beautiful websites for businesses around the world. If you
+    need a modern and powerful website, book a call below.
   action: Book a call
+bio:
+  title: Design
+  features:
+    - text: I design beautiful and powerful websites for modern businesses. These are
+        essential to build customer loyalty and help drive conversions. I make
+        sure your website looks and feels great.
+      image: /img/headshotSmall.jpg
 ---
 
 # What I do
