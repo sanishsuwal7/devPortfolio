@@ -22,11 +22,20 @@ bio:
         easily.
 
     - header: Deliver
-      body: >+
+      body: >
         My projects are built towards what's important; conversions. Bringing
         more leads, more sales, and a driven ROI to your business. One pixel at
         a time.
 projects:
+  - title: Visit Geneva Homepage
+    body: Homepage design + development for a personal project (concept) Switzerland
+      Tourism page.
+    tags:
+      - Website Design
+      - Webflow Development
+      - Personal Project
+    link: https://agustincarozo.webflow.io/project/visit-geneva-homepage
+    action: see this project
 ---
 
 # What I do
