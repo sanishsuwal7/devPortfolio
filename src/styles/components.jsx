@@ -27,6 +27,21 @@ export const Wrapper = styled.div`
   }
   .logo {
   }
+  .highlight {
+    /* border-bottom: 1rem solid ${colors.accent}; */
+    position: relative;
+    z-index: 100;
+    >div:nth-child(2){
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 40%;
+      transform: translateX(.25rem);
+
+      background: ${colors.accent};
+      z-index: -100;
+    }
+  }
 `
 
 export const Section = styled.div`

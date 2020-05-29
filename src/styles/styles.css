@@ -5,6 +5,22 @@ body {
 }
 
 h1,
+h2,
+h3,
+h4,
+h5 {
+  display: flex;
+  flex-wrap: wrap;
+}
+h1 > div,
+h2 > div,
+h3 > div,
+h4 > div,
+h5 > div {
+  padding-right: 1rem;
+}
+
+h1,
 button,
 a {
   font-family: Inter;

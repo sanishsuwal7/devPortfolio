@@ -15,16 +15,14 @@ const Index = ({ data }) => {
   const content = fileAbsolutePath.frontmatter
   const { title, subtitle, action } = content.mainpitch
 
-  //console.log(content.projects)
-
   const getBio = bio => {
     const { title, features } = bio
-    console.log(features)
+    console.log(bio)
+
     return (
       <div>
-        <h1>{title}</h1>
+        <h1>{formatTitle(title)}</h1>
         {features.map(feature => {
-          console.log(feature)
           return (
             <div>
               <h3>{feature.header}</h3>
@@ -40,7 +38,7 @@ const Index = ({ data }) => {
       const { action, body, link, tags, title, image } = project
       return (
         <div>
-          <h1>{title}</h1>
+          <h1>{formatTitle(title)}</h1>
           <ul>
             {tags.map(li => (
               <li>{li}</li>
@@ -56,15 +54,41 @@ const Index = ({ data }) => {
     })
   }
 
+  const getContact = contact => {
+    const { action, title } = contact
+    return (
+      <div>
+        <Hero>{formatTitle(title)}</Hero>
+        <button>{action}</button>
+      </div>
+    )
+  }
+
+  const formatTitle = title => {
+    return title.split(" ").map(el => {
+      if (el.includes("**")) {
+        console.log(el)
+        const reg = /\*/g
+        return (
+          <div className="highlight">
+            <div>{el.replace(reg, "")}</div>
+            <div></div>
+          </div>
+        )
+      } else return <div>{el}</div>
+    })
+  }
+
   return (
     <Layout>
       <Section>
-        <Hero>{title}</Hero>
+        <Hero>{formatTitle(title)}</Hero>
         <p>{subtitle}</p>
         <button>{action}</button>
       </Section>
       <Section>{getBio(content.bio)}</Section>
       <Section>{getProjects(content.projects)}</Section>
+      <Section>{getContact(content.contact)}</Section>
     </Layout>
   )
 }
@@ -97,6 +121,10 @@ export const pageQuery = graphql`
               header
               body
             }
+          }
+          contact {
+            action
+            title
           }
         }
       }

@@ -2,38 +2,32 @@
 title: Landing page title from local markdown
 internal: true
 mainpitch:
-  title: Hi, I’m Alejandro, Software Engineer and Web Developer
+  title: Hi, I’m Alejandro, **Software Engineer** and **Web Developer**
   subtitle: I build beautiful websites for businesses around the world. If you
     need a modern and powerful website, book a call below.
   action: Book a call
-  highlight:
-    - Software Engineer
-    - Web Developer
 bio:
-  title: What I do
+  title: What **I do**
   features:
     - header: Design
       body: >+
         I design beautiful and powerful websites for modern businesses. These
         are essential to build customer loyalty and help drive conversions. I
         make sure your website looks and feels great.
-
     - header: Develop
       body: >+
         I build custom software tools that fit your needs. Plus, I deliver a
         powerful content editor so you and your team can make edits quickly and
         easily.
-
     - header: Deliver
       body: >
         My projects are built towards what's important; conversions. Bringing
         more leads, more sales, and a driven ROI to your business. One pixel at
         a time.
-  highlight:
-    - I do
 projects:
   - title: Visit Geneva Homepage
-    body: Homepage design + development for a personal project (concept) Switzerland
+    body:
+      Homepage design + development for a personal project (concept) Switzerland
       Tourism page.
     tags:
       - Website Design
@@ -43,10 +37,8 @@ projects:
     action: see this project
     image: /img/5ece6758ed7fb5184711539d_thumbnail.jpg
 contact:
-  title: Ready to start your own Project?
+  title: Ready to start your own **Project?**
   action: Contact me
-  highlight:
-    - Project
 ---
 
 # What I do
