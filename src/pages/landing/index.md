@@ -36,6 +36,7 @@ projects:
       - Personal Project
     link: https://agustincarozo.webflow.io/project/visit-geneva-homepage
     action: see this project
+    image: /img/5ece6758ed7fb5184711539d_thumbnail.jpg
 ---
 
 # What I do
