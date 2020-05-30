@@ -8,6 +8,7 @@ mainpitch:
   action: Book a call
 bio:
   title: What **I do**
+  image: /img/headshotsmall.jpg
   features:
     - header: Design
       body: >+

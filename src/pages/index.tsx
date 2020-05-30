@@ -1,7 +1,16 @@
 // Gatsby supports TypeScript natively!
 import React, { useEffect } from "react"
 import { PageProps, Link, graphql } from "gatsby"
-import { Section, Hero } from "../styles/components"
+import {
+  Section,
+  Hero,
+  Tags,
+  Button,
+  HeroP,
+  ImageFull,
+  Bio,
+  Projects,
+} from "../styles/components"
 
 import Layout from "../templates/layout"
 
@@ -16,40 +25,50 @@ const Index = ({ data }) => {
   const { title, subtitle, action } = content.mainpitch
 
   const getBio = bio => {
-    const { title, features } = bio
+    const { title, features, image } = bio
     console.log(bio)
 
     return (
-      <div>
-        <h1>{formatTitle(title)}</h1>
-        {features.map(feature => {
-          return (
-            <div>
-              <h3>{feature.header}</h3>
-              <p>{feature.body}</p>
-            </div>
-          )
-        })}
-      </div>
+      <Bio>
+        <div id="bioContainer">
+          <h1>{formatTitle(title)}</h1>
+          <ImageFull id="bioImage">
+            <img src={image} />
+          </ImageFull>
+          <div id="bioText">
+            {features.map(feature => {
+              return (
+                <div>
+                  <h3>{feature.header}</h3>
+                  <p>{feature.body}</p>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </Bio>
     )
   }
   const getProjects = projects => {
-    return projects.map(project => {
+    return projects.map((project, i) => {
       const { action, body, link, tags, title, image } = project
       return (
-        <div>
-          <h1>{formatTitle(title)}</h1>
-          <ul>
+        <Projects>
+          <h1 style={{ gridArea: "title" }}>{formatTitle(title)}</h1>
+          <Tags>
             {tags.map(li => (
               <li>{li}</li>
             ))}
-          </ul>
-          <p>{body}</p>
-          <a href={link}>
-            <button>{action}</button>
+          </Tags>
+          <p style={{ gridArea: "text" }}>{body}</p>
+          <a style={{ gridArea: "button" }} href={link}>
+            <Button>
+              <div>{action}</div>
+              <div></div>
+            </Button>
           </a>
-          <img src={image} />
-        </div>
+          <img style={{ gridArea: "image" }} src={image} />
+        </Projects>
       )
     })
   }
@@ -59,7 +78,10 @@ const Index = ({ data }) => {
     return (
       <div>
         <Hero>{formatTitle(title)}</Hero>
-        <button>{action}</button>
+        <Button>
+          <div>{action}</div>
+          <div></div>
+        </Button>
       </div>
     )
   }
@@ -81,10 +103,13 @@ const Index = ({ data }) => {
 
   return (
     <Layout>
-      <Section>
-        <Hero>{formatTitle(title)}</Hero>
-        <p>{subtitle}</p>
-        <button>{action}</button>
+      <Section invert={true} top={true}>
+        <Hero invert={true}>{formatTitle(title)}</Hero>
+        <HeroP>{subtitle}</HeroP>
+        <Button invert={true}>
+          <div>{action}</div>
+          <div></div>
+        </Button>
       </Section>
       <Section>{getBio(content.bio)}</Section>
       <Section>{getProjects(content.projects)}</Section>
@@ -117,6 +142,7 @@ export const pageQuery = graphql`
           }
           bio {
             title
+            image
             features {
               header
               body
