@@ -62,7 +62,9 @@ const Index = ({ data }) => {
           </Tags>
           <p style={{ gridArea: "text" }}>{body}</p>
           <Button style={{ gridArea: "button" }}>{getButton(action)}</Button>
-          <img style={{ gridArea: "image" }} src={image} />
+          <div className="projectImage" style={{ gridArea: "image" }}>
+            <img src={image} />
+          </div>
         </Projects>
       )
     })

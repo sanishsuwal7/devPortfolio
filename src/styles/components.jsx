@@ -5,8 +5,9 @@ export const colors = {
   accent: "#ff715b",
   green: "#0dab76",
   faded: "#b7b4b9",
-  white: "white",
+  white: "#fdfffc",
   grey: "#c7c7c7",
+  contrast: "#f9efe7",
 }
 
 export const ThumbnailImg = styled.img`
@@ -27,16 +28,17 @@ export const ImageFull = styled.div`
 
 export const Button = styled.a`
   display: block;
-  width: 200px;
+  width: 300px;
   height: 100px;
   position: relative;
+
   div {
     position: absolute;
     font-size: 1.2rem;
     text-align: center;
     top: 0;
     left: 0;
-    padding: 1rem 1.5rem 1.1rem;
+    padding: 1rem 2.5rem 1.1rem;
   }
   > div:nth-child(1) {
     background: ${props => (props.invert ? colors.green : colors.accent)};
@@ -51,7 +53,8 @@ export const Button = styled.a`
   }
   > div:nth-child(2) {
     z-index: 0;
-    border: 2px ${props => (props.invert ? "white" : "black")} solid;
+    border: 2px ${props => (props.invert ? colors.white : colors.background)}
+      solid;
     position: absolute;
     color: transparent;
   }
@@ -79,8 +82,13 @@ export const Tags = styled.ul`
 export const Wrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
-  max-width: 100rem;
+  max-width: 89rem;
   padding: 1.5rem 0.75rem;
+
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 400;
+  }
 
   .inh {
     color: inherit;
@@ -153,31 +161,69 @@ export const Projects = styled.div`
   justify-content: space-between;
   flex-flow: column;
 
+  > * {
+    margin-bottom: 2rem;
+  }
+
   p {
+    font-size: 1.3rem;
+    font-weight: 400;
     max-width: 30rem;
   }
-  > * {
-    margin-bottom: 0.75rem;
+
+  .projectImage {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    > img {
+      padding: 0;
+      margin: 0;
+      border: 0;
+    }
   }
   @media only screen and (min-width: 768px) {
+    .projectImage {
+      background: ${colors.contrast};
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      > img {
+        padding: 0 10% 0;
+        margin: 0;
+        border: 0;
+      }
+    }
+  }
+  @media only screen and (min-width: 1024px) {
     display: grid;
+    grid-template-columns: 50% 1fr;
     grid-template-areas:
       "title image"
       "tags image"
       "button image"
       "text image";
-    img {
-      max-width: 80%;
+    .projectImage {
       margin: auto;
+      background: transparent;
+      > img {
+        padding: 0 2rem 0;
+        margin: 0;
+        border: 0;
+      }
     }
   }
 `
 
 export const Hero = styled.h1`
   color: ${props => (props.invert ? colors.white : colors.background)};
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: normal;
   max-width: 60rem;
+  @media only screen and (min-width: 768px) {
+    font-size: 4rem;
+  }
 `
 export const HeroP = styled.p`
   color: ${colors.grey};
