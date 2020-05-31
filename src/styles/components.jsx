@@ -25,31 +25,35 @@ export const ImageFull = styled.div`
   }
 `
 
-export const Button = styled.button`
+export const Button = styled.a`
+  display: block;
+  width: 200px;
+  height: 100px;
   position: relative;
-  min-width: 200px;
-  padding: 1rem 1.5rem 1.1rem;
-  border: 0;
-  background: ${props => (props.invert ? colors.green : colors.accent)};
-  color: ${colors.white};
-  font-size: 1.2rem;
-  text-align: center;
-
+  div {
+    position: absolute;
+    font-size: 1.2rem;
+    text-align: center;
+    top: 0;
+    left: 0;
+    padding: 1rem 1.5rem 1.1rem;
+  }
   > div:nth-child(1) {
+    background: ${props => (props.invert ? colors.green : colors.accent)};
+    color: ${colors.white};
     z-index: 100;
+    transform: translate3d(-8px, -8px, 0px) scale3d(1, 1, 1) rotateX(0deg)
+      rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    transition: transform 0.3s ease-in-out;
+    :hover {
+      transform: translate3d(2px, 2px, 2px);
+    }
   }
   > div:nth-child(2) {
-    display: none;
+    z-index: 0;
+    border: 2px ${props => (props.invert ? "white" : "black")} solid;
     position: absolute;
-    z-index: -1;
-    left: 1rem;
-    width: 100%;
-    height: 100%;
-    border: 5px solid black;
-    transform: translate(-2rem, -50%);
-    :focus {
-      border: 5px solid black;
-    }
+    color: transparent;
   }
 `
 
@@ -58,9 +62,10 @@ export const Tags = styled.ul`
   justify-content: flex-start;
   flex-wrap: wrap;
   grid-area: tags;
+
   li {
+    height: 2rem;
     list-style: none;
-    display: inline;
     padding-right: 0.5rem;
     background: ${colors.background};
     color: ${colors.white};
@@ -129,17 +134,17 @@ export const Bio = styled.div`
       display: grid;
     }
     #bioImage {
-      padding: 2rem 2rem 2rem 0;
+      padding: 0rem 2rem 2rem 0;
     }
-    @media only screen and (min-width: 1024px) {
-      #bioContainer {
-        grid-template-areas:
-          "header header"
-          "image text";
-      }
-      #bioImage {
-        padding: 2rem 2rem 2rem 0;
-      }
+  }
+  @media only screen and (min-width: 1024px) {
+    #bioContainer {
+      grid-template-areas:
+        "header header"
+        "image text";
+    }
+    #bioImage {
+      padding: 2rem 2rem 2rem 0;
     }
   }
 `
@@ -147,8 +152,24 @@ export const Projects = styled.div`
   display: flex;
   justify-content: space-between;
   flex-flow: column;
+
+  p {
+    max-width: 30rem;
+  }
   > * {
     margin-bottom: 0.75rem;
+  }
+  @media only screen and (min-width: 768px) {
+    display: grid;
+    grid-template-areas:
+      "title image"
+      "tags image"
+      "button image"
+      "text image";
+    img {
+      max-width: 80%;
+      margin: auto;
+    }
   }
 `
 

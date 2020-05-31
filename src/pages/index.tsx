@@ -31,7 +31,7 @@ const Index = ({ data }) => {
     return (
       <Bio>
         <div id="bioContainer">
-          <h1>{formatTitle(title)}</h1>
+          <h1 style={{ height: "3rem" }}>{formatTitle(title)}</h1>
           <ImageFull id="bioImage">
             <img src={image} />
           </ImageFull>
@@ -61,12 +61,7 @@ const Index = ({ data }) => {
             ))}
           </Tags>
           <p style={{ gridArea: "text" }}>{body}</p>
-          <a style={{ gridArea: "button" }} href={link}>
-            <Button>
-              <div>{action}</div>
-              <div></div>
-            </Button>
-          </a>
+          <Button style={{ gridArea: "button" }}>{getButton(action)}</Button>
           <img style={{ gridArea: "image" }} src={image} />
         </Projects>
       )
@@ -78,10 +73,7 @@ const Index = ({ data }) => {
     return (
       <div>
         <Hero>{formatTitle(title)}</Hero>
-        <Button>
-          <div>{action}</div>
-          <div></div>
-        </Button>
+        <Button style={{ gridArea: "button" }}>{getButton(action)}</Button>
       </div>
     )
   }
@@ -101,14 +93,17 @@ const Index = ({ data }) => {
     })
   }
 
+  const getButton = action => {
+    return [0, 0].map(e => <div>{action}</div>)
+  }
+
   return (
     <Layout>
       <Section invert={true} top={true}>
         <Hero invert={true}>{formatTitle(title)}</Hero>
         <HeroP>{subtitle}</HeroP>
-        <Button invert={true}>
-          <div>{action}</div>
-          <div></div>
+        <Button invert={true} style={{ gridArea: "button" }}>
+          {getButton(action)}
         </Button>
       </Section>
       <Section>{getBio(content.bio)}</Section>
