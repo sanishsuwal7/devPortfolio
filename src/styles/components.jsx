@@ -31,7 +31,7 @@ export const Button = styled.a`
   width: 300px;
   height: 100px;
   position: relative;
-
+  margin-top: 10vh;
   div {
     position: absolute;
     font-size: 1.2rem;
@@ -83,7 +83,7 @@ export const Wrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
   max-width: 89rem;
-  padding: 1.5rem 0.75rem;
+  padding: 0 0.75rem 1.5rem;
 
   h1 {
     font-size: 3.5rem;

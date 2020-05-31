@@ -47,4 +47,17 @@ export default function Navbar() {
   )
 }
 
-const Container = styled.div``
+const Container = styled.div`
+  list-style: none;
+  * {
+    margin: 0;
+  }
+  ul {
+    display: flex;
+    justify-content: flex-start;
+  }
+  li {
+    list-style: none;
+    padding-right: 2rem;
+  }
+`
