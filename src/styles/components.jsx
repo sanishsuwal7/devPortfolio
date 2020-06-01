@@ -85,6 +85,17 @@ export const Wrapper = styled.div`
   max-width: 89rem;
   padding: 1.5rem 0.75rem;
 
+  ul {
+    display: flex;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    margin: 0;
+  }
+  li {
+    padding-right: 2rem;
+    list-style: none;
+  }
+
   h1 {
     font-size: 3.5rem;
     font-weight: 400;

@@ -32,7 +32,7 @@ export default function Layout({ children }) {
   return (
     <Wrapper>
       <Navbar />
-      <Bio />
+      {/* <Bio /> */}
       {children}
       <footer>
         © {new Date().getFullYear()}, Built with {` `}
