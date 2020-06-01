@@ -9,9 +9,8 @@ export const AboutPageTemplate = ({ title, content }) => {
   //console.log(title)
   return (
     <div>
-      <h2>title</h2>
       <h3>{title}</h3>
-      {/* <div dangerouslySetInnerHTML={{ __html: content }}></div> */}
+      <div>{content}</div>
     </div>
   )
 }

@@ -1,13 +1,15 @@
 import React from "react"
-import AboutPageTemplate from "../pages/about"
 
-export default function AboutTemplateExport({ title, content }) {
+const AboutTemplateExport = ({ title, content }) => {
   //const PageContent = contentComponent || Content
-  //console.log(title)
+  console.log("loading from about.js")
   return (
-    <AboutPageTemplate
-      title={title}
-      content={"<div>There is some html</div>"}
-    />
+    <div>
+      <h3>{title}</h3>
+      <p>{content}</p>
+      <div>something</div>
+    </div>
   )
 }
+
+export default AboutTemplateExport
