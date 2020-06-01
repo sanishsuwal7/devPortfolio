@@ -4,14 +4,14 @@ import PropTypes from "prop-types"
 //import Content, { HTMLContent } from "../components/Content"
 import { graphql } from "gatsby"
 
-export const AboutPageTemplate = ({ title, content, contentComponent }) => {
-  console.log(contentComponent)
+export const AboutPageTemplate = ({ title, content }) => {
   //const PageContent = contentComponent || Content
   //console.log(title)
   return (
     <div>
+      <h2>title</h2>
       <h3>{title}</h3>
-      <div dangerouslySetInnerHTML={{ __html: content }}></div>
+      {/* <div dangerouslySetInnerHTML={{ __html: content }}></div> */}
     </div>
   )
 }

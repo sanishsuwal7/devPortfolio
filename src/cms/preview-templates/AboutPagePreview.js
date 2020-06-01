@@ -1,13 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types"
-import AboutTemplate from "../../templates/about"
+import AboutTemplateExport from "../../templates/about"
 
 const AboutPagePreview = ({ entry, widgetFor }) => (
-  <AboutTemplate
-    contentComponent={widgetFor("body")}
+  <AboutTemplateExport
     title={entry.getIn(["data", "title"])}
     content={widgetFor("body")}
-    hidden={widgetFor("internal")}
   />
 )
 
