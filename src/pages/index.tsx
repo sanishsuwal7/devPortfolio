@@ -74,10 +74,8 @@ const Index = ({ data }) => {
     const { action, title } = contact
     return (
       <div>
-        <Hero invert={true}>{formatTitle(title)}</Hero>
-        <Button invert={true} style={{ gridArea: "button" }}>
-          {getButton(action)}
-        </Button>
+        <Hero>{formatTitle(title)}</Hero>
+        <Button style={{ gridArea: "button" }}>{getButton(action)}</Button>
       </div>
     )
   }
@@ -112,7 +110,7 @@ const Index = ({ data }) => {
       </Section>
       <Section>{getBio(content.bio)}</Section>
       <Section>{getProjects(content.projects)}</Section>
-      <Section invert={true}>{getContact(content.contact)}</Section>
+      <Section>{getContact(content.contact)}</Section>
     </Layout>
   )
 }
