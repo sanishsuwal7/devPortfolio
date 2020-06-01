@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../templates/layout"
 import { graphql } from "gatsby"
 
-export default function about({ data }) {
+export default function About({ data }) {
   const {
     allMarkdownRemark: {
       nodes: [fileAbsolutePath],
