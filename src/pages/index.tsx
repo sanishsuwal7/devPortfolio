@@ -26,7 +26,7 @@ const Index = ({ data }) => {
 
   const getBio = bio => {
     const { title, features, image } = bio
-    console.log(bio)
+    //console.log(bio)
 
     return (
       <Bio>
@@ -85,7 +85,7 @@ const Index = ({ data }) => {
   const formatTitle = title => {
     return title.split(" ").map(el => {
       if (el.includes("**")) {
-        console.log(el)
+        //console.log(el)
         const reg = /\*/g
         return (
           <div className="highlight">
