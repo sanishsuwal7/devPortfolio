@@ -1,7 +1,6 @@
 import React from "react"
 import "../styles/styles.css"
-
-import Bio from "../components/bio"
+//import Bio from "../components/bio"
 import { Wrapper } from "../styles/components"
 import Navbar from "../components/Navbar"
 import { Link, graphql, useStaticQuery } from "gatsby"

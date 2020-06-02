@@ -1,6 +1,6 @@
 // Gatsby supports TypeScript natively!
 import React, { useEffect } from "react"
-import { PageProps, Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import {
   Section,
   Hero,

@@ -70,7 +70,6 @@ export const Tags = styled.ul`
   li {
     height: 2rem;
     list-style: none;
-    padding-right: 0.5rem;
     background: ${colors.background};
     color: ${colors.white};
     padding: 0.25rem 0.55rem;
@@ -94,7 +93,6 @@ export const Wrapper = styled.div`
     margin: 0;
   }
   li {
-    padding-right: 2rem;
     list-style: none;
   }
 

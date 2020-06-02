@@ -47,4 +47,8 @@ export default function Navbar() {
   )
 }
 
-const Container = styled.div``
+const Container = styled.div`
+  li {
+    padding-right: 2rem;
+  }
+`
