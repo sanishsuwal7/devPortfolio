@@ -40,17 +40,6 @@ collections:
                 ],
             }
           - {
-              label: Mainpitch,
-              name: mainpitch,
-              widget: object,
-              fields:
-                [
-                  { label: Title, name: title, widget: markdown },
-                  { label: Subtitle, name: subtitle, widget: text },
-                  { label: Action, name: action, widget: text },
-                ],
-            }
-          - {
               label: Bio,
               name: bio,
               widget: object,
