@@ -55,28 +55,40 @@ const Container = styled.nav`
     color: ${props => (props.invert ? colors.white : colors.background)};
   }
   position: absolute;
-  display: flex;
+  text-align: center;
   width: 100%;
   padding: 1rem 3rem;
+
   > div {
     position: relative;
-    width: 100%;
   }
 
   ul {
-    position: absolute;
-    top: 0;
-    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20vw;
   }
 
   li {
     position: relative;
-    margin-right: 2rem;
+    margin: 0;
+    padding: 0;
     border-bottom: 5px ${colors.accent} solid;
     transition: border-bottom 0.2s ease-in-out;
 
     :hover {
       border-bottom: 10px ${colors.accent} double;
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    > div {
+      display: grid;
+      grid-template-columns: 80% 1fr;
+      text-align: left;
+    }
+    ul {
+      padding: 0;
+      justify-content: space-evenly;
     }
   }
 `

@@ -2,6 +2,8 @@
 body {
   color: #121e27;
   background: white;
+  max-width: 89rem;
+  margin: auto;
 }
 
 h1,

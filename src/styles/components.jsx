@@ -11,7 +11,11 @@ export const colors = {
 }
 
 export const sizing = {
-  paddingExterior: "3.2rem 3rem 3.2rem",
+  paddingExterior: {
+    base: "3.2rem 3rem 3.2rem",
+    tablet: "3.2rem 3rem 3.2rem",
+    desktop: "3.2rem 3rem 3.2rem",
+  },
 }
 
 export const ThumbnailImg = styled.img`
@@ -25,16 +29,17 @@ export const ImageFull = styled.div`
   max-width: 30rem;
   margin: auto;
   img {
-    border-radius: 60px;
+    border-radius: 20px;
     grid-area: image;
   }
 `
 
 export const Button = styled.a`
-  display: block;
-  width: 300px;
-  height: 100px;
   position: relative;
+  display: block;
+  width: 100%;
+  height: 20vh;
+  padding-bottom: 2rem;
 
   div {
     position: absolute;
@@ -84,15 +89,15 @@ export const Tags = styled.ul`
   }
 `
 export const Space = styled.div`
-  padding: ${sizing.paddingExterior};
+  padding: ${sizing.paddingExterior.base};
 `
 
 export const Wrapper = styled.div`
-  margin-left: auto;
-  margin-right: auto;
+  /*   margin-left: auto;
+  margin-right: auto; */
   position: relative;
-  max-width: 89rem;
-  padding: 1.5rem 0.75rem 0;
+  /* max-width: 89rem; */
+  margin: 0rem;
   a {
     color: ${colors.accent};
   }
@@ -108,7 +113,7 @@ export const Wrapper = styled.div`
   }
 
   h1 {
-    font-size: 3.5rem;
+    /* font-size: 3.5rem; */
     font-weight: 400;
   }
 
@@ -135,7 +140,8 @@ export const Wrapper = styled.div`
 export const Section = styled.div`
   background: ${props => (props.invert ? colors.background : colors.white)};
   color: ${props => (props.invert ? colors.white : colors.background)};
-  padding: ${props => (props.top ? "22vh 3rem 22vh" : sizing.paddingExterior)};
+  padding: ${props =>
+    props.top ? "11vh 3rem 22vh" : sizing.paddingExterior.base};
 `
 export const Bio = styled.div`
   #bioContainer {
@@ -241,9 +247,10 @@ export const Projects = styled.div`
 
 export const Hero = styled.h1`
   color: ${props => (props.invert ? colors.white : colors.background)};
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   font-weight: normal;
   max-width: 60rem;
+
   @media only screen and (min-width: 768px) {
     font-size: 4rem;
   }
