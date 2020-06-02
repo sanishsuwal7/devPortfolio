@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby + Netlify CMS`,
+    title: `Alejandro Aspinwall`,
     author: {
       name: `Alejandro Aspinwall`,
       summary: `who builds tools to simplify your digital needs.`,
     },
-    description: `A template for Gatsby + Netlify CMS.`,
+    description: `Development portfolio`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
     social: {
       twitter: `aaspinwall`,
