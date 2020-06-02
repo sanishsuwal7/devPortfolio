@@ -36,6 +36,26 @@ projects:
     link: https://agustincarozo.webflow.io/project/visit-geneva-homepage
     action: see this project
     image: /img/5ece6758ed7fb5184711539d_thumbnail.jpg
+  - title: Wodly
+    image: /img/screen-shot-2020-06-02-at-9.12.28-am.png
+    action: See this project
+    tags:
+      - Front-end
+      - Back-end
+      - Authentication
+    link: https://wodly.netlify.app/
+    body: Save your home workouts and display them in a chalkboard friendly manner.
+      Share with your friends!
+  - title: Moving day
+    body: An easy to use web scraper that helps you find an apartment in Montreal.
+    image: /img/screen-shot-2020-06-02-at-9.17.17-am.png
+    action: See this project
+    link: https://objective-thompson-83bedd.netlify.app/
+    tags:
+      - Web scraping
+      - Google maps API
+      - Walkscore API
+      - Authentication
 contact:
   title: Ready to start your own **Project?**
   action: Contact me
