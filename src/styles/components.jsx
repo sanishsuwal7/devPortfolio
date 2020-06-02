@@ -142,6 +142,11 @@ export const Section = styled.div`
   color: ${props => (props.invert ? colors.white : colors.background)};
   padding: ${props =>
     props.top ? "11vh 3rem 22vh" : sizing.paddingExterior.base};
+
+  @media only screen and (min-width: 768px) {
+    padding: ${props =>
+      props.top ? "22vh 3rem 22vh" : sizing.paddingExterior.base};
+  }
 `
 export const Bio = styled.div`
   #bioContainer {
