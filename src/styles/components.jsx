@@ -39,6 +39,7 @@ export const Button = styled.a`
     top: 0;
     left: 0;
     padding: 1rem 2.5rem 1.1rem;
+    margin-top: 2rem;
   }
   > div:nth-child(1) {
     background: ${props => (props.invert ? colors.green : colors.accent)};
@@ -76,6 +77,7 @@ export const Tags = styled.ul`
     margin-right: 0.25rem;
     font-size: 0.8rem;
     font-weight: 700;
+    margin-bottom: 1rem;
   }
 `
 
