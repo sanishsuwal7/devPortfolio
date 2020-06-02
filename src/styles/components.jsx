@@ -173,6 +173,7 @@ export const Projects = styled.div`
   display: flex;
   justify-content: space-between;
   flex-flow: column;
+  padding-bottom: 10vh;
 
   > * {
     margin-bottom: 2rem;
