@@ -100,7 +100,7 @@ const Index = ({ data }) => {
   }
 
   return (
-    <Layout>
+    <Layout invert={true}>
       <Section invert={true} top={true}>
         <Hero invert={true}>{formatTitle(title)}</Hero>
         <HeroP>{subtitle}</HeroP>

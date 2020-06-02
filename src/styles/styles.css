@@ -23,7 +23,9 @@ h5 > div {
 
 h1,
 button,
-a {
+small,
+a,
+nav {
   font-family: Inter;
   text-decoration: none;
   box-shadow: none;

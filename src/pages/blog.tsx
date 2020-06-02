@@ -1,7 +1,7 @@
 // Gatsby supports TypeScript natively!
 import React from "react"
 import { PageProps, Link, graphql } from "gatsby"
-
+import { Wrapper, Hero, Space } from "../styles/components"
 import Layout from "../templates/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
@@ -36,28 +36,30 @@ const BlogIndex = ({ data }: PageProps<Data>) => {
   return (
     <Layout>
       <SEO title="All posts" />
-      {posts.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug
-        return (
-          <article key={node.fields.slug}>
-            <header>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-            </header>
-            <section>
-              <p>{node.frontmatter.description || node.excerpt}</p>
-            </section>
-          </article>
-        )
-      })}
+      <Space>
+        {posts.map(({ node }) => {
+          const title = node.frontmatter.title || node.fields.slug
+          return (
+            <article key={node.fields.slug}>
+              <header>
+                <h3
+                  style={{
+                    marginBottom: rhythm(1 / 4),
+                  }}
+                >
+                  <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                    {title}
+                  </Link>
+                </h3>
+                <small>{node.frontmatter.date}</small>
+              </header>
+              <section>
+                <p>{node.frontmatter.description || node.excerpt}</p>
+              </section>
+            </article>
+          )
+        })}
+      </Space>
     </Layout>
   )
 }

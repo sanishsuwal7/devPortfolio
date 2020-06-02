@@ -10,6 +10,10 @@ export const colors = {
   contrast: "#f9efe7",
 }
 
+export const sizing = {
+  paddingExterior: "3.2rem 3rem 3.2rem",
+}
+
 export const ThumbnailImg = styled.img`
   width: 50px;
   height: 50px;
@@ -79,12 +83,19 @@ export const Tags = styled.ul`
     margin-bottom: 1rem;
   }
 `
+export const Space = styled.div`
+  padding: ${sizing.paddingExterior};
+`
 
 export const Wrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
+  position: relative;
   max-width: 89rem;
-  padding: 1.5rem 0.75rem;
+  padding: 1.5rem 0.75rem 0;
+  a {
+    color: ${colors.accent};
+  }
 
   ul {
     display: flex;
@@ -124,7 +135,7 @@ export const Wrapper = styled.div`
 export const Section = styled.div`
   background: ${props => (props.invert ? colors.background : colors.white)};
   color: ${props => (props.invert ? colors.white : colors.background)};
-  padding: ${props => (props.top ? "22vh 3rem 22vh" : "3.2rem 3rem 3.2rem")};
+  padding: ${props => (props.top ? "22vh 3rem 22vh" : sizing.paddingExterior)};
 `
 export const Bio = styled.div`
   #bioContainer {

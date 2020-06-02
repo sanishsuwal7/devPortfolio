@@ -1,11 +1,11 @@
 import React from "react"
 import "../styles/styles.css"
 //import Bio from "../components/bio"
-import { Wrapper } from "../styles/components"
+import { Wrapper, Space } from "../styles/components"
 import Navbar from "../components/Navbar"
 import { Link, graphql, useStaticQuery } from "gatsby"
 
-export default function Layout({ children }) {
+export default function Layout(props) {
   const data = useStaticQuery(graphql`
     query {
       allSitePage(
@@ -30,13 +30,15 @@ export default function Layout({ children }) {
 
   return (
     <Wrapper>
-      <Navbar />
+      <Navbar invert={props.invert} />
       {/* <Bio /> */}
-      {children}
-      <footer>
-        © {new Date().getFullYear()}, Built with {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
+      {props.children}
+      <Space>
+        <footer>
+          © {new Date().getFullYear()}, Built with {` `}
+          <a href="https://www.gatsbyjs.org">Gatsby</a>
+        </footer>
+      </Space>
     </Wrapper>
   )
 }
