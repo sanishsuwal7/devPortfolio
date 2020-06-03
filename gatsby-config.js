@@ -1,12 +1,13 @@
 module.exports = {
   siteMetadata: {
     title: `Alejandro Aspinwall`,
+    lang: "en-US",
     author: {
       name: `Alejandro Aspinwall`,
       summary: `who builds tools to simplify your digital needs.`,
     },
     description: `Development portfolio`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    siteUrl: `https://alejandroaspinwall.ca/`,
     social: {
       twitter: `aaspinwall`,
     },

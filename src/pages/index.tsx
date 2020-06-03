@@ -1,5 +1,6 @@
 // Gatsby supports TypeScript natively!
-import React, { useEffect } from "react"
+import React from "react"
+import SEO from "../components/seo"
 import { graphql } from "gatsby"
 import {
   Section,
@@ -101,6 +102,7 @@ const Index = ({ data }) => {
 
   return (
     <Layout invert={true}>
+      <SEO />
       <Section invert={true} top={true}>
         <Hero invert={true}>{formatTitle(title)}</Hero>
         <HeroP>{subtitle}</HeroP>
