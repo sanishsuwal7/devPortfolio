@@ -20,7 +20,7 @@ h2 > div,
 h3 > div,
 h4 > div,
 h5 > div {
-  padding-right: 1rem;
+  margin-right: 1rem;
 }
 
 h1,
