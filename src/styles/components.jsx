@@ -204,6 +204,10 @@ export const Projects = styled.div`
     font-weight: 400;
     max-width: 30rem;
   }
+  h1 {
+    font-size: 4rem;
+    margin: 0 0 1rem 0;
+  }
 
   .projectImage {
     margin: 0;
@@ -215,6 +219,15 @@ export const Projects = styled.div`
       margin: 0;
       border: 0;
     }
+  }
+
+  .latest {
+    font-family: Muli;
+
+    color: grey;
+    margin: 0 0 1rem;
+    padding: 0;
+    letter-spacing: 0.1rem;
   }
   @media only screen and (min-width: 768px) {
     .projectImage {

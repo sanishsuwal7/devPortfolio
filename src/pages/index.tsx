@@ -1,6 +1,6 @@
 // Gatsby supports TypeScript natively!
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, navigate } from "gatsby"
 import {
   Section,
   Hero,
@@ -54,6 +54,7 @@ const Index = ({ data }) => {
       const { action, body, link, tags, title, image } = project
       return (
         <Projects>
+          <div className="latest">LATEST WORK</div>
           <h1 style={{ gridArea: "title" }}>{formatTitle(title)}</h1>
           <Tags>
             {tags.map(li => (
@@ -61,7 +62,9 @@ const Index = ({ data }) => {
             ))}
           </Tags>
           <p style={{ gridArea: "text" }}>{body}</p>
-          <Button style={{ gridArea: "button" }}>{getButton(action)}</Button>
+          <Button style={{ gridArea: "button" }}>
+            {getButton(action, link)}
+          </Button>
           <div className="projectImage" style={{ gridArea: "image" }}>
             <img src={image} />
           </div>
@@ -95,8 +98,8 @@ const Index = ({ data }) => {
     })
   }
 
-  const getButton = action => {
-    return [0, 0].map(e => <div>{action}</div>)
+  const getButton = (action, link) => {
+    return [0, 0].map(e => <div onClick={() => navigate(link)}>{action}</div>)
   }
 
   return (
@@ -105,7 +108,7 @@ const Index = ({ data }) => {
         <Hero invert={true}>{formatTitle(title)}</Hero>
         <HeroP>{subtitle}</HeroP>
         <Button invert={true} style={{ gridArea: "button" }}>
-          {getButton(action)}
+          {getButton(action, "/")}
         </Button>
       </Section>
       <Section>{getBio(content.bio)}</Section>
