@@ -30,7 +30,7 @@ projects:
     body: An easy to use web scraper that helps you find an apartment in Montreal.
     image: /img/screen-shot-2020-06-02-at-9.17.17-am.png
     action: See this project
-    link: https://objective-thompson-83bedd.netlify.app/
+    link: https://movingday.netlify.app/
     tags:
       - Web scraping
       - Google maps API
