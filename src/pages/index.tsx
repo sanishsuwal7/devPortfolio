@@ -99,7 +99,9 @@ const Index = ({ data }) => {
   }
 
   const getButton = (action, link) => {
-    return [0, 0].map(e => <div onClick={() => navigate(link)}>{action}</div>)
+    return [0, 0].map(e => (
+      <div onClick={() => window.open(link)}>{action}</div>
+    ))
   }
 
   return (
