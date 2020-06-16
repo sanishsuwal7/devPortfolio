@@ -35,6 +35,16 @@ projects:
       - CDN Image-resizing
     body: A web application that displays your meals with recipes and portion sizes.
       Developed in collaboration with nutrition experts.
+  - title: Brummana Pattiserie
+    link: https://brummana.netlify.app/
+    tags:
+      - Front-end
+      - CMS
+      - Gatsby
+    action: See this project
+    image: /img/brummana
+    body: Local bakery static site. I created a content management system for the
+      owners. Their sales surged 200% after they released their online store.
   - title: Visit Geneva Homepage
     body: Homepage design + development for a personal project (concept) Switzerland
       Tourism page.
@@ -65,16 +75,6 @@ projects:
       - Google maps API
       - Walkscore API
       - Authentication
-  - title: Brummana Pattiserie
-    link: https://brummana.netlify.app/
-    tags:
-      - Front-end
-      - CMS
-      - Gatsby
-    action: See this project
-    image: /img/brummana
-    body: Local bakery static site. I created a content management system for the
-      owners. Their sales surged 200% after they released their online store.
 contact:
   title: Ready to start your own **Project?**
   action: Contact me
