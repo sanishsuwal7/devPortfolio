@@ -1,5 +1,5 @@
 ---
-title: About page title from local markdown
+title: I've always loved tech
 internal: true
 ---
 

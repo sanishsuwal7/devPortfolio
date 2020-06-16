@@ -2,16 +2,13 @@ import React from "react"
 import Layout from "../templates/layout"
 import PropTypes from "prop-types"
 import { Wrapper, Hero, Section } from "../styles/components"
-import Content, { HTMLContent } from "../components/Content"
 import { graphql } from "gatsby"
 
 export const AboutPageTemplate = ({ title, content }) => {
-  const PageContent = Content
-  //console.log(title)
   return (
     <Section>
       <Hero>{title}</Hero>
-      <PageContent className="content" content={content} />
+      <div dangerouslySetInnerHTML={{ __html: content }}></div>
     </Section>
   )
 }

@@ -94,6 +94,6 @@ collections:
         label: "About"
         name: "about"
         fields:
-          - { label: "Title", name: "title", widget: "markdown" }
+          - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
           - { label: "Internal", name: "internal", widget: "hidden" }
