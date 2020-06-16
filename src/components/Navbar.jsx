@@ -29,7 +29,7 @@ export default function Navbar(props) {
     <Container invert={props.invert}>
       <div>
         <Link to="/">
-          <div>{siteMetadata.title}</div>
+          <div>Alejandro Aspinwall</div>
         </Link>
         <ul>
           {/* Links to all pages */}

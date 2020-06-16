@@ -5,6 +5,7 @@ import Bio from "../components/bio"
 import Layout from "../templates/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
+import { sizing } from "../styles/components"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -22,7 +23,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           <header>
             <h1
               style={{
-                marginTop: rhythm(1),
+                marginTop: sizing.paddingExterior.base,
                 marginBottom: 0,
               }}
             >
@@ -32,7 +33,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               style={{
                 ...scale(-1 / 5),
                 display: `block`,
-                marginBottom: rhythm(1),
+                marginBottom: sizing.paddingExterior.base,
               }}
             >
               {post.frontmatter.date}
@@ -41,7 +42,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr
             style={{
-              marginBottom: rhythm(1),
+              marginBottom: sizing.paddingExterior.base,
             }}
           />
           <footer>

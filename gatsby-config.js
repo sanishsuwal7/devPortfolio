@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Alejandro Aspinwall`,
+    title: `Alejandro Aspinwall | Developer`,
     lang: "en-US",
     author: {
       name: `Alejandro Aspinwall`,
@@ -14,10 +14,18 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-netlify-cms",
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
         // Add any options here
+      },
+    },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://www.alejandroaspinwall.ca",
+        policy: [{ userAgent: "*", allow: "/" }],
       },
     },
 
