@@ -1,6 +1,6 @@
-[[headers]]
-  for = "/*"
-  [headers.values]
+#[[headers]]
+  #for = "/*"
+  #[headers.values]
     
   #  Multi-value headers are expressed with multi-line strings
 	#cache-control = '''
