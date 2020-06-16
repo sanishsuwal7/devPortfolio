@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
+import React, { useEffect } from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
@@ -80,7 +80,28 @@ const SEO = ({ lang, meta }) => {
           content: "We7BOl_CZVyDeFTxQEtsewDNNE2nwsw5rJi7Kf1s4JA",
         },
       ].concat(meta)}
-    />
+    >
+      <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
+
+      <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-analytics.js"></script>
+
+      <script>
+        {`  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCKqDirqF99M7jJKo-uNXVJ7DQwdliKuFQ",
+    authDomain: "devportfolio-314b9.firebaseapp.com",
+    databaseURL: "https://devportfolio-314b9.firebaseio.com",
+    projectId: "devportfolio-314b9",
+    storageBucket: "devportfolio-314b9.appspot.com",
+    messagingSenderId: "854072268663",
+    appId: "1:854072268663:web:793bf548f01ae12fe9f372",
+    measurementId: "G-KBD98ZWTNM"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();`}
+      </script>
+    </Helmet>
   )
 }
 

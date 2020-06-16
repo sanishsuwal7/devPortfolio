@@ -21,21 +21,7 @@ module.exports = {
         // Add any options here
       },
     },
-    {
-      resolve: "gatsby-plugin-firebase",
-      options: {
-        credentials: {
-          apiKey: "AIzaSyCKqDirqF99M7jJKo-uNXVJ7DQwdliKuFQ",
-          authDomain: "devportfolio-314b9.firebaseapp.com",
-          databaseURL: "https://devportfolio-314b9.firebaseio.com",
-          projectId: "devportfolio-314b9",
-          storageBucket: "devportfolio-314b9.appspot.com",
-          messagingSenderId: "854072268663",
-          appId: "1:854072268663:web:793bf548f01ae12fe9f372",
-          measurementId: "G-KBD98ZWTNM",
-        },
-      },
-    },
+
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
@@ -103,12 +89,7 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
-      },
-    },
+
     `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
