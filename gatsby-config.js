@@ -98,8 +98,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby + Netlify CMS`,
-        short_name: `Gatsby+CMS`,
+        name: `Alejandro Aspinwall Developer`,
+        short_name: `Alejandro Aspinwall Developer`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#ff715b`,

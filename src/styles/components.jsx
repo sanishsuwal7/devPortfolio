@@ -68,6 +68,11 @@ export const Button = styled.a`
     position: absolute;
     color: transparent;
   }
+  @media only screen and (max-width: 400px) {
+    div {
+      font-size: 1rem;
+    }
+  }
 `
 
 export const Tags = styled.ul`
@@ -228,6 +233,11 @@ export const Projects = styled.div`
     margin: 0 0 1rem;
     padding: 0;
     letter-spacing: 0.1rem;
+  }
+  @media only screen and (max-width: 400px) {
+    h1 {
+      font-size: 2.5rem;
+    }
   }
   @media only screen and (min-width: 768px) {
     .projectImage {
