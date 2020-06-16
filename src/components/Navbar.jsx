@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { Link, graphql, useStaticQuery, navigate } from "gatsby"
 import styled from "styled-components"
 import { colors } from "../styles/components"
 
@@ -35,7 +35,8 @@ export default function Navbar(props) {
           {/* Links to all pages */}
           {nodes.map(node => {
             const path = node.path
-            if (path.includes("404") || path === "/" || path === "about") {
+            console.log(path)
+            if (path.includes("404") || path === "/" || path === "/about/") {
               return null
             }
             return (
@@ -44,6 +45,11 @@ export default function Navbar(props) {
               </Link>
             )
           })}
+          {["projects", "contact"].map(link => (
+            <div onClick={() => navigate(`#${link}`)}>
+              <li>{link}</li>
+            </div>
+          ))}
         </ul>
       </div>
     </Container>

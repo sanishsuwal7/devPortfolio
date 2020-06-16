@@ -113,9 +113,9 @@ const Index = ({ data }) => {
           {getButton(action, "/")}
         </Button>
       </Section>
-      <Section>{getBio(content.bio)}</Section>
-      <Section>{getProjects(content.projects)}</Section>
-      <Section>{getContact(content.contact)}</Section>
+      <Section id="bio">{getBio(content.bio)}</Section>
+      <Section id="projects">{getProjects(content.projects)}</Section>
+      <Section id="contact">{getContact(content.contact)}</Section>
     </Layout>
   )
 }
