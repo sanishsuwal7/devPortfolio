@@ -95,12 +95,18 @@ const Container = styled.nav`
   @media only screen and (min-width: 768px) {
     > div {
       display: grid;
-      grid-template-columns: 80% 1fr;
+      grid-template-columns: 50% 1fr;
       text-align: left;
     }
     ul {
       padding: 0;
       justify-content: space-evenly;
+    }
+  }
+  @media only screen and (min-width: 1024px) {
+    > div {
+      display: grid;
+      grid-template-columns: 80% 1fr;
     }
   }
 `

@@ -33,7 +33,8 @@ projects:
     tags:
       - Front end
       - CDN Image-resizing
-    body: A web application that displays your meals with recipes and portion sizes.
+    body:
+      A web application that displays your meals with recipes and portion sizes.
       Developed in collaboration with nutrition experts.
   - title: Brummana Pattiserie
     link: https://brummana.netlify.app/
@@ -43,10 +44,12 @@ projects:
       - Gatsby
     action: See this project
     image: /img/brummana
-    body: Local bakery static site. I created a content management system for the
+    body:
+      Local bakery static site. I developed the site and created a content management system for the
       owners. Their sales surged 200% after they released their online store.
   - title: Visit Geneva Homepage
-    body: Homepage design + development for a personal project (concept) Switzerland
+    body:
+      Homepage design + development for a personal project (concept) Switzerland
       Tourism page.
     tags:
       - Website Design
@@ -62,11 +65,13 @@ projects:
       - Front-end
       - Back-end
       - Authentication
+      - Redux
     link: https://wodly.netlify.app/
-    body: Save your home workouts and display them in a chalkboard friendly manner.
+    body:
+      Save your home workouts and display them in a chalkboard friendly manner.
       Share with your friends!
   - title: Moving day
-    body: An easy to use web scraper that helps you find an apartment in Montreal.
+    body: Looking for an apartment in Montreal is quite a pain. Since Kijiji doesn't provide a public API, I made one that runs on a local server.
     image: /img/screen-shot-2020-06-02-at-9.17.17-am.png
     action: See this project
     link: https://movingday.netlify.app/

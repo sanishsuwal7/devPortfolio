@@ -257,6 +257,7 @@ export const Projects = styled.div`
     display: grid;
     grid-template-columns: 50% 1fr;
     grid-template-areas:
+      "top top"
       "title image"
       "tags image"
       "button image"

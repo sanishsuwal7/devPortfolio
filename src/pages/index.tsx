@@ -54,7 +54,9 @@ const Index = ({ data }) => {
       const { action, body, link, tags, title, image } = project
       return (
         <Projects>
-          <div className="latest">LATEST WORK</div>
+          <div className="latest" style={{ gridArea: "top" }}>
+            LATEST WORK
+          </div>
           <h1 style={{ gridArea: "title" }}>{formatTitle(title)}</h1>
           <Tags>
             {tags.map(li => (
