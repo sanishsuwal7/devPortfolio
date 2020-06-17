@@ -71,8 +71,7 @@ const Container = styled.nav`
 
   ul {
     display: flex;
-    justify-content: space-between;
-    padding: 0 10vw;
+    justify-content: space-evenly;
     @media only screen and (max-width: 320px) {
       justify-content: center;
       li {
