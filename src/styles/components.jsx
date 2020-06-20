@@ -78,19 +78,20 @@ export const Button = styled.a`
 export const Tags = styled.ul`
   display: flex;
   justify-content: flex-start;
-  flex-wrap: wrap;
   grid-area: tags;
+  flex-wrap: wrap;
 
   li {
-    height: 2rem;
     list-style: none;
     background: ${colors.background};
     color: ${colors.white};
-    padding: 0.25rem 0.55rem;
-    margin-right: 0.25rem;
+    padding: 0.25rem 0.7rem;
+    margin: 0 0.25rem 1rem 0;
     font-size: 0.8rem;
     font-weight: 700;
-    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `
 export const Space = styled.div`
@@ -217,8 +218,6 @@ export const Projects = styled.div`
   .projectImage {
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
     > img {
       padding: 0;
       margin: 0;
