@@ -80,7 +80,13 @@ const Index = ({ data }) => {
     return (
       <div>
         <Hero>{formatTitle(title)}</Hero>
-        <Button style={{ gridArea: "button" }}>{getButton(action)}</Button>
+        <Button style={{ gridArea: "button" }}>
+          {getButton(
+            action,
+            "/",
+            () => (window.location.href = "mailto:aaspinwall@gmail.com")
+          )}
+        </Button>
       </div>
     )
   }
@@ -100,10 +106,14 @@ const Index = ({ data }) => {
     })
   }
 
-  const getButton = (action, link = "/") => {
-    return [0, 0].map(e => (
-      <div onClick={() => window.open(link)}>{action}</div>
-    ))
+  const getButton = (action: string, link: string = "/", alt?) => {
+    return [0, 0].map(e =>
+      alt ? (
+        <div onClick={alt}>{action}</div>
+      ) : (
+        <div onClick={() => window.open(link)}>{action}</div>
+      )
+    )
   }
 
   return (
@@ -111,9 +121,9 @@ const Index = ({ data }) => {
       <Section invert={true} top={true}>
         <Hero invert={true}>{formatTitle(title)}</Hero>
         <HeroP>{subtitle}</HeroP>
-        <Button invert={true} style={{ gridArea: "button" }}>
-          {getButton(action, "/")}
-        </Button>
+        {/*         <Button invert={true} style={{ gridArea: "button" }}>
+          {getButton("Check out my projects", "/")}
+        </Button> */}
       </Section>
       <Section id="bio">{getBio(content.bio)}</Section>
       <Section id="projects">{getProjects(content.projects)}</Section>
