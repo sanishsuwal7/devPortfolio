@@ -2,14 +2,14 @@
 title: I've always loved tech
 internal: true
 ---
-I grew up with this
+My name is Alejandro Aspinwall.
 
-\||
+I have been building web stuff since I was 11 years old. Back in the day I tinkered endlessly with the site builder tool from Geocities and came up with a few sites were I could host the Flash animations I was making for my friends. Later the game changed and the cool stuff was made with Dreamweaver, so I used it make fan-club websites for my favourite music artist. When social media came around I was making myspace websites look stunning (15 year old me thought so) with my sick coding skills. 
 
-V
+Since then I haven't stopped learning and creating. I've been involved music, photography, sound engineering, electronic engineering, programming, video production, feature film post-production, VR games, and 3D sound.
 
-<div style="width:100%;height:0;padding-bottom:100%;position:relative;"><iframe src="https://giphy.com/embed/lORulWik72L7O" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/internet-aol-netscape-lORulWik72L7O">via GIPHY</a></p>
+In the last few years I've been increasingly working on software development tasks in my professional life. But most recently I came back to my first love, **The web** 🌐, it can do everything nowadays!
 
-I love the internet!
+Most of the tools I came to know and love are not around anymore. But my passion and excitement for building cool stuff hasn't been deprecated. 
 
-I'm also an [audio professional](https://alejandroaspinwall.com/)
+Check out my [audio professional](https://alejandroaspinwall.com/) work if you're interested.
