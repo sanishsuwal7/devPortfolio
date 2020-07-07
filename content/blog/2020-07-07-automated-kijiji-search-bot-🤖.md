@@ -1,6 +1,6 @@
 ---
 title: Automated kijiji search bot 🤖
-draft: true
+draft: false
 date: 2020-07-07T22:35:00.000Z
 description: It started as a freelance job. But it was bigger than myself...
 ---
