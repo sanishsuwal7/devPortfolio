@@ -1,7 +1,7 @@
 ---
 title: Automated kijiji search bot 🤖
 draft: true
-date: 2020-07-07T20:35:49.973Z
+date: 2020-07-07T22:35:00.000Z
 description: It started as a freelance job. But it was bigger than myself...
 ---
 I live in Montreal, Canada. We don't have many options when it comes to classified ads and funny enough, the same applies for websites for real estate rentals. There is this ad ridden website called [kijiji](kijiji.com) that seems to be the only viable option. 
