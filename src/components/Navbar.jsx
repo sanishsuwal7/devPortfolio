@@ -36,7 +36,7 @@ export default function Navbar(props) {
           {nodes.map(node => {
             const path = node.path
             console.log(path)
-            if (path.includes("404") || path === "/" || path === "/about/") {
+            if (path.includes("404") || path === "/") {
               return null
             }
             return (
