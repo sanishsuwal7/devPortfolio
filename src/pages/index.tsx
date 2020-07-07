@@ -118,12 +118,11 @@ const Index = ({ data }) => {
 
   return (
     <Layout invert={true}>
-      <Section invert={true} top={true}>
-        <Hero invert={true}>{formatTitle(title)}</Hero>
-        <HeroP>{subtitle}</HeroP>
-        {/*         <Button invert={true} style={{ gridArea: "button" }}>
-          {getButton("Check out my projects", "/")}
-        </Button> */}
+      <Section invert={true}>
+        <div className="marquee">
+          <Hero invert={true}>{formatTitle(title)}</Hero>
+          <HeroP>{subtitle}</HeroP>
+        </div>
       </Section>
       <Section id="bio">{getBio(content.bio)}</Section>
       <Section id="projects">{getProjects(content.projects)}</Section>

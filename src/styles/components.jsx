@@ -146,12 +146,17 @@ export const Wrapper = styled.div`
 export const Section = styled.div`
   background: ${props => (props.invert ? colors.background : colors.white)};
   color: ${props => (props.invert ? colors.white : colors.background)};
-  padding: ${props =>
-    props.top ? "11vh 3rem 22vh" : sizing.paddingExterior.base};
+  padding: ${sizing.paddingExterior.base};
 
   @media only screen and (min-width: 768px) {
     padding: ${props =>
       props.top ? "22vh 3rem 22vh" : sizing.paddingExterior.base};
+  }
+  .marquee {
+    height: 65vh;
+    h1 {
+      margin-top: 25vh;
+    }
   }
 `
 export const Bio = styled.div`

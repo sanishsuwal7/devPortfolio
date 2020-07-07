@@ -26,10 +26,20 @@ bio:
         more leads, more sales, and a driven ROI to your business. One pixel at
         a time.
 projects:
+  - title: Moving day
+    body: Looking for an apartment in Montreal is quite a pain. Since Kijiji doesn't provide a public API, I made one that runs on a local server.
+    image: /img/movingday.png
+    action: See this project
+    link: https://movingday.netlify.app/
+    tags:
+      - Web scraping
+      - Google maps API
+      - Walkscore API
+      - Authentication
   - title: My Nomnoms
     link: https://mynomnoms.netlify.app/
     action: See this project
-    image: /img/screen-shot-2020-06-02-at-9.21.11-am.png
+    image: /img/mynomnoms.png
     tags:
       - Front end
       - CDN Image-resizing
@@ -47,6 +57,18 @@ projects:
     body:
       Local bakery static site. I developed the site and created a content management system for the
       owners. Their sales surged 200% after they released their online store.
+  - title: Wodly
+    image: /img/wodly.png
+    action: See this project
+    tags:
+      - Front-end
+      - Back-end
+      - Authentication
+      - Redux
+    link: https://wodly.netlify.app/workouts
+    body:
+      Save your home workouts and display them in a chalkboard friendly manner.
+      Share with your friends!
   - title: Visit Geneva Homepage
     body:
       Homepage design + development for a personal project (concept) Switzerland
@@ -58,28 +80,7 @@ projects:
     link: https://agustincarozo.webflow.io/project/visit-geneva-homepage
     action: see this project
     image: /img/5ece6758ed7fb5184711539d_thumbnail.jpg
-  - title: Wodly
-    image: /img/screen-shot-2020-06-02-at-9.12.28-am.png
-    action: See this project
-    tags:
-      - Front-end
-      - Back-end
-      - Authentication
-      - Redux
-    link: https://wodly.netlify.app/
-    body:
-      Save your home workouts and display them in a chalkboard friendly manner.
-      Share with your friends!
-  - title: Moving day
-    body: Looking for an apartment in Montreal is quite a pain. Since Kijiji doesn't provide a public API, I made one that runs on a local server.
-    image: /img/screen-shot-2020-06-02-at-9.17.17-am.png
-    action: See this project
-    link: https://movingday.netlify.app/
-    tags:
-      - Web scraping
-      - Google maps API
-      - Walkscore API
-      - Authentication
+
 contact:
   title: Ready to start your own **Project?**
   action: Contact me
