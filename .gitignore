@@ -69,3 +69,5 @@ yarn-error.log
 .yarn-integrity
 #Draft
 src/drafts/
+# Local Netlify folder
+.netlify
