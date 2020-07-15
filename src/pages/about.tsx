@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../templates/layout"
 import PropTypes from "prop-types"
-import { Wrapper, Hero, Section } from "../styles/components"
+import { Hero, Section } from "../styles/components"
 import { graphql } from "gatsby"
 
 export const AboutPageTemplate = ({ title, content }) => {

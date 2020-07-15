@@ -75,7 +75,10 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { internal: { ne: true }, draft: { ne: true } } }
+      filter: {
+        frontmatter: { internal: { ne: true }, draft: { ne: true } }
+        fileAbsolutePath: { regex: "/blog/" }
+      }
     ) {
       edges {
         node {

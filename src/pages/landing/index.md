@@ -2,7 +2,7 @@
 title: "Landing page title from local markdown "
 internal: true
 mainpitch:
-  title: Hi, I’m Alejandro, **Software Engineer** and **Web Developer**
+  title: Hi, I’m Alejandro, **Full Stack** **Web Developer**
   subtitle: I build beautiful websites for businesses around the world. If you
     need a modern and powerful website, book a call below.
   action: Book a call
