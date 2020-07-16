@@ -1,6 +1,6 @@
 ---
 title: Moving Day
-description: Coffee by Benjamin is a React Application built for a self roasting coffee kit. I built this project from scratch alongside a designer with React, GraphQL, and Shopify. This e-commerce application required a lot of heavy lifting to create a universal cart and overall shopping experience as well as introduce the product and include support pages.
+description: Moving Day is an application that helps users to look for a place to live. I've moved countries a couple of times and everytime I do, I dread looking for a new place. I want to offer others a simple tool that filters out spam, notifies them of listings that match their search criterion and most importantly, gives them peace of mind during stressful times.
 details:
   type: Personal project
   stack: react styled-components firebase netlify
@@ -10,27 +10,26 @@ details:
 
 # Project Purpose and Goal
 
-This was initially intended to be a data scraper for Kijiji (a classified ad site in Canada) with a simple front end that filters out spam.
+This project was initially thought of as a tool for people that were looking to rent apartments in Montreal. Since the most popular site for this purpose is Kijiji, I wanted to make a friendly front end that filtered out the spam posts and displayed relevant information about the listing. I also wanted to add a notification system that sent an email to the user anytime a new ad that matched their search terms was posted. Finally, I wanted to display additional information that wasn’t available directly from kijiji. I decided to add the Google Maps API that allows for a more intuitive navigation and the Walkscore API rates the listing’s access to public transportation and bike friendliness.
 
-This project included 3 phases and iterations of the site. Phase 1 simply allowed users to enter their email to be alerted to when the product was released. Phase 2 was quite larger and is designed to introduce users to the Coffee By Benjamin product and answer any questions they may have. Phase three is by far the largest and most complex, as it includes the full shop and cart pages as well as the logic and backend that goes along with it.
-
-I found that the best way to implement these 3 phases without having separate versions saved was to incorporate a feature flag that will pass the current state that should be displayed and then render content conditionally.
+My goal was to learn to use third party APIs and to make a robust full stack application.
 
 # Web Stack and Explanation
 
-React made the most sense for the web application because it required to connect to graphQL and the Shopify-SDK for javascript ties into React very smoothly. The Shopify-Buy-SDK was chosen because of the ability for the client to modify the products without any complex coding knowledge.
+To maximize my learning-to-production ratio,I wanted to have a javascript-based stack. I chose React for the fronted because I was already familiar with it. I wanted to push myself even within a familiar environment so after developing the initial version, refactored the code using hooks. This was the first time I used hooks with Redux and also the first time I would be using a store persistor.
 
-React hooks and session storage are also used throughout the project to maintain the user cart items and allows the cart count and other shopping data to be displayed universally without the need for Redux. Netlify is also an obvious choice for deployment because of its speed and reliability.
+I used a firebase realtime database to store the scraped data and to eventually provide a public facing API.
 
-[PICTURES]
+For the backend I wanted to learn to develop and deploy serverless functions. This meant that I would have to split the functionality into simple modules. I used Netlify functions, a Heroku instance as a master clock for the lambda functions and finally a Cloud Scheduler to keep everything synced.
+
+After trying a few other providers, I decided that Netlify was the best choice for my application. It's a powerful and fast platform for deployment, which allowed me to use (and learn) serverless functions.
+
+![altText](/img/brummana.png "title")
 
 # Problems and Thought Process
 
-As the project grew
-
-Like most projects, I ran into a few bumps along the way, one particularly difficult area was organization and structure of the code. Because of this project's size, I realized how important maintaining an organized structure would be.
-
-I worked hard to keep components as reusable as possible and utilized props for many slight variations. I also used styled-components, because the structure of CSS-in-js is much clearer and prevents overrides.
+Like most projects, the initial idea in my head was simpler and more elegant than what the actual solutions ended up being. I encountered a few bumps along the way that set back my progress significantly. Looking back, all these caveats forced me to learn much more than I initially challenged myself to.
+When I started to develop the search function I encountered that kijiji doesn’t provide a public API for their ads. To solve this, I created a simple express app that scraped the site. The results would be displayed in real time on the application. Everything ran smoothly on my local machine, but when I deployed the application I soon realized that kijiji doesn’t like repeated requests from servers. I would need a more robust infrastructure to work around this limitation.
 
 [PICTURES]
 

@@ -3,7 +3,6 @@ import Layout from "../templates/layout"
 import PropTypes from "prop-types"
 import { Section } from "../styles/components"
 import { graphql } from "gatsby"
-import Img from "gatsby-image"
 
 export const Project = ({ data, images }) => {
   const { title, details, description, html } = data

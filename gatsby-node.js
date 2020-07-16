@@ -12,7 +12,10 @@ exports.createPages = async ({ graphql, actions }) => {
         allMarkdownRemark(
           sort: { fields: [frontmatter___date], order: DESC }
           limit: 1000
-          filter: { frontmatter: { internal: { ne: true } } }
+          filter: {
+            frontmatter: { internal: { ne: true } }
+            fileAbsolutePath: { regex: "/blog/" }
+          }
         ) {
           edges {
             node {
@@ -60,8 +63,8 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   // Create blog posts pages.
-  const posts = projectsQuery.data.allMarkdownRemark.edges
-  const projects = blogQuery.data.allMarkdownRemark.edges
+  const projects = projectsQuery.data.allMarkdownRemark.edges
+  const posts = blogQuery.data.allMarkdownRemark.edges
 
   posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
@@ -77,7 +80,7 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
-  posts.forEach((post, index) => {
+  projects.forEach(post => {
     createPage({
       path: post.node.fields.slug,
       component: projectsTemplate,

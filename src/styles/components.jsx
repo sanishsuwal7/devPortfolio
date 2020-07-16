@@ -173,10 +173,15 @@ export const Section = styled.div`
     display: flex;
     justify-content: center;
     flex-direction: column;
-    img {
-      object-fit: contain;
-      max-width: 100%;
-    }
+  }
+  p {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  img {
+    object-fit: contain;
+    max-width: 100%;
   }
 `
 export const Bio = styled.div`
