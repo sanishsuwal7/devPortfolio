@@ -159,8 +159,12 @@ export const Section = styled.div`
     }
   }
   #projectDetails {
+    padding-bottom: 2rem;
+    > div {
+      flex-basis: 20px;
+    }
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     h3 {
       margin: 1rem 0 1rem;
       font-family: Inter;
@@ -169,19 +173,14 @@ export const Section = styled.div`
       font-family: Muli;
     }
   }
-  .images {
+  .projectImages {
     display: flex;
     justify-content: center;
     flex-direction: column;
-  }
-  p {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
-  img {
-    object-fit: contain;
-    max-width: 100%;
+    img {
+      max-width: 100%;
+      margin: auto;
+    }
   }
 `
 export const Bio = styled.div`
@@ -225,6 +224,15 @@ export const Bio = styled.div`
     }
   }
 `
+
+export const Markdown = styled.div`
+  img {
+    padding: 2rem;
+    max-width: 100%;
+    margin: auto;
+  }
+`
+
 export const Projects = styled.div`
   display: flex;
   justify-content: space-between;

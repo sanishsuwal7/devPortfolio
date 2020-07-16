@@ -71,3 +71,6 @@ yarn-error.log
 src/drafts/
 # Local Netlify folder
 .netlify
+
+#vscode
+.vscode

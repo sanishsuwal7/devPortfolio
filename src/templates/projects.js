@@ -1,8 +1,9 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Layout from "../templates/layout"
 import PropTypes from "prop-types"
-import { Section } from "../styles/components"
+import { Section, Markdown } from "../styles/components"
 import { graphql } from "gatsby"
+import Icon from "../components/Icon"
 
 export const Project = ({ data, images }) => {
   const { title, details, description, html } = data
@@ -10,10 +11,12 @@ export const Project = ({ data, images }) => {
 
   console.log(details)
   console.log(images)
+
   return (
     <Section top={true}>
       <h1>{title}</h1>
       <p>{description}</p>
+      <Icon speed={"4s"} />
       <div id="projectDetails">
         <div>
           <h3>Type</h3>
@@ -40,11 +43,14 @@ export const Project = ({ data, images }) => {
           </a>
         </div>
       </div>
-      <div className="images">
+      <div className="projectImages">
         <img src={"/img/placeholder.png"} alt={"projectImage"}></img>
         <img src={"/img/placeholder.gif"} alt={"projectImage"}></img>
       </div>
-      <div dangerouslySetInnerHTML={{ __html: html }}></div>
+      <Markdown
+        className="projectBody"
+        dangerouslySetInnerHTML={{ __html: html }}
+      ></Markdown>
     </Section>
   )
 }

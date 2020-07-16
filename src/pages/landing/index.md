@@ -30,7 +30,7 @@ projects:
     body: Looking for an apartment in Montreal is quite a pain. Since Kijiji doesn't provide a public API, I made one that runs on a local server.
     image: /img/movingday.png
     action: See this project
-    link: https://movingday.netlify.app/
+    link: /projects/movingday/overview
     tags:
       - Web scraping
       - Google maps API
