@@ -46,7 +46,7 @@ export default function Navbar(props) {
             )
           })}
           {["projects", "contact"].map(link => (
-            <div onClick={() => navigate(`#${link}`)}>
+            <div onClick={() => navigate(`/#${link}`)}>
               <li>{link}</li>
             </div>
           ))}
