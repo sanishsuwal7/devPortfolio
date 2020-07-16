@@ -69,17 +69,6 @@ projects:
     body:
       Save your home workouts and display them in a chalkboard friendly manner.
       Share with your friends!
-  - title: Visit Geneva Homepage
-    body:
-      Homepage design + development for a personal project (concept) Switzerland
-      Tourism page.
-    tags:
-      - Website Design
-      - Webflow Development
-      - Personal Project
-    link: https://agustincarozo.webflow.io/project/visit-geneva-homepage
-    action: see this project
-    image: /img/5ece6758ed7fb5184711539d_thumbnail.jpg
 
 contact:
   title: Ready to start your own **Project?**

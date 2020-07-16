@@ -227,7 +227,8 @@ export const Bio = styled.div`
 
 export const Markdown = styled.div`
   img {
-    padding: 2rem;
+    padding: 2rem 15% 2rem;
+    width: 100%;
     max-width: 100%;
     margin: auto;
   }

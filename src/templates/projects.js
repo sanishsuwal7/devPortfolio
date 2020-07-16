@@ -9,9 +9,6 @@ export const Project = ({ data, images }) => {
   const { title, details, description, html } = data
   const { stack, code, live, type } = details
 
-  console.log(details)
-  console.log(images)
-
   return (
     <Section top={true}>
       <h1>{title}</h1>
