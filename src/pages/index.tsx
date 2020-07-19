@@ -115,50 +115,29 @@ const Index = ({ data }) => {
     )
   }
 
+  const makeClouds = (cloudCount: number, mult: number = 1) => {
+    const cloudArray = [...Array(cloudCount).keys()]
+
+    return cloudArray.map(cloud => {
+      function r(min, max) {
+        const rand = Math.random() * (max - min) + min
+        return rand.toString()
+      }
+      return (
+        <Clouds
+          roll={`${r(40, 120)}s`}
+          top={`${r(3, 90)}vh`}
+          pulse={`${r(7, 12)}s`}
+          size={`${r(0.5, 7)}rem`}
+          offset={`${r(-10, 90)}vw`}
+        />
+      )
+    })
+  }
+
   return (
     <Layout invert={true}>
-      <Clouds
-        roll={"90s"}
-        top={"8vh"}
-        pulse={"12s"}
-        size={"3rem"}
-        offset={"-20vw"}
-      />
-      <Clouds
-        roll={"62s"}
-        top={"60vh"}
-        pulse={"9s"}
-        size={"12rem"}
-        offset={"-22vw"}
-      />
-      <Clouds
-        roll={"42s"}
-        top={"20vh"}
-        pulse={"12s"}
-        size={"5rem"}
-        offset={"-22vw"}
-      />
-      <Clouds
-        roll={"40s"}
-        top={"30vh"}
-        pulse={"9s"}
-        size={"8rem"}
-        offset={"-22vw"}
-      />
-      <Clouds
-        roll={"88s"}
-        top={"90vh"}
-        pulse={"15s"}
-        size={"9rem"}
-        offset={"-50vw"}
-      />
-      <Clouds
-        roll={"100s"}
-        top={"79vh"}
-        pulse={"10s"}
-        size={"7rem"}
-        offset={"-2vw"}
-      />
+      {makeClouds(20, 3)}
       <Section invert={true}>
         <div className="marquee">
           <Hero invert={true}>{formatTitle(title)}</Hero>
