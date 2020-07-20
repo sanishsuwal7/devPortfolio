@@ -73,6 +73,9 @@ export const Button = styled.a`
       font-size: 1rem;
     }
   }
+  :focus {
+    outline: none;
+  }
 `
 
 export const Tags = styled.ul`
@@ -148,7 +151,7 @@ export const Section = styled.div`
   color: ${props => (props.invert ? colors.white : colors.background)};
 
   padding: ${props =>
-    props.top ? "12vh 3rem 22vh" : sizing.paddingExterior.base};
+    props.top ? "12vh 1rem 22vh" : sizing.paddingExterior.base};
 
   @media only screen and (min-width: 768px) {
   }
@@ -180,6 +183,54 @@ export const Section = styled.div`
     img {
       max-width: 100%;
       margin: auto;
+    }
+  }
+  #contactBox {
+    position: relative;
+  }
+  .cup {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    top: 6rem;
+    left: 100%;
+    z-index: 800;
+    transform: translate(-100%, 0);
+
+    svg {
+      height: 7rem;
+      :first-child {
+        @keyframes float {
+          from {
+            transform: translate(0, -10px) rotate(-7deg);
+            filter: opacity(1);
+          }
+          to {
+            transform: translate(5px, -50px) rotate(3deg);
+            filter: opacity(0.5);
+          }
+        }
+        animation: float 7s ease-in-out alternate infinite;
+      }
+      :nth-child(2) {
+        transition: transform 0.4s ease-in-out;
+        @keyframes ring {
+          from {
+            transform: translateX(0) rotate(0);
+          }
+          50% {
+            transform: translateX(-10px) rotate(-2deg);
+          }
+          to {
+            transform: translateX(10px) rotate(2deg);
+          }
+        }
+        :hover {
+          animation: ring 1s ease-in-out alternate infinite;
+        }
+      }
     }
   }
 `
@@ -227,7 +278,7 @@ export const Bio = styled.div`
 
 export const Markdown = styled.div`
   img {
-    padding: 2rem 15% 2rem;
+    padding: 2rem 0 2rem;
     width: 100%;
     max-width: 100%;
     margin: auto;
@@ -261,6 +312,13 @@ export const Projects = styled.div`
       padding: 0;
       margin: 0;
       border: 0;
+    }
+    transition: transform 0.3s ease-in-out, box-shadow 0.2s ease,
+      border-radius 0.2s ease;
+    :hover {
+      transform: translate(1%, -1%);
+      box-shadow: -17px 17px 20px 8px grey;
+      border-radius: 40px;
     }
   }
 

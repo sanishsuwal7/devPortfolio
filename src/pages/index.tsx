@@ -15,6 +15,9 @@ import {
 import Clouds from "../components/Clouds"
 import Layout from "../templates/layout"
 
+import Steam from "../draw/steam/steam_1.svg"
+import Cup from "../draw/cup.svg"
+
 const Index = ({ data }) => {
   const {
     allMarkdownRemark: {
@@ -64,10 +67,18 @@ const Index = ({ data }) => {
             ))}
           </Tags>
           <p style={{ gridArea: "text" }}>{body}</p>
-          <Button style={{ gridArea: "button" }}>
+          <Button tabIndex={"0"} style={{ gridArea: "button" }}>
             {getButton(action, link)}
           </Button>
-          <div className="projectImage" style={{ gridArea: "image" }}>
+          <div
+            tabIndex="0"
+            onClick={() => window.open(link)}
+            onKeyDown={e => {
+              if (e.keyCode === 13) window.open(link)
+            }}
+            className="projectImage"
+            style={{ gridArea: "image" }}
+          >
             <img src={image} />
           </div>
         </Projects>
@@ -78,8 +89,12 @@ const Index = ({ data }) => {
   const getContact = contact => {
     const { action, title } = contact
     return (
-      <div>
+      <div id="contactBox">
         <Hero>{formatTitle(title)}</Hero>
+        <div className="cup">
+          <Steam />
+          <Cup />
+        </div>
         <Button style={{ gridArea: "button" }}>
           {getButton(
             action,
@@ -125,7 +140,7 @@ const Index = ({ data }) => {
       }
       return (
         <Clouds
-          roll={`${r(40, 120)}s`}
+          roll={`${r(400, 1200)}s`}
           top={`${r(3, 90)}vh`}
           pulse={`${r(7, 12)}s`}
           size={`${r(0.5, 7)}rem`}

@@ -1,6 +1,6 @@
 ---
 title: Moving Day
-description: Moving Day is an application that helps users to look for a place to live. I've moved countries a couple of times and everytime I do, I dread looking for a new place. I want to offer others a simple tool that filters out spam, notifies them of listings that match their search criterion and most importantly, gives them peace of mind during stressful times.
+description: Moving Day is an application that helps users to look for a place to live. I've moved countries a couple of times and everytime I do, I dread looking for a new place. I want to offer others <b>a simple tool that filters out spam, notifies them of listings that match their search</b> criterion and most importantly, gives them peace of mind during stressful times.
 details:
   type: Personal project
   stack: react styled-components firebase netlify

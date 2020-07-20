@@ -12,7 +12,7 @@ export const Project = ({ data, images }) => {
   return (
     <Section top={true}>
       <h1>{title}</h1>
-      <p>{description}</p>
+      <p dangerouslySetInnerHTML={{ __html: description }}></p>
       <Icon speed={"4s"} />
       <div id="projectDetails">
         <div>
@@ -40,10 +40,7 @@ export const Project = ({ data, images }) => {
           </a>
         </div>
       </div>
-      <div className="projectImages">
-        <img src={"/img/placeholder.png"} alt={"projectImage"}></img>
-        <img src={"/img/placeholder.gif"} alt={"projectImage"}></img>
-      </div>
+
       <Markdown
         className="projectBody"
         dangerouslySetInnerHTML={{ __html: html }}

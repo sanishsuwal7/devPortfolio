@@ -33,19 +33,25 @@ export default function Navbar(props) {
         </Link>
         <ul>
           {/* Links to all pages */}
-          {nodes.map(node => {
+          {nodes.map((node, i) => {
             const path = node.path
             if (path.includes("404") || path === "/") {
               return null
             }
             return (
-              <Link to={path}>
+              <Link to={path} tabIndex={"0"}>
                 <li>{path.replace(new RegExp("/", "g"), "")}</li>
               </Link>
             )
           })}
           {["projects", "contact"].map(link => (
-            <div onClick={() => navigate(`/#${link}`)}>
+            <div
+              tabIndex={"0"}
+              onClick={() => navigate(`/#${link}`)}
+              onKeyDown={e => {
+                if (e.keyCode === 13) navigate(`/#${link}`)
+              }}
+            >
               <li>{link}</li>
             </div>
           ))}

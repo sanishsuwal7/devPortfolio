@@ -11,28 +11,7 @@ import cloud_5 from "../draw/cloud_5.svg"
 export default function Clouds({ roll, top, pulse, size, offset }) {
   const [active, setActive] = useState(false)
   const thisCloud = useRef()
-  const handleHover = e => {
-    e.target.animate(
-      [
-        // keyframes
-        { filter: "opacity(0.6)" },
-        { filter: "opacity(0)" },
-      ],
-      {
-        // timing options
-        duration: 1000,
-        iterations: 1,
-        fill: "forwards",
-      }
-    )
-    setActive(true)
-    console.log("animated")
-  }
-  useEffect(() => {
-    const cloudNode = thisCloud.current
-    cloudNode.addEventListener("mouseover", handleHover)
-    return () => cloudNode.removeEventListener("mouseover", handleHover)
-  }, [])
+
   function r(min, max) {
     const rand = Math.random() * (max - min) + min
     return Math.floor(rand)
@@ -103,8 +82,8 @@ export const SVGcontainer = styled.div`
 
   svg {
     animation: life linear 2s;
-    /*     :hover {
-      animation: spin 1s ease-in-out forwards;
-    } */
+    path {
+      fill: white;
+    }
   }
 `
