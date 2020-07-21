@@ -177,7 +177,7 @@ export const Section = styled.div`
       font-family: Muli;
     }
   }
-  .projectImages {
+  .projectImage {
     display: flex;
     justify-content: center;
     flex-direction: column;

@@ -34,7 +34,7 @@ const Index = ({ data }) => {
     return (
       <Bio>
         <div id="bioContainer">
-          <h1 style={{ height: "3rem" }}>{formatTitle(title)}</h1>
+          <h1 style={{ height: "3rem" }}>{highlightWords(title)}</h1>
           <ImageFull id="bioImage">
             <img src={image} />
           </ImageFull>
@@ -60,7 +60,7 @@ const Index = ({ data }) => {
           <div className="latest" style={{ gridArea: "top" }}>
             LATEST WORK
           </div>
-          <h1 style={{ gridArea: "title" }}>{formatTitle(title)}</h1>
+          <h1 style={{ gridArea: "title" }}>{highlightWords(title)}</h1>
           <Tags>
             {tags.map(li => (
               <li>{li}</li>
@@ -68,7 +68,7 @@ const Index = ({ data }) => {
           </Tags>
           <p style={{ gridArea: "text" }}>{body}</p>
           <Button tabIndex={"0"} style={{ gridArea: "button" }}>
-            {getButton(action, link)}
+            {slidingButton(action, link)}
           </Button>
           <div
             tabIndex="0"
@@ -90,13 +90,13 @@ const Index = ({ data }) => {
     const { action, title } = contact
     return (
       <div id="contactBox">
-        <Hero>{formatTitle(title)}</Hero>
+        <Hero>{highlightWords(title)}</Hero>
         <div className="cup">
           <Steam />
           <Cup />
         </div>
         <Button style={{ gridArea: "button" }}>
-          {getButton(
+          {slidingButton(
             action,
             "/",
             () => (window.location.href = "mailto:aaspinwall@gmail.com")
@@ -106,7 +106,7 @@ const Index = ({ data }) => {
     )
   }
 
-  const formatTitle = title => {
+  const highlightWords = title => {
     return title.split(" ").map(el => {
       if (el.includes("**")) {
         const reg = /\*/g
@@ -120,7 +120,7 @@ const Index = ({ data }) => {
     })
   }
 
-  const getButton = (action: string, link: string = "/", alt?) => {
+  const slidingButton = (action: string, link: string = "/", alt?) => {
     return [0, 0].map(e =>
       alt ? (
         <div onClick={alt}>{action}</div>
@@ -132,8 +132,7 @@ const Index = ({ data }) => {
 
   const makeClouds = (cloudCount: number, mult: number = 1) => {
     const cloudArray = [...Array(cloudCount).keys()]
-
-    return cloudArray.map(cloud => {
+    return cloudArray.map(cloudComponent => {
       function r(min, max) {
         const rand = Math.random() * (max - min) + min
         return rand.toString()
@@ -152,10 +151,10 @@ const Index = ({ data }) => {
 
   return (
     <Layout invert={true}>
-      {makeClouds(20, 3)}
       <Section invert={true}>
+        {makeClouds(20, 3)}
         <div className="marquee">
-          <Hero invert={true}>{formatTitle(title)}</Hero>
+          <Hero invert={true}>{highlightWords(title)}</Hero>
           <HeroP>{subtitle}</HeroP>
         </div>
       </Section>

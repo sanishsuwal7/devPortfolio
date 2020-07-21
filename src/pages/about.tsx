@@ -1,14 +1,14 @@
 import React from "react"
 import Layout from "../templates/layout"
 import PropTypes from "prop-types"
-import { Hero, Section } from "../styles/components"
+import { Hero, Section, Markdown } from "../styles/components"
 import { graphql } from "gatsby"
 
 export const AboutPageTemplate = ({ title, content }) => {
   return (
     <Section>
       <Hero>{title}</Hero>
-      <div dangerouslySetInnerHTML={{ __html: content }}></div>
+      <Markdown dangerouslySetInnerHTML={{ __html: content }}></Markdown>
     </Section>
   )
 }
