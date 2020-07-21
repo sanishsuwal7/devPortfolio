@@ -36,7 +36,8 @@ export default function Layout(props) {
       {props.children}
       <Space>
         <footer>
-          © {new Date().getFullYear()}, Built with {` `}
+          © {new Date().getFullYear()}, Built by Alejandro Aspinwall, using{" "}
+          {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
       </Space>
