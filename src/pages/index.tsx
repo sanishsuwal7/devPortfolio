@@ -156,7 +156,7 @@ const Index = ({ data }) => {
       <Section invert={true}>
         <div className="marquee">
           <Hero invert={true}>{formatTitle(title)}</Hero>
-          {/* <HeroP>{subtitle}</HeroP> */}
+          <HeroP>{subtitle}</HeroP>
         </div>
       </Section>
       <Section id="bio">{getBio(content.bio)}</Section>

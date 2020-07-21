@@ -44,7 +44,7 @@ export default function Navbar(props) {
               </Link>
             )
           })}
-          {["projects", "contact"].map(link => (
+          {["projects", "contact"].map((link, i) => (
             <div
               tabIndex={"0"}
               onClick={() => navigate(`/#${link}`)}

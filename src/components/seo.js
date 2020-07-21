@@ -52,6 +52,10 @@ const SEO = ({ lang, meta }) => {
           content: title,
         },
         {
+          property: `og:image`,
+          content: "https://www.alejandroaspinwall.ca/img/icon.png",
+        },
+        {
           property: `og:description`,
           content: metaDescription,
         },
