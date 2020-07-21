@@ -14,6 +14,7 @@ import {
 
 import Clouds from "../components/Clouds"
 import Layout from "../templates/layout"
+import Social from "../components/Social"
 
 import Steam from "../draw/steam/steam_1.svg"
 import Cup from "../draw/cup.svg"
@@ -27,6 +28,19 @@ const Index = ({ data }) => {
 
   const content = fileAbsolutePath.frontmatter
   const { title, subtitle, action } = content.mainpitch
+
+  const getTop = () => {
+    return (
+      <div>
+        {makeClouds(20, 3)}
+        <div className="marquee">
+          <Hero invert={true}>{highlightWords(title)}</Hero>
+          <Social />
+          {/* <HeroP>{subtitle}</HeroP> */}
+        </div>
+      </div>
+    )
+  }
 
   const getBio = bio => {
     const { title, features, image } = bio
@@ -151,13 +165,7 @@ const Index = ({ data }) => {
 
   return (
     <Layout invert={true}>
-      <Section invert={true}>
-        {makeClouds(20, 3)}
-        <div className="marquee">
-          <Hero invert={true}>{highlightWords(title)}</Hero>
-          <HeroP>{subtitle}</HeroP>
-        </div>
-      </Section>
+      <Section invert={true}>{getTop()}</Section>
       <Section id="bio">{getBio(content.bio)}</Section>
       <Section id="projects">{getProjects(content.projects)}</Section>
       <Section id="contact">{getContact(content.contact)}</Section>

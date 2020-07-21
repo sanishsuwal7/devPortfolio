@@ -10,7 +10,7 @@ bio:
   title: What **I do**
   image: /img/headshotsmall.jpg
   features:
-    - header: Design
+    - header: Skills
       body: >
         I design beautiful and powerful websites for modern businesses. These
         are essential to build customer loyalty and help drive conversions. I
@@ -74,19 +74,3 @@ contact:
   title: Let's have a **chat**
   action: Get in touch
 ---
-
-# What I do
-
-![my picture](/img/headshotsmall.jpg "my picture")
-
-### Design
-
-I design beautiful and powerful websites for modern businesses. These are essential to build customer loyalty and help drive conversions. I make sure your website looks and feels great.
-
-### Develop
-
-I build custom software tools that fit your needs. Plus, I deliver a powerful content editor so you and your team can make edits quickly and easily.
-
-### Deliver
-
-My projects are built towards what's important; conversions. Bringing more leads, more sales, and a driven ROI to your business. One pixel at a time.
