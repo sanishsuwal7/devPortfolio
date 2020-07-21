@@ -35,7 +35,7 @@ export default function Navbar(props) {
           {/* Links to all pages */}
           {nodes.map((node, i) => {
             const path = node.path
-            if (path.includes("404") || path === "/") {
+            if (path.includes("404") || path === "/" || path.includes("blog")) {
               return null
             }
             return (

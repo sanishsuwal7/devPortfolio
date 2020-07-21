@@ -31,9 +31,8 @@ export default function Layout(props) {
 
   return (
     <Wrapper>
-      <SEO />
       <Navbar invert={props.invert} />
-      {/* <Bio /> */}
+      <SEO />
       {props.children}
       <Space>
         <footer>

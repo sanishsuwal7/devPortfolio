@@ -27,6 +27,8 @@ Since most of the application’s frontend resembled a project that I had comple
 
 Towards the end of the development process, **I was finding myself using timers for most of the exercises**. I tired every free app I could find but most were too ugly or too hard to use. **This motivated me to code a simple timer** where you can choose the number of rounds, time on the exercise and time for rest between rounds.
 
+Checkout the timer [here](https://wodly.netlify.app/timer)
+
 # Lessons Learned
 
 **Authentication was a big problem for me.** Page refreshing was a big one, because it rendered the login screen for half a second (as it fetched the user’s information) until it loaded the actual page. This was happening because **I didn’t want to store the user’s information in the browser’s local storage** as it is easily susceptible to malicious attacks. After reading more about how firebase manages sessions, I realized that they actually store their data on the user’s browser but they validate it on their servers. Knowing this, **I re-designed the authentication process and stored the user id on the browser’s local storage.** Finally, I added a persisted state that re-hydrated the Redux store on reload.

@@ -30,13 +30,13 @@ export const Project = ({ data, images }) => {
         {code ? (
           <div>
             <h3>Code</h3>
-            <div>{code}</div>
+            <a href={code}>Github</a>
           </div>
         ) : null}
         <div>
           <h3>Live</h3>
           <a href={live} target={"blank"}>
-            <h3>View site</h3>
+            <a href={live}>Site</a>
           </a>
         </div>
       </div>

@@ -4,7 +4,7 @@ description: Moving Day is an application that helps users to look for a place t
 details:
   type: Personal project
   stack: react styled-components firebase netlify
-  code: github
+  code: https://github.com/aaspinwall/movingday-backend
   live: https://movingday.netlify.app/
 ---
 

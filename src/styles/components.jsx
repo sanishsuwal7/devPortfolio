@@ -106,6 +106,7 @@ export const Wrapper = styled.div`
   margin-right: auto; */
   position: relative;
   /* max-width: 89rem; */
+
   margin: 0rem;
   a {
     color: ${colors.accent};
