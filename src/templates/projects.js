@@ -13,7 +13,7 @@ export const Project = ({ data, images }) => {
     <Section top={true}>
       <h1>{title}</h1>
       <p dangerouslySetInnerHTML={{ __html: description }}></p>
-      <Icon speed={"4s"} />
+      {/* <Icon speed={"4s"} /> */}
       <div id="projectDetails">
         <div>
           <h3>Type</h3>

@@ -151,7 +151,7 @@ export const Section = styled.div`
   color: ${props => (props.invert ? colors.white : colors.background)};
 
   padding: ${props =>
-    props.top ? "12vh 1rem 22vh" : sizing.paddingExterior.base};
+    props.top ? "12vh 3rem 22vh" : sizing.paddingExterior.base};
 
   @media only screen and (min-width: 768px) {
   }
@@ -194,7 +194,7 @@ export const Section = styled.div`
     justify-content: center;
     align-items: center;
     flex-flow: column;
-    top: 6rem;
+    top: 7rem;
     left: 100%;
     z-index: 800;
     transform: translate(-100%, 0);
@@ -204,15 +204,19 @@ export const Section = styled.div`
       :first-child {
         @keyframes float {
           from {
+            filter: opacity(0);
             transform: translate(0, -10px) rotate(-7deg);
+          }
+          50% {
+            transform: translate(-2px, -20px) rotate(-2deg);
             filter: opacity(1);
           }
           to {
             transform: translate(5px, -50px) rotate(3deg);
-            filter: opacity(0.5);
+            filter: opacity(0);
           }
         }
-        animation: float 7s ease-in-out alternate infinite;
+        animation: float 7s ease-in-out infinite;
       }
       :nth-child(2) {
         transition: transform 0.4s ease-in-out;
@@ -231,6 +235,12 @@ export const Section = styled.div`
           animation: ring 1s ease-in-out alternate infinite;
         }
       }
+    }
+    @media only screen and (max-width: 400px) {
+      position: relative;
+      height: 12rem;
+      margin: 1rem 0 3rem;
+      top: 2rem;
     }
   }
 `
@@ -279,7 +289,8 @@ export const Bio = styled.div`
 export const Markdown = styled.div`
   img {
     padding: 2rem 0 2rem;
-    width: 100%;
+    display: grid;
+    place-items: center;
     max-width: 100%;
     margin: auto;
   }
@@ -315,10 +326,12 @@ export const Projects = styled.div`
     }
     transition: transform 0.3s ease-in-out, box-shadow 0.2s ease,
       border-radius 0.2s ease;
-    :hover {
+    :hover,
+    :focus {
       transform: translate(1%, -1%);
       box-shadow: -17px 17px 20px 8px grey;
       border-radius: 40px;
+      outline: none;
     }
   }
 

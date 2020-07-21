@@ -140,7 +140,7 @@ const Index = ({ data }) => {
       }
       return (
         <Clouds
-          roll={`${r(400, 1200)}s`}
+          roll={`${r(120, 300)}s`}
           top={`${r(3, 90)}vh`}
           pulse={`${r(7, 12)}s`}
           size={`${r(0.5, 7)}rem`}
