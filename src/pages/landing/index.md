@@ -3,28 +3,20 @@ title: "Landing page title from local markdown "
 internal: true
 mainpitch:
   title: Hi, I’m Alejandro, **Full Stack** **Web Developer**
-  subtitle: I build beautiful websites for businesses around the world. If you
-    need a modern and powerful website, book a call below.
+  subtitle: >
+    I'm a lifelong learner, I love exploring and creating.
+    My mission is to write, debug, test and ship readable code. 
+    I have a thing for traditional Neapolitan Pizza 🍕
+
   action: Book a call
 bio:
-  title: What **I do**
+  title: My **Skills**
   image: /img/headshotsmall.jpg
   features:
-    - header: Skills
+    - header: I love building stuff 📱
       body: >
-        I design beautiful and powerful websites for modern businesses. These
-        are essential to build customer loyalty and help drive conversions. I
-        make sure your website looks and feels great.
-    - header: Develop
-      body: >
-        I build custom software tools that fit your needs. Plus, I deliver a
-        powerful content editor so you and your team can make edits quickly and
-        easily.
-    - header: Deliver
-      body: >
-        My projects are built towards what's important; conversions. Bringing
-        more leads, more sales, and a driven ROI to your business. One pixel at
-        a time.
+        I've been I have making web stuff since I was 11 years old. Since then I've been tinkering with all sorts of technologies that in some way or another led me to work on music, photography, sound engineering, electronic engineering, automation, video production, feature film post-production, VR games, and 3D sound.
+
 projects:
   - title: Moving day
     body: Looking for an apartment in Montreal is quite a pain. Since Kijiji doesn't provide a public API, I made one that runs on a local server.
@@ -32,18 +24,24 @@ projects:
     action: See this project
     link: /projects/movingday/
     tags:
-      - Web scraping
-      - Google maps API
+      - React
+      - Redux
+      - Styled-components
+      - Netlify
       - Walkscore API
-      - Authentication
+      - Google Maps API
+      - Firebase
+
   - title: Wodly
     image: /img/wodly.png
     action: See this project
     tags:
-      - Front-end
-      - Back-end
-      - Authentication
+      - React
       - Redux
+      - Styled-components
+      - Firebase
+      - AWS Amplify
+
     link: /projects/wodly/
     body:
       Save your home workouts and display them in a chalkboard friendly manner.
@@ -53,17 +51,22 @@ projects:
     action: See this project
     image: /img/mynomnoms.png
     tags:
-      - Front end
-      - CDN Image-resizing
+      - React
+      - Styled-components
+      - Netlify
+      - Cloud image resizing
     body:
       A web application that displays your meals with recipes and portion sizes.
       Developed in collaboration with nutrition experts.
   - title: Brummana Pattiserie
     link: https://brummana.netlify.app/
     tags:
-      - Front-end
-      - CMS
       - Gatsby
+      - React
+      - TypeScript
+      - Cloud image resizing
+      - Styled-components
+      - Netlify CMS
     action: See this project
     image: /img/brummana
     body:

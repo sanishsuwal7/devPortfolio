@@ -10,6 +10,7 @@ import {
   ImageFull,
   Bio,
   Projects,
+  SkillIcons,
 } from "../styles/components"
 
 import Clouds from "../components/Clouds"
@@ -20,6 +21,44 @@ import Steam from "../draw/steam/steam_1.svg"
 import Cup from "../draw/cup.svg"
 
 const Index = ({ data }) => {
+  React.useEffect(
+    () =>
+      console.log(
+        ` _____________________________________________________________________
+  
+                                                        
+        _|    _|    _|_|    _|      _|  _|_|_|_|        _|_|    
+        _|    _|  _|    _|  _|      _|  _|            _|    _|  
+        _|_|_|_|  _|_|_|_|  _|      _|  _|_|_|        _|_|_|_|  
+        _|    _|  _|    _|    _|  _|    _|            _|    _|  
+        _|    _|  _|    _|      _|      _|_|_|_|      _|    _|  
+                                                                
+                                                                
+                                                
+        _|      _|  _|_|_|    _|_|_|  _|_|_|_|  
+        _|_|    _|    _|    _|        _|        
+        _|  _|  _|    _|    _|        _|_|_|    
+        _|    _|_|    _|    _|        _|        
+        _|      _|  _|_|_|    _|_|_|  _|_|_|_|  
+                                                
+                                                
+                                            
+        _|_|_|      _|_|    _|      _|  _|  
+        _|    _|  _|    _|    _|  _|    _|  
+        _|    _|  _|_|_|_|      _|      _|  
+        _|    _|  _|    _|      _|          
+        _|_|_|    _|    _|      _|      _|  
+
+
+
+        WEBSITE DESIGNED AND BUILT BY ALEJANDRO ASPINWALL  _______________________________________________
+
+
+                
+  `
+      ),
+    []
+  )
   const {
     allMarkdownRemark: {
       nodes: [fileAbsolutePath],
@@ -36,7 +75,7 @@ const Index = ({ data }) => {
         <div className="marquee">
           <Hero invert={true}>{highlightWords(title)}</Hero>
           <Social />
-          {/* <HeroP>{subtitle}</HeroP> */}
+          <HeroP>{subtitle}</HeroP>
         </div>
       </div>
     )
@@ -52,7 +91,18 @@ const Index = ({ data }) => {
           <ImageFull id="bioImage">
             <img src={image} />
           </ImageFull>
+
           <div id="bioText">
+            {/*             <SkillIcons>
+              <div>Javascript ES6</div>
+              <div>HTML / CSS</div>
+              <div>React</div>
+              <div>GraphQL</div>
+              <div>Firebase</div>
+              <div>NodeJS</div>
+              <div>Git</div>
+            </SkillIcons> */}
+
             {features.map(feature => {
               return (
                 <div>

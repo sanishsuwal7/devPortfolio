@@ -94,6 +94,7 @@ const Container = styled.nav`
 
     :hover {
       border-bottom: 10px ${colors.accent} double;
+      cursor: pointer;
     }
   }
   @media only screen and (min-width: 768px) {

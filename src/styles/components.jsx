@@ -10,6 +10,16 @@ export const colors = {
   contrast: "#f9efe7",
 }
 
+export const SkillIcons = styled.div`
+  display: flex;
+  max-width: 200px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  > div {
+    padding: 0 1rem 0 0;
+  }
+`
+
 export const sizing = {
   paddingExterior: {
     base: "3.2rem 3rem 3.2rem",
@@ -56,9 +66,10 @@ export const Button = styled.a`
     z-index: 100;
     transform: translate3d(-8px, -8px, 0px) scale3d(1, 1, 1) rotateX(0deg)
       rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.2s ease-in-out;
     :hover {
       transform: translate3d(2px, 2px, 2px);
+      cursor: pointer;
     }
   }
   > div:nth-child(2) {
@@ -83,6 +94,9 @@ export const Tags = styled.ul`
   justify-content: flex-start;
   grid-area: tags;
   flex-wrap: wrap;
+  @media only screen and (min-width: 768) {
+    padding-right: 4rem;
+  }
 
   li {
     list-style: none;
@@ -140,9 +154,24 @@ export const Wrapper = styled.div`
       bottom: 0;
       width: 100%;
       height: 40%;
+      transition: width 0.4s ease-in-out;
       transform: translateX(0.25rem);
       background: ${colors.accent};
       z-index: -100;
+    }
+    @keyframes sw {
+      from {
+        width: 100%;
+      }
+      50% {
+        width: 33%;
+      }
+      to {
+        width: 100%;
+      }
+    }
+    :hover > div:nth-child(2) {
+      animation: sw 0.4s ease-in-out;
     }
   }
 `
@@ -245,6 +274,10 @@ export const Section = styled.div`
     }
   }
 `
+export const Read = styled.div`
+  font-family: Inter;
+`
+
 export const Bio = styled.div`
   #bioContainer {
     grid-template-areas:
@@ -320,19 +353,19 @@ export const Projects = styled.div`
   .projectImage {
     margin: 0;
     padding: 0;
+    border-radius: 40px;
     > img {
       padding: 0;
       margin: 0;
       border: 0;
     }
-    transition: transform 0.3s ease-in-out, box-shadow 0.2s ease,
-      border-radius 0.2s ease;
+    transition: transform 0.3s ease-in-out, box-shadow 0.2s ease;
     :hover,
     :focus {
       transform: translate(1%, -1%);
       box-shadow: -17px 17px 20px 8px grey;
-      border-radius: 40px;
       outline: none;
+      cursor: pointer;
     }
   }
 

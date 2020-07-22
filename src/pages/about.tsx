@@ -1,13 +1,15 @@
 import React from "react"
 import Layout from "../templates/layout"
 import PropTypes from "prop-types"
-import { Hero, Section, Markdown } from "../styles/components"
+import { Hero, Section, Markdown, Read } from "../styles/components"
 import { graphql } from "gatsby"
 
 export const AboutPageTemplate = ({ title, content }) => {
+  const readTime = Math.ceil(content.split(" ").length / 265)
   return (
     <Section>
       <Hero>{title}</Hero>
+      <Read>{readTime + " minute read"}</Read>
       <Markdown dangerouslySetInnerHTML={{ __html: content }}></Markdown>
     </Section>
   )
