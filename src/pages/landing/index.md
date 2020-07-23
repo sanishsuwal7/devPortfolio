@@ -15,7 +15,7 @@ bio:
   features:
     - header: I love building stuff 📱
       body: >
-        I've been I have making web stuff since I was 11 years old. Since then I've been tinkering with all sorts of technologies that in some way or another led me to work on music, photography, sound engineering, electronic engineering, automation, video production, feature film post-production, VR games, and 3D sound.
+        I have been I have making web stuff since I was 11 years-old. Since then I have been tinkering with all sorts of technologies that in some way or another led me to work on music, photography, sound engineering, electronic engineering, automation, video production, feature film post-production, VR games, and 3D sound.
 
 projects:
   - title: Moving day
@@ -43,16 +43,16 @@ projects:
       - AWS Amplify
 
     link: /projects/wodly/
-    body:
-      Save your home workouts and display them in a chalkboard friendly manner.
+    body: Save your home workouts and display them in a friendly manner.
       Share with your friends!
   - title: My Nomnoms
-    link: https://mynomnoms.netlify.app/
+    link: /projects/mynomnoms/
     action: See this project
     image: /img/mynomnoms.png
     tags:
       - React
       - Styled-components
+      - PWA
       - Netlify
       - Cloud image resizing
     body:

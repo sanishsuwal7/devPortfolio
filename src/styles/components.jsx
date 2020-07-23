@@ -328,6 +328,11 @@ export const Markdown = styled.div`
     max-width: 100%;
     margin: auto;
   }
+  .gif {
+    float: left;
+    margin: 0 2rem 0 0;
+    padding: 1rem 0;
+  }
 `
 
 export const Projects = styled.div`
