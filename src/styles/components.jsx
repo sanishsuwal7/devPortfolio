@@ -59,7 +59,8 @@ export const Button = styled.a`
     transform: translate3d(-8px, -8px, 0px) scale3d(1, 1, 1) rotateX(0deg)
       rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
     transition: transform 0.2s ease-in-out;
-    :hover {
+    :hover,
+    :focus {
       transform: translate3d(2px, 2px, 2px);
       cursor: pointer;
     }
@@ -249,7 +250,8 @@ export const Section = styled.div`
             transform: translateX(10px) rotate(2deg);
           }
         }
-        :hover {
+        :hover,
+        :focus {
           animation: ring 1s ease-in-out alternate infinite;
         }
       }
@@ -327,10 +329,6 @@ export const Projects = styled.div`
   flex-flow: column;
   margin-bottom: 20vh;
 
-  /*   > * {
-    margin-bottom: 2rem;
-  } */
-
   p {
     font-size: 1.3rem;
     font-weight: 400;
@@ -350,6 +348,7 @@ export const Projects = styled.div`
     margin: 0;
     padding: 0;
     border-radius: 40px;
+    grid-area: image;
 
     > img {
       padding: 0;

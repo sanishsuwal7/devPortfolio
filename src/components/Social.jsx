@@ -29,7 +29,8 @@ const SocialIcons = styled.div`
     padding: 2rem 1rem 2rem 0px;
     filter: opacity(0.8);
     transition: filter 0.4s ease-in-out, color 0.4s ease-in-out;
-    :hover {
+    :hover,
+    :focus {
       filter: opacity(1);
       color: white;
     }

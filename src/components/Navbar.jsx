@@ -90,7 +90,8 @@ const Container = styled.nav`
     border-bottom: 5px ${colors.accent} solid;
     transition: border-bottom 0.2s ease-in-out;
 
-    :hover {
+    :hover,
+    :focus {
       border-bottom: 10px ${colors.accent} double;
       cursor: pointer;
     }

@@ -112,6 +112,7 @@ const Index = ({ data }) => {
   const getProjects = projects => {
     return projects.map((project, i) => {
       const { action, body, link, tags, title, image } = project
+      console.log(image)
       return (
         <Projects>
           <div className="latest" style={{ gridArea: "top" }}>
@@ -127,14 +128,16 @@ const Index = ({ data }) => {
           <Button style={{ gridArea: "button" }}>
             {slidingButton(action, link)}
           </Button>
-          <Link
-            tabIndex="0"
-            to={link}
+          <div
+            tabIndex={0}
             className="projectImage"
-            style={{ gridArea: "image" }}
+            onKeyDown={e => {
+              if (e.keyCode === 13) navigate(link)
+            }}
+            onClick={() => navigate(link)}
           >
             <img src={image} />
-          </Link>
+          </div>
         </Projects>
       )
     })
