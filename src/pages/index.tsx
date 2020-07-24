@@ -1,6 +1,6 @@
 // Gatsby supports TypeScript natively!
 import React from "react"
-import { graphql, navigate } from "gatsby"
+import { graphql, navigate, Link } from "gatsby"
 import {
   Section,
   Hero,
@@ -10,12 +10,12 @@ import {
   ImageFull,
   Bio,
   Projects,
-  SkillIcons,
 } from "../styles/components"
 
 import Clouds from "../components/Clouds"
 import Layout from "../templates/layout"
 import Social from "../components/Social"
+import SkillIcons from "../components/SkillIcons"
 
 import Steam from "../draw/steam/steam_1.svg"
 import Cup from "../draw/cup.svg"
@@ -93,15 +93,8 @@ const Index = ({ data }) => {
           </ImageFull>
 
           <div id="bioText">
-            {/*             <SkillIcons>
-              <div>Javascript ES6</div>
-              <div>HTML / CSS</div>
-              <div>React</div>
-              <div>GraphQL</div>
-              <div>Firebase</div>
-              <div>NodeJS</div>
-              <div>Git</div>
-            </SkillIcons> */}
+            {/* TODO Add skill icons */}
+            <SkillIcons />
 
             {features.map(feature => {
               return (
@@ -131,20 +124,17 @@ const Index = ({ data }) => {
             ))}
           </Tags>
           <p style={{ gridArea: "text" }}>{body}</p>
-          <Button tabIndex={"0"} style={{ gridArea: "button" }}>
+          <Button style={{ gridArea: "button" }}>
             {slidingButton(action, link)}
           </Button>
-          <div
+          <Link
             tabIndex="0"
-            onClick={() => window.open(link)}
-            onKeyDown={e => {
-              if (e.keyCode === 13) window.open(link)
-            }}
+            to={link}
             className="projectImage"
             style={{ gridArea: "image" }}
           >
             <img src={image} />
-          </div>
+          </Link>
         </Projects>
       )
     })
@@ -185,11 +175,15 @@ const Index = ({ data }) => {
   }
 
   const slidingButton = (action: string, link: string = "/", alt?) => {
-    return [0, 0].map(e =>
+    return [0, 0].map((e, i) =>
       alt ? (
-        <div onClick={alt}>{action}</div>
+        <div tabIndex={i === 0 ? 0 : -1} onClick={alt}>
+          {action}
+        </div>
       ) : (
-        <div onClick={() => window.open(link)}>{action}</div>
+        <Link tabIndex={i === 0 ? 0 : -1} to={link}>
+          {action}
+        </Link>
       )
     )
   }

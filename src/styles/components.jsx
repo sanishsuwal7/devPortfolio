@@ -10,21 +10,11 @@ export const colors = {
   contrast: "#f9efe7",
 }
 
-export const SkillIcons = styled.div`
-  display: flex;
-  max-width: 200px;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  > div {
-    padding: 0 1rem 0 0;
-  }
-`
-
 export const sizing = {
   paddingExterior: {
-    base: "3.2rem 3rem 3.2rem",
+    base: "3.2rem 2rem 3.2rem",
     tablet: "3.2rem 3rem 3.2rem",
-    desktop: "3.2rem 3rem 3.2rem",
+    desktop: "3.2rem 0 3.2rem",
   },
 }
 
@@ -50,17 +40,19 @@ export const Button = styled.a`
   width: 100%;
   height: 20vh;
   padding-bottom: 2rem;
-
-  div {
+  div,
+  a {
     position: absolute;
     font-size: 1.2rem;
     text-align: center;
     top: 0;
     left: 0;
     padding: 1rem 2.5rem 1.1rem;
-    margin-top: 2rem;
+    @media only screen and (min-width: 1024px) {
+      margin-top: 2rem;
+    }
   }
-  > div:nth-child(1) {
+  > *:nth-child(1) {
     background: ${props => (props.invert ? colors.green : colors.accent)};
     color: ${colors.white};
     z-index: 100;
@@ -72,7 +64,7 @@ export const Button = styled.a`
       cursor: pointer;
     }
   }
-  > div:nth-child(2) {
+  > *:nth-child(2) {
     z-index: 0;
     border: 2px ${props => (props.invert ? colors.white : colors.background)}
       solid;
@@ -80,7 +72,8 @@ export const Button = styled.a`
     color: transparent;
   }
   @media only screen and (max-width: 400px) {
-    div {
+    div,
+    a {
       font-size: 1rem;
     }
   }
@@ -94,8 +87,12 @@ export const Tags = styled.ul`
   justify-content: flex-start;
   grid-area: tags;
   flex-wrap: wrap;
+  white-space: nowrap;
   @media only screen and (min-width: 768) {
     padding-right: 4rem;
+  }
+  @media only screen and (min-width: 1024) {
+    max-width: 80%;
   }
 
   li {
@@ -106,6 +103,7 @@ export const Tags = styled.ul`
     margin: 0 0.25rem 1rem 0;
     font-size: 0.8rem;
     font-weight: 700;
+    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -116,10 +114,7 @@ export const Space = styled.div`
 `
 
 export const Wrapper = styled.div`
-  /*   margin-left: auto;
-  margin-right: auto; */
   position: relative;
-  /* max-width: 89rem; */
 
   margin: 0rem;
   a {
@@ -186,7 +181,7 @@ export const Section = styled.div`
   @media only screen and (min-width: 768px) {
   }
   .marquee {
-    height: 65vh;
+    min-height: 65vh;
     h1 {
       margin-top: 25vh;
     }
@@ -206,15 +201,7 @@ export const Section = styled.div`
       font-family: Muli;
     }
   }
-  .projectImage {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    img {
-      max-width: 100%;
-      margin: auto;
-    }
-  }
+
   #contactBox {
     position: relative;
   }
@@ -273,9 +260,6 @@ export const Section = styled.div`
       top: 2rem;
     }
   }
-`
-export const Read = styled.div`
-  font-family: Inter;
 `
 
 export const Bio = styled.div`
@@ -336,19 +320,22 @@ export const Markdown = styled.div`
 `
 
 export const Projects = styled.div`
+  position: relative;
   display: flex;
   justify-content: space-between;
   flex-flow: column;
-  padding-bottom: 10vh;
+  margin-bottom: 20vh;
 
-  > * {
+  /*   > * {
     margin-bottom: 2rem;
-  }
+  } */
 
   p {
     font-size: 1.3rem;
     font-weight: 400;
-    max-width: 30rem;
+    @media only screen and (min-width: 768px) {
+      max-width: 80%;
+    }
   }
   h1 {
     font-size: 4rem;
@@ -356,20 +343,26 @@ export const Projects = styled.div`
   }
 
   .projectImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0;
     padding: 0;
     border-radius: 40px;
+
     > img {
       padding: 0;
       margin: 0;
       border: 0;
+      border-radius: 40px;
+      max-height: 100%;
     }
     transition: transform 0.3s ease-in-out, box-shadow 0.2s ease;
     :hover,
     :focus {
-      transform: translate(1%, -1%);
-      box-shadow: -17px 17px 20px 8px grey;
-      outline: none;
+      transform: translate(0, -2%);
+      box-shadow: 0px 40px 8px -10px grey;
+      outline: ${colors.contrast};
       cursor: pointer;
     }
   }
@@ -389,21 +382,15 @@ export const Projects = styled.div`
   }
   @media only screen and (min-width: 768px) {
     .projectImage {
-      background: ${colors.contrast};
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
+      max-width: 500px;
+      margin: auto;
       > img {
-        padding: 0 10% 0;
-        margin: 0;
-        border: 0;
       }
     }
   }
   @media only screen and (min-width: 1024px) {
     display: grid;
-    grid-template-columns: 50% 1fr;
+    grid-template-columns: 3fr 2fr;
     grid-template-areas:
       "top top"
       "title image"
@@ -413,11 +400,6 @@ export const Projects = styled.div`
     .projectImage {
       margin: auto;
       background: transparent;
-      > img {
-        padding: 0 2rem 0;
-        margin: 0;
-        border: 0;
-      }
     }
   }
 `

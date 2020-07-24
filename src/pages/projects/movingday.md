@@ -24,7 +24,7 @@ To maximize my learning-to-production ratio, I wanted to have a **javascript-bas
 
 I used a **firebase realtime database** to store the scraped data and to eventually provide a public facing API.
 
-For the backend I wanted to learn to develop and deploy **serverless functions**. This meant that I would have to split the functionality into simple modules. I used **Netlify functions,** a **Heroku** instance as a master clock for the lambda functions and finally a **Cloud Scheduler** to keep everything synced.
+For the backend I wanted to learn to develop and deploy **serverless functions**. This meant that I would have to split the functionality into simple modules. I used **Netlify functions,** a **Heroku** instance as a master clock for the lambda functions and lastly a **Cloud Scheduler** to keep everything synced.
 
 After trying a few other providers, I decided that **Netlify** was the best choice for my application. It's a **powerful and fast platform for deployment,** which allowed me to use (and learn) serverless functions.
 
@@ -32,10 +32,14 @@ After trying a few other providers, I decided that **Netlify** was the best choi
 
 Like most projects, the initial idea in my head was simpler and more elegant than what the actual solutions ended up being. I encountered a few bumps along the way that set back my progress significantly. Looking back, **all these caveats forced me to learn much more than I initially challenged myself to.**
 
-When I started to develop the search function I encountered that kijiji doesn’t provide a public API for their ads. **To solve this,** I created a simple express app that scraped the site. The results would be displayed in real time on the application. Everything ran smoothly on my local machine, but when I deployed the application I soon realized that kijiji doesn’t like repeated requests from servers. I would need a more robust infrastructure to work around this limitation.
+When I started to develop the search function I encountered that kijiji doesn’t provide a public API for their ads. **To solve this,** I created a simple express app that scraped the site. The results would be displayed in real time on the application. Everything ran smoothly on my local machine, but when I deployed the application I soon realized that kijiji doesn’t like repeated requests from servers. I would need a more robust infrastructure to work around this limitation. Ultimately, I wanted to keep the app's cost low (free) and this meant that I would have to make things more complicated for me.
 
 ![Results page](/img/movingday/result.png "Results page")
 
-# Lessons Learned
+I compiled the most popular search-terms in the Montreal area for real estate rentals and added them to my database. This would function as the
 
-I could spend all day describing the lessons that I learned while working on this project, but the most important ones involved my newfound understanding of React Hooks, Git management, Feature Keys, and API integration. As my first large project using React, I learned a lot of lessons regarding code structure and organization. When I first began, I would write sloppy code and move on, but now I know how doing so can come back to bite you; I now spend a lot more time refactoring and improving every line I code I write, for the best readability and far fewer headaches.
+Since Netlify functions run on the AWS lambda infrastructure, they have a 10 second limit on execution. This meant that I would have to trigger the function multiple times per minute if I wanted to have the scraper run non-stop. For this, I made a simple express app and ran it on Heroku. The app gets an HTTP request from the Netlify function, then waits 10 seconds until it makes a request back to the Netlify function.
+
+# Lessons Learned & Future Work
+
+My motivation to keep costs low led me to design an overly complex system to make a responsive backend API. In spite of a few headaches, I learned a lot about cloud functions and serverless infrastructure. Since I already use Netlify to deploy most of my projects, I will take advantage of the built-in lambda functions they provide. It's a simple way to make requests that can bypass the browser's CORS policies without the need of proxying requests.

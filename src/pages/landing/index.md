@@ -21,7 +21,7 @@ projects:
   - title: Moving day
     body: Looking for an apartment in Montreal is quite a pain. Since Kijiji doesn't provide a public API, I made one that runs on a local server.
     image: /img/movingday.png
-    action: See this project
+    action: View project
     link: /projects/movingday/
     tags:
       - React
@@ -34,7 +34,7 @@ projects:
 
   - title: Wodly
     image: /img/wodly.png
-    action: See this project
+    action: View project
     tags:
       - React
       - Redux
@@ -47,7 +47,7 @@ projects:
       Share with your friends!
   - title: My Nomnoms
     link: /projects/mynomnoms/
-    action: See this project
+    action: View project
     image: /img/mynomnoms.png
     tags:
       - React
@@ -67,7 +67,7 @@ projects:
       - Cloud image resizing
       - Styled-components
       - Netlify CMS
-    action: See this project
+    action: View project
     image: /img/brummana
     body:
       Local bakery static site. I developed the site and created a content management system for the

@@ -1,8 +1,9 @@
-import React, { useEffect } from "react"
+import React from "react"
 import Layout from "../templates/layout"
 import PropTypes from "prop-types"
 import { Section, Markdown } from "../styles/components"
 import { graphql } from "gatsby"
+import ReadTime from "../components/ReadTime"
 import Icon from "../components/Icon"
 
 export const Project = ({ data, images }) => {
@@ -12,8 +13,9 @@ export const Project = ({ data, images }) => {
   return (
     <Section top={true}>
       <h1>{title}</h1>
+      <ReadTime text={description + html} />
       <p dangerouslySetInnerHTML={{ __html: description }}></p>
-      {/* <Icon speed={"4s"} /> */}
+      <Icon speed={"4s"} />
       <div id="projectDetails">
         <div>
           <h3>Type</h3>
