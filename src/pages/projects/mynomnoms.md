@@ -4,7 +4,7 @@ description: Is an application I developed as the final of my front-end bootcamp
 
 details:
   type: Personal project
-  stack: react styled-components cdn-resizing pwa netlify
+  stack: React Styled-Components CDN-Resizing PWA Netlify
   code: https://github.com/aaspinwall/minomnomsapp
   live: https://mynomnoms.netlify.app/
 ---

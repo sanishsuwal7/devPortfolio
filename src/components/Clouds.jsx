@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { useRef } from "react"
 import styled from "styled-components"
 
 import cloud_0 from "../draw/cloud_0.svg"
@@ -9,7 +9,6 @@ import cloud_4 from "../draw/cloud_4.svg"
 import cloud_5 from "../draw/cloud_5.svg"
 
 export default function Clouds({ roll, top, pulse, size, offset }) {
-  const [active, setActive] = useState(false)
   const thisCloud = useRef()
 
   function r(min, max) {
@@ -81,6 +80,7 @@ export const SVGcontainer = styled.div`
     roll ${props => props.roll} linear forwards;
 
   svg {
+    z-index: -999;
     animation: life linear 2s;
     path {
       fill: white;

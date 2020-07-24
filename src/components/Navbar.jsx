@@ -27,36 +27,34 @@ export default function Navbar(props) {
   } = data
   return (
     <Container invert={props.invert}>
-      <div>
-        <Link to="/">
-          <div>Alejandro Aspinwall</div>
-        </Link>
-        <ul>
-          {/* Links to all pages */}
-          {nodes.map((node, i) => {
-            const path = node.path
-            if (path.includes("404") || path === "/" || path.includes("blog")) {
-              return null
-            }
-            return (
-              <Link to={path} tabIndex={"0"}>
-                <li>{path.replace(new RegExp("/", "g"), "")}</li>
-              </Link>
-            )
-          })}
-          {["projects", "contact"].map((link, i) => (
-            <div
-              tabIndex={"0"}
-              onClick={() => navigate(`/#${link}`)}
-              onKeyDown={e => {
-                if (e.keyCode === 13) navigate(`/#${link}`)
-              }}
-            >
-              <li>{link}</li>
-            </div>
-          ))}
-        </ul>
-      </div>
+      <Link to="/">
+        <div>Alejandro Aspinwall</div>
+      </Link>
+      <ul>
+        {/* Links to all pages */}
+        {nodes.map((node, i) => {
+          const path = node.path
+          if (path.includes("404") || path === "/" || path.includes("blog")) {
+            return null
+          }
+          return (
+            <Link to={path} tabIndex={"0"}>
+              <li>{path.replace(new RegExp("/", "g"), "")}</li>
+            </Link>
+          )
+        })}
+        {["projects", "contact"].map((link, i) => (
+          <div
+            tabIndex={"0"}
+            onClick={() => navigate(`/#${link}`)}
+            onKeyDown={e => {
+              if (e.keyCode === 13) navigate(`/#${link}`)
+            }}
+          >
+            <li>{link}</li>
+          </div>
+        ))}
+      </ul>
     </Container>
   )
 }

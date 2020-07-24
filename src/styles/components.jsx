@@ -88,12 +88,6 @@ export const Tags = styled.ul`
   grid-area: tags;
   flex-wrap: wrap;
   white-space: nowrap;
-  @media only screen and (min-width: 768) {
-    padding-right: 4rem;
-  }
-  @media only screen and (min-width: 1024) {
-    max-width: 80%;
-  }
 
   li {
     list-style: none;
@@ -107,6 +101,13 @@ export const Tags = styled.ul`
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  @media only screen and (min-width: 768px) {
+    padding-right: 4rem;
+  }
+  @media only screen and (min-width: 1024px) {
+    max-width: 80%;
+    display: none;
   }
 `
 export const Space = styled.div`
