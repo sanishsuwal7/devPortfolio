@@ -29,6 +29,12 @@ module.exports = {
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
+    {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        offset: 200,
+      },
+    },
 
     {
       resolve: `gatsby-source-filesystem`,

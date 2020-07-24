@@ -4,6 +4,7 @@ import "../styles/styles.css"
 import SEO from "../components/seo"
 import { Wrapper, Space } from "../styles/components"
 import Navbar from "../components/Navbar"
+import Footer from "../components/Footer"
 import { Link, graphql, useStaticQuery } from "gatsby"
 
 export default function Layout(props) {
@@ -34,13 +35,7 @@ export default function Layout(props) {
       <Navbar invert={props.invert} />
       <SEO />
       {props.children}
-      <Space>
-        <footer>
-          © {new Date().getFullYear()}, Built by Alejandro Aspinwall, using{" "}
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </Space>
+      <Footer />
     </Wrapper>
   )
 }

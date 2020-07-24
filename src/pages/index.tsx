@@ -16,6 +16,7 @@ import Clouds from "../components/Clouds"
 import Layout from "../templates/layout"
 import Social from "../components/Social"
 import SkillIcons from "../components/SkillIcons"
+import Email from "../components/Email"
 
 import Steam from "../draw/steam/steam_1.svg"
 import Cup from "../draw/cup.svg"
@@ -112,7 +113,7 @@ const Index = ({ data }) => {
   const getProjects = projects => {
     return projects.map((project, i) => {
       const { action, body, link, tags, title, image } = project
-      console.log(image)
+
       return (
         <Projects>
           <div className="latest" style={{ gridArea: "top" }}>
@@ -152,6 +153,7 @@ const Index = ({ data }) => {
           <Steam />
           <Cup />
         </div>
+        {/* <Email /> */}
         <Button style={{ gridArea: "button" }}>
           {slidingButton(
             action,

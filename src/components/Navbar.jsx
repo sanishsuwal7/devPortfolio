@@ -2,6 +2,7 @@ import React from "react"
 import { Link, graphql, useStaticQuery, navigate } from "gatsby"
 import styled from "styled-components"
 import { colors } from "../styles/components"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 export default function Navbar(props) {
   const data = useStaticQuery(graphql`
@@ -44,15 +45,16 @@ export default function Navbar(props) {
           )
         })}
         {["projects", "contact"].map((link, i) => (
-          <div
+          <AnchorLink
             tabIndex={"0"}
-            onClick={() => navigate(`/#${link}`)}
+            to={`/#${link}`}
+            /* onClick={() => navigate(`/#${link}`)} */
             onKeyDown={e => {
               if (e.keyCode === 13) navigate(`/#${link}`)
             }}
           >
             <li>{link}</li>
-          </div>
+          </AnchorLink>
         ))}
       </ul>
     </Container>

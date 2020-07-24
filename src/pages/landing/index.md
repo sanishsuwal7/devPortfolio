@@ -68,7 +68,7 @@ projects:
       - Styled-components
       - Netlify CMS
     action: View project
-    image: /img/brummana
+    image: /img/brummana.png
     body:
       Local bakery static site. I developed the site and created a content management system for the
       owners. Their sales surged 200% after they released their online store.
