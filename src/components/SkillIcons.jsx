@@ -1,34 +1,46 @@
 import React from "react"
 import styled from "styled-components"
+import { Tags } from "../styles/components"
 
 export default function SkillIcons() {
-  return null
   return (
     <Wrapper>
-      <div>Languages</div>
-      <div>
-        <div>Javascript</div>
-        <div>Python</div>
-        <div>C#</div>
-        <div>C++</div>
-      </div>
-      <div>Frameworks</div>
-      <div>
-        <div>React</div>
-        <div>Unity3D</div>
-        <div></div>
-        <div>C++</div>
-      </div>
+      <AllTags>
+        <li>Javascript</li>
+        <li>Python</li>
+        <li>React</li>
+        <li>NodeJS</li>
+        <li>Unity3D</li>
+        <li>C#</li>
+        <li>C++</li>
+        <li>GraphQL</li>
+        <li>NoSQL</li>
+      </AllTags>
     </Wrapper>
   )
 }
 
-export const Wrapper = styled.div`
+const Wrapper = styled.div`
   display: flex;
-  max-width: 200px;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   > div {
     padding: 0 1rem 0 0;
+  }
+`
+const AllTags = styled(Tags)`
+  width: 100%;
+  justify-content: center !important;
+  @media only screen and (min-width: 768px) {
+    padding-right: 0;
+    max-width: 100%;
+    width: 100%;
+    justify-content: flex-start !important;
+  }
+  @media only screen and (min-width: 1024px) {
+    max-width: 100%;
+  }
+  li {
+    font-size: 1rem;
   }
 `

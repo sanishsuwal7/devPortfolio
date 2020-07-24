@@ -279,7 +279,7 @@ export const Bio = styled.div`
   #bioText {
     grid-area: text;
     max-width: 40rem;
-    margin: 0 auto auto 0;
+    margin: auto;
   }
   #bioImage {
     padding: 0;
@@ -287,20 +287,14 @@ export const Bio = styled.div`
   @media only screen and (min-width: 768px) {
     #bioContainer {
       grid-template-areas:
-        "header text"
-        "image  text";
-      display: grid;
+        "header header"
+        "image text";
     }
     #bioImage {
       padding: 0rem 2rem 2rem 0;
     }
   }
   @media only screen and (min-width: 1024px) {
-    #bioContainer {
-      grid-template-areas:
-        "header header"
-        "image text";
-    }
     #bioImage {
       padding: 2rem 2rem 2rem 0;
     }
