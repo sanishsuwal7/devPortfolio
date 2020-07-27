@@ -195,27 +195,10 @@ export const Section = styled.div`
   padding: ${props =>
     props.top ? "12vh 3rem 22vh" : sizing.paddingExterior.base};
 
-  @media only screen and (min-width: 768px) {
-  }
   .marquee {
     min-height: 65vh;
     h1 {
       margin-top: 25vh;
-    }
-  }
-  #projectDetails {
-    padding-bottom: 2rem;
-    > div {
-      flex-basis: 20px;
-    }
-    display: flex;
-    justify-content: space-around;
-    h3 {
-      margin: 1rem 0 1rem;
-      font-family: Inter;
-    }
-    div {
-      font-family: Muli;
     }
   }
 
