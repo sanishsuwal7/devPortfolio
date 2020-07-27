@@ -11,7 +11,7 @@ mainpitch:
   action: Book a call
 bio:
   title: My **Skills**
-  image: /img/headshotsmall.jpg
+  image: landingImage.jpg
   features:
     - header: I love building stuff 📱
       body: >
@@ -20,7 +20,7 @@ bio:
 projects:
   - title: Moving day
     body: Looking for an apartment in Montreal is quite a pain. Since Kijiji doesn't provide a public API, I made one that runs on a local server.
-    image: /img/movingday.png
+    image: movingday.png
     action: View project
     link: /projects/movingday/overview/
     tags:
@@ -33,7 +33,7 @@ projects:
       - Firebase
 
   - title: Wodly
-    image: /img/wodly.png
+    image: wodly.png
     action: View project
     tags:
       - React
@@ -48,7 +48,7 @@ projects:
   - title: My Nomnoms
     link: /projects/mynomnoms/overview/
     action: View project
-    image: /img/mynomnoms.png
+    image: mynomnoms.png
     tags:
       - React
       - Styled-components
@@ -68,7 +68,7 @@ projects:
       - Styled-components
       - Netlify CMS
     action: View project
-    image: /img/brummana.png
+    image: brummana.png
     body:
       Local bakery static site. I developed the site and created a content management system for the
       owners. Their sales surged 200% after they released their online store.

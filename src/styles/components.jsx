@@ -26,11 +26,15 @@ export const ThumbnailImg = styled.img`
   margin-right: 1rem;
 `
 export const ImageFull = styled.div`
-  max-width: 30rem;
-  margin: auto;
+  /* max-width: 30rem;
+  margin: auto; */
+  margin: 0 3rem 2rem;
   img {
     border-radius: 20px;
     grid-area: image;
+  }
+  @media only screen and (min-width: 768px) {
+    margin: 0;
   }
 `
 
@@ -286,9 +290,11 @@ export const Bio = styled.div`
   }
   @media only screen and (min-width: 768px) {
     #bioContainer {
+      align-items: center;
       grid-template-areas:
         "header header"
         "image text";
+      grid-template-columns: 1fr 2fr;
     }
     #bioImage {
       padding: 0rem 2rem 2rem 0;

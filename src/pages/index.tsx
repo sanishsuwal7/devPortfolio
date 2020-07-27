@@ -1,6 +1,7 @@
 // Gatsby supports TypeScript natively!
 import React from "react"
 import { graphql, navigate, Link } from "gatsby"
+import Img from "gatsby-image"
 import {
   Section,
   Hero,
@@ -12,6 +13,8 @@ import {
   Projects,
 } from "../styles/components"
 
+import styled from "styled-components"
+
 import Clouds from "../components/Clouds"
 import Layout from "../templates/layout"
 import Social from "../components/Social"
@@ -22,6 +25,7 @@ import Steam from "../draw/steam/steam_1.svg"
 import Cup from "../draw/cup.svg"
 
 const Index = ({ data }) => {
+  console.log(data)
   React.useEffect(
     () =>
       console.log(
@@ -85,12 +89,17 @@ const Index = ({ data }) => {
   const getBio = bio => {
     const { title, features, image } = bio
 
+    console.log(image.childImageSharp.fluid)
+
     return (
       <Bio>
         <div id="bioContainer">
           <h1 style={{ height: "3rem" }}>{highlightWords(title)}</h1>
           <ImageFull id="bioImage">
-            <img src={image} />
+            <Img
+              fluid={image.childImageSharp.fluid}
+              style={{ gridArea: "image" }}
+            />
           </ImageFull>
 
           <div id="bioText">
@@ -129,16 +138,19 @@ const Index = ({ data }) => {
           <Button style={{ gridArea: "button" }}>
             {slidingButton(action, link)}
           </Button>
-          <div
-            tabIndex={0}
-            className="projectImage"
+          <Link
+            style={{ gridArea: "image" }}
+            to={link}
             onKeyDown={e => {
               if (e.keyCode === 13) navigate(link)
             }}
-            onClick={() => navigate(link)}
           >
-            <img src={image} />
-          </div>
+            <Img
+              fluid={image.childImageSharp.fluid}
+              className="projectImage"
+              imgStyle={{ borderRadius: "40px" }}
+            />
+          </Link>
         </Projects>
       )
     })
@@ -242,11 +254,23 @@ export const pageQuery = graphql`
             link
             tags
             title
-            image
+            image {
+              childImageSharp {
+                fluid(maxWidth: 500) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
           bio {
             title
-            image
+            image {
+              childImageSharp {
+                fluid(maxWidth: 500) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
             features {
               header
               body
