@@ -11,21 +11,21 @@ import {
   ImageFull,
   Bio,
   Projects,
+  SectionTag,
+  Paragraph,
+  Header,
+  CupContainer,
 } from "../styles/components"
-
-import styled from "styled-components"
 
 import Clouds from "../components/Clouds"
 import Layout from "../templates/layout"
 import Social from "../components/Social"
 import SkillIcons from "../components/SkillIcons"
-import Email from "../components/Email"
 
 import Steam from "../draw/steam/steam_1.svg"
 import Cup from "../draw/cup.svg"
 
 const Index = ({ data }) => {
-  console.log(data)
   React.useEffect(
     () =>
       console.log(
@@ -89,8 +89,6 @@ const Index = ({ data }) => {
   const getBio = bio => {
     const { title, features, image } = bio
 
-    console.log(image.childImageSharp.fluid)
-
     return (
       <Bio>
         <div id="bioContainer">
@@ -125,16 +123,16 @@ const Index = ({ data }) => {
 
       return (
         <Projects>
-          <div className="latest" style={{ gridArea: "top" }}>
+          <SectionTag className="latest" style={{ gridArea: "top" }}>
             LATEST WORK
-          </div>
-          <h1 style={{ gridArea: "title" }}>{highlightWords(title)}</h1>
+          </SectionTag>
+          <Header style={{ gridArea: "title" }}>{highlightWords(title)}</Header>
           <Tags>
             {tags.map(li => (
               <li>{li}</li>
             ))}
           </Tags>
-          <p style={{ gridArea: "text" }}>{body}</p>
+          <Paragraph style={{ gridArea: "text" }}>{body}</Paragraph>
           <Button style={{ gridArea: "button" }}>
             {slidingButton(action, link)}
           </Button>
@@ -161,11 +159,10 @@ const Index = ({ data }) => {
     return (
       <div id="contactBox">
         <Hero>{highlightWords(title)}</Hero>
-        <div className="cup">
+        <CupContainer className="cup">
           <Steam />
           <Cup />
-        </div>
-        {/* <Email /> */}
+        </CupContainer>
         <Button style={{ gridArea: "button" }}>
           {slidingButton(
             action,

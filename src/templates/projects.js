@@ -5,19 +5,19 @@ import { Section, Markdown } from "../styles/components"
 import { graphql } from "gatsby"
 import ReadTime from "../components/ReadTime"
 import Icon from "../components/Icon"
+import styled from "styled-components"
 
 export const Project = ({ data }) => {
-  const { title, details, description, html } = data
+  const { title, details, description, html, timeToRead } = data
   const { stack, code, live, type } = details
 
   return (
     <Section top={true}>
       <h1>{title}</h1>
-      <ReadTime text={description + html} />
+      <ReadTime text={timeToRead} />
       <p dangerouslySetInnerHTML={{ __html: description }}></p>
       <Icon speed={"4s"} />
-
-      <div id="projectDetails">
+      <ProjectDetails>
         <div>
           <h3>Type</h3>
           <div>{type}</div>
@@ -42,7 +42,7 @@ export const Project = ({ data }) => {
             <a href={live}>Site</a>
           </a>
         </div>
-      </div>
+      </ProjectDetails>
 
       <Markdown
         className="projectBody"
@@ -52,16 +52,36 @@ export const Project = ({ data }) => {
   )
 }
 
+const ProjectDetails = styled.div`
+  padding-bottom: 2rem;
+  > div {
+    flex-basis: 20px;
+  }
+  display: flex;
+  justify-content: space-around;
+  flex-flow: column;
+  h3 {
+    margin: 1rem 0 1rem;
+    font-family: Inter;
+  }
+  div {
+    font-family: Muli;
+  }
+  @media only screen and (min-width: 768px) {
+    flex-flow: row;
+  }
+`
+
 const ProjectPage = ({ data }) => {
   const {
-    markdownRemark: { html, frontmatter },
+    markdownRemark: { html, frontmatter, timeToRead },
   } = data
 
   const { title, details, description } = frontmatter
 
   return (
     <Layout>
-      <Project data={{ title, details, description, html }} />
+      <Project data={{ title, details, description, html, timeToRead }} />
     </Layout>
   )
 }
@@ -75,8 +95,8 @@ export default ProjectPage
 export const pageQuery = graphql`
   query ProjectBySlug($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
+      timeToRead
       html
-      fileAbsolutePath
       frontmatter {
         title
         internal

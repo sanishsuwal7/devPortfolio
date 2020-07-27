@@ -38,6 +38,17 @@ export const ImageFull = styled.div`
   }
 `
 
+export const Header = styled.h1``
+
+export const Paragraph = styled.p``
+
+export const SectionTag = styled.div`
+  font-family: Muli;
+  margin: 0 0 1rem;
+  padding: 0;
+  letter-spacing: 0.1rem;
+`
+
 export const Button = styled.a`
   position: relative;
   display: block;
@@ -211,61 +222,61 @@ export const Section = styled.div`
   #contactBox {
     position: relative;
   }
-  .cup {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: column;
-    top: 7rem;
-    left: 100%;
-    z-index: 800;
-    transform: translate(-100%, 0);
+`
+export const CupContainer = styled.div`
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  top: 7rem;
+  left: 100%;
+  z-index: 800;
+  transform: translate(-100%, 0);
 
-    svg {
-      height: 7rem;
-      :first-child {
-        @keyframes float {
-          from {
-            filter: opacity(0);
-            transform: translate(0, -10px) rotate(-7deg);
-          }
-          50% {
-            transform: translate(-2px, -20px) rotate(-2deg);
-            filter: opacity(1);
-          }
-          to {
-            transform: translate(5px, -50px) rotate(3deg);
-            filter: opacity(0);
-          }
+  svg {
+    height: 7rem;
+    :first-child {
+      @keyframes float {
+        from {
+          filter: opacity(0);
+          transform: translate(0, -10px) rotate(-7deg);
         }
-        animation: float 7s ease-in-out infinite;
-      }
-      :nth-child(2) {
-        transition: transform 0.4s ease-in-out;
-        @keyframes ring {
-          from {
-            transform: translateX(0) rotate(0);
-          }
-          50% {
-            transform: translateX(-10px) rotate(-2deg);
-          }
-          to {
-            transform: translateX(10px) rotate(2deg);
-          }
+        50% {
+          transform: translate(-2px, -20px) rotate(-2deg);
+          filter: opacity(1);
         }
-        :hover,
-        :focus {
-          animation: ring 1s ease-in-out alternate infinite;
+        to {
+          transform: translate(5px, -50px) rotate(3deg);
+          filter: opacity(0);
         }
       }
+      animation: float 7s ease-in-out infinite;
     }
-    @media only screen and (max-width: 400px) {
-      position: relative;
-      height: 12rem;
-      margin: 1rem 0 3rem;
-      top: 2rem;
+    :nth-child(2) {
+      transition: transform 0.4s ease-in-out;
+      @keyframes ring {
+        from {
+          transform: translateX(0) rotate(0);
+        }
+        50% {
+          transform: translateX(-10px) rotate(-2deg);
+        }
+        to {
+          transform: translateX(10px) rotate(2deg);
+        }
+      }
+      :hover,
+      :focus {
+        animation: ring 1s ease-in-out alternate infinite;
+      }
     }
+  }
+  @media only screen and (max-width: 400px) {
+    position: relative;
+    height: 12rem;
+    margin: 1rem 0 3rem;
+    top: 2rem;
   }
 `
 
@@ -308,13 +319,6 @@ export const Bio = styled.div`
 `
 
 export const Markdown = styled.div`
-  /*   img {
-    padding: 2rem 0 2rem;
-    display: grid;
-    place-items: center;
-    max-width: 100%;
-    margin: auto;
-  } */
   .gif {
     float: left;
     margin: 0 2rem 0 0;
@@ -357,7 +361,7 @@ export const Projects = styled.div`
       border-radius: 40px;
       max-height: 100%;
     }
-    transition: transform 0.3s ease-in-out, box-shadow 0.2s ease;
+    transition: transform 0.3s ease-in-out, box-shadow 0.2s ease-in-out;
     :hover,
     :focus {
       transform: translate(0, -2%);
@@ -367,14 +371,6 @@ export const Projects = styled.div`
     }
   }
 
-  .latest {
-    font-family: Muli;
-
-    color: grey;
-    margin: 0 0 1rem;
-    padding: 0;
-    letter-spacing: 0.1rem;
-  }
   @media only screen and (max-width: 400px) {
     h1 {
       font-size: 2.5rem;

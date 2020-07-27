@@ -22,5 +22,6 @@ const Wrapper = styled.div`
       }
     }
     font-size: 2rem;
+    animation: example ${props => props.speed} linear infinite;
   }
 `
