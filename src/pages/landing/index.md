@@ -22,7 +22,7 @@ projects:
     body: Looking for an apartment in Montreal is quite a pain. Since Kijiji doesn't provide a public API, I made one that runs on a local server.
     image: /img/movingday.png
     action: View project
-    link: /projects/movingday/
+    link: /projects/movingday/overview/
     tags:
       - React
       - Redux
@@ -42,11 +42,11 @@ projects:
       - Firebase
       - AWS Amplify
 
-    link: /projects/wodly/
+    link: /projects/wodly/overview/
     body: Save your home workouts and display them in a friendly manner.
       Share with your friends!
   - title: My Nomnoms
-    link: /projects/mynomnoms/
+    link: /projects/mynomnoms/overview/
     action: View project
     image: /img/mynomnoms.png
     tags:

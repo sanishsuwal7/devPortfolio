@@ -302,13 +302,13 @@ export const Bio = styled.div`
 `
 
 export const Markdown = styled.div`
-  img {
+  /*   img {
     padding: 2rem 0 2rem;
     display: grid;
     place-items: center;
     max-width: 100%;
     margin: auto;
-  }
+  } */
   .gif {
     float: left;
     margin: 0 2rem 0 0;

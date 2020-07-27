@@ -6,7 +6,7 @@ import { graphql } from "gatsby"
 import ReadTime from "../components/ReadTime"
 import Icon from "../components/Icon"
 
-export const Project = ({ data, images }) => {
+export const Project = ({ data }) => {
   const { title, details, description, html } = data
   const { stack, code, live, type } = details
 
@@ -16,6 +16,7 @@ export const Project = ({ data, images }) => {
       <ReadTime text={description + html} />
       <p dangerouslySetInnerHTML={{ __html: description }}></p>
       <Icon speed={"4s"} />
+
       <div id="projectDetails">
         <div>
           <h3>Type</h3>
@@ -54,17 +55,13 @@ export const Project = ({ data, images }) => {
 const ProjectPage = ({ data }) => {
   const {
     markdownRemark: { html, frontmatter },
-    imageSharp,
   } = data
 
   const { title, details, description } = frontmatter
 
   return (
     <Layout>
-      <Project
-        data={{ title, details, description, html }}
-        images={imageSharp}
-      />
+      <Project data={{ title, details, description, html }} />
     </Layout>
   )
 }
