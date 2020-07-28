@@ -17,6 +17,8 @@ import {
   CupContainer,
 } from "../styles/components"
 
+import styled from "styled-components"
+
 import Clouds from "../components/Clouds"
 import Layout from "../templates/layout"
 import Social from "../components/Social"
@@ -136,23 +138,28 @@ const Index = ({ data }) => {
           <Button style={{ gridArea: "button" }}>
             {slidingButton(action, link)}
           </Button>
-          <Link
-            style={{ gridArea: "image" }}
-            to={link}
-            onKeyDown={e => {
-              if (e.keyCode === 13) navigate(link)
-            }}
-          >
-            <Img
-              fluid={image.childImageSharp.fluid}
-              className="projectImage"
-              imgStyle={{ borderRadius: "40px" }}
-            />
-          </Link>
+          <ProjectImage style={{ gridArea: "image" }}>
+            <Link
+              to={link}
+              onKeyDown={e => {
+                if (e.keyCode === 13) navigate(link)
+              }}
+            >
+              <Img
+                fluid={image.childImageSharp.fluid}
+                className="projectImage"
+                imgStyle={{ borderRadius: "40px" }}
+              />
+            </Link>
+          </ProjectImage>
         </Projects>
       )
     })
   }
+
+  const ProjectImage = styled.div`
+    grid-area: image;
+  `
 
   const getContact = contact => {
     const { action, title } = contact
