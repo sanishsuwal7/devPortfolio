@@ -14,7 +14,7 @@ export const AboutPageTemplate = ({ title, content }) => {
       <Hero>{title}</Hero>
 
       <ReadTime text={html} />
-      {work.map(wrk => (
+      {/*       {work.map(wrk => (
         <Work>
           <div>image</div>
           <div>
@@ -33,7 +33,7 @@ export const AboutPageTemplate = ({ title, content }) => {
             <div dangerouslySetInnerHTML={{ __html: wrk.shipped }}></div>
           </div>
         </Work>
-      ))}
+      ))} */}
       <Markdown dangerouslySetInnerHTML={{ __html: html }}></Markdown>
     </Section>
   )

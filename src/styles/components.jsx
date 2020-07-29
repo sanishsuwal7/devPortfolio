@@ -336,8 +336,9 @@ export const Projects = styled.div`
     padding: 0;
     border-radius: 40px;
     grid-area: image;
+    max-width: 500px;
 
-    > img {
+/*     > img {
       padding: 0;
       margin: 0;
       border: 0;
@@ -351,7 +352,7 @@ export const Projects = styled.div`
       box-shadow: 0px 40px 8px -10px grey;
       outline: ${colors.contrast};
       cursor: pointer;
-    }
+    } */
   }
 
   @media only screen and (max-width: 400px) {

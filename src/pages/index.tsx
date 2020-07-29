@@ -147,8 +147,8 @@ const Index = ({ data }) => {
             >
               <Img
                 fluid={image.childImageSharp.fluid}
-                className="projectImage"
-                imgStyle={{ borderRadius: "40px" }}
+                className="imageFluidContainer"
+                /* imgStyle={{ borderRadius: "40px" }} */
               />
             </Link>
           </ProjectImage>
@@ -159,6 +159,18 @@ const Index = ({ data }) => {
 
   const ProjectImage = styled.div`
     grid-area: image;
+
+    .imageFluidContainer {
+      max-width: 500px;
+      border-radius: 40px;
+      transition: transform 0.3s ease-in-out, box-shadow 0.2s ease-in-out;
+      :hover,
+      :focus {
+        transform: translate(0, -2%);
+        box-shadow: 0px 40px 8px -10px grey;
+        cursor: pointer;
+      }
+    }
   `
 
   const getContact = contact => {
@@ -219,7 +231,7 @@ const Index = ({ data }) => {
       return (
         <Clouds
           roll={`${r(120, 300)}s`}
-          top={`${r(3, 90)}vh`}
+          top={`${r(12, 90)}vh`}
           pulse={`${r(7, 12)}s`}
           size={`${r(0.5, 7)}rem`}
           offset={`${r(-10, 90)}vw`}
@@ -260,8 +272,8 @@ export const pageQuery = graphql`
             title
             image {
               childImageSharp {
-                fluid(maxWidth: 500) {
-                  ...GatsbyImageSharpFluid
+                fluid(maxWidth: 500, quality: 100) {
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }
@@ -270,8 +282,8 @@ export const pageQuery = graphql`
             title
             image {
               childImageSharp {
-                fluid(maxWidth: 500) {
-                  ...GatsbyImageSharpFluid
+                fluid(maxWidth: 500, quality: 100) {
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }
