@@ -4,6 +4,7 @@ import { Space } from "../styles/components"
 import Bio from "../components/bio"
 import Layout from "../templates/layout"
 import SEO from "../components/seo"
+import Readtime from "../components/ReadTime"
 import { rhythm, scale } from "../utils/typography"
 import { sizing } from "../styles/components"
 
@@ -29,6 +30,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             >
               {post.frontmatter.title}
             </h1>
+            <Readtime text={post.timeToRead} />
             <p
               style={{
                 ...scale(-1 / 5),
@@ -94,6 +96,7 @@ export const pageQuery = graphql`
       id
       excerpt(pruneLength: 160)
       html
+      timeToRead
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
