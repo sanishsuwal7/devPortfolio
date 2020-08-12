@@ -10,11 +10,11 @@ export default function SkillIcons() {
         <li>Python</li>
         <li>React</li>
         <li>NodeJS</li>
+        <li>GraphQL</li>
+        <li>Sequelize</li>
         <li>Unity3D</li>
         <li>C#</li>
         <li>C++</li>
-        <li>GraphQL</li>
-        <li>NoSQL</li>
       </AllTags>
     </Wrapper>
   )
