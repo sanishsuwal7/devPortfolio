@@ -2,6 +2,7 @@
 import React from "react"
 import { graphql, navigate, Link } from "gatsby"
 import Img from "gatsby-image"
+
 import {
   Section,
   Hero,
@@ -114,6 +115,9 @@ const Index = ({ data }) => {
                 </div>
               )
             })}
+            <ReadMore>
+              <Link to="/about">Read more...</Link>
+            </ReadMore>
           </div>
         </div>
       </Bio>
@@ -170,6 +174,14 @@ const Index = ({ data }) => {
         box-shadow: 0px 40px 8px -10px grey;
         cursor: pointer;
       }
+    }
+  `
+  const ReadMore = styled.div`
+    font-family: Muli;
+    transition: 0.8s ease-in-out;
+
+    :hover {
+      transform: translateX(-1rem);
     }
   `
 
