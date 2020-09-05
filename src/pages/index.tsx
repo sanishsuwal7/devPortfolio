@@ -181,7 +181,8 @@ const Index = ({ data }) => {
     transition: 0.8s ease-in-out;
 
     :hover {
-      transform: translateX(-1rem);
+      font-weight: bold;
+      filter: brightness(0.8);
     }
   `
 
