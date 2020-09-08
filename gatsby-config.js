@@ -15,12 +15,15 @@ module.exports = {
   plugins: [
     "gatsby-plugin-netlify-cms",
     `gatsby-plugin-sitemap`,
-    `gatsby-plugin-chakra-ui`,
+
+    {
+      resolve: `gatsby-plugin-chakra-ui`,
+      options: {
+        isResettingCSS: false,
+      },
+    },
     {
       resolve: `gatsby-plugin-styled-components`,
-      options: {
-        // Add any options here
-      },
     },
 
     {
