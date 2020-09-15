@@ -15,7 +15,6 @@ module.exports = {
   plugins: [
     "gatsby-plugin-netlify-cms",
     `gatsby-plugin-sitemap`,
-
     {
       resolve: `gatsby-plugin-chakra-ui`,
       options: {
