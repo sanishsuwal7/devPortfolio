@@ -188,7 +188,7 @@ export const Wrapper = styled.div`
   }
 `
 
-export const Section = styled.div`
+export const Section = styled.section`
   background: ${props => (props.invert ? colors.background : colors.white)};
   color: ${props => (props.invert ? colors.white : colors.background)};
 

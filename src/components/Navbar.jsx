@@ -26,6 +26,9 @@ export default function Navbar(props) {
     allSitePage: { nodes },
     site: { siteMetadata },
   } = data
+
+  const blacklist = ["blog", "payment"]
+
   return (
     <Container invert={props.invert}>
       <Link to="/">
@@ -35,7 +38,11 @@ export default function Navbar(props) {
         {/* Links to all pages */}
         {nodes.map((node, i) => {
           const path = node.path
-          if (path.includes("404") || path === "/" || path.includes("blog")) {
+          if (
+            path.includes("404") ||
+            path === "/" ||
+            blacklist.some(e => path.includes(e))
+          ) {
             return null
           }
           return (

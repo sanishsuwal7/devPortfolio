@@ -1,7 +1,7 @@
 // with thanks https://github.com/alexmacarthur/netlify-lambda-function-example/blob/68a0cdc05e201d68fe80b0926b0af7ff88f15802/lambda-src/purchase.js
 
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY)
-const YOUR_DOMAIN = `http://localhost:8888/`
+const url = `${process.env.URL}/payment/success`
 
 const statusCode = 200
 const headers = {
@@ -27,17 +27,19 @@ exports.handler = function (event, context, callback) {
           price_data: {
             currency: "usd",
             product_data: {
-              name: "Stubborn Attachments",
-              images: ["https://i.imgur.com/EHyR2nP.png"],
+              name: "Get Alejandro some coffee",
+              images: [
+                "https://aaspinwall.com/static/a90bf3d0d375ca4ebd2a49dafa4d72e5/4e6d4/landingImage.webp",
+              ],
             },
-            unit_amount: 2000,
+            unit_amount: 100,
           },
           quantity: 1,
         },
       ],
       mode: "payment",
-      success_url: `${YOUR_DOMAIN}?success=true`,
-      cancel_url: `${YOUR_DOMAIN}?canceled=true`,
+      success_url: `${url}?success=true`,
+      cancel_url: `${url}?canceled=true`,
     })
     console.log(session.id)
     callback(null, {
@@ -45,10 +47,10 @@ exports.handler = function (event, context, callback) {
       headers,
       body: JSON.stringify({ id: session.id }),
     })
-    return {
-      statusCode: 200,
+    /*     return {
+      statusCode,
       body: JSON.stringify({ id: session.id }),
-    }
+    } */
   }
   makeSession()
 }
