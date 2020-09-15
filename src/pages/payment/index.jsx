@@ -57,7 +57,7 @@ const stripePromise = loadStripe(
   `pk_test_51HRfXgBRONX4uWcmjRoBLKOcwcOPPJAo725YgNEsnhc23B7S5hSVhhn5l6bkJ8faLJwmlhnJohw2G2JPOx0dYYPV003nDcWKnI`
 )
 
-const ProductDisplay = ({ handleClick }) => (
+const ProductDisplay = ({ handleClick, processing }) => (
   <Section>
     <Box className="product">
       <div>
@@ -75,7 +75,11 @@ const ProductDisplay = ({ handleClick }) => (
         variantColor={"teal"}
         borderRadius="15px"
         role="link"
-        onClick={handleClick}
+        onClick={() => {
+          processing.setProcessing(true)
+          handleClick()
+        }}
+        isLoading={processing.isProcessing}
       >
         Checkout
       </Button>
@@ -92,6 +96,7 @@ const Message = ({ message }) => (
 
 export default function App() {
   const [message, setMessage] = useState("")
+  const [isProcessing, setProcessing] = useState(false)
 
   useEffect(() => {
     // Check to see if this is a redirect back from Checkout
@@ -110,9 +115,9 @@ export default function App() {
 
   const handleClick = async event => {
     const stripe = await stripePromise
-
     const response = await fetch(url, {
       method: "POST",
+      body: JSON.stringify({ body: "BODY IS NOT IN USE" }),
     })
 
     const session = await response.json()
@@ -133,27 +138,10 @@ export default function App() {
     <Message message={message} />
   ) : (
     <Layout>
-      <ProductDisplay handleClick={handleClick} />
+      <ProductDisplay
+        handleClick={handleClick}
+        processing={{ isProcessing, setProcessing }}
+      />
     </Layout>
   )
 }
-
-/* const Debug = () => {
-  const get = async () => {
-    const body = await fetch(url)
-    const ms = await body.json()
-    setData(ms)
-    console.log(ms)
-  }
-  const [data, setData] = React.useState(null)
-  React.useEffect(get, [])
-  return (
-    <div>
-      <div>Debugging</div>
-      <div>{data ? data.message : null}</div>
-      
-    </div>
-  )
-}
-
-export default Debug */

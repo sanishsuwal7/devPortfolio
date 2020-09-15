@@ -11,6 +11,7 @@ const headers = {
 
 exports.handler = function (event, context, callback) {
   //-- We only care to do anything if this is our POST request.
+
   if (event.httpMethod !== "POST" || !event.body) {
     callback(null, {
       statusCode,
