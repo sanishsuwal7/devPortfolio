@@ -256,7 +256,7 @@ const Index = ({ data }) => {
 
   return (
     <Layout invert={true}>
-      <SEO />
+      <SEO title="Alejandro Aspinwall | Full Stack Developer" />
       <Section invert={true}>{getTop()}</Section>
       <Section id="bio">{getBio(content.bio)}</Section>
       <Section id="projects">{getProjects(content.projects)}</Section>
