@@ -6,6 +6,7 @@ import { graphql } from "gatsby"
 import ReadTime from "../components/ReadTime"
 import Icon from "../components/Icon"
 import styled from "styled-components"
+import SEO from "../components/seo"
 
 export const Project = ({ data }) => {
   const { title, details, description, html, timeToRead } = data
@@ -13,6 +14,7 @@ export const Project = ({ data }) => {
 
   return (
     <Section top={true}>
+      <SEO description={description} title={title} />
       <h1>{title}</h1>
       <ReadTime text={timeToRead} />
       <p dangerouslySetInnerHTML={{ __html: description }}></p>
@@ -62,7 +64,7 @@ const ProjectDetails = styled.div`
   flex-flow: column;
   h3 {
     margin: 1rem 0 1rem;
-    font-family: Inter;
+    font-family: Montserrat;
   }
   div {
     font-family: Muli;

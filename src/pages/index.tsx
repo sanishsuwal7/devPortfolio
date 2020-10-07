@@ -2,6 +2,7 @@
 import React from "react"
 import { graphql, navigate, Link } from "gatsby"
 import Img from "gatsby-image"
+import SEO from "../components/seo"
 
 import {
   Section,
@@ -255,6 +256,7 @@ const Index = ({ data }) => {
 
   return (
     <Layout invert={true}>
+      <SEO />
       <Section invert={true}>{getTop()}</Section>
       <Section id="bio">{getBio(content.bio)}</Section>
       <Section id="projects">{getProjects(content.projects)}</Section>

@@ -1,13 +1,13 @@
 module.exports = {
   siteMetadata: {
-    title: `Alejandro Aspinwall | Developer`,
+    title: `Alejandro Aspinwall | Full Stack Developer`,
     lang: "en-US",
     author: {
       name: `Alejandro Aspinwall`,
-      summary: `who builds tools to simplify your digital needs.`,
+      summary: `Alejandro loves to build tools to simplify your digital needs`,
     },
-    description: `Development portfolio`,
-    siteUrl: `https://alejandroaspinwall.ca/`,
+    description: `I'm a software engineer specialized in web development and cloud solutions. My toolset includes javascript, python, react, nodeJS, graphQL, mongoDB and various cloud solutions based on AWS and GCP`,
+    siteUrl: `https://aaspinwall.com/`,
     social: {
       twitter: `aaspinwall`,
     },
@@ -28,7 +28,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: "https://www.alejandroaspinwall.ca",
+        host: "https://aaspinwall.com/",
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },

@@ -10,5 +10,5 @@ export default function ReadTime({ text }) {
 }
 
 export const ReadTimeWrapper = styled.div`
-  font-family: Inter;
+  font-family: Montserrat;
 `

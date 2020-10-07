@@ -7,7 +7,12 @@ import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import { Link, graphql, useStaticQuery } from "gatsby"
 
-export default function Layout(props) {
+interface Props {
+  children: any
+  invert?: boolean
+}
+
+export default function Layout({ children, invert }: Props) {
   const data = useStaticQuery(graphql`
     query {
       allSitePage(
@@ -32,9 +37,8 @@ export default function Layout(props) {
 
   return (
     <Wrapper>
-      <Navbar invert={props.invert} />
-      <SEO />
-      {props.children}
+      <Navbar invert={invert} />
+      {children}
       <Footer />
     </Wrapper>
   )

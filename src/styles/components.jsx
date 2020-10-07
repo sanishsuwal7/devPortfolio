@@ -136,6 +136,7 @@ export const Wrapper = styled.div`
   margin: 0rem;
   a {
     color: ${colors.accent};
+    font-weight: bold;
   }
 
   ul {
@@ -149,7 +150,6 @@ export const Wrapper = styled.div`
   }
 
   h1 {
-    /* font-size: 3.5rem; */
     font-weight: 400;
   }
 
