@@ -1,15 +1,6 @@
 ---
 title: I have always loved tech
 internal: true
-work:
-  - title: Frontend developer
-    company: Playhybrid
-    mission: Brings Hollywood blockbuster visual effects and graphics to social media campaigns.
-    stack: React**Gatsby
-    did: >
-      nothing<br/>
-      nothing
-    shipped: garbage
 ---
 
 ###My quick story
