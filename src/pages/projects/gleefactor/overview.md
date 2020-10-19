@@ -19,6 +19,7 @@ details:
 # Project Purpose and Goal
 
 Gleefactor is a work culture management firm that helps organizations transform their cultures by enabling teams to adopt and activate new behaviours through play. **The goal was to create a fast website that would drive conversions** from social media and search engine traffic.
+
 The company had to pivot away from in-person events and quickly build an online platform that would be able to handle a growing number of uniquely built products. This posed a challenge for their Wordpress based infrastructure.
 
 The goal was to deliver a site that featured a payment gateway, downloads, email subscriptions and bilingual content.
@@ -29,7 +30,7 @@ I chose a server side rendered site that would load from a CDN to achieve the fa
 
 **I intended to keep Wordpress as a headless CMS to ensure that any changes to the content would trigger a new site build**. The data would then be fetched from WP and rendered as HTML.
 
-This project uses APIs that are commonly executed on a server but **I opted to use a serverless approach by creating Lambda functions that run on demand**. Luckily lambda functions are built into the Gatsby/Netlify architecture. All the sensitive data is kept using environment variables.
+This project uses APIs that are commonly executed on a server but **I opted to use a serverless approach by creating Lambda functions that run on demand**. Luckily lambda functions are built into the Gatsby/Netlify architecture. All the sensitive data is kept safe using environment variables.
 
 **I deployed the site to Netlify** because I am very comfortable with the tools they provide for continuous deployment and integration.
 
@@ -37,8 +38,53 @@ This project uses APIs that are commonly executed on a server but **I opted to u
 
 **I was initially brought into the project to maintain the website running solely on Wordpress.** Unfortunately, there had been many iterations of the site built on top of each other without proper maintenance. **In practical terms, this meant that the plugins that were used years ago, couldn't be updated to keep compatibility with other plugins that kept the core functionalities stable.** All this resulted in a slow, insecure, hard-to-maintain site. We soon came to the conclusion that **re-building the site would be the best way to go forward.**
 
-The client was happy with the site on Wordpress and requested it to stay there.
+The client was happy with the site on Wordpress and requested it to stay there. To satisfy this, I re-organized all the content into pages and posts and mapped the data using GraphQL queries to build pages on Gatsby.
+
+```javascript
+exports.handler = async function (event, context, callback) {
+  const { email, firstName, lastName } = JSON.parse(event.body)
+  try {
+    const callChimp = async email => {
+      const response = await mailchimp.lists.addListMember(listId, {
+        email_address: email,
+        status: "subscribed",
+        merge_fields: {
+          FNAME: firstName,
+          LNAME: lastName,
+        },
+      })
+
+      console.log(
+        `Successfully added contact as an audience member. The contact's id is ${response.id}.`
+      )
+      //return response
+      return Promise.resolve(response)
+    }
+    const chimpRes = await callChimp(email)
+    return {
+      statusCode: 200,
+      body: JSON.stringify({
+        response: `Successfully added contact as an audience member. The contact's id is ${chimpRes.id}.`,
+        chimpRes,
+      }),
+    }
+  } catch (error) {
+    //console.log(error)
+    const {
+      status,
+      response: { text },
+    } = error
+    return {
+      statusCode: status,
+      body: JSON.stringify({
+        response: `Something went wrong on Mailchimp's end`,
+        text,
+      }),
+    }
+  }
+}
+```
 
 # Lessons Learned
 
-I worked with WP many years ago, before I got into modern javascript based frameworks. I think the technology works very well for some organizations, especially ones that have a lot of content and not many features. This project called for a flexible solution that would scale to fit the needs of the company' growth.
+I worked with WP many years ago, before I got into modern javascript based frameworks. I think the technology works very well for some organizations, especially ones that have a lot of content and not many features. This project called for a flexible solution that would scale to fit the needs of the company's growth. Moving the whole site away from WP would've been my choice but the client's requests made me re-evaluate the solutions. I'm satisfied with the result!
