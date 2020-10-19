@@ -4,8 +4,7 @@ internal: true
 mainpitch:
   title: Hi, I’m Alejandro, **Full Stack** **Web Developer**
   subtitle: >
-    I'm a lifelong learner, I love exploring and creating. My mission is to
-    write, debug, test and ship readable code.  I have a thing for traditional
+    I love exploring and creating 🚀 I'm a lifelong learner 🎓 and I might have a thing for traditional
     Neapolitan Pizza 🍕
   action: Book a call
 bio:
@@ -14,10 +13,10 @@ bio:
   features:
     - header: I love building stuff 📱
       body: >
-        I have been I have making web stuff since I was 11 years-old. Since then
+        I started playing with computers when I was 11 years-old. Since then
         I have been tinkering with all sorts of technologies that in some way or
         another led me to work on music, photography, sound engineering,
-        electronic engineering, automation, video production, feature film
+        electric engineering, automation, video production, feature film
         post-production, VR games, and 3D sound.
 projects:
   - title: Gleefactor
@@ -33,13 +32,14 @@ projects:
       - MDX
       - Netlify
   - title: ING Creatives
-    body: I built the latest version of their site to improve speed and performance. It features statically generated pages, cloud image resizing and a custom CMS.
+    body: I built the latest version of the site to improve speed and performance. It features statically generated pages, cloud image resizing and a custom CMS.
     image: ing.png
     action: View project
     link: /projects/ing/overview/
     tags:
       - React
       - Gatsbyjs
+      - Shopify
       - Netlify
       - Image CDN
   - title: Moving day
@@ -83,20 +83,7 @@ projects:
     body:
       A web application that displays your meals with recipes and portion sizes.
       Developed in collaboration with nutrition experts.
-  - title: Brummana Pattiserie
-    link: https://brummana.netlify.app/
-    tags:
-      - Gatsby
-      - React
-      - TypeScript
-      - Cloud image resizing
-      - Styled-components
-      - Netlify CMS
-    action: View project
-    image: brummana.png
-    body: Local bakery static site. I developed the site and created a content
-      management system for the owners. Their sales surged 200% after they
-      released their online store.
+
 contact:
   title: Let's have a **chat**
   action: Get in touch

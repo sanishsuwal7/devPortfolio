@@ -1,12 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `Alejandro Aspinwall | Full Stack Developer`,
+    title: `Alejandro Aspinwall | Software Engineer`,
     lang: "en-US",
     author: {
       name: `Alejandro Aspinwall`,
       summary: `Alejandro loves to build tools to simplify your digital needs`,
     },
-    description: `I'm a software engineer specialized in web development and cloud solutions. My toolset includes javascript, python, react, nodeJS, graphQL, mongoDB and various cloud solutions based on AWS and GCP`,
+    description: `I'm a software engineer specialized in web development and cloud solutions. My toolset includes javascript, python, react and various cloud solutions`,
     siteUrl: `https://aaspinwall.com/`,
     social: {
       twitter: `aaspinwall`,

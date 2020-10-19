@@ -49,7 +49,7 @@ export const SectionTag = styled.div`
   letter-spacing: 0.1rem;
 `
 
-export const Button = styled.a`
+export const Button = styled.div`
   position: relative;
   display: block;
   width: 100%;

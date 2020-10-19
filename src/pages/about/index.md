@@ -3,7 +3,7 @@ title: I have always loved tech
 internal: true
 ---
 
-**Thinking of hiring me?** Go straight to [my CV](https://alejandro.tech/)
+**Looking for my CV?** [check it out](https://alejandro.tech/) I actually wrote a [blog post](/cloud-resume) about how I made it.
 
 ###My quick story
 

@@ -2,46 +2,43 @@
 title: Gleefactor
 featuredImage: overview.png
 
-description: Ing creatives is an e-learning platform that provides professional resources in areas ranging from branding, design, product design, UI/UX, marketing, to advertising and social media, among others.
+description: Gleefactor is a work culture management firm that helps organizations transform their cultures by enabling teams to adopt and activate new behaviours through play. **The goal was to create a fast website that would drive conversions** from social media and search engine traffic.
+
+seo: I created a fast website that would drive conversions from social media and search engine traffic. Using pre-rendered static pages with Gatsbyjs
 
 details:
   type: E-learning platform
-  stack: Gatsby Styled-Components Chakra-UI Netlify
-  live: https://flamboyant-wilson-56672f.netlify.app/
+  stack: Gatsby Styled-Components AWS-Lambda Netlify
+  live: https://gleefactor.com/
 ---
 
-![Results page](screen.png "Results page")
+![Results page](screen.png "Resources page that shows the available workshops")
+
+---
 
 # Project Purpose and Goal
 
-This project was initially thought of as a tool for people that were looking to **rent apartments in Montreal**. Since the most popular site for this purpose is Kijiji, I wanted to make a friendly front end that filtered out the spam posts and displayed relevant information about the listing. I also wanted to add a **notification system** that sent an email to the user anytime a new ad that matched their search terms was posted. Finally, I wanted to display additional information that wasn’t available directly from kijiji. I decided to add the **Google Maps API** that allows for a more intuitive navigation and the **Walkscore API** rates the listing’s access to public transportation and bike friendliness.
+Gleefactor is a work culture management firm that helps organizations transform their cultures by enabling teams to adopt and activate new behaviours through play. **The goal was to create a fast website that would drive conversions** from social media and search engine traffic.
+The company had to pivot away from in-person events and quickly build an online platform that would be able to handle a growing number of uniquely built products. This posed a challenge for their Wordpress based infrastructure.
 
-My goal was to **learn to use third party APIs** and to make a robust **full stack application.**
-
-![Results page](map.png "Results page")
+The goal was to deliver a site that featured a payment gateway, downloads, email subscriptions and bilingual content.
 
 # Web Stack and Explanation
 
-To maximize my learning-to-production ratio, I wanted to have a **javascript-based** stack. I chose **React** for the fronted because I was already familiar with it. I wanted to push myself even within a familiar environment so after developing the initial version, refactored the code using hooks. This was the first time I used hooks with **Redux** and also the first time I would be using a **store persistor.**
+I chose a server side rendered site that would load from a CDN to achieve the fastest loading times. **I chose Gatsby for the static page generation because their Wordpress plugin is second to none.**
 
-I used a **firebase realtime database** to store the scraped data and to eventually provide a public facing API.
+**I intended to keep Wordpress as a headless CMS to ensure that any changes to the content would trigger a new site build**. The data would then be fetched from WP and rendered as HTML.
 
-For the backend I wanted to learn to develop and deploy **serverless functions**. This meant that I would have to split the functionality into simple modules. I used **Netlify functions,** a **Heroku** instance as a master clock for the lambda functions and lastly a **Cloud Scheduler** to keep everything synced.
+This project uses APIs that are commonly executed on a server but **I opted to use a serverless approach by creating Lambda functions that run on demand**. Luckily lambda functions are built into the Gatsby/Netlify architecture. All the sensitive data is kept using environment variables.
 
-After trying a few other providers, I decided that **Netlify** was the best choice for my application. It's a **powerful and fast platform for deployment,** which allowed me to use (and learn) serverless functions.
+**I deployed the site to Netlify** because I am very comfortable with the tools they provide for continuous deployment and integration.
 
 # Problems and Thought Process
 
-Like most projects, the initial idea in my head was simpler and more elegant than what the actual solutions ended up being. I encountered a few bumps along the way that set back my progress significantly. Looking back, **all these caveats forced me to learn much more than I initially challenged myself to.**
+**I was initially brought into the project to maintain the website running solely on Wordpress.** Unfortunately, there had been many iterations of the site built on top of each other without proper maintenance. **In practical terms, this meant that the plugins that were used years ago, couldn't be updated to keep compatibility with other plugins that kept the core functionalities stable.** All this resulted in a slow, insecure, hard-to-maintain site. We soon came to the conclusion that **re-building the site would be the best way to go forward.**
 
-When I started to develop the search function I encountered that kijiji doesn’t provide a public API for their ads. **To solve this,** I created a simple express app that scraped the site. The results would be displayed in real time on the application. Everything ran smoothly on my local machine, but when I deployed the application I soon realized that kijiji doesn’t like repeated requests from servers. I would need a more robust infrastructure to work around this limitation. **Ultimately, I wanted to keep the app's cost low (free) and this meant that I would have to make things more complicated for me**.
+The client was happy with the site on Wordpress and requested it to stay there.
 
-![Results page](result.png "Results page")
+# Lessons Learned
 
-I compiled the most popular search-terms in the Montreal area for real estate rentals and added them to my database. Whenever the function ran, it would read the keywords, do the search and store the results. That way, **whenever a user interacted with the frontend, they would get up to date results**.
-
-**Since Netlify functions run on the AWS lambda infrastructure, they have a 10 second limit on execution.** This meant that I would have to trigger the function multiple times per minute if I wanted to have the scraper run non-stop. For this, I made a simple express app and ran it on Heroku. The app gets an HTTP request from the Netlify function, then waits 10 seconds until it makes a request back to the Netlify function.
-
-# Lessons Learned & Future Work
-
-My motivation to keep costs low led me to design an overly complex system to make a responsive backend API. In spite of a few headaches, **I learned a lot about cloud functions and serverless infrastructure.** Since I already use Netlify to deploy most of my projects, I will take advantage of the built-in lambda functions they provide. It's a simple way to make requests that can bypass the browser's CORS policies without the need of proxying requests.
+I worked with WP many years ago, before I got into modern javascript based frameworks. I think the technology works very well for some organizations, especially ones that have a lot of content and not many features. This project called for a flexible solution that would scale to fit the needs of the company' growth.

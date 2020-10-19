@@ -7,17 +7,18 @@ import ReadTime from "../components/ReadTime"
 import Icon from "../components/Icon"
 import styled from "styled-components"
 import SEO from "../components/seo"
+import remark from "../utils/remark"
 
 export const Project = ({ data }) => {
-  const { title, details, description, html, timeToRead } = data
+  const { title, details, description, html, timeToRead, seo } = data
   const { stack, code, live, type } = details
 
   return (
     <Section top={true}>
-      <SEO description={description} title={title} />
+      <SEO description={seo || description} title={title} />
       <h1>{title}</h1>
       <ReadTime text={timeToRead} />
-      <p dangerouslySetInnerHTML={{ __html: description }}></p>
+      <p dangerouslySetInnerHTML={{ __html: remark(description) }}></p>
       <Icon speed={"4s"} />
       <ProjectDetails>
         <div>
@@ -57,7 +58,7 @@ export const Project = ({ data }) => {
 const ProjectDetails = styled.div`
   padding-bottom: 2rem;
   > div {
-    flex-basis: 20px;
+    flex-basis: 100%;
   }
   display: flex;
   justify-content: space-around;
@@ -79,11 +80,11 @@ const ProjectPage = ({ data }) => {
     markdownRemark: { html, frontmatter, timeToRead },
   } = data
 
-  const { title, details, description } = frontmatter
+  const { title, details, description, seo } = frontmatter
 
   return (
     <Layout>
-      <Project data={{ title, details, description, html, timeToRead }} />
+      <Project data={{ title, details, description, html, timeToRead, seo }} />
     </Layout>
   )
 }
@@ -103,6 +104,7 @@ export const pageQuery = graphql`
         title
         internal
         description
+        seo
         details {
           code
           live
