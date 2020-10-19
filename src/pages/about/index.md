@@ -1,19 +1,8 @@
 ---
 title: I have always loved tech
 internal: true
-<<<<<<< HEAD
-=======
-work:
-  - title: Frontend developer
-    company: Playhybrid
-    mission: Brings Hollywood blockbuster visual effects and graphics to social
-      media campaigns.
-    stack: React**Gatsby
-    did: |
-      nothing<br/> nothing
-    shipped: garbage
->>>>>>> 08180d2fbdc9934bf513026aa383bac429806169
 ---
+
 TLDR; Here is my [CV](https://alejandro.tech/)
 
 \###My quick story
@@ -26,7 +15,7 @@ In the last few years, I have been increasingly working on software development 
 
 \###As a developer
 
-I pay close **attention to my code’s readability**. Sure, I’ll put together something as quickly as possible to make it work, but after that I’ll spend a good amount of time commenting and organizing everything. *Mi casa es tu casa*, I want you to **feel welcome around my code.**
+I pay close **attention to my code’s readability**. Sure, I’ll put together something as quickly as possible to make it work, but after that I’ll spend a good amount of time commenting and organizing everything. _Mi casa es tu casa_, I want you to **feel welcome around my code.**
 
 **Clean, consistent, readable and maintainable code.** It’s great when features work, but it’s even greater whenever they can stay that way, regardless of who’s working on them.
 
