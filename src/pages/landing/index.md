@@ -21,10 +21,8 @@ bio:
         post-production, VR games, and 3D sound.
 projects:
   - title: Gleefactor
-    body: A work culture management firm that helps organizations transform their
-      cultures by enabling teams to adopt and activate new behaviors through
-      play.
-    image: /img/screen-shot-2020-10-19-at-11.06.02-am.png
+    body: I took their existing wordpress site and turned it into a headless CMS with React on the frontend. The site features e-commerce, downloads and a seamless bilingual experience.
+    image: glee.png
     action: View project
     link: /projects/gleefactor/overview/
     tags:
@@ -32,8 +30,21 @@ projects:
       - Gatsbyjs
       - Wordpress
       - Google Pay
+      - MDX
+      - Netlify
+  - title: ING Creatives
+    body: I built the latest version of their site to improve speed and performance. It features statically generated pages, cloud image resizing and a custom CMS.
+    image: ing.png
+    action: View project
+    link: /projects/ing/overview/
+    tags:
+      - React
+      - Gatsbyjs
+      - Netlify
+      - Image CDN
   - title: Moving day
-    body: Looking for an apartment in Montreal is quite a pain. Since Kijiji doesn't
+    body:
+      Looking for an apartment in Montreal is quite a pain. Since Kijiji doesn't
       provide a public API, I made one that runs on a local server.
     image: movingday.png
     action: View project
@@ -56,7 +67,8 @@ projects:
       - Firebase
       - AWS Amplify
     link: /projects/wodly/overview/
-    body: Save your home workouts and display them in a friendly manner. Share with
+    body:
+      Save your home workouts and display them in a friendly manner. Share with
       your friends!
   - title: My Nomnoms
     link: /projects/mynomnoms/overview/
@@ -68,7 +80,8 @@ projects:
       - PWA
       - Netlify
       - Cloud image resizing
-    body: A web application that displays your meals with recipes and portion sizes.
+    body:
+      A web application that displays your meals with recipes and portion sizes.
       Developed in collaboration with nutrition experts.
   - title: Brummana Pattiserie
     link: https://brummana.netlify.app/
@@ -88,4 +101,5 @@ contact:
   title: Let's have a **chat**
   action: Get in touch
 ---
+
 body
