@@ -6,6 +6,7 @@ import ReadTime from "../components/ReadTime"
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
 import styled from "styled-components"
+import Button from "../components/ui/button"
 
 export const AboutPageTemplate = ({ title, content }) => {
   const { html } = content
@@ -13,8 +14,9 @@ export const AboutPageTemplate = ({ title, content }) => {
   return (
     <Section>
       <Hero>{title}</Hero>
-      <ReadTime text={html} />
+      {/* <ReadTime text={html} /> */}
       <Markdown dangerouslySetInnerHTML={{ __html: html }}></Markdown>
+      <Button to={`https://calendly.com/aaspinwall/15`}>Get in touch</Button>
     </Section>
   )
 }

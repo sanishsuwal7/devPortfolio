@@ -200,7 +200,7 @@ const Index = ({ data }) => {
           {slidingButton(
             action,
             "/",
-            () => (window.location.href = "mailto:aaspinwall@gmail.com")
+            () => (window.location.href = "https://calendly.com/aaspinwall/15")
           )}
         </Button>
       </div>
