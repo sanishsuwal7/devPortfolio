@@ -4,10 +4,9 @@ internal: true
 mainpitch:
   title: Hi, I’m Alejandro, **Full Stack** **Web Developer**
   subtitle: >
-    I'm a lifelong learner, I love exploring and creating.
-    My mission is to write, debug, test and ship readable code. 
-    I have a thing for traditional Neapolitan Pizza 🍕
-
+    I'm a lifelong learner, I love exploring and creating. My mission is to
+    write, debug, test and ship readable code.  I have a thing for traditional
+    Neapolitan Pizza 🍕
   action: Book a call
 bio:
   title: My **Skills**
@@ -15,11 +14,27 @@ bio:
   features:
     - header: I love building stuff 📱
       body: >
-        I have been I have making web stuff since I was 11 years-old. Since then I have been tinkering with all sorts of technologies that in some way or another led me to work on music, photography, sound engineering, electronic engineering, automation, video production, feature film post-production, VR games, and 3D sound.
-
+        I have been I have making web stuff since I was 11 years-old. Since then
+        I have been tinkering with all sorts of technologies that in some way or
+        another led me to work on music, photography, sound engineering,
+        electronic engineering, automation, video production, feature film
+        post-production, VR games, and 3D sound.
 projects:
+  - title: Gleefactor
+    body: A work culture management firm that helps organizations transform their
+      cultures by enabling teams to adopt and activate new behaviors through
+      play.
+    image: /img/screen-shot-2020-10-19-at-11.06.02-am.png
+    action: View project
+    link: /projects/gleefactor/overview/
+    tags:
+      - React
+      - Gatsbyjs
+      - Wordpress
+      - Google Pay
   - title: Moving day
-    body: Looking for an apartment in Montreal is quite a pain. Since Kijiji doesn't provide a public API, I made one that runs on a local server.
+    body: Looking for an apartment in Montreal is quite a pain. Since Kijiji doesn't
+      provide a public API, I made one that runs on a local server.
     image: movingday.png
     action: View project
     link: /projects/movingday/overview/
@@ -31,7 +46,6 @@ projects:
       - Walkscore API
       - Google Maps API
       - Firebase
-
   - title: Wodly
     image: wodly.png
     action: View project
@@ -41,10 +55,9 @@ projects:
       - Styled-components
       - Firebase
       - AWS Amplify
-
     link: /projects/wodly/overview/
-    body: Save your home workouts and display them in a friendly manner.
-      Share with your friends!
+    body: Save your home workouts and display them in a friendly manner. Share with
+      your friends!
   - title: My Nomnoms
     link: /projects/mynomnoms/overview/
     action: View project
@@ -55,8 +68,7 @@ projects:
       - PWA
       - Netlify
       - Cloud image resizing
-    body:
-      A web application that displays your meals with recipes and portion sizes.
+    body: A web application that displays your meals with recipes and portion sizes.
       Developed in collaboration with nutrition experts.
   - title: Brummana Pattiserie
     link: https://brummana.netlify.app/
@@ -69,11 +81,11 @@ projects:
       - Netlify CMS
     action: View project
     image: brummana.png
-    body:
-      Local bakery static site. I developed the site and created a content management system for the
-      owners. Their sales surged 200% after they released their online store.
-
+    body: Local bakery static site. I developed the site and created a content
+      management system for the owners. Their sales surged 200% after they
+      released their online store.
 contact:
   title: Let's have a **chat**
   action: Get in touch
 ---
+body
