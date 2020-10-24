@@ -1,9 +1,10 @@
 ---
 title: I have always loved tech
 internal: true
+drafter: I actually wrote a [blog post](/cloud-resume) about how I made it.
 ---
 
-**Looking for my CV?** [check it out](https://alejandro.tech/) I actually wrote a [blog post](/cloud-resume) about how I made it.
+**Looking for my CV?** [check it out](https://alejandro.tech/)
 
 ###My quick story
 

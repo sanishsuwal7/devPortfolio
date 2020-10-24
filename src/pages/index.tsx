@@ -224,7 +224,7 @@ const Index = ({ data }) => {
   const slidingButton = (action: string, link: string = "/", alt?) => {
     return [0, 0].map((e, i) =>
       alt ? (
-        <div tabIndex={i === 0 ? 0 : -1} onClick={alt}>
+        <div className="topButton" tabIndex={i === 0 ? 0 : -1} onClick={alt}>
           {action}
         </div>
       ) : (
@@ -287,7 +287,7 @@ export const pageQuery = graphql`
             title
             image {
               childImageSharp {
-                fluid(maxWidth: 500, quality: 100) {
+                fluid(maxWidth: 1000, quality: 100) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }

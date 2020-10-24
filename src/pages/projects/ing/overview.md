@@ -10,41 +10,34 @@ details:
   type: E-learning platform
   stack: Gatsby Styled-Components Chakra-UI Netlify
   code: https://github.com/aaspinwall/festival-gatsby
-  live: https://flamboyant-wilson-56672f.netlify.app/
+  live: https://www.ingcreatives.com/
 ---
 
 ![Results page](screen.png "Results page")
 
 # Project Purpose and Goal
 
-This project was initially thought of as a tool for people that were looking to **rent apartments in Montreal**. Since the most popular site for this purpose is Kijiji, I wanted to make a friendly front end that filtered out the spam posts and displayed relevant information about the listing. I also wanted to add a **notification system** that sent an email to the user anytime a new ad that matched their search terms was posted. Finally, I wanted to display additional information that wasn’t available directly from kijiji. I decided to add the **Google Maps API** that allows for a more intuitive navigation and the **Walkscore API** rates the listing’s access to public transportation and bike friendliness.
-
-My goal was to **learn to use third party APIs** and to make a robust **full stack application.**
-
-![Results page](map.png "Results page")
-
-# Web Stack and Explanation
-
-To maximize my learning-to-production ratio, I wanted to have a **javascript-based** stack. I chose **React** for the fronted because I was already familiar with it. I wanted to push myself even within a familiar environment so after developing the initial version, refactored the code using hooks. This was the first time I used hooks with **Redux** and also the first time I would be using a **store persistor.**
-
-I used a **firebase realtime database** to store the scraped data and to eventually provide a public facing API.
-
-For the backend I wanted to learn to develop and deploy **serverless functions**. This meant that I would have to split the functionality into simple modules. I used **Netlify functions,** a **Heroku** instance as a master clock for the lambda functions and lastly a **Cloud Scheduler** to keep everything synced.
-
-After trying a few other providers, I decided that **Netlify** was the best choice for my application. It's a **powerful and fast platform for deployment,** which allowed me to use (and learn) serverless functions.
+The CEO’s main concern was the speed of the original site. It was usually taking about 8-12 seconds to show the content. This meant that any social media campaign would likely fail, as users would leave the site before it even loaded. **As google puts it “Two seconds is the threshold for ecommerce website acceptability. At Google, we aim for under a half-second.”** Once that was agreed upon, I set my goal to prioritize speed.
 
 # Problems and Thought Process
 
-Like most projects, the initial idea in my head was simpler and more elegant than what the actual solutions ended up being. I encountered a few bumps along the way that set back my progress significantly. Looking back, **all these caveats forced me to learn much more than I initially challenged myself to.**
+The biggest challenge for this project was that it had image heavy pages that had to load as fast as possible. I looked through the original site to determine what could be optimized and what had to be re-built. **I quickly realized that most of the loading time was spent on unused scripts and large images.** I went through the code to lazy load images, but it didn’t make much of a difference. The scripts were the issue. **The second problem was that all the media was being requested on demand from the server,** which added an additional delay to the page's load-time.
 
-When I started to develop the search function I encountered that kijiji doesn’t provide a public API for their ads. **To solve this,** I created a simple express app that scraped the site. The results would be displayed in real time on the application. Everything ran smoothly on my local machine, but when I deployed the application I soon realized that kijiji doesn’t like repeated requests from servers. I would need a more robust infrastructure to work around this limitation. **Ultimately, I wanted to keep the app's cost low (free) and this meant that I would have to make things more complicated for me**.
+I quickly came to the conclusion that optimizing the current site was going to take longer than building it from scratch. **I put together a test that reproduced the landing page's functionality but based on a static page model instead of a dynamic one**. The results were immediately noticeable.
 
-![Results page](result.png "Results page")
+<iframe src="https://player.vimeo.com/video/471748874" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+*Here is an early test of the old website and my Gatsby version.*
 
-I compiled the most popular search-terms in the Montreal area for real estate rentals and added them to my database. Whenever the function ran, it would read the keywords, do the search and store the results. That way, **whenever a user interacted with the frontend, they would get up to date results**.
+After my proof of concept, I was told to go ahead and rebuild the whole site's frontend. **After the users coming from social media interacted with the experience, they would move on to completing the conversion that was running on legacy backend** for the first stage of the product's launch. Later we would be able to move it to Shopify seamlessly because the frontend wouldn't change.
 
-**Since Netlify functions run on the AWS lambda infrastructure, they have a 10 second limit on execution.** This meant that I would have to trigger the function multiple times per minute if I wanted to have the scraper run non-stop. For this, I made a simple express app and ran it on Heroku. The app gets an HTTP request from the Netlify function, then waits 10 seconds until it makes a request back to the Netlify function.
+# Web Stack and Explanation
+
+I used Gatsby as my static page generator to ensure that the pages would load as fast as possible. I also chose this technology because it’s based on React, this gave me flexibility to use components that I had been working on previously. **I built a markdown based content management system for the team to add and modify content easily.** I deployed it to Netlify because it offers an open source CMS and admin solutions out of the box. Finally, I implemented Stripe for payments using their Nodejs API. **Since I wanted to avoid deploying a server, I added a serverless lambda function that talked to the Stripe API.**
+
+<iframe src="https://player.vimeo.com/video/471747159" width="640" height="353" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+_Initial speed tests of the static site using GatsbyJS and its image optimization API._
 
 # Lessons Learned & Future Work
 
-My motivation to keep costs low led me to design an overly complex system to make a responsive backend API. In spite of a few headaches, **I learned a lot about cloud functions and serverless infrastructure.** Since I already use Netlify to deploy most of my projects, I will take advantage of the built-in lambda functions they provide. It's a simple way to make requests that can bypass the browser's CORS policies without the need of proxying requests.
+**The approach we took for this project was setting small goals, building minimum viable products and comparing those to the ones in production.** This led to a fast paced process that yielded well performing results. **Having the opportunity to build from scratch and learn from the company's previous mistakes gave me a huge lead.**

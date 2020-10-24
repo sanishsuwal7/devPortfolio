@@ -133,6 +133,11 @@ export const Space = styled.div`
 export const Wrapper = styled.div`
   position: relative;
 
+  .topButton {
+    font-family: Montserrat;
+    font-weight: bold;
+  }
+
   margin: 0rem;
   a {
     color: ${colors.accent};
