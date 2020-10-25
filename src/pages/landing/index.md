@@ -2,7 +2,7 @@
 title: "Landing page title from local markdown "
 internal: true
 mainpitch:
-  title: Hi, I’m Alejandro, **Full Stack** **Web Developer**
+  title: Hi, I’m Alejandro | **Software** **Engineer**
   subtitle: >
     I love exploring and creating 🚀 I'm a lifelong learner 🎓 and I might have a thing for traditional
     Neapolitan Pizza 🍕

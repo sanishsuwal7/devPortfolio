@@ -167,8 +167,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Alejandro Aspinwall Developer`,
-        short_name: `Alejandro Aspinwall Developer`,
+        name: `Alejandro Aspinwall | Software Engineer`,
+        short_name: `Alejandro Aspinwall Software Engineer`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#ff715b`,
