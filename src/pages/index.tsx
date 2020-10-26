@@ -162,6 +162,15 @@ const Index = ({ data }) => {
     })
   }
 
+  const Email = styled.a`
+    font-size: 1.3rem;
+    margin: 2rem 0;
+    :hover {
+      filter: brightness(1.2);
+    }
+    cursor: pointer;
+  `
+
   const ProjectImage = styled.div`
     grid-area: image;
 
@@ -189,6 +198,7 @@ const Index = ({ data }) => {
 
   const getContact = contact => {
     const { action, title } = contact
+
     return (
       <div id="contactBox">
         <Hero>{highlightWords(title)}</Hero>
@@ -196,6 +206,9 @@ const Index = ({ data }) => {
           <Steam />
           <Cup />
         </CupContainer>
+
+        <Email href={"mailto:aaspinwall@gmail.com"}>aaspinwall@gmail.com</Email>
+
         <Button style={{ gridArea: "button" }}>
           {slidingButton(
             action,

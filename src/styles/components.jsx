@@ -132,6 +132,7 @@ export const Space = styled.div`
 
 export const Wrapper = styled.div`
   position: relative;
+  padding-top: 3rem;
 
   .topButton {
     font-family: Montserrat;

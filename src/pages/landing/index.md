@@ -33,7 +33,7 @@ projects:
       - Netlify
   - title: ING Creatives
     body: I built the latest version of the site to improve speed and performance. It features statically generated pages, cloud image resizing and a custom CMS.
-    image: screen.png
+    image: ing.png
     action: View project
     link: /projects/ing/overview/
     tags:
