@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: template
+  branch: business
 
 media_folder: static/img
 public_folder: /img

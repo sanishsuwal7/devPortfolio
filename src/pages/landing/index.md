@@ -2,47 +2,53 @@
 title: "Landing page title from local markdown "
 internal: true
 mainpitch:
-  title: Hi, I’m Alejandro | **Software** **Engineer**
+  title: Hi, We're BRAND | **Business** **Tech** **Consulting**
   subtitle: >
-    I love exploring and creating 🚀 I'm a lifelong learner 🎓 and I might have a thing for traditional
-    Neapolitan Pizza 🍕
+    We're helping leaders adapt to the new tech landscape by providing software solutions for their businesses. The digital world changes fast ⚡️. We help you move with it ☁️.
   action: Book a call
 bio:
-  title: My **Skills**
+  title: What **We Offer**
   image: landingImage.jpg
   features:
-    - header: I love building stuff 📱
+    - header: We're here to help
       body: >
-        I started playing with computers when I was 11 years-old. Since then
-        I have been tinkering with all sorts of technologies that in some way or
-        another led me to work on music, photography, sound engineering,
-        electric engineering, automation, video production, feature film
-        post-production, VR games, and 3D sound.
+        improve their value proposition
+    - header: Cloud based solutions
+      body: >
+        Regardless of your company’s size, there's always an opportunity to simplify operations with cloud tools. The cloud scales with your needs while keeping costs low.
+    - header: Social media campaign pipelines
+      body: >
+        Improving conversions across platforms
+    - header: AI powered insights
+      body: >
+        Computers are really good at spotting patterns. We can analyze large large sets of data to provide you with deep insights about your business. We turn complex analytics into simple decisions
 projects:
   - title: Gleefactor
+    type: Case study
     body: I took their existing wordpress site and turned it into a headless CMS with React on the frontend. The site features e-commerce, downloads and a seamless bilingual experience.
     image: glee.png
     action: View project
     link: /projects/gleefactor/overview/
     tags:
-      - React
-      - Gatsbyjs
-      - Wordpress
-      - Google Pay
-      - MDX
-      - Netlify
+      - Optimization
+      - E-commerce
+      - Payments
+      - Digital inventory
+
   - title: ING Creatives
+    type: Case study
     body: I built the latest version of the site to improve speed and performance. It features statically generated pages, cloud image resizing and a custom CMS.
     image: ing.png
     action: View project
     link: /projects/ing/overview/
     tags:
-      - React
-      - Gatsbyjs
-      - Shopify
-      - Netlify
+      - Optimization
+      - E-commerce
+      - E-learning
+      - Social media
       - Image CDN
   - title: Moving day
+    type: Case study
     body:
       Looking for an apartment in Montreal is quite a pain. Since Kijiji doesn't
       provide a public API, I made one that runs on a local server.
@@ -58,6 +64,7 @@ projects:
       - Google Maps API
       - Firebase
   - title: Wodly
+    type: Case study
     image: wodly.png
     action: View project
     tags:
@@ -71,6 +78,7 @@ projects:
       Save your home workouts and display them in a friendly manner. Share with
       your friends!
   - title: My Nomnoms
+    type: Case study
     link: /projects/mynomnoms/overview/
     action: View project
     image: mynomnoms.png

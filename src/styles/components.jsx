@@ -206,6 +206,14 @@ export const Section = styled.section`
     h1 {
       margin-top: 25vh;
     }
+    #spinner {
+      position: absolute;
+      top: 33%;
+      left: 33%;
+      margin: 0;
+      z-index: 100;
+      opacity: 0.5;
+    }
   }
 
   #contactBox {

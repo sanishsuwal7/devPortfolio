@@ -2,15 +2,13 @@ import React, { useState } from "react"
 import { FaReact } from "react-icons/fa"
 import styled from "styled-components"
 
-export default function Icon({ speed, type = "react" }) {
-  const icons = {
-    react: <FaReact />,
-  }
-  return <Wrapper speed={speed}>{icons[type]}</Wrapper>
+export default function Icon({ speed, icon, ...props }) {
+  return <Wrapper speed={speed}>{icon ? icon : <FaReact />}</Wrapper>
 }
 
 const Wrapper = styled.div`
-  svg {
+  svg,
+  img {
     color: #ff715b;
     @keyframes example {
       from {

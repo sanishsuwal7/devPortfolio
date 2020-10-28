@@ -137,7 +137,7 @@ export default function Navbar(props) {
       onMouseLeave={hasLeft}
     >
       <Link to="/">
-        <div>Alejandro Aspinwall</div>
+        <div>BRAND</div>
       </Link>
       {hidenav ? null : (
         <ul className={hidenav ? "invisible" : ""}>

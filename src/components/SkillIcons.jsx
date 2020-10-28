@@ -6,15 +6,11 @@ export default function SkillIcons() {
   return (
     <Wrapper>
       <AllTags>
-        <li>Javascript</li>
-        <li>Python</li>
-        <li>React</li>
-        <li>NodeJS</li>
-        <li>GraphQL</li>
-        <li>Sequelize</li>
-        <li>Unity3D</li>
-        <li>C#</li>
-        <li>C++</li>
+        <li>E-commerce</li>
+        <li>Comprehensive Analytics</li>
+        <li>Machine Learning</li>
+        <li>Web Optimization</li>
+        <li>Social media pipelines</li>
       </AllTags>
     </Wrapper>
   )

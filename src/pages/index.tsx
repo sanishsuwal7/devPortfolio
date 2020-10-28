@@ -27,6 +27,8 @@ import Social from "../components/Social"
 import SkillIcons from "../components/SkillIcons"
 
 import Steam from "../draw/steam/steam_1.svg"
+import Icon from "../components/Icon"
+import circle from "../../content/assets/icon.svg"
 import Cup from "../draw/cup.svg"
 
 const Index = ({ data }) => {
@@ -60,7 +62,7 @@ const Index = ({ data }) => {
 
 
 
-        WEBSITE DESIGNED AND BUILT BY ALEJANDRO ASPINWALL  _______________________________________________
+        WEBSITE DESIGNED AND BUILT BY BRAND  _______________________________________________
 
 
                 
@@ -79,9 +81,17 @@ const Index = ({ data }) => {
 
   const getTop = () => {
     return (
-      <div>
+      <div style={{ position: "relative" }}>
         {makeClouds(20, 3)}
         <div className="marquee">
+          {/*           <Icon
+            speed={"24s"}
+            icon={
+              <div id="spinner">
+                <img style={{ height: "200px", width: "200px" }} src={circle} />
+              </div>
+            }
+          /> */}
           <Hero invert={true}>{highlightWords(title)}</Hero>
           <Social />
           <HeroP>{subtitle}</HeroP>
@@ -95,8 +105,10 @@ const Index = ({ data }) => {
 
     return (
       <Bio>
+        <SkillIcons />
         <div id="bioContainer">
           <h1 style={{ height: "3rem" }}>{highlightWords(title)}</h1>
+
           <ImageFull id="bioImage">
             <Img
               fluid={image.childImageSharp.fluid}
@@ -106,7 +118,6 @@ const Index = ({ data }) => {
 
           <div id="bioText">
             {/* TODO Add skill icons */}
-            <SkillIcons />
 
             {features.map(feature => {
               return (
@@ -126,12 +137,14 @@ const Index = ({ data }) => {
   }
   const getProjects = projects => {
     return projects.map((project, i) => {
-      const { action, body, link, tags, title, image } = project
+      const { action, body, link, tags, title, image, type } = project
+
+      const TYPE = type || `CASE STUDY`
 
       return (
         <Projects>
           <SectionTag className="latest" style={{ gridArea: "top" }}>
-            LATEST WORK
+            {TYPE.toUpperCase()}
           </SectionTag>
           <Header style={{ gridArea: "title" }}>{highlightWords(title)}</Header>
           <Tags>
@@ -298,6 +311,7 @@ export const pageQuery = graphql`
             link
             tags
             title
+            type
             image {
               childImageSharp {
                 fluid(maxWidth: 1000, quality: 100) {
