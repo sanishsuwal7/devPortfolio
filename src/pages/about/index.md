@@ -4,7 +4,7 @@ internal: true
 drafter: I actually wrote a [blog post](/cloud-resume) about how I made it.
 ---
 
-Hi, leaders! My name is Alejandro Aspinwall. I’m a software engineer based in Montreal Canada 🇨🇦 I have worked in the entertainment industry and media for 15 years. My most recent role was as the lead technology researcher at Playhybrid, where I was working on creating Augmented Reality experiences for Facebook.
+Hi, leaders! My name is BRAND Aspinwall. I’m a software engineer based in Montreal Canada 🇨🇦 I have worked in the entertainment industry and media for 15 years. My most recent role was as the lead technology researcher at Playhybrid, where I was working on creating Augmented Reality experiences for Facebook.
 
 My industry experience has taught me the **power of storytelling** and the important role it plays for brands. I’m currently a Business Technology Consultant working with stakeholders to improve their value proposition in the digital space.
 

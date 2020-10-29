@@ -4,7 +4,7 @@ module.exports = {
     lang: "en-US",
     author: {
       name: `BRAND`,
-      summary: `Alejandro loves to build tools to simplify your digital needs`,
+      summary: `BRAND loves to build tools to simplify your digital needs`,
     },
     description: `I'm a software engineer specialized in web development and cloud solutions. My toolset includes javascript, python, react, html, css, gatsbyjs, nextjsx and a whole lot of creativity.`,
     siteUrl: `https://aaspinwall.com/`,

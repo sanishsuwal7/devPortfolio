@@ -195,6 +195,8 @@ export const Wrapper = styled.div`
 `
 
 export const Section = styled.section`
+  max-width: 1100px;
+  margin: auto;
   background: ${props => (props.invert ? colors.background : colors.white)};
   color: ${props => (props.invert ? colors.white : colors.background)};
 

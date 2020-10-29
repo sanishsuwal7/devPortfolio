@@ -5,4 +5,4 @@ description: We analyzed our posts on slack to find out how we perceive ourselve
 draft: true
 ---
 
-We an
+Being part oft eh brand strategy sprint
