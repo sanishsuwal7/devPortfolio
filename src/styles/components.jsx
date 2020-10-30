@@ -134,6 +134,12 @@ export const Wrapper = styled.div`
   position: relative;
   padding-top: 3rem;
 
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .topButton {
     font-family: Montserrat;
     font-weight: bold;
@@ -195,7 +201,7 @@ export const Wrapper = styled.div`
 `
 
 export const Section = styled.section`
-  max-width: 1100px;
+  max-width: 500px;
   margin: auto;
   background: ${props => (props.invert ? colors.background : colors.white)};
   color: ${props => (props.invert ? colors.white : colors.background)};
