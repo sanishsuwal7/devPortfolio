@@ -106,7 +106,7 @@ const Prof = ({ data }) => {
     }
     CONTENT[el.frontmatter.name] = el.html
   })
-  const { intro, timeToRead, tweet, words, sentiment, time } = CONTENT
+  const { intro, timeToRead, tweet, words, sentiment, time, nerd } = CONTENT
 
   console.log(CONTENT)
 
@@ -164,12 +164,14 @@ const Prof = ({ data }) => {
         </div>
 
         <div dangerouslySetInnerHTML={{ __html: sentiment }}></div>
+        <div dangerouslySetInnerHTML={{ __html: nerd }}></div>
         <div
           style={{
             display: "flex",
             justifyContent: "center",
             margin: "auto",
             maxWidth: "500px",
+            flexWrap: "wrap",
           }}
         >
           <ReactWordcloud

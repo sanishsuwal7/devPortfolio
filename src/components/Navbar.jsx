@@ -123,7 +123,7 @@ export default function Navbar(props) {
     site: { siteMetadata },
   } = data
 
-  const blacklist = ["blog", "payment"]
+  const blacklist = ["blog", "payment", "profg"]
   const delayedHide = delay(() => setHidenav(true), 1000)
 
   const hasLeft = () => {
@@ -157,7 +157,7 @@ export default function Navbar(props) {
               </Link>
             )
           })}
-          {["projects", "contact"].map((link, i) => (
+          {["contact"].map((link, i) => (
             <AnchorLink
               tabIndex={"0"}
               to={`/#${link}`}
