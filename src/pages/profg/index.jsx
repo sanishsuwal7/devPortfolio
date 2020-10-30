@@ -81,7 +81,12 @@ const Graph = styled.div`
   }
 `
 
-const size = [300, 700]
+const Note = styled(HeroP)`
+  padding: 0;
+  margin: 1rem 0;
+`
+
+const size = [300, 500]
 
 const callbacks = {
   getWordColor: word => (word.value > 50 ? "#ff715b" : "#FFA799"),
@@ -110,8 +115,8 @@ const Prof = ({ data }) => {
       <SEO title="Prof G Data analysis" />
       <Section>
         <Hero>Prof G's Brand Strategy Sprint - About The Sprinters </Hero>
-        <HeroP>October 29, 2020</HeroP>
-        <HeroP>{timeToRead} minute read</HeroP>
+        <Note>October 29, 2020</Note>
+        <Note>{timeToRead} minute read</Note>
         {/* <Tweet /> */}
         <div dangerouslySetInnerHTML={{ __html: intro }}></div>
 
@@ -184,7 +189,7 @@ const Prof = ({ data }) => {
             words={positive}
           />
         </div>
-        <HeroP>Hover/tap to see how many times each word occurred.</HeroP>
+        <Note>Hover/tap to see how many times each word occurred.</Note>
         <div dangerouslySetInnerHTML={{ __html: time }}></div>
       </Section>
     </Layout>
