@@ -285,7 +285,7 @@ const Index = ({ data }) => {
       <SEO title="Welcome" />
       <Section invert={true}>{getTop()}</Section>
       <Section id="bio">{getBio(content.bio)}</Section>
-      <Section id="projects">{getProjects(content.projects)}</Section>
+      {/*       <Section id="projects">{getProjects(content.projects)}</Section> */}
       <Section id="contact">{getContact(content.contact)}</Section>
     </Layout>
   )
