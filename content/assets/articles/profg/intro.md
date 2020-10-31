@@ -5,7 +5,7 @@ internal: true
 type: custom-blog
 ---
 
-Being part of Prof G's brand strategy sprint has been a unique experience from day one. It's been a huge opportunity to meet people from very diverse backgrounds. We come together because we're embracing change and want \_\_
+Being part of Prof G's brand strategy sprint has been unique from day one. It's been a huge opportunity to meet people from very diverse backgrounds. We come together because we're embracing change and want to be part of this massive learning experience.
 
 On the first day of the sprint we were added to the Slack workspace. Here we were greeted by the awesome TAs and admins that would help us through the course. There was a channel called #networking where the welcome message was. "Share a quick intro about who you are, what you do, and why you’re here." I quickly realized that there were over a thousand participants on the community!
 

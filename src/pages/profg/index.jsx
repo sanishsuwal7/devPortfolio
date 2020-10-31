@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useCallback } from "react"
 import Layout from "../../templates/layout"
 import PropTypes from "prop-types"
 import {
@@ -7,9 +7,10 @@ import {
   Markdown,
   HeroP,
 } from "../../styles/components"
+import { Flex } from "@chakra-ui/core"
 import ReadTime from "../../components/ReadTime"
 import SEO from "../../components/seo"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import styled from "styled-components"
 import Button from "../../components/ui/button"
 
@@ -19,6 +20,8 @@ import twImg from "../../../content/assets/images/tweet.png"
 
 import { positive, negative, all } from "../../utils/data"
 import msglen from "../../../content/assets/svg/msglen.svg"
+import sentimentPlot from "../../../content/assets/svg/sentiment.svg"
+import timePlot from "../../../content/assets/svg/time.svg"
 import up from "lodash/capitalize"
 import "tippy.js/dist/tippy.css"
 import "tippy.js/animations/scale.css"
@@ -36,6 +39,15 @@ const Hero = styled(H)`
 const Sub = styled(Hero)`
   font-size: 1.2rem;
   font-weight: bold;
+`
+
+const Email = styled.a`
+  font-size: 1.3rem;
+  margin: 2rem 0;
+  :hover {
+    filter: brightness(1.2);
+  }
+  cursor: pointer;
 `
 
 const options = {
@@ -73,11 +85,27 @@ const Graph = styled.div`
   .x {
     bottom: 5%;
     left: 50%;
+    transform: translateX(-50%);
   }
   .y {
-    transform: rotate(-90deg);
-    left: 0;
+    transform: rotate(-90deg) translateY(-50%) translateX(10%);
+    left: -10%;
     top: 50%;
+  }
+  img {
+    margin-left: 2rem;
+  }
+`
+
+const NerdBox = styled.div`
+  div:nth-child(1) {
+    font-family: Muli;
+    color: #ff715b;
+    font-weight: bold;
+  }
+  div:nth-child(2) {
+    background: lightgray;
+    padding: 1rem;
   }
 `
 
@@ -106,9 +134,36 @@ const Prof = ({ data }) => {
     }
     CONTENT[el.frontmatter.name] = el.html
   })
-  const { intro, timeToRead, tweet, words, sentiment, time, nerd } = CONTENT
+  const {
+    intro,
+    timeToRead,
+    tweet,
+    words,
+    sentiment,
+    time,
+    nerd,
+    good,
+    conclusion,
+  } = CONTENT
 
   console.log(CONTENT)
+
+  const [more, setMore] = useState(false)
+  const toggleMore = useCallback(() => setMore(!more), [more])
+
+  const slidingButton = (action, link = "/", alt) => {
+    return [0, 0].map((e, i) =>
+      alt ? (
+        <div className="topButton" tabIndex={i === 0 ? 0 : -1} onClick={alt}>
+          {action}
+        </div>
+      ) : (
+        <Link tabIndex={i === 0 ? 0 : -1} to={link}>
+          {action}
+        </Link>
+      )
+    )
+  }
 
   return (
     <Layout>
@@ -149,7 +204,7 @@ const Prof = ({ data }) => {
               enableTooltip: true,
               deterministic: true,
               fontFamily: "Montserrat",
-              fontSizes: [30, 80],
+              fontSizes: [20, 80],
               fontStyle: "normal",
               fontWeight: "normal",
               padding: 2,
@@ -164,7 +219,21 @@ const Prof = ({ data }) => {
         </div>
 
         <div dangerouslySetInnerHTML={{ __html: sentiment }}></div>
-        <div dangerouslySetInnerHTML={{ __html: nerd }}></div>
+        <Graph className="center">
+          <span className="y">Number of posts</span>
+          <span className="x">Sentiment score</span>
+          <img src={sentimentPlot} />
+        </Graph>
+
+        <NerdBox>
+          <div onClick={toggleMore}>
+            {!more ? `Click here to read a detailed explanation ` : `Show less`}
+          </div>
+          {more ? <div dangerouslySetInnerHTML={{ __html: nerd }}></div> : null}
+        </NerdBox>
+
+        <div dangerouslySetInnerHTML={{ __html: good }}></div>
+
         <div
           style={{
             display: "flex",
@@ -193,6 +262,29 @@ const Prof = ({ data }) => {
         </div>
         <Note>Hover/tap to see how many times each word occurred.</Note>
         <div dangerouslySetInnerHTML={{ __html: time }}></div>
+        <Graph className="center">
+          <span className="x">Time</span>
+          <span className="y">Number of posts</span>
+          <img src={timePlot} />
+        </Graph>
+        <div dangerouslySetInnerHTML={{ __html: conclusion }}></div>
+      </Section>
+      <Section>
+        <Hero>Let's have a chat</Hero>
+        <P>
+          The digital world changes fast ⚡️ We would love to help you move with
+          it ☁️
+        </P>
+        <Button
+          to="https://calendly.com/aaspinwall/15"
+          style={{ gridArea: "button" }}
+        >
+          Get in touch
+        </Button>
+      </Section>
+      <Section>
+        <P>Thoughts? I'd love to hear from you</P>
+        <Email href={"mailto:aaspinwall@gmail.com"}>aaspinwall@gmail.com</Email>
       </Section>
     </Layout>
   )

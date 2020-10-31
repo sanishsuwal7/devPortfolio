@@ -7,7 +7,7 @@ import { Button as B } from "@chakra-ui/core"
 const Button = ({ children, to, ...props }) => {
   const external = to.includes("http")
   return (
-    <B {...props}>
+    <B variant="ghost" {...props}>
       {external ? (
         <a href={to} target="blank">
           {children}

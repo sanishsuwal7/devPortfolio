@@ -119,13 +119,13 @@ export const all = [
   { text: "currently", value: 88 },
   { text: "learning", value: 86 },
   { text: "digital", value: 84 },
-  /* { text: "also", value: 82 }, */
+  { text: "also", value: 82 },
   { text: "love", value: 77 },
   { text: "brands", value: 76 },
   { text: "next", value: 75 },
   { text: "agency", value: 71 },
   { text: "experience", value: 69 },
-  /* { text: "name", value: 67 }, */
+  { text: "name", value: 67 },
   { text: "get", value: 63 },
   { text: "group", value: 63 },
   { text: "tech", value: 63 },
@@ -143,6 +143,18 @@ export const all = [
   { text: "one", value: 50 },
   { text: "course", value: 50 },
   { text: "prof", value: 50 },
+  { text: "help", value: 49 },
+  { text: "design", value: 48 },
+  { text: "last", value: 48 },
+  { text: "product", value: 48 },
+  { text: "management", value: 48 },
+  { text: "global", value: 47 },
+  { text: "worked", value: 46 },
+  { text: "startup", value: 46 },
+  { text: "really", value: 44 },
+  { text: "content", value: 44 },
+  { text: "part", value: 44 },
+  { text: "companies", value: 43 },
 ]
 
 /* export const postive = [
