@@ -78,9 +78,14 @@ const P = styled.p``
 const Graph = styled.div`
   position: relative;
   font-family: Montserrat;
+
+  #sprinters {
+    left: 0%;
+  }
   .x,
   .y {
     position: absolute;
+    font-weight: bold;
   }
   .x {
     bottom: 5%;
@@ -177,7 +182,9 @@ const Prof = ({ data }) => {
 
         <Graph className="center">
           <span className="x">Words</span>
-          <span className="y">Sprinters</span>
+          <span id="sprinters" className="y">
+            Sprinters
+          </span>
           <img src={msglen} />
         </Graph>
         <div dangerouslySetInnerHTML={{ __html: tweet }}></div>
@@ -244,6 +251,12 @@ const Prof = ({ data }) => {
           }}
         >
           <ReactWordcloud
+            callbacks={callbacks}
+            options={options}
+            size={size}
+            words={positive}
+          />
+          <ReactWordcloud
             callbacks={{
               ...callbacks,
               getWordColor: word => (word.value > 5 ? "black" : "grey"),
@@ -251,13 +264,6 @@ const Prof = ({ data }) => {
             options={options}
             size={size}
             words={negative}
-          />
-
-          <ReactWordcloud
-            callbacks={callbacks}
-            options={options}
-            size={size}
-            words={positive}
           />
         </div>
         <Note>Hover/tap to see how many times each word occurred.</Note>
