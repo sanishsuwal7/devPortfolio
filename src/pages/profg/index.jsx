@@ -175,7 +175,7 @@ const Prof = ({ data }) => {
       <SEO title="Prof G Data analysis" />
       <Section>
         <Hero>Prof G's Brand Strategy Sprint - About The Sprinters </Hero>
-        <Note>October 29, 2020</Note>
+        <Note>October 31, 2020</Note>
         <Note>{timeToRead} minute read</Note>
         {/* <Tweet /> */}
         <div dangerouslySetInnerHTML={{ __html: intro }}></div>
@@ -255,6 +255,7 @@ const Prof = ({ data }) => {
             options={options}
             size={size}
             words={positive}
+            style={{ textAlign: "-webkit-center" }}
           />
           <ReactWordcloud
             callbacks={{
@@ -264,6 +265,7 @@ const Prof = ({ data }) => {
             options={options}
             size={size}
             words={negative}
+            style={{ textAlign: "-webkit-center" }}
           />
         </div>
         <Note>Hover/tap to see how many times each word occurred.</Note>
