@@ -134,6 +134,12 @@ export const Wrapper = styled.div`
   position: relative;
   padding-top: 3rem;
 
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .topButton {
     font-family: Montserrat;
     font-weight: bold;
@@ -195,6 +201,7 @@ export const Wrapper = styled.div`
 `
 
 export const Section = styled.section`
+  margin: auto;
   background: ${props => (props.invert ? colors.background : colors.white)};
   color: ${props => (props.invert ? colors.white : colors.background)};
 
@@ -205,6 +212,14 @@ export const Section = styled.section`
     min-height: 65vh;
     h1 {
       margin-top: 25vh;
+    }
+    #spinner {
+      position: absolute;
+      top: 33%;
+      left: 33%;
+      margin: 0;
+      z-index: 100;
+      opacity: 0.5;
     }
   }
 
