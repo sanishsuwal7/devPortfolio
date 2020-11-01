@@ -123,7 +123,7 @@ export default function Navbar(props) {
     site: { siteMetadata },
   } = data
 
-  const blacklist = ["blog", "payment"]
+  const blacklist = ["blog", "payment", "profg"]
   const delayedHide = delay(() => setHidenav(true), 1000)
 
   const hasLeft = () => {
@@ -143,6 +143,13 @@ export default function Navbar(props) {
         <ul className={hidenav ? "invisible" : ""}>
           {/* Links to all pages */}
           {nodes.map((node, i) => {
+            if (i === 2) {
+              return (
+                <Link to={"/profg"} tabIndex={"0"}>
+                  <li>blog</li>
+                </Link>
+              )
+            }
             const path = node.path
             if (
               path.includes("404") ||
