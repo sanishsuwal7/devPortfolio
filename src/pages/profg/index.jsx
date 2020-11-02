@@ -123,7 +123,7 @@ const size = [300, 500]
 
 const callbacks = {
   getWordColor: word => (word.value > 50 ? "#ff715b" : "#FFA799"),
-  onWordClick: (e, i) => console.log(e, i),
+  /* onWordClick: (e, i) => console.log(e, i), */
   getWordTooltip: word => ` ${word.value}`,
 
   /* `${word.text} (${word.value}) [${word.value > 50 ? "good" : "bad"}]`, */
@@ -151,7 +151,7 @@ const Prof = ({ data }) => {
     conclusion,
   } = CONTENT
 
-  console.log(CONTENT)
+  //console.log(CONTENT)
 
   const [more, setMore] = useState(false)
   const toggleMore = useCallback(() => setMore(!more), [more])
@@ -172,7 +172,11 @@ const Prof = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Prof G Data analysis" />
+      <SEO
+        title="Prof G Data analysis"
+        thumb={"profg.png"}
+        description={`Prof G's brand strategy sprint has been unique from day one. There are +1,000 students networking! We crunched the numbers to get some insights into the group.`}
+      />
       <Section>
         <Hero>Prof G's Brand Strategy Sprint - About The Sprinters </Hero>
         <Note>October 31, 2020</Note>
