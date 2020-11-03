@@ -201,6 +201,7 @@ export const Wrapper = styled.div`
 `
 
 export const Section = styled.section`
+  max-width: 1100px;
   margin: auto;
   background: ${props => (props.invert ? colors.background : colors.white)};
   color: ${props => (props.invert ? colors.white : colors.background)};
@@ -225,6 +226,9 @@ export const Section = styled.section`
 
   #contactBox {
     position: relative;
+    max-width: 700px;
+    margin: auto;
+    padding: auto 2rem;
   }
 `
 export const CupContainer = styled.div`

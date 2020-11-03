@@ -17,6 +17,7 @@ import {
   Paragraph,
   Header,
   CupContainer,
+  colors,
 } from "../styles/components"
 
 import styled from "styled-components"
@@ -80,7 +81,7 @@ const Index = ({ data }) => {
   const getTop = () => {
     return (
       <div>
-        {makeClouds(20, 3)}
+        {makeClouds(30, 1)}
         <div className="marquee">
           <Hero invert={true}>{highlightWords(title)}</Hero>
           <Social />
@@ -162,9 +163,16 @@ const Index = ({ data }) => {
     })
   }
 
+  const HeroSection = styled(Section)`
+    max-width: 100vw;
+  `
+
   const Email = styled.a`
     font-size: 1.3rem;
-    margin: 2rem 0;
+    * {
+      padding-bottom: 1rem;
+      margin: 2rem 0 !important;
+    }
     :hover {
       filter: brightness(1.2);
     }
@@ -209,7 +217,7 @@ const Index = ({ data }) => {
 
         <Email href={"mailto:aaspinwall@gmail.com"}>aaspinwall@gmail.com</Email>
 
-        <Button style={{ gridArea: "button" }}>
+        <Button style={{ gridArea: "button", marginTop: "1rem" }}>
           {slidingButton(
             action,
             "/",
@@ -249,19 +257,19 @@ const Index = ({ data }) => {
   }
 
   const makeClouds = (cloudCount: number, mult: number = 1) => {
-    const cloudArray = [...Array(cloudCount).keys()]
+    const cloudArray = [...Array(cloudCount * mult).keys()]
     return cloudArray.map(cloudComponent => {
-      function r(min, max) {
+      function randomizeValue(min, max) {
         const rand = Math.random() * (max - min) + min
         return rand.toString()
       }
       return (
         <Clouds
-          roll={`${r(120, 300)}s`}
-          top={`${r(12, 90)}vh`}
-          pulse={`${r(7, 12)}s`}
-          size={`${r(0.5, 7)}rem`}
-          offset={`${r(-10, 90)}vw`}
+          roll={`${randomizeValue(120, 300)}s`}
+          top={`${randomizeValue(12, 90)}vh`}
+          pulse={`${randomizeValue(7, 12)}s`}
+          size={`${randomizeValue(0.5, 7)}rem`}
+          offset={`${randomizeValue(-10, 90)}vw`}
         />
       )
     })
@@ -270,7 +278,14 @@ const Index = ({ data }) => {
   return (
     <Layout invert={true}>
       <SEO title="Welcome" />
-      <Section invert={true}>{getTop()}</Section>
+      <div
+        style={{
+          padding: "0 clamp(1rem, 7vw, 200px)",
+          background: colors.background,
+        }}
+      >
+        <HeroSection invert={true}>{getTop()}</HeroSection>
+      </div>
       <Section id="bio">{getBio(content.bio)}</Section>
       <Section id="projects">{getProjects(content.projects)}</Section>
       <Section id="contact">{getContact(content.contact)}</Section>

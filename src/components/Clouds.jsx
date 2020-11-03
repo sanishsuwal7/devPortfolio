@@ -11,12 +11,12 @@ import cloud_5 from "../draw/cloud_5.svg"
 export default function Clouds({ roll, top, pulse, size, offset }) {
   const thisCloud = useRef()
 
-  function r(min, max) {
+  function randomizeValue(min, max) {
     const rand = Math.random() * (max - min) + min
     return Math.floor(rand)
   }
   const cloudArray = [cloud_0, cloud_1, cloud_2, cloud_3, cloud_4, cloud_5]
-  const index = r(3, 6)
+  const index = randomizeValue(3, 6)
   const Cloud = cloudArray[index]
 
   return (

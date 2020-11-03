@@ -1,14 +1,17 @@
 import React, { useState, useCallback } from "react"
 import Layout from "../../templates/layout"
+import { FaVideo } from "react-icons/fa"
 import PropTypes from "prop-types"
 import {
   Hero as H,
   Section as S,
   Markdown,
   HeroP,
+  colors,
 } from "../../styles/components"
 import { Flex } from "@chakra-ui/core"
 import ReadTime from "../../components/ReadTime"
+import Social from "../../components/Social"
 import SEO from "../../components/seo"
 import { graphql, Link } from "gatsby"
 import styled from "styled-components"
@@ -23,6 +26,7 @@ import msglen from "../../../content/assets/svg/msglen.svg"
 import sentimentPlot from "../../../content/assets/svg/sentiment.svg"
 import timePlot from "../../../content/assets/svg/time.svg"
 import up from "lodash/capitalize"
+
 import "tippy.js/dist/tippy.css"
 import "tippy.js/animations/scale.css"
 
@@ -287,11 +291,15 @@ const Prof = ({ data }) => {
           The digital world changes fast ⚡️ We would love to help you move with
           it ☁️
         </P>
+        <Social c={"black"} h={colors.accent} />
         <Button
           to="https://calendly.com/aaspinwall/15"
           style={{ gridArea: "button" }}
         >
-          Get in touch
+          <div className="center">
+            {" "}
+            {<FaVideo />} <div style={{ paddingLeft: "1rem" }}>Book a call</div>{" "}
+          </div>
         </Button>
       </Section>
       <Section>

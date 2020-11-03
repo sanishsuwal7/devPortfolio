@@ -1,10 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `BRAND | Software Engineer`,
+    title: `Alejandro Aspinwall | Software Engineer`,
     lang: "en-US",
     author: {
-      name: `BRAND`,
-      summary: `BRAND loves to build tools to simplify your digital needs`,
+      name: `Alejandro Aspinwall`,
+      summary: `Alejandro Aspinwall loves to build tools to simplify your digital needs`,
     },
     description: `I'm a software engineer specialized in web development and cloud solutions. My toolset includes javascript, python, react, html, css, gatsbyjs, nextjsx and a whole lot of creativity.`,
     siteUrl: `https://aaspinwall.com/`,
@@ -174,8 +174,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `BRAND | Software Engineer`,
-        short_name: `BRAND Software Engineer`,
+        name: `Alejandro Aspinwall | Software Engineer`,
+        short_name: `Alejandro Aspinwall Software Engineer`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#ff715b`,

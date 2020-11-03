@@ -2,7 +2,7 @@
 body {
   color: #121e27;
   background: white;
-  max-width: 80rem;
+  /* max-width: 80rem; */
   margin: auto;
   overflow-x: hidden;
 }
