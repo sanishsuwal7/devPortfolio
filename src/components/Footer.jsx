@@ -2,50 +2,55 @@ import React from "react"
 import { colors as c } from "../styles/components"
 import { Link } from "gatsby"
 import { Box } from "@chakra-ui/core"
+import Sc from "../components/Social"
 import styled from "styled-components"
 
 const Foot = styled.footer`
   position: relative;
-  padding: 0px clamp(1rem, 7vw, 200px);
+  padding: 2rem clamp(1rem, 7vw, 200px);
   z-index: 2;
-  width: 100%;
-  padding: 3.2rem 2rem 3.2rem;
-  display: flex;
-  -webkit-box-pack: justify;
-  justify-content: space-between;
   background-color: ${c.background};
-  > * {
+  #footWrap {
+    display: grid;
     max-width: 1100px;
     margin-left: auto;
     margin-right: auto;
+    > * {
+      padding: 1rem 0;
+    }
+  }
+  @media only screen and (min-width: 62em) {
+    #footWrap {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 `
+
+const Social = styled(Sc)``
 
 const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.5rem;
+  gap: 0 0.5rem;
 `
 
 const Heading = styled.div`
+  display: block;
+  font-weight: bold;
   color: ${c.grey};
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 `
 
-const A = ({ text, link }) => (
-  <a target="blank" href={link}>
-    {text}
-  </a>
-)
 const To = ({ text, link }) => <Link to={link}>{text}</Link>
 
-const Logo = styled.div`
-  color: white;
-  font-size: 1.4rem;
-  line-height: 2rem;
-  text-align: left;
-  font-family: "Montserrat";
-  margin-bottom: 1rem;
+const Logo = styled(Link)`
+  color: white !important;
+  font-size: 1.4rem !important;
+  line-height: 2rem !important;
+  font-family: "Montserrat" !important;
+  margin-bottom: 1rem !important;
+  padding-bottom: 1rem !important;
 `
 
 const Div = Box
@@ -53,16 +58,16 @@ const Div = Box
 export default function Footer() {
   return (
     <Foot>
-      <>
+      <div id="footWrap">
         <Div maxW="200px" color={c.faded}>
-          <Logo>Alejandro Aspinwall</Logo>
-          <div>
+          <Logo to="/">Alejandro Aspinwall</Logo>
+          <div style={{ fontSize: "0.8rem", marginTop: "0.5rem" }}>
             © {new Date().getFullYear()}, Built and designed by Alejandro
             Aspinwall
           </div>
         </Div>
 
-        <Div>
+        <Div w="200px">
           <Heading>Links</Heading>
           <Grid>
             <To text="About" link="/about"></To>
@@ -72,15 +77,13 @@ export default function Footer() {
           </Grid>
         </Div>
 
-        <Div display="grid">
-          <Heading>Social</Heading>
+        <Div w="200px">
+          <Heading>Get in touch</Heading>
           <Div display="grid">
-            <A text="twitter" link="https://twitter.com/aaspinwall"></A>
-            <A text="linkedin" link=""></A>
-            <A text="github" link=""></A>
+            <Social c={"white"} h={"white"} p={"0rem 1rem 2rem 0px"} />
           </Div>
         </Div>
-      </>
+      </div>
     </Foot>
   )
 }

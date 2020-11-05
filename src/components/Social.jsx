@@ -3,9 +3,25 @@ import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa"
 import { colors } from "../styles/components"
 import styled from "styled-components"
 
-export default function Social({ c = colors.accent, h = "white" }) {
+const SocialIcons = styled.div`
+  font-size: 2rem;
+
+  a {
+    padding: ${props => props.p || "2rem 1rem 2rem 0px"};
+    filter: opacity(0.8);
+    color: ${props => props.c};
+    transition: filter 0.4s ease-in-out, color 0.4s ease-in-out;
+    :hover,
+    :focus {
+      filter: opacity(1);
+      color: ${props => props.h};
+    }
+  }
+`
+
+export default function Social({ c = colors.accent, h = "white", p }) {
   return (
-    <SocialIcons c={c} h={h}>
+    <SocialIcons c={c} h={h} p={p}>
       <a href={`https://github.com/aaspinwall`} target="blank">
         <FaGithub />
       </a>
@@ -21,19 +37,3 @@ export default function Social({ c = colors.accent, h = "white" }) {
     </SocialIcons>
   )
 }
-
-const SocialIcons = styled.div`
-  font-size: 2rem;
-
-  a {
-    padding: 2rem 1rem 2rem 0px;
-    filter: opacity(0.8);
-    color: ${props => props.c};
-    transition: filter 0.4s ease-in-out, color 0.4s ease-in-out;
-    :hover,
-    :focus {
-      filter: opacity(1);
-      color: ${props => props.h};
-    }
-  }
-`
