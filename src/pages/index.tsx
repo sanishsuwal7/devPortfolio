@@ -287,6 +287,24 @@ const Index = ({ data }) => {
         <HeroSection invert={true}>{getTop()}</HeroSection>
       </div>
       <Section id="bio">{getBio(content.bio)}</Section>
+      <Section id="featured">
+        <Hero>Featured</Hero>
+        <div>
+          <HeroP>Data analysis</HeroP>
+          <ProjectImage>
+            <img
+              style={{
+                height: "400px",
+                width: "400px",
+                objectFit: "fill",
+                border: "1px solid #8080803b",
+              }}
+              src="img/profg.png"
+              className="imageFluidContainer"
+            />
+          </ProjectImage>
+        </div>
+      </Section>
       <Section id="projects">{getProjects(content.projects)}</Section>
       <Section id="contact">{getContact(content.contact)}</Section>
     </Layout>

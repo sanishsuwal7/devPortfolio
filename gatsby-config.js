@@ -16,6 +16,12 @@ module.exports = {
     "gatsby-plugin-netlify-cms",
     `gatsby-plugin-sitemap`,
     {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [`gatsby-remark-responsive-iframe`],
+      },
+    },
+    {
       resolve: `gatsby-plugin-chakra-ui`,
       options: {
         isResettingCSS: false,

@@ -131,6 +131,11 @@ export const Space = styled.div`
 `
 
 export const Wrapper = styled.div`
+  .leaflet-popup-content {
+    div {
+      color: green !important;
+    }
+  }
   position: relative;
   padding-top: 3rem;
 

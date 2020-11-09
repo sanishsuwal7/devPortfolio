@@ -145,7 +145,7 @@ export default function Navbar(props) {
           {nodes.map((node, i) => {
             if (i === 2) {
               return (
-                <Link to={"/profg"} tabIndex={"0"}>
+                <Link to={"/blog"} tabIndex={"0"}>
                   <li>blog</li>
                 </Link>
               )

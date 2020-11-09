@@ -1,23 +1,10 @@
 import React, { useState, useCallback } from "react"
 import Layout from "../../templates/layout"
-import { FaVideo } from "react-icons/fa"
-import PropTypes from "prop-types"
-import {
-  Hero as H,
-  Section as S,
-  Markdown,
-  HeroP,
-  colors,
-} from "../../styles/components"
-import { Flex } from "@chakra-ui/core"
-import ReadTime from "../../components/ReadTime"
-import Social from "../../components/Social"
+import { Hero, Note, HeroP, Section } from "../../components/ui/screens/blog"
+import Social from "../../components/ui/Social"
 import SEO from "../../components/seo"
 import { graphql, Link } from "gatsby"
 import styled from "styled-components"
-import Button from "../../components/ui/button"
-
-import Tweet from "../../components/ui/screens/"
 import ReactWordcloud from "react-wordcloud"
 import twImg from "../../../content/assets/images/tweet.png"
 
@@ -29,30 +16,6 @@ import up from "lodash/capitalize"
 
 import "tippy.js/dist/tippy.css"
 import "tippy.js/animations/scale.css"
-
-const Section = styled(S)`
-  max-width: 600px;
-  h2 {
-    font-family: Montserrat;
-    font-weight: bold;
-  }
-`
-const Hero = styled(H)`
-  font-size: 2.3rem !important;
-`
-const Sub = styled(Hero)`
-  font-size: 1.2rem;
-  font-weight: bold;
-`
-
-const Email = styled.a`
-  font-size: 1.3rem;
-  margin: 2rem 0;
-  :hover {
-    filter: brightness(1.2);
-  }
-  cursor: pointer;
-`
 
 const options = {
   colors: ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b"],
@@ -116,11 +79,6 @@ const NerdBox = styled.div`
     background: lightgray;
     padding: 1rem;
   }
-`
-
-const Note = styled(HeroP)`
-  padding: 0;
-  margin: 1rem 0;
 `
 
 const size = [300, 500]
@@ -286,26 +244,12 @@ const Prof = ({ data }) => {
         <div dangerouslySetInnerHTML={{ __html: conclusion }}></div>
       </Section>
       <Section>
-        <Hero>Let's have a chat</Hero>
-        <P>
-          The digital world changes fast ⚡️ We would love to help you move with
-          it ☁️
-        </P>
-        <Social c={"black"} h={colors.accent} />
-        <Button
-          to="https://calendly.com/aaspinwall/15"
-          style={{ gridArea: "button" }}
-        >
-          <div className="center">
-            {" "}
-            {<FaVideo />} <div style={{ paddingLeft: "1rem" }}>Book a call</div>{" "}
-          </div>
-        </Button>
+        <Hero>Related posts:</Hero>
+        <Link to="/prof-g-map">
+          Prof G's Brand Strategy Sprint - Sprinters Around The World
+        </Link>
       </Section>
-      <Section>
-        <P>Thoughts? I'd love to hear from you</P>
-        <Email href={"mailto:aaspinwall@gmail.com"}>aaspinwall@gmail.com</Email>
-      </Section>
+      <Social />
     </Layout>
   )
 }

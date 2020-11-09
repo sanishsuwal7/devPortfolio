@@ -4,9 +4,10 @@ import { Space } from "../styles/components"
 import Bio from "../components/bio"
 import Layout from "../templates/layout"
 import SEO from "../components/seo"
-import Readtime from "../components/ReadTime"
 import { rhythm, scale } from "../utils/typography"
 import { sizing } from "../styles/components"
+import Social from "../components/ui/Social"
+import { Hero, Note, HeroP, Section } from "../components/ui/screens/blog"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -17,68 +18,76 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
     <Layout title={siteTitle}>
       <SEO
         title={post.frontmatter.title}
+        thumb={post.frontmatter.thumb}
         description={post.frontmatter.description || post.excerpt}
       />
-      <Space>
-        <article>
-          <header>
-            <h1
-              style={{
-                marginTop: sizing.paddingExterior.base,
-                marginBottom: 0,
-              }}
-            >
-              {post.frontmatter.title}
-            </h1>
-            <Readtime text={post.timeToRead} />
-            <p
-              style={{
-                ...scale(-1 / 5),
-                display: `block`,
-                marginBottom: sizing.paddingExterior.base,
-              }}
-            >
-              {post.frontmatter.date}
-            </p>
-          </header>
-          <section dangerouslySetInnerHTML={{ __html: post.html }} />
-          <hr
+      {/* <Space> */}
+      <Section>
+        <header>
+          <Hero
+            style={{
+              marginTop: sizing.paddingExterior.base,
+              marginBottom: 0,
+            }}
+          >
+            {post.frontmatter.title}
+          </Hero>
+          <Note>{post.timeToRead} minute read</Note>
+          <HeroP
+            style={{
+              ...scale(-1 / 5),
+              display: `block`,
+              marginBottom: sizing.paddingExterior.base,
+            }}
+          >
+            {post.frontmatter.date}
+          </HeroP>
+        </header>
+        <section dangerouslySetInnerHTML={{ __html: post.html }} />
+        {/*           <hr
             style={{
               marginBottom: sizing.paddingExterior.base,
             }}
-          />
-          <footer>
+          /> */}
+        {/* <footer>
             <Bio />
-          </footer>
-        </article>
+          </footer> */}
+        <>
+          <Hero>Related posts:</Hero>
+          <Link to="/profg">
+            Prof G's Brand Strategy Sprint - About The Sprinters
+          </Link>
+        </>
+        <Social />
+      </Section>
 
-        <nav>
-          <ul
-            style={{
-              display: `flex`,
-              flexWrap: `wrap`,
-              justifyContent: `space-between`,
-              listStyle: `none`,
-              padding: 0,
-            }}
-          >
-            <li>
-              {previous && (
-                <Link to={previous.fields.slug} rel="prev">
-                  ← {previous.frontmatter.title}
-                </Link>
-              )}
-            </li>
-            <li>
-              {next && (
-                <Link to={next.fields.slug} rel="next">
-                  {next.frontmatter.title} →
-                </Link>
-              )}
-            </li>
-          </ul>
-        </nav>
-      </Space>
+      <nav>
+        <ul
+          style={{
+            display: `flex`,
+            flexWrap: `wrap`,
+            justifyContent: `space-between`,
+            listStyle: `none`,
+            padding: 0,
+          }}
+        >
+          <li>
+            {previous && (
+              <Link to={previous.fields.slug} rel="prev">
+                ← {previous.frontmatter.title}
+              </Link>
+            )}
+          </li>
+          <li>
+            {next && (
+              <Link to={next.fields.slug} rel="next">
+                {next.frontmatter.title} →
+              </Link>
+            )}
+          </li>
+        </ul>
+      </nav>
+      {/* </Space> */}
     </Layout>
   )
 }
@@ -99,6 +108,7 @@ export const pageQuery = graphql`
       timeToRead
       frontmatter {
         title
+        thumb
         date(formatString: "MMMM DD, YYYY")
         description
       }
