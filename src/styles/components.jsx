@@ -138,6 +138,8 @@ export const Wrapper = styled.div`
   }
   position: relative;
   padding-top: 3rem;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 
   .center {
     display: flex;

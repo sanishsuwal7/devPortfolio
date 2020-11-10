@@ -2,6 +2,7 @@ import React from "react"
 import { colors as c } from "../styles/components"
 import { Link } from "gatsby"
 import { Box } from "@chakra-ui/core"
+
 import Sc from "../components/Social"
 import styled from "styled-components"
 

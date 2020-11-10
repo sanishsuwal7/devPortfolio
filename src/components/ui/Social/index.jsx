@@ -56,10 +56,10 @@ const Soc = () => {
           </div>
         </Button>
       </Section>
-      <Section>
+      {/* <Section>
         <P>Thoughts? I'd love to hear from you</P>
         <Email href={"mailto:aaspinwall@gmail.com"}>aaspinwall@gmail.com</Email>
-      </Section>
+      </Section> */}
     </>
   )
 }

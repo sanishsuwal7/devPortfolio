@@ -1,9 +1,10 @@
 // Gatsby supports TypeScript natively!
 import React from "react"
 import { PageProps, Link, graphql } from "gatsby"
-import { Wrapper, Hero, Space } from "../styles/components"
+import { Wrapper, Hero, Space, Section as S } from "../styles/components"
 import Layout from "../templates/layout"
 import SEO from "../components/seo"
+import styled from "styled-components"
 import { rhythm } from "../utils/typography"
 
 type Data = {
@@ -29,14 +30,18 @@ type Data = {
   }
 }
 
+const Section = styled(S)`
+  min-height: 75vh;
+`
+
 const BlogIndex = ({ data }: PageProps<Data>) => {
   //const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
 
   return (
     <Layout>
-      <SEO title="All posts" />
-      <Space>
+      <SEO title="Blog" />
+      <Section>
         <article>
           <header>
             <h3
@@ -76,7 +81,7 @@ const BlogIndex = ({ data }: PageProps<Data>) => {
             </article>
           )
         })}
-      </Space>
+      </Section>
     </Layout>
   )
 }

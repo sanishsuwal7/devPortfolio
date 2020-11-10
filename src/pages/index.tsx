@@ -287,7 +287,7 @@ const Index = ({ data }) => {
         <HeroSection invert={true}>{getTop()}</HeroSection>
       </div>
       <Section id="bio">{getBio(content.bio)}</Section>
-      <Section id="featured">
+      {/*       <Section id="featured">
         <Hero>Featured</Hero>
         <div>
           <HeroP>Data analysis</HeroP>
@@ -304,7 +304,7 @@ const Index = ({ data }) => {
             />
           </ProjectImage>
         </div>
-      </Section>
+      </Section> */}
       <Section id="projects">{getProjects(content.projects)}</Section>
       <Section id="contact">{getContact(content.contact)}</Section>
     </Layout>

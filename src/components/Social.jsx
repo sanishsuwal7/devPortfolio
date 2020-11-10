@@ -1,5 +1,6 @@
 import React from "react"
 import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa"
+import { AiFillMail } from "react-icons/ai"
 import { colors } from "../styles/components"
 import styled from "styled-components"
 
@@ -33,6 +34,9 @@ export default function Social({ c = colors.accent, h = "white", p }) {
       </a>
       <a href={`https://twitter.com/aaspinwall`} target="blank">
         <FaTwitter />
+      </a>
+      <a href="mailto:aaspinwall@gmail.com">
+        <AiFillMail />
       </a>
     </SocialIcons>
   )
