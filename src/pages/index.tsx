@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 import SEO from "../components/seo"
 
 import {
-  Section,
+  Section as S,
   Hero,
   Tags,
   Button,
@@ -20,15 +20,23 @@ import {
   colors,
 } from "../styles/components"
 
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
+import { fadeIn } from "react-animations"
 
 import Clouds from "../components/Clouds"
+import SkillClouds from "../components/SkillClouds"
 import Layout from "../templates/layout"
 import Social from "../components/Social"
 import SkillIcons from "../components/SkillIcons"
 
 import Steam from "../draw/steam/steam_1.svg"
 import Cup from "../draw/cup.svg"
+
+const FadeIn = keyframes`${fadeIn}`
+
+const Section = styled(S)`
+  animation: 1s ${FadeIn};
+`
 
 const Index = ({ data }) => {
   React.useEffect(
@@ -258,21 +266,42 @@ const Index = ({ data }) => {
 
   const makeClouds = (cloudCount: number, mult: number = 1) => {
     const cloudArray = [...Array(cloudCount * mult).keys()]
-    return cloudArray.map(cloudComponent => {
-      function randomizeValue(min, max) {
-        const rand = Math.random() * (max - min) + min
-        return rand.toString()
-      }
-      return (
-        <Clouds
-          roll={`${randomizeValue(120, 300)}s`}
-          top={`${randomizeValue(12, 90)}vh`}
-          pulse={`${randomizeValue(7, 12)}s`}
-          size={`${randomizeValue(0.5, 7)}rem`}
-          offset={`${randomizeValue(-10, 90)}vw`}
-        />
-      )
-    })
+    const wordArray = [...Array((cloudCount * mult) / 2).keys()]
+    return (
+      <>
+        {cloudArray.map(() => {
+          function randomizeValue(min, max) {
+            const rand = Math.random() * (max - min) + min
+            return rand.toString()
+          }
+          return (
+            <Clouds
+              roll={`${randomizeValue(120, 300)}s`}
+              top={`${randomizeValue(12, 90)}vh`}
+              pulse={`${randomizeValue(7, 12)}s`}
+              size={`${randomizeValue(0.5, 7)}rem`}
+              offset={`${randomizeValue(-10, 90)}vw`}
+            />
+          )
+        })}
+        {wordArray.map(() => {
+          return
+          function randomizeValue(min, max) {
+            const rand = Math.random() * (max - min) + min
+            return rand.toString()
+          }
+          return (
+            <SkillClouds
+              roll={`${randomizeValue(120, 300)}s`}
+              top={`${randomizeValue(12, 90)}vh`}
+              pulse={`${randomizeValue(7, 12)}s`}
+              size={`${randomizeValue(0.3, 1.2)}rem`}
+              offset={`${randomizeValue(-10, 90)}vw`}
+            />
+          )
+        })}
+      </>
+    )
   }
 
   return (

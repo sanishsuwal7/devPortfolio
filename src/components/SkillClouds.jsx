@@ -1,18 +1,22 @@
 import React, { useRef } from "react"
 import styled from "styled-components"
 
-import cloud_3 from "../draw/cloud_3.svg"
-import cloud_4 from "../draw/cloud_4.svg"
-import cloud_5 from "../draw/cloud_5.svg"
-
-export default function Clouds({ roll, top, pulse, size, offset }) {
+export default function SkillClouds({ roll, top, pulse, size, offset }) {
   const thisCloud = useRef()
 
   function randomizeValue(min, max) {
     const rand = Math.random() * (max - min) + min
     return Math.floor(rand)
   }
-  const cloudArray = [cloud_3, cloud_4, cloud_5]
+  const cloudArray = [
+    "javascript",
+    "python",
+    "html",
+    "css",
+    "react",
+    "gatsbyjs",
+    "AWS",
+  ]
   const index = randomizeValue(0, cloudArray.length - 1)
   const Cloud = cloudArray[index]
 
@@ -25,7 +29,7 @@ export default function Clouds({ roll, top, pulse, size, offset }) {
       size={size}
       offset={offset}
     >
-      <Cloud />
+      <div>{Cloud}</div>
     </SVGcontainer>
   )
 }
@@ -33,7 +37,6 @@ export default function Clouds({ roll, top, pulse, size, offset }) {
 export const SVGcontainer = styled.div`
   position: absolute;
 
-  width: ${props => props.size};
   top: ${props => props.top};
   overflow: hidden;
   left: ${props => props.offset};
@@ -76,11 +79,7 @@ export const SVGcontainer = styled.div`
   animation: pulse ${props => props.pulse} ease-in-out infinite alternate,
     roll ${props => props.roll} linear forwards;
 
-  svg {
-    z-index: -999;
-    animation: life linear 2s;
-    path {
-      fill: white;
-    }
-  }
+  color: whitesmoke;
+  font-size: ${props => props.size};
+  font-family: Montserrat;
 `
