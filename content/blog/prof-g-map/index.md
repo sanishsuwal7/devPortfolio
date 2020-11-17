@@ -1,5 +1,5 @@
 ---
-title: Prof G's Brand Strategy Sprint - Sprinters Around The World
+title: Prof G's - Sprinters Around The World
 draft: false
 date: 2020-11-09T17:55:46.594Z
 description: This past week many of us have spent a little too much time staring at maps. An electoral map shows division by default. I want to show you a map that shows quite the opposite.

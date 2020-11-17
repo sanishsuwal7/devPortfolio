@@ -13,6 +13,13 @@ export default function SkillIcons() {
         <li>HTML</li>
         <li>CSS</li>
         <li>AWS</li>
+        <li>Gatsby</li>
+        <li>Next.js</li>
+        <li>MongoDB</li>
+        <li>GraphQL</li>
+        <li>Firebase</li>
+        <li>Wordpress</li>
+        <li>Shopify</li>
       </AllTags>
     </Wrapper>
   )
