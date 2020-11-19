@@ -131,6 +131,9 @@ export const Space = styled.div`
 `
 
 export const Wrapper = styled.div`
+  > *:nth-child(2) {
+    min-height: 75vh;
+  }
   .leaflet-popup-content {
     div {
       color: green !important;

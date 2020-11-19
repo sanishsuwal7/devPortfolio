@@ -12,18 +12,15 @@ const Foot = styled.footer`
   z-index: 2;
   background-color: ${c.background};
   #footWrap {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0 2rem;
     max-width: 1100px;
     margin-left: auto;
     margin-right: auto;
     > * {
       padding: 1rem 0;
-    }
-  }
-  @media only screen and (min-width: 62em) {
-    #footWrap {
-      display: flex;
-      justify-content: space-between;
     }
   }
 `

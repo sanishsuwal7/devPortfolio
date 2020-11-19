@@ -44,49 +44,55 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </HeroP>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        {/*           <hr
+        <hr
+          style={{
+            marginBottom: sizing.paddingExterior.base,
+          }}
+        />
+        <nav>
+          <ul
             style={{
-              marginBottom: sizing.paddingExterior.base,
+              display: `flex`,
+              flexWrap: `wrap`,
+              justifyContent: `space-between`,
+              listStyle: `none`,
+              padding: 0,
             }}
-          /> */}
+          >
+            <li>
+              {previous && (
+                <>
+                  <div>Previous</div>
+                  <Link to={previous.fields.slug} rel="prev">
+                    ← {previous.frontmatter.title}
+                  </Link>
+                </>
+              )}
+            </li>
+            <li>
+              {next && (
+                <>
+                  <div>Next</div>
+                  <Link to={next.fields.slug} rel="next">
+                    {next.frontmatter.title} →
+                  </Link>
+                </>
+              )}
+            </li>
+          </ul>
+        </nav>
         {/* <footer>
-            <Bio />
-          </footer> */}
-        <>
+          <Bio />
+        </footer> */}
+        {/*         <>
           <Hero>Related posts:</Hero>
           <Link to="/profg">
             Prof G's Brand Strategy Sprint - About The Sprinters
           </Link>
-        </>
+        </> */}
         <Social />
       </Section>
 
-      <nav>
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
       {/* </Space> */}
     </Layout>
   )

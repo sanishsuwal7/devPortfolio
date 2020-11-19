@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react"
 import delay from "lodash/debounce"
+import { GiHamburgerMenu } from "react-icons/gi"
 import { Link, graphql, useStaticQuery, navigate } from "gatsby"
 import styled from "styled-components"
 import { colors } from "../styles/components"
@@ -9,7 +10,7 @@ const Container = styled.nav`
   * {
     color: ${props => (props.invert ? colors.white : colors.background)};
   }
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 0;
   background-color: #121e27;
@@ -17,6 +18,25 @@ const Container = styled.nav`
   text-align: center;
   width: 100%;
   padding: 1rem 3rem;
+
+  #burger {
+    color: white;
+    position: absolute;
+    right: 2rem;
+    top: 1rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+  }
+  .hide {
+    display: none !important;
+  }
+
+  #menu {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: 1rem;
+  }
 
   > div {
     position: relative;
@@ -59,6 +79,18 @@ const Container = styled.nav`
       justify-content: space-evenly;
     }
   }
+  @media only screen and (min-width: 768px) {
+    .hide {
+      display: flex !important;
+    }
+    #menu {
+      display: flex;
+      margin-top: 0;
+    }
+    #burger {
+      display: none;
+    }
+  }
   @media only screen and (min-width: 1024px) {
     > div {
       display: grid;
@@ -81,13 +113,13 @@ const Container = styled.nav`
 export default function Navbar(props) {
   const [hidenav, setHidenav] = useState(true)
   const [buffer, setBuffer] = useState(null)
+  const [open, setOpen] = useState(false)
+
   const delayedFunc = delay(() => {
     const height = window.pageYOffset
     setHidenav(true)
     setBuffer(height)
-  }, 1000)
-
-  //useEffect(() => console.log(buffer), [buffer])
+  }, 2000)
 
   useEffect(() => {
     let scroller = () => {
@@ -123,12 +155,15 @@ export default function Navbar(props) {
     site: { siteMetadata },
   } = data
 
-  const blacklist = ["blog", "payment", "profg"]
   const delayedHide = delay(() => setHidenav(true), 1000)
 
   const hasLeft = () => {
     delayedHide()
   }
+
+  const Logo = styled.div`
+    display: inline;
+  `
 
   return (
     <Container
@@ -137,30 +172,17 @@ export default function Navbar(props) {
       onMouseLeave={hasLeft}
     >
       <Link to="/">
-        <div>Alejandro Aspinwall</div>
+        <Logo>Alejandro Aspinwall</Logo>
       </Link>
-      {hidenav ? null : (
-        <ul className={hidenav ? "invisible" : ""}>
-          {/* Links to all pages */}
-          {nodes.map((node, i) => {
-            if (i === 2) {
-              return (
-                <Link to={"/blog"} tabIndex={"0"}>
-                  <li>blog</li>
-                </Link>
-              )
-            }
-            const path = node.path
-            if (
-              path.includes("404") ||
-              path === "/" ||
-              blacklist.some(e => path.includes(e))
-            ) {
-              return null
-            }
+      <div id="burger" onClick={() => setOpen(!open)}>
+        <GiHamburgerMenu />
+      </div>
+      {
+        <ul id="menu" className={`${!open ? "hide" : ""}`}>
+          {["about", "blog"].map((node, i) => {
             return (
-              <Link to={path} tabIndex={"0"}>
-                <li>{path.replace(new RegExp("/", "g"), "")}</li>
+              <Link to={`/${node}`} tabIndex={"0"}>
+                <li>{node}</li>
               </Link>
             )
           })}
@@ -168,7 +190,6 @@ export default function Navbar(props) {
             <AnchorLink
               tabIndex={"0"}
               to={`/#${link}`}
-              /* onClick={() => navigate(`/#${link}`)} */
               onKeyDown={e => {
                 if (e.keyCode === 13) navigate(`/#${link}`)
               }}
@@ -177,7 +198,7 @@ export default function Navbar(props) {
             </AnchorLink>
           ))}
         </ul>
-      )}
+      }
     </Container>
   )
 }
