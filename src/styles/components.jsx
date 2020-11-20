@@ -211,6 +211,11 @@ export const Wrapper = styled.div`
 `
 
 export const Section = styled.section`
+  .gatsby-highlight {
+    margin: 1rem auto;
+    max-width: 900px;
+    overflow: auto;
+  }
   max-width: 1100px;
   margin: auto;
   background: ${props => (props.invert ? colors.background : colors.white)};

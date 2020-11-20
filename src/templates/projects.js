@@ -18,7 +18,7 @@ export const Project = ({ data }) => {
       <SEO description={seo || description} title={title} />
       <h1>{title}</h1>
       <ReadTime text={timeToRead} />
-      <p dangerouslySetInnerHTML={{ __html: remark(description) }}></p>
+      <div dangerouslySetInnerHTML={{ __html: remark(description) }}></div>
       <Icon speed={"4s"} />
       <ProjectDetails>
         <div>
