@@ -6,7 +6,7 @@ module.exports = {
       name: `Alejandro Aspinwall`,
       summary: `Alejandro Aspinwall loves to build tools to simplify your digital needs`,
     },
-    description: `I'm a software engineer specialized in web development and cloud solutions. My toolset includes javascript, python, react, html, css, gatsbyjs, nextjsx and a whole lot of creativity.`,
+    description: `I am a software engineer specialized in web and cloud solutions. My toolset includes javascript, python, react, html, css and a whole lot of creativity.`,
     siteUrl: `https://aaspinwall.com/`,
     social: {
       twitter: `aaspinwall`,

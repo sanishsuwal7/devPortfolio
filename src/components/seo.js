@@ -68,6 +68,14 @@ const SEO = ({
           content: `summary`,
         },
         {
+          name: `twitter:image`,
+          content: `https://www.aaspinwall.com/img/${thumb}`,
+        },
+        {
+          name: `twitter:image:alt`,
+          content: `Alejandro Aspinwall Logo`,
+        },
+        {
           name: `twitter:creator`,
           content: site.siteMetadata.social.twitter,
         },
