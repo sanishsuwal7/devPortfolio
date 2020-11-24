@@ -58,7 +58,7 @@ const Soc = () => {
       </Section>
       {/* <Section>
         <P>Thoughts? I'd love to hear from you</P>
-        <Email href={"mailto:aaspinwall@gmail.com"}>aaspinwall@gmail.com</Email>
+        <Email href={"mailto:contact@aaspinwall.com"}>contact@aaspinwall.com</Email>
       </Section> */}
     </>
   )

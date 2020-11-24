@@ -35,7 +35,7 @@ export default function Social({ c = colors.accent, h = "white", p }) {
       <a href={`https://twitter.com/aaspinwall`} target="blank">
         <FaTwitter />
       </a>
-      <a href="mailto:aaspinwall@gmail.com">
+      <a href="mailto:contact@aaspinwall.com">
         <AiFillMail />
       </a>
     </SocialIcons>

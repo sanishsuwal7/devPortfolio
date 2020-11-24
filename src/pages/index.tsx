@@ -223,7 +223,9 @@ const Index = ({ data }) => {
           <Cup />
         </CupContainer>
 
-        <Email href={"mailto:aaspinwall@gmail.com"}>aaspinwall@gmail.com</Email>
+        <Email href={"mailto:contact@aaspinwall.com"}>
+          contact@aaspinwall.com
+        </Email>
 
         <Button style={{ gridArea: "button", marginTop: "1rem" }}>
           {slidingButton(

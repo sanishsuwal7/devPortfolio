@@ -213,7 +213,7 @@ export const Wrapper = styled.div`
 export const Section = styled.section`
   .gatsby-highlight {
     margin: 1rem auto;
-    max-width: 900px;
+    width: clamp(200px, 80vw, 900px);
     overflow: auto;
   }
   max-width: 1100px;
