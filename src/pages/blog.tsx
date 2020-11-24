@@ -31,6 +31,7 @@ type Data = {
 }
 
 const Section = styled(S)`
+  margin-top: 1rem;
   min-height: 75vh;
 `
 
@@ -40,7 +41,10 @@ const BlogIndex = ({ data }: PageProps<Data>) => {
 
   return (
     <Layout>
-      <SEO title="Blog" />
+      <SEO
+        title="Blog"
+        keywords={"blog, data analysis, javascript, react, nodejs, graphql"}
+      />
       <Section>
         <article>
           <header>
@@ -50,7 +54,7 @@ const BlogIndex = ({ data }: PageProps<Data>) => {
               }}
             >
               <Link style={{ boxShadow: `none` }} to={"/profg"}>
-                {`Prof G's Brand Strategy Sprint - About The Sprinters`}
+                {`Prof G: About The Sprinters `}
               </Link>
             </h3>
             <small>{`October 31, 2020`}</small>

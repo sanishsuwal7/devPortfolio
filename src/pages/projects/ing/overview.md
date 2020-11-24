@@ -1,5 +1,5 @@
 ---
-title: ING Creatives
+title: "ING Creatives: Your place to learn"
 featuredImage: overview.png
 
 description: Ing creatives is an e-learning platform that provides professional resources in areas ranging from branding, design, product design, UI/UX, marketing, to advertising and social media, among others.
@@ -11,6 +11,7 @@ details:
   stack: Gatsby Styled-Components Chakra-UI Netlify
   code: https://github.com/aaspinwall/festival-gatsby
   live: https://www.ingcreatives.com/
+keywords: ing, ingcreatives, gatsby, shopify, javascript
 ---
 
 ![Results page](screen.png "Results page")

@@ -308,7 +308,7 @@ const Index = ({ data }) => {
 
   return (
     <Layout invert={true}>
-      <SEO title="Welcome" />
+      <SEO title="Alejandro Aspinwall | Software Engineer" />
       <div
         style={{
           padding: "0 clamp(1rem, 7vw, 200px)",

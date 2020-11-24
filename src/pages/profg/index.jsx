@@ -135,12 +135,12 @@ const Prof = ({ data }) => {
   return (
     <Layout>
       <SEO
-        title="Prof G Data analysis"
+        title="Prof G: Data analysis"
         thumb={"profg.png"}
         description={`Prof G's brand strategy sprint has been unique from day one. There are +1,000 students networking! We crunched the numbers to get some insights into the group.`}
       />
       <Section>
-        <Hero>Prof G's Brand Strategy Sprint - About The Sprinters </Hero>
+        <Hero>Prof G: Brand Strategy Sprint - Data Analysis</Hero>
         <Note>October 31, 2020</Note>
         <Note>{timeToRead} minute read</Note>
         {/* <Tweet /> */}

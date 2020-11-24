@@ -10,13 +10,13 @@ import SEO from "../components/seo"
 import remark from "../utils/remark"
 
 export const Project = ({ data }) => {
-  const { title, details, description, html, timeToRead, seo } = data
+  const { title, details, description, html, timeToRead, seo, keywords } = data
   const { stack, code, live, type } = details
 
   return (
     <Section top={true}>
-      <SEO description={seo || description} title={title} />
-      <h1>{title}</h1>
+      <SEO description={seo || description} title={title} keywords={keywords} />
+      <h1>{title.split(":")[0]}</h1>
       <ReadTime text={timeToRead} />
       <div dangerouslySetInnerHTML={{ __html: remark(description) }}></div>
       <Icon speed={"4s"} />
@@ -80,11 +80,13 @@ const ProjectPage = ({ data }) => {
     markdownRemark: { html, frontmatter, timeToRead },
   } = data
 
-  const { title, details, description, seo } = frontmatter
+  const { title, details, description, seo, keywords } = frontmatter
 
   return (
     <Layout>
-      <Project data={{ title, details, description, html, timeToRead, seo }} />
+      <Project
+        data={{ title, details, description, html, timeToRead, seo, keywords }}
+      />
     </Layout>
   )
 }
@@ -103,6 +105,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         internal
+        keywords
         description
         seo
         details {

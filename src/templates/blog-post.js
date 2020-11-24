@@ -19,6 +19,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       <SEO
         title={post.frontmatter.title}
         thumb={post.frontmatter.thumb}
+        keywords={post.frontmatter.tags}
         description={post.frontmatter.description || post.excerpt}
       />
       {/* <Space> */}
@@ -117,6 +118,7 @@ export const pageQuery = graphql`
         thumb
         date(formatString: "MMMM DD, YYYY")
         description
+        keywords
       }
     }
   }

@@ -1,5 +1,5 @@
 ---
-title: My Nomnoms
+title: "My Nomnoms: Nutrition and portion control app"
 featuredImage: fixed.png
 description: Is an application I developed as the final of my front-end bootcamp at Concordia. I built it from scratch using React and deployed a <b>Progressive Web App</b> that is compatible with <b>mobile devices</b>.
 
@@ -8,6 +8,8 @@ details:
   stack: React Styled-Components CDN-Resizing PWA Netlify
   code: https://github.com/aaspinwall/minomnomsapp
   live: https://mynomnoms.netlify.app/
+
+keywords: react, pwa, styled components, javascript
 ---
 
 ![Results page](screen.png "Results page")

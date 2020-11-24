@@ -10,6 +10,7 @@ module.exports = {
     siteUrl: `https://aaspinwall.com/`,
     social: {
       twitter: `aaspinwall`,
+      email: `contact@aaspinwall.com`,
     },
   },
   plugins: [

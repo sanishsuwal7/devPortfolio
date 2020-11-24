@@ -3,7 +3,14 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-const SEO = ({ description, lang, meta, title, thumb = "logo.png" }) => {
+const SEO = ({
+  description,
+  lang,
+  meta,
+  title,
+  thumb = "logo.png",
+  keywords = "javascript, css, html, gatsby, nextjs",
+}) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -22,6 +29,7 @@ const SEO = ({ description, lang, meta, title, thumb = "logo.png" }) => {
 
   const defaultTitle = site.siteMetadata?.title
   const metaDescription = description || site.siteMetadata.description
+  const metaTags = keywords
 
   return (
     <Helmet
@@ -29,11 +37,14 @@ const SEO = ({ description, lang, meta, title, thumb = "logo.png" }) => {
         lang,
       }}
       title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
       meta={[
         {
           name: `description`,
           content: metaDescription,
+        },
+        {
+          property: `keywords`,
+          content: metaTags,
         },
         {
           property: `og:title`,
@@ -58,6 +69,10 @@ const SEO = ({ description, lang, meta, title, thumb = "logo.png" }) => {
         },
         {
           name: `twitter:creator`,
+          content: site.siteMetadata.social.twitter,
+        },
+        {
+          name: `twitter:site`,
           content: site.siteMetadata.social.twitter,
         },
         {
