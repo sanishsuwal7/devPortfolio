@@ -9,10 +9,23 @@ import {
 import styled from "styled-components"
 
 export const Section = styled(S)`
+  .gatsby-highlight {
+    margin: 1rem auto;
+    /* width: clamp(200px, 80vw, 900px); */
+    width: 100%;
+    overflow: auto;
+  }
   max-width: 600px;
   h2 {
     font-family: Montserrat;
     font-weight: bold;
+  }
+  ul {
+    display: grid;
+    li {
+      list-style: disc;
+      margin-left: 2rem;
+    }
   }
 `
 export const Hero = styled(H)`

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useRef } from "react"
 import { Link, graphql } from "gatsby"
 import { Space } from "../styles/components"
 import Bio from "../components/bio"
@@ -13,6 +13,13 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
+  const markdownRef = useRef(null)
+
+  useEffect(() => {
+    const links = document.querySelectorAll("section a")
+    console.log(links)
+    links.forEach(el => (el.target = "blank"))
+  }, [])
 
   return (
     <Layout title={siteTitle}>
@@ -44,7 +51,10 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             {post.frontmatter.date}
           </HeroP>
         </header>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
+        <section
+          ref={markdownRef}
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
         <hr
           style={{
             marginBottom: sizing.paddingExterior.base,
