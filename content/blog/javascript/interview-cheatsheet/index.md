@@ -2,8 +2,9 @@
 title: Javascript cheatsheet
 draft: false
 date: 2020-08-03T18:44:42.151Z
-description: "A cheatsheet for interviews"
+description: "A cheatsheet for javascript interviews"
 internal: false
+keywords: "javascript, interviews, cs, cheatsheet, scrimba"
 ---
 
 ### Q: What is the difference between undefined and undeclared?
@@ -120,7 +121,7 @@ While undefined means that something doesn't exist, null means something has no 
 ### What are some JavaScript data types?
 
 Primitives: String, boolean, numbers, BigInt, Symbol.
-Non-primitives: [], {}, Map (objects with unique keys that are beyond strings), Set (arrays with unique values)
+Non-primitives: [ ], { }, Map (objects with unique keys that are beyond strings), Set (arrays with unique values)
 
 ### What do the spread and rest operators do?
 
@@ -177,7 +178,7 @@ const letters = ["A", "B", "C"]
 easy(...letters) // Easy as A B C
 ```
 
-**Rest**
+#### Rest
 
 Does the opposite of spread. It collects a function's arguments into an array. It's useful when you don't know how many parameters a fuction needs.
 
