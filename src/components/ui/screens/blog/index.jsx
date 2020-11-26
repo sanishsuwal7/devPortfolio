@@ -15,7 +15,7 @@ export const Section = styled(S)`
     width: 100%;
     overflow: auto;
   }
-  max-width: 600px;
+  max-width: 650px;
   h2 {
     font-family: Montserrat;
     font-weight: bold;
