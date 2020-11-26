@@ -6,6 +6,10 @@ description: "Notes from the algorithm world"
 internal: false
 ---
 
+What are algorithms?
+
+Operations we can perform on data structures + the sets of instructions for executing them
+
 ## Binary search
 
 ![lookup example](./fig-a.png)
