@@ -12,7 +12,7 @@ import Social from "../../Social"
 import styled from "styled-components"
 
 const Section = styled(S)`
-  max-width: 600px;
+  max-width: 650px;
   h2 {
     font-family: Montserrat;
     font-weight: bold;
