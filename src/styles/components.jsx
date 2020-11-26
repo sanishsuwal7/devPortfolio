@@ -211,6 +211,9 @@ export const Wrapper = styled.div`
 `
 
 export const Section = styled.section`
+  .gatsby-highlight pre[class*="language-"] {
+    padding: 0 3.8rem 1rem;
+  }
   .gatsby-highlight {
     margin: 1rem auto;
     width: clamp(200px, 80vw, 900px);
