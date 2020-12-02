@@ -192,6 +192,10 @@ order("fries", "milkshake", "cheesburger")
 //cheesburger
 ```
 
+### Q:What is and why might you destructure an object or array?
+
+Destrucuring provides context It's intended to make code easier to read.
+
 ### References:
 
 [Scrimba Frontend Interview Tips](https://scrimba.com/learn/frontendinterview/)
