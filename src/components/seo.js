@@ -53,7 +53,7 @@ const SEO = ({
         {
           property: `og:image`,
           itemprop: "image",
-          content: `https://www.aaspinwall.com/img/${thumb}`,
+          content: `https://www.aaspinwall.com/img/${thumb || "logo.png"}`,
         },
         {
           property: `og:description`,
@@ -69,7 +69,7 @@ const SEO = ({
         },
         {
           name: `twitter:image`,
-          content: `https://www.aaspinwall.com/img/${thumb}`,
+          content: `https://www.aaspinwall.com/img/${thumb || "logo.png"}`,
         },
         {
           name: `twitter:image:alt`,

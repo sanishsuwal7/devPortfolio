@@ -1,19 +1,10 @@
 ---
-<<<<<<< HEAD
-title: React cheatsheet
-draft: false
-date: 2020-12-01T18:44:42.151Z
-description: "A cheatsheet for javascript interviews"
-internal: false
-keywords: "javascript, interviews, cs, cheatsheet, scrimba"
----
-
-=======
 title: React interview cheatsheet
 draft: false
 date: 2020-12-01T18:44:42.151Z
 description: "A cheatsheet for React interviews"
 internal: false
+thumb: "react.png"
 keywords: "javascript, react, interviews, cs, cheatsheet, scrimba, cassidoo"
 ---
 
@@ -25,7 +16,6 @@ To be honest, when I found out I was having the interview, I freaked out. I went
 
 **This is my cheatsheet**. I took all the questions and answered them in my own words. You know... How you would on an interview. That way I could hit `cmd + f` and find that "cue card".
 
->>>>>>> blog
 ## React DOM
 
 **What is the difference between the virtual DOM and the real DOM?**
@@ -53,21 +43,13 @@ To be honest, when I found out I was having the interview, I freaked out. I went
 **What are the limitations of React?**
 
 - Heavy dependencies
-<<<<<<< HEAD
-- It's not a siver bullet. Some applications might benefit from using vanilla JS or a hybrid of both. Netflix uses vanilla JS for the front-page and react for the app after login.
-=======
 - It's not a silver bullet. Some applications might benefit from using vanilla JS or a hybrid of both. Netflix uses vanilla JS for the front-page and react for the app after login.
->>>>>>> blog
 
 ## JSX
 
 **What is JSX?**
 
-<<<<<<< HEAD
-- JSX is an extension of javascript that allows you to use the React.createElement functions by using a syntax similar to html. It has to be transpiled by a preprocessor into regular javascript.
-=======
 - JSX is an extension of javascript that allows you to use the `React.createElement` functions by using a syntax similar to html. It has to be transpiled by a preprocessor into regular javascript.
->>>>>>> blog
 
 **Can you write React without JSX?**
 
@@ -100,11 +82,7 @@ To be honest, when I found out I was having the interview, I freaked out. I went
 
 **How does state in a class component differ from state in a functional component?**
 
-<<<<<<< HEAD
-- In a class component, state belongs to the class instance (this). The state is set when it's passed to the constructor function and accesed via `this.state` and modified via `this.setState`.
-=======
 - In a class component, state belongs to the class instance (this). The state is set when it's passed to the constructor function and accessed via `this.state` and modified via `this.setState`.
->>>>>>> blog
 - Functional components are managed by using the `useState` hook. This gets recalled each time the component renders and returns the state managed by React under the hood.
 
 **What is the component lifecycle?**
@@ -178,8 +156,6 @@ To be honest, when I found out I was having the interview, I freaked out. I went
 **What are uncontrolled and uncontrolled components?**
 
 - Controlled components have child components (usually `input`, `textarea` or `select`) where the value is managed by a react state. Uncontrolled components' values can be accessed by react via refs, they can't be changed by react.
-<<<<<<< HEAD
-=======
 
 All these notes were based on [this blog post](https://scrimba.com/articles/react-interview-questions/#what-is-the-difference-between-the-virtual-dom-and-the-real-dom). If you want to see Cassidoo explain in depth all of these answers, [checkout her course](https://scrimba.com/learn/reactinterview?utm_source=scrimba-blog&utm_medium=body&utm_campaign=react-interview-questions-epic-post) on Scrimba.
 
@@ -188,4 +164,3 @@ If you want to learn way more about React and step up your game. Head on to [Cas
 **Thanks again to Cassidy and Alex. It was a wonderful experience.**
 
 \- Alejandro 🧡
->>>>>>> blog
