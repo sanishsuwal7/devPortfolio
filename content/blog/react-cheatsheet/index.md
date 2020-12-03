@@ -1,5 +1,5 @@
 ---
-title: Javascript cheatsheet
+title: React cheatsheet
 draft: false
 date: 2020-12-01T18:44:42.151Z
 description: "A cheatsheet for javascript interviews"
