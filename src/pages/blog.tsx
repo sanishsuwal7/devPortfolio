@@ -46,6 +46,23 @@ const BlogIndex = ({ data }: PageProps<Data>) => {
         keywords={"blog, data analysis, javascript, react, nodejs, graphql"}
       />
       <Section>
+        <article>
+          <header>
+            <h3
+              style={{
+                marginBottom: rhythm(1 / 4),
+              }}
+            >
+              <Link style={{ boxShadow: `none` }} to={"/profg"}>
+                {`Prof G: About The Sprinters `}
+              </Link>
+            </h3>
+            <small>{`October 31, 2020`}</small>
+          </header>
+          <section>
+            <p>{`Being part of Prof G’s brand strategy sprint has been unique from day one. It’s been a huge opportunity to meet people from very diverse backgrounds. We come together because we’re embracing change and want to be part of this massive learning experience.`}</p>
+          </section>
+        </article>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
@@ -68,23 +85,6 @@ const BlogIndex = ({ data }: PageProps<Data>) => {
             </article>
           )
         })}
-        <article>
-          <header>
-            <h3
-              style={{
-                marginBottom: rhythm(1 / 4),
-              }}
-            >
-              <Link style={{ boxShadow: `none` }} to={"/profg"}>
-                {`Prof G: About The Sprinters `}
-              </Link>
-            </h3>
-            <small>{`October 31, 2020`}</small>
-          </header>
-          <section>
-            <p>{`Being part of Prof G’s brand strategy sprint has been unique from day one. It’s been a huge opportunity to meet people from very diverse backgrounds. We come together because we’re embracing change and want to be part of this massive learning experience.`}</p>
-          </section>
-        </article>
       </Section>
     </Layout>
   )

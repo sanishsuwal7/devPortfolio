@@ -4,7 +4,6 @@ draft: false
 date: 2020-12-01T18:44:42.151Z
 description: "A cheatsheet for React interviews"
 internal: false
-thumb: "react.png"
 keywords: "javascript, react, interviews, cs, cheatsheet, scrimba, cassidoo"
 ---
 
