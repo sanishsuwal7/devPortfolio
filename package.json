@@ -83,7 +83,8 @@
   "scripts": {
     "deploy": "netlify build && netlify deploy -p",
     "dev": "netlify dev",
-    "build": "cd functions/stripe-charge npm i && gatsby build",
+    "buid:stripe-charge": "cd functions/stripe-charge && npm i",
+    "build": "npm run buid:stripe-charge && gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
