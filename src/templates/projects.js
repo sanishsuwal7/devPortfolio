@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../templates/layout"
 import PropTypes from "prop-types"
 import { Section, Markdown } from "../styles/components"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 import { graphql } from "gatsby"
 import ReadTime from "../components/ReadTime"
 import Icon from "../components/Icon"
@@ -10,7 +11,7 @@ import SEO from "../components/seo"
 import remark from "../utils/remark"
 
 export const Project = ({ data }) => {
-  const { title, details, description, html, timeToRead, seo, keywords } = data
+  const { title, details, description, body, timeToRead, seo, keywords } = data
   const { stack, code, live, type } = details
 
   return (
@@ -18,7 +19,8 @@ export const Project = ({ data }) => {
       <SEO description={seo || description} title={title} keywords={keywords} />
       <h1>{title.split(":")[0]}</h1>
       <ReadTime text={timeToRead} />
-      <div dangerouslySetInnerHTML={{ __html: remark(description) }}></div>
+      <MDXRenderer>{description}</MDXRenderer>
+
       <Icon speed={"4s"} />
       <ProjectDetails>
         <div>
@@ -46,11 +48,7 @@ export const Project = ({ data }) => {
           </a>
         </div>
       </ProjectDetails>
-
-      <Markdown
-        className="projectBody"
-        dangerouslySetInnerHTML={{ __html: html }}
-      ></Markdown>
+      <MDXRenderer>{body}</MDXRenderer>
     </Section>
   )
 }
@@ -77,7 +75,7 @@ const ProjectDetails = styled.div`
 
 const ProjectPage = ({ data }) => {
   const {
-    markdownRemark: { html, frontmatter, timeToRead },
+    mdx: { body, frontmatter, timeToRead },
   } = data
 
   const { title, details, description, seo, keywords } = frontmatter
@@ -85,7 +83,7 @@ const ProjectPage = ({ data }) => {
   return (
     <Layout>
       <Project
-        data={{ title, details, description, html, timeToRead, seo, keywords }}
+        data={{ title, details, description, body, timeToRead, seo, keywords }}
       />
     </Layout>
   )
@@ -99,9 +97,9 @@ export default ProjectPage
 
 export const pageQuery = graphql`
   query ProjectBySlug($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    mdx(fields: { slug: { eq: $slug } }) {
       timeToRead
-      html
+      body
       frontmatter {
         title
         internal

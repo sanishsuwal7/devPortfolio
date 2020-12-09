@@ -4,12 +4,12 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  const blogTemplate = path.resolve(`./src/templates/blog-post.js`)
-  const projectsTemplate = path.resolve(`./src/templates/projects.js`)
-  const blogQuery = await graphql(
+  //const blogTemplate = path.resolve(`./src/templates/blog-post.js`)
+  //const projectsTemplate = path.resolve(`./src/templates/projects.js`)
+  /* const blogQuery = await graphql(
     `
       {
-        allMarkdownRemark(
+        allMdx(
           sort: { fields: [frontmatter___date], order: DESC }
           limit: 1000
           filter: {
@@ -30,11 +30,11 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
     `
-  )
-  const projectsQuery = await graphql(
+  ) */
+  /* const projectsQuery = await graphql(
     `
       {
-        allMarkdownRemark(
+        allMdx(
           filter: {
             frontmatter: { internal: { ne: true } }
             fileAbsolutePath: { regex: "/projects/" }
@@ -53,20 +53,20 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
     `
-  )
+  ) */
 
-  if (projectsQuery.errors) {
+  /*   if (projectsQuery.errors) {
     throw projectsQuery.errors
-  }
-  if (blogQuery.errors) {
+  } */
+  /* if (blogQuery.errors) {
     throw blogQuery.errors
-  }
+  } */
 
   // Create blog posts pages.
-  const projects = projectsQuery.data.allMarkdownRemark.edges
-  const posts = blogQuery.data.allMarkdownRemark.edges
+  //const projects = projectsQuery.data.allMdx.edges
+  //const posts = blogQuery.data.allMdx.edges
 
-  posts.forEach((post, index) => {
+  /*   posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
     const next = index === 0 ? null : posts[index - 1].node
 
@@ -79,8 +79,9 @@ exports.createPages = async ({ graphql, actions }) => {
         next,
       },
     })
-  })
-  projects.forEach(post => {
+  }) */
+
+  /*   projects.forEach(post => {
     createPage({
       path: post.node.fields.slug,
       component: projectsTemplate,
@@ -88,13 +89,13 @@ exports.createPages = async ({ graphql, actions }) => {
         slug: post.node.fields.slug,
       },
     })
-  })
+  }) */
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === `Mdx`) {
     const value = createFilePath({ node, getNode })
     createNodeField({
       name: `slug`,

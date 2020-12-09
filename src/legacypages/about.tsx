@@ -9,13 +9,13 @@ import styled from "styled-components"
 import Button from "../components/ui/button"
 
 export const AboutPageTemplate = ({ title, content }) => {
-  const { html } = content
+  const { body } = content
 
   return (
     <Section>
       <Hero>{title}</Hero>
       {/* <ReadTime text={html} /> */}
-      <Markdown dangerouslySetInnerHTML={{ __html: html }}></Markdown>
+      <Markdown dangerouslySetInnerHTML={{ __html: body }}></Markdown>
       <Button to={`https://calendly.com/aaspinwall/15`}>Get in touch</Button>
     </Section>
   )
@@ -23,7 +23,7 @@ export const AboutPageTemplate = ({ title, content }) => {
 
 const AboutPage = ({ data }) => {
   const {
-    allMarkdownRemark: {
+    allMdx: {
       nodes: [fileAbsolutePath],
     },
   } = data
@@ -50,14 +50,14 @@ export default AboutPage
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/about/" } }) {
+    allMdx(filter: { fileAbsolutePath: { regex: "/about/" } }) {
       nodes {
         fileAbsolutePath
         frontmatter {
           title
           internal
         }
-        html
+        body
       }
     }
   }

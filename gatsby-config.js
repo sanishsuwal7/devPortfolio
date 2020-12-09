@@ -17,9 +17,10 @@ module.exports = {
     "gatsby-plugin-netlify-cms",
     `gatsby-plugin-sitemap`,
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        plugins: [`gatsby-remark-responsive-iframe`],
+        extensions: [".mdx", ".md"],
+        gatsbyRemarkPlugins: [`gatsby-remark-responsive-iframe`],
       },
     },
     {
@@ -92,11 +93,12 @@ module.exports = {
 
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-transformer-remark`,
+    `gatsby-plugin-mdx`,
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        plugins: [
+        extensions: [".mdx", ".md"],
+        gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -177,7 +179,7 @@ module.exports = {
       },
     },
 
-    `gatsby-plugin-feed`,
+    `gatsby-plugin-feed-mdx`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

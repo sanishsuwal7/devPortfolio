@@ -6,11 +6,13 @@ import Layout from "../templates/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 import { sizing } from "../styles/components"
+
+import { MDXRenderer } from "gatsby-plugin-mdx"
 import Social from "../components/ui/Social"
 import { Hero, Note, HeroP, Section } from "../components/ui/screens/blog"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
-  const post = data.markdownRemark
+  const post = data.mdx
   const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
   const markdownRef = useRef(null)
@@ -51,10 +53,11 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             {post.frontmatter.date}
           </HeroP>
         </header>
-        <section
+        {/*         <section
           ref={markdownRef}
           dangerouslySetInnerHTML={{ __html: post.html }}
-        />
+        /> */}
+        <MDXRenderer ref={markdownRef}>{post.body}</MDXRenderer>
         <hr
           style={{
             marginBottom: sizing.paddingExterior.base,
@@ -92,15 +95,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             </li>
           </ul>
         </nav>
-        {/* <footer>
-          <Bio />
-        </footer> */}
-        {/*         <>
-          <Hero>Related posts:</Hero>
-          <Link to="/profg">
-            Prof G's Brand Strategy Sprint - About The Sprinters
-          </Link>
-        </> */}
         <Social />
       </Section>
 
@@ -118,10 +112,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    mdx(fields: { slug: { eq: $slug } }) {
       id
       excerpt(pruneLength: 160)
-      html
+      body
       timeToRead
       frontmatter {
         title

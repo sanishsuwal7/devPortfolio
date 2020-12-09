@@ -78,7 +78,7 @@ const Index = ({ data }) => {
     []
   )
   const {
-    allMarkdownRemark: {
+    allMdx: {
       nodes: [fileAbsolutePath],
     },
   } = data
@@ -346,7 +346,7 @@ export default Index
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/landing/" } }) {
+    allMdx(filter: { fileAbsolutePath: { regex: "/landing/" } }) {
       nodes {
         fileAbsolutePath
         frontmatter {

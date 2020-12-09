@@ -92,7 +92,7 @@ const callbacks = {
 }
 
 const Prof = ({ data }) => {
-  const content = data.allMarkdownRemark.nodes
+  const content = data.allMdx.nodes
   const CONTENT = {}
   content.forEach(el => {
     if (el.frontmatter.name === "full") {
@@ -258,11 +258,9 @@ export default Prof
 
 export const pageQuery = graphql`
   query q {
-    allMarkdownRemark(
-      filter: { frontmatter: { type: { eq: "custom-blog" } } }
-    ) {
+    allMdx(filter: { frontmatter: { type: { eq: "custom-blog" } } }) {
       nodes {
-        html
+        body
         frontmatter {
           name
         }
