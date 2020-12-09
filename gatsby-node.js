@@ -5,7 +5,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   const blogTemplate = path.resolve(`./src/templates/blog-post.js`)
-  const projectsTemplate = path.resolve(`./src/templates/projects.js`)
+  //const projectsTemplate = path.resolve(`./src/templates/projects.js`)
   const blogQuery = await graphql(
     `
       {
@@ -31,7 +31,7 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     `
   )
-  const projectsQuery = await graphql(
+  /*   const projectsQuery = await graphql(
     `
       {
         allMdx(
@@ -53,18 +53,18 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
     `
-  )
+  ) */
 
-  if (projectsQuery.errors) {
+  /*   if (projectsQuery.errors) {
     throw projectsQuery.errors
-  }
+  } */
 
   if (blogQuery.errors) {
     throw blogQuery.errors
   }
 
   // Create blog posts pages.
-  const projects = projectsQuery.data.allMdx.edges
+  //const projects = projectsQuery.data.allMdx.edges
   const posts = blogQuery.data.allMdx.edges
 
   posts.forEach((post, index) => {
@@ -82,7 +82,7 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  projects.forEach(post => {
+  /* projects.forEach(post => {
     createPage({
       path: post.node.fields.slug,
       component: projectsTemplate,
@@ -90,7 +90,7 @@ exports.createPages = async ({ graphql, actions }) => {
         slug: post.node.fields.slug,
       },
     })
-  })
+  }) */
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
