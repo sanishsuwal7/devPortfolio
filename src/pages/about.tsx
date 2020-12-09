@@ -6,6 +6,8 @@ import ReadTime from "../components/ReadTime"
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
 import styled from "styled-components"
+import { MDXRenderer } from "gatsby-plugin-mdx"
+
 import Button from "../components/ui/button"
 
 export const AboutPageTemplate = ({ title, content }) => {
@@ -15,7 +17,7 @@ export const AboutPageTemplate = ({ title, content }) => {
     <Section>
       <Hero>{title}</Hero>
       {/* <ReadTime text={html} /> */}
-      <Markdown dangerouslySetInnerHTML={{ __html: body }}></Markdown>
+      <MDXRenderer>{body}</MDXRenderer>
       <Button to={`https://calendly.com/aaspinwall/15`}>Get in touch</Button>
     </Section>
   )

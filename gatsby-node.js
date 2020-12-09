@@ -4,9 +4,9 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  //const blogTemplate = path.resolve(`./src/templates/blog-post.js`)
+  const blogTemplate = path.resolve(`./src/templates/blog-post.js`)
   //const projectsTemplate = path.resolve(`./src/templates/projects.js`)
-  /* const blogQuery = await graphql(
+  const blogQuery = await graphql(
     `
       {
         allMdx(
@@ -30,7 +30,7 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
     `
-  ) */
+  )
   /* const projectsQuery = await graphql(
     `
       {
@@ -58,15 +58,16 @@ exports.createPages = async ({ graphql, actions }) => {
   /*   if (projectsQuery.errors) {
     throw projectsQuery.errors
   } */
-  /* if (blogQuery.errors) {
+
+  if (blogQuery.errors) {
     throw blogQuery.errors
-  } */
+  }
 
   // Create blog posts pages.
   //const projects = projectsQuery.data.allMdx.edges
-  //const posts = blogQuery.data.allMdx.edges
+  const posts = blogQuery.data.allMdx.edges
 
-  /*   posts.forEach((post, index) => {
+  posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
     const next = index === 0 ? null : posts[index - 1].node
 
@@ -79,7 +80,7 @@ exports.createPages = async ({ graphql, actions }) => {
         next,
       },
     })
-  }) */
+  })
 
   /*   projects.forEach(post => {
     createPage({

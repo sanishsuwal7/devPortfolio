@@ -17,13 +17,6 @@ module.exports = {
     "gatsby-plugin-netlify-cms",
     `gatsby-plugin-sitemap`,
     {
-      resolve: `gatsby-plugin-mdx`,
-      options: {
-        extensions: [".mdx", ".md"],
-        gatsbyRemarkPlugins: [`gatsby-remark-responsive-iframe`],
-      },
-    },
-    {
       resolve: `gatsby-plugin-chakra-ui`,
       options: {
         isResettingCSS: false,
@@ -165,6 +158,7 @@ module.exports = {
               escapeEntities: {},
             },
           },
+          `gatsby-remark-responsive-iframe`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ],

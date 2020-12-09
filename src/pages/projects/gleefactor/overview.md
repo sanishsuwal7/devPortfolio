@@ -16,8 +16,6 @@ keywords: gleefactor, gatsby, wordpress, javascript, google pay
 
 ![Results page](screen.png "Resources page that shows the available workshops")
 
----
-
 # Project Purpose and Goal
 
 Gleefactor is a work culture management firm that helps organizations transform their cultures by enabling teams to adopt and activate new behaviours through play. **The goal was to create a fast website that would drive conversions** from social media and search engine traffic.
