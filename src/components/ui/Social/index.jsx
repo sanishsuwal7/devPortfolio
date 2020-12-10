@@ -41,10 +41,7 @@ const Soc = () => {
     <>
       <Section>
         <Hero>Let's have a chat</Hero>
-        <P>
-          The digital world changes fast ⚡️ We would love to help you move with
-          it ☁️
-        </P>
+        <P>I'd love to hear from you ☁️</P>
         <Social c={"black"} h={colors.accent} />
         <Button
           to="https://calendly.com/aaspinwall/15"
@@ -56,10 +53,6 @@ const Soc = () => {
           </div>
         </Button>
       </Section>
-      {/* <Section>
-        <P>Thoughts? I'd love to hear from you</P>
-        <Email href={"mailto:contact@aaspinwall.com"}>contact@aaspinwall.com</Email>
-      </Section> */}
     </>
   )
 }

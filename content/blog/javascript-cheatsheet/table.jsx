@@ -12,7 +12,7 @@ const Menu = styled.div`
   }
 `
 
-export default function Headers(props) {
+export default function Table(props) {
   const [allTitles, setAllTitles] = useState(null)
 
   useEffect(() => {
