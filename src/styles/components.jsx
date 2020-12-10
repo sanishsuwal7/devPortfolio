@@ -131,6 +131,14 @@ export const Space = styled.div`
 `
 
 export const Wrapper = styled.div`
+  .anchorLink {
+    color: ${colors.accent};
+
+    transition: 0.3s ease-in-out filter;
+    :hover {
+      filter: brightness(0.7);
+    }
+  }
   > *:nth-child(2) {
     min-height: 75vh;
   }
@@ -150,7 +158,8 @@ export const Wrapper = styled.div`
     align-items: center;
   }
 
-  .topButton {
+  .topButton,
+  .anchorLink {
     font-family: Montserrat;
     font-weight: bold;
   }

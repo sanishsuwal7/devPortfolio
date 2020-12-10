@@ -1,26 +1,41 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useRef } from "react"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
+import { navigate } from "@reach/router"
 import kebab from "lodash/kebabCase"
+import styled from "styled-components"
+
+const Menu = styled.div`
+  div {
+    padding: 0.5rem 0;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+`
 
 export default function Headers(props) {
   const [allTitles, setAllTitles] = useState(null)
+
   useEffect(() => {
     const titles = document.querySelectorAll("h3")
     console.log(titles)
     const indexArr = Object.values(titles).map((el, i) => {
       console.log(el)
       return (
-        <AnchorLink
-          to={`${window.location.pathname}#${el.id}`}
+        <div
+          className="anchorLink"
+          onClick={() => {
+            console.log(window.location.pathname)
+            el.scrollIntoView()
+          }}
           key={`titles-index-${i}`}
         >
-          {el.innerText}
-        </AnchorLink>
+          {el.innerText.replace(/Q:|:/, "")}
+        </div>
       )
     })
     setAllTitles(indexArr)
   }, [])
-  return <div style={{ display: "grid" }}>{allTitles}</div>
+  return <Menu style={{ display: "grid" }}>{allTitles}</Menu>
 }
 
 export const H1 = ({ children: text, id: directID, ...props }) => {

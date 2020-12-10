@@ -1,7 +1,7 @@
 ---
 title: Javascript cheatsheet
 draft: false
-date: 2020-08-03T18:44:42.151Z
+date: 2020-12-10T18:44:42.151Z
 description: "A cheatsheet for javascript interviews"
 internal: false
 keywords: "javascript, interviews, cs, cheatsheet, scrimba"
@@ -26,7 +26,7 @@ console.log(firstNameVar) // undefined
 console.log(firstNameLet) // ReferenceError: firstNameLet is not defined
 ```
 
-<H1>Q: What are falsey values in JavaScript?</H1>
+<H1>Q: What are falsy values in JavaScript?</H1>
 
 A: A set of unique values that evaluate to false.
 
@@ -145,6 +145,16 @@ console.log(allUsers)
 // [ 'Mr. Dog', 'dinosaur', 'pumpkin', 'cat' ]
 ```
 
+This operator is used in function definitions to collect additional function arguments. Useful when you don't know how many parameters a function needs. It collects them into an array.
+
+```js
+function easy(a, b, c) {
+  console.log("Easy as", a, b, c)
+}
+const letters = ["A", "B", "C"]
+easy(...letters) // Easy as A B C
+```
+
 **concatenate an array**
 
 ```js
@@ -157,34 +167,9 @@ console.log(family)
 //[ 'Mr. Dog', 'Mrs. Dog', 'Pup', 'Little Dog' ]
 ```
 
-**Destructuring**
-
-```js
-const scores = {
-  water: 5,
-  wine: 11,
-  milk: 4,
-  beer: 7,
-}
-const { wine, ...others } = scores
-
-console.log("how much do I like wine?", wine)
-//how much do I like wine?
-```
-
-This operator is used in function definitions to collect additional function arguments. Useful when you don't know how many parameters a function needs. It collects them into an array.
-
-```js
-function easy(a, b, c) {
-  console.log("Easy as", a, b, c)
-}
-const letters = ["A", "B", "C"]
-easy(...letters) // Easy as A B C
-```
-
 #### Rest
 
-Does the opposite of spread. It collects a function's arguments into an array. It's useful when you don't know how many parameters a fuction needs.
+Does the opposite of spread. It collects a function's arguments into an array. It's useful when you don't know how many parameters a function needs.
 
 ```js
 function order(...elements) {
@@ -196,12 +181,39 @@ order("fries", "milkshake", "cheesburger")
 //cheesburger
 ```
 
-<H1>Q:What is and why might you destructure an object or array?</H1>
+<H1>Q: What is and why might you destructure an object or array?</H1>
 
-Destrucuring provides context It's intended to make code easier to read.
+Destrucuring provides context. It's intended to make code easier to read.
+
+**Destructuring**
+
+Destructuring objects
+
+```js
+const scores = {
+  water: 5,
+  wine: 11,
+  milk: 4,
+  beer: 7,
+}
+const { wine: fav, ...others } = scores
+
+console.log("How would you rate wine?", fav)
+//How would you rate wine? 11
+```
+
+Now let's do arrays
+
+```js
+const user = "Paul Hollywood 🍰"
+const [first, last, emoji] = user.split(" ")
+
+console.log(`${first} loves ${emoji}`)
+//Paul loves 🍰
+```
 
 <H1 id="references">References:</H1>
 
-[Scrimba Frontend Interview Tips](https://scrimba.com/learn/frontendinterview/)
+This cheatsheet is based on [Dylan Israel's](https://twitter.com/pizzapokerguy?lang=en) awesome [Scrimba Frontend Interview Tips](https://scrimba.com/learn/frontendinterview/).
 
-[Josh Comeau's Operator Lookup](https://www.joshwcomeau.com/operator-lookup?match=restspread)
+Checkout [Josh Comeau's Operator Lookup](https://www.joshwcomeau.com/operator-lookup?match=restspread) for even more operator fun!
