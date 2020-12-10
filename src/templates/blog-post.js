@@ -53,10 +53,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             {post.frontmatter.date}
           </HeroP>
         </header>
-        {/*         <section
-          ref={markdownRef}
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        /> */}
         <MDXRenderer ref={markdownRef}>{post.body}</MDXRenderer>
         <hr
           style={{
@@ -97,8 +93,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         </nav>
         <Social />
       </Section>
-
-      {/* </Space> */}
     </Layout>
   )
 }

@@ -1,5 +1,10 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
+const isDev = process.env.NODE_ENV === "development"
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
@@ -61,7 +66,17 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   // Create blog posts pages.
-  const posts = blogQuery.data.allMdx.edges
+  // filter drafts fro production mode
+  const posts = blogQuery.data.allMdx.edges.filter((post, i) => {
+    const slug = post.node.fields.slug
+    const isDraft = slug.includes("draft")
+    if (isDev) {
+      console.log(`slug: ${slug} || is draft? ${isDraft}`)
+      return true
+    } else {
+      return !isDraft
+    }
+  })
   const projects = projectsQuery.data.allMdx.edges
 
   posts.forEach((post, index) => {

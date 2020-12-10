@@ -6,6 +6,9 @@ import Layout from "../templates/layout"
 import SEO from "../components/seo"
 import styled from "styled-components"
 import { rhythm } from "../utils/typography"
+import config from "dotenv/config"
+
+const isDev = process.env.GATSBY_STATE === "development"
 
 type Data = {
   site: {
@@ -64,6 +67,16 @@ const BlogIndex = ({ data }: PageProps<Data>) => {
           </section>
         </article>
         {posts.map(({ node }) => {
+          if (node.fields.slug.includes("drafts")) {
+            return isDev ? (
+              <div>
+                <div>draft: </div>
+                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                  {node.fields.slug}
+                </Link>
+              </div>
+            ) : null
+          }
           const title = node.frontmatter.title || node.fields.slug
           return (
             <article key={node.fields.slug}>
@@ -116,7 +129,6 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
-            draft
           }
         }
       }
