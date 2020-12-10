@@ -78,7 +78,7 @@ const Index = ({ data }) => {
     []
   )
   const {
-    allMarkdownRemark: {
+    allMdx: {
       nodes: [fileAbsolutePath],
     },
   } = data
@@ -109,7 +109,7 @@ const Index = ({ data }) => {
           <ImageFull id="bioImage">
             <Img
               fluid={image.childImageSharp.fluid}
-              style={{ gridArea: "image" }}
+              style={{ gridArea: "image", maxWidth: "320px", margin: "auto" }}
             />
           </ImageFull>
 
@@ -318,24 +318,6 @@ const Index = ({ data }) => {
         <HeroSection invert={true}>{getTop()}</HeroSection>
       </div>
       <Section id="bio">{getBio(content.bio)}</Section>
-      {/*       <Section id="featured">
-        <Hero>Featured</Hero>
-        <div>
-          <HeroP>Data analysis</HeroP>
-          <ProjectImage>
-            <img
-              style={{
-                height: "400px",
-                width: "400px",
-                objectFit: "fill",
-                border: "1px solid #8080803b",
-              }}
-              src="img/profg.png"
-              className="imageFluidContainer"
-            />
-          </ProjectImage>
-        </div>
-      </Section> */}
       <Section id="projects">{getProjects(content.projects)}</Section>
       <Section id="contact">{getContact(content.contact)}</Section>
     </Layout>
@@ -346,7 +328,7 @@ export default Index
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/landing/" } }) {
+    allMdx(filter: { fileAbsolutePath: { regex: "/landing/" } }) {
       nodes {
         fileAbsolutePath
         frontmatter {

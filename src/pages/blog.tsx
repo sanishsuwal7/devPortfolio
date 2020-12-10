@@ -13,7 +13,7 @@ type Data = {
       title: string
     }
   }
-  allMarkdownRemark: {
+  allMdx: {
     edges: {
       node: {
         excerpt: string
@@ -37,7 +37,7 @@ const Section = styled(S)`
 
 const BlogIndex = ({ data }: PageProps<Data>) => {
   //const siteTitle = data.site.siteMetadata.title
-  const posts = data.allMarkdownRemark.edges
+  const posts = data.allMdx.edges
 
   return (
     <Layout>
@@ -99,7 +99,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(
+    allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: {
         frontmatter: { internal: { ne: true } }
