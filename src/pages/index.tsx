@@ -109,7 +109,7 @@ const Index = ({ data }) => {
           <ImageFull id="bioImage">
             <Img
               fluid={image.childImageSharp.fluid}
-              style={{ gridArea: "image" }}
+              style={{ gridArea: "image", maxWidth: "320px", margin: "auto" }}
             />
           </ImageFull>
 

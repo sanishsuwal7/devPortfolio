@@ -1,7 +1,7 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import Layout from "../templates/layout"
 import PropTypes from "prop-types"
-import { Section, Markdown } from "../styles/components"
+import { Section } from "../styles/components"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { graphql } from "gatsby"
 import ReadTime from "../components/ReadTime"
@@ -14,12 +14,18 @@ export const Project = ({ data }) => {
   const { title, details, description, body, timeToRead, seo, keywords } = data
   const { stack, code, live, type } = details
 
+  const [remarkDescription, setDescription] = useState(description)
+
+  useEffect(() => {
+    setDescription(remark(description))
+  }, [description])
+
   return (
     <Section top={true}>
       <SEO description={seo || description} title={title} keywords={keywords} />
       <h1>{title.split(":")[0]}</h1>
       <ReadTime text={timeToRead} />
-      <Markdown dangerouslySetInnerHTML={{ __html: description }}></Markdown>
+      <div dangerouslySetInnerHTML={{ __html: remarkDescription }} />
 
       <Icon speed={"4s"} />
       <ProjectDetails>
@@ -52,6 +58,14 @@ export const Project = ({ data }) => {
     </Section>
   )
 }
+
+const Markdown = styled(MDXRenderer)`
+  .gif {
+    float: left;
+    margin: 0 2rem 0 0;
+    padding: 1rem 0;
+  }
+`
 
 const ProjectDetails = styled.div`
   padding-bottom: 2rem;
