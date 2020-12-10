@@ -45,9 +45,6 @@ exports.createPages = async ({ graphql, actions }) => {
               fields {
                 slug
               }
-              frontmatter {
-                title
-              }
             }
           }
         }
@@ -64,8 +61,8 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   // Create blog posts pages.
-  const projects = projectsQuery.data.allMdx.edges
   const posts = blogQuery.data.allMdx.edges
+  const projects = projectsQuery.data.allMdx.edges
 
   posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
