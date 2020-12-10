@@ -19,7 +19,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
 
   useEffect(() => {
     const links = document.querySelectorAll("section a")
-    console.log(links)
     links.forEach(el => (el.target = "blank"))
   }, [])
 

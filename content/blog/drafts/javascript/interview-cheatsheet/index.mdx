@@ -7,7 +7,11 @@ internal: false
 keywords: "javascript, interviews, cs, cheatsheet, scrimba"
 ---
 
-### Q: What is the difference between undefined and undeclared?
+import Headers, { H1 } from "./headers"
+
+<Headers />
+
+<H1>Q: What is the difference between undefined and undeclared? </H1>
 
 Undefined means that the variable has been declared but has not had a value assigned to it.
 Undeclared is that it hasn't been declared.
@@ -22,7 +26,7 @@ console.log(firstNameVar) // undefined
 console.log(firstNameLet) // ReferenceError: firstNameLet is not defined
 ```
 
-### Q: What are falsey values in JavaScript?
+<H1>Q: What are falsey values in JavaScript?</H1>
 
 A: A set of unique values that evaluate to false.
 
@@ -36,7 +40,7 @@ console.log(falsy.some(el => el)) // false
 ```
 <!-- prettier-ignore-end -->
 
-### Q: What are the differences between const, let, and var?
+<H1>Q: What are the differences between const, let, and var?</H1>
 
 A: **const and let** use a block scope (anything between curly brackets) while **var** uses lexical scope.
 
@@ -69,7 +73,7 @@ var num // Declaration
 num = 6 // Initialization
 ```
 
-### Q: What is the difference between == vs === ?
+<H1>Q: What is the difference between == vs === ?</H1>
 
 This operator checks to see if two values are equivalent. Returns a boolean value.
 == ignores the type and focuses on the value.
@@ -83,7 +87,7 @@ console.log(value1 == value2) // true
 console.log(value1 === value2) // false
 ```
 
-### Q: What do map(), filter() and reduce() do?
+<H1>Q: What do map(), filter() and reduce() do?</H1>
 
 Map applies the callback to each value. Returns an array with the results.
 
@@ -114,16 +118,16 @@ const sum = nums.reduce((total, current) => {
 console.log(sum) // 6
 ```
 
-### Q: What is the difference between undefined and null?
+<H1>Q: What is the difference between undefined and null?</H1>
 
 While undefined means that something doesn't exist, null means something has no value. It's preferable to have null values that might change later rather than undefined. _Friendlier code_
 
-### What are some JavaScript data types?
+<H1>What are some JavaScript data types?</H1>
 
 Primitives: String, boolean, numbers, BigInt, Symbol.
 Non-primitives: [ ], { }, Map (objects with unique keys that are beyond strings), Set (arrays with unique values)
 
-### What do the spread and rest operators do?
+<H1>What do the spread and rest operators do?</H1>
 
 #### Spread
 
@@ -192,11 +196,11 @@ order("fries", "milkshake", "cheesburger")
 //cheesburger
 ```
 
-### Q:What is and why might you destructure an object or array?
+<H1>Q:What is and why might you destructure an object or array?</H1>
 
 Destrucuring provides context It's intended to make code easier to read.
 
-### References:
+<H1 id="references">References:</H1>
 
 [Scrimba Frontend Interview Tips](https://scrimba.com/learn/frontendinterview/)
 
