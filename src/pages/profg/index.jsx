@@ -14,6 +14,8 @@ import sentimentPlot from "../../../content/assets/svg/sentiment.svg"
 import timePlot from "../../../content/assets/svg/time.svg"
 import up from "lodash/capitalize"
 
+import { MDXRenderer } from "gatsby-plugin-mdx"
+
 import "tippy.js/dist/tippy.css"
 import "tippy.js/animations/scale.css"
 
@@ -99,7 +101,7 @@ const Prof = ({ data }) => {
       CONTENT["timeToRead"] = el.timeToRead
       return
     }
-    CONTENT[el.frontmatter.name] = el.html
+    CONTENT[el.frontmatter.name] = el.body
   })
   const {
     intro,
@@ -118,20 +120,6 @@ const Prof = ({ data }) => {
   const [more, setMore] = useState(false)
   const toggleMore = useCallback(() => setMore(!more), [more])
 
-  const slidingButton = (action, link = "/", alt) => {
-    return [0, 0].map((e, i) =>
-      alt ? (
-        <div className="topButton" tabIndex={i === 0 ? 0 : -1} onClick={alt}>
-          {action}
-        </div>
-      ) : (
-        <Link tabIndex={i === 0 ? 0 : -1} to={link}>
-          {action}
-        </Link>
-      )
-    )
-  }
-
   return (
     <Layout>
       <SEO
@@ -144,7 +132,7 @@ const Prof = ({ data }) => {
         <Note>October 31, 2020</Note>
         <Note>{timeToRead} minute read</Note>
         {/* <Tweet /> */}
-        <div dangerouslySetInnerHTML={{ __html: intro }}></div>
+        <MDXRenderer>{intro}</MDXRenderer>
 
         <Graph className="center">
           <span className="x">Words</span>
@@ -153,13 +141,13 @@ const Prof = ({ data }) => {
           </span>
           <img src={msglen} />
         </Graph>
-        <div dangerouslySetInnerHTML={{ __html: tweet }}></div>
+        <MDXRenderer>{tweet}</MDXRenderer>
 
         <div className="center">
           <img src={twImg} />
         </div>
 
-        <div dangerouslySetInnerHTML={{ __html: words }}></div>
+        <MDXRenderer>{words}</MDXRenderer>
 
         <div style={{ width: "100%", height: "100%" }}>
           <ReactWordcloud
@@ -191,7 +179,7 @@ const Prof = ({ data }) => {
           />
         </div>
 
-        <div dangerouslySetInnerHTML={{ __html: sentiment }}></div>
+        <MDXRenderer>{sentiment}</MDXRenderer>
         <Graph className="center">
           <span className="y">Number of posts</span>
           <span className="x">Sentiment score</span>
@@ -202,10 +190,10 @@ const Prof = ({ data }) => {
           <div onClick={toggleMore}>
             {!more ? `Click here to read a detailed explanation ` : `Show less`}
           </div>
-          {more ? <div dangerouslySetInnerHTML={{ __html: nerd }}></div> : null}
+          {more ? <MDXRenderer>{nerd}</MDXRenderer> : null}
         </NerdBox>
 
-        <div dangerouslySetInnerHTML={{ __html: good }}></div>
+        <MDXRenderer>{good}</MDXRenderer>
 
         <div
           style={{
@@ -235,13 +223,13 @@ const Prof = ({ data }) => {
           />
         </div>
         <Note>Hover/tap to see how many times each word occurred.</Note>
-        <div dangerouslySetInnerHTML={{ __html: time }}></div>
+        <MDXRenderer>{time}</MDXRenderer>
         <Graph className="center">
           <span className="x">Time</span>
           <span className="y">Number of posts</span>
           <img src={timePlot} />
         </Graph>
-        <div dangerouslySetInnerHTML={{ __html: conclusion }}></div>
+        <MDXRenderer>{conclusion}</MDXRenderer>
       </Section>
       <Section>
         <Hero>Related posts:</Hero>
