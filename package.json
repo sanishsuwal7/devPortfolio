@@ -81,6 +81,7 @@
   },
   "scripts": {
     "dev": "netlify dev",
+    "deploy" : "netlify build && netlify deploy -p",
     "buid:stripe-charge": "cd functions/stripe-charge && npm i",
     "build": "npm run buid:stripe-charge && gatsby build",
     "develop": "gatsby develop",

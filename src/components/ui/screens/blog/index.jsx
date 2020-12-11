@@ -9,12 +9,6 @@ import {
 import styled from "styled-components"
 
 export const Section = styled(S)`
-  .gatsby-highlight {
-    margin: 1rem auto;
-    /* width: clamp(200px, 80vw, 900px); */
-    width: 100%;
-    overflow: auto;
-  }
   max-width: 675px;
   h2 {
     font-family: Montserrat;

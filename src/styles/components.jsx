@@ -131,6 +131,17 @@ export const Space = styled.div`
 `
 
 export const Wrapper = styled.div`
+  .gatsby-highlight pre[class*="language-"] {
+    padding: 0 3.8rem 1rem;
+    width: clamp(200px, 80vw, 900px);
+  }
+  .gatsby-highlight {
+    margin: 1rem auto;
+    /* width: clamp(200px, 80vw, 900px); */
+    width: 100%;
+    overflow: auto;
+  }
+
   .anchorLink {
     color: ${colors.accent};
 
@@ -220,14 +231,6 @@ export const Wrapper = styled.div`
 `
 
 export const Section = styled.section`
-  .gatsby-highlight pre[class*="language-"] {
-    padding: 0 3.8rem 1rem;
-  }
-  .gatsby-highlight {
-    margin: 1rem auto;
-    width: clamp(200px, 80vw, 900px);
-    overflow: auto;
-  }
   max-width: 1100px;
   margin: auto;
   background: ${props => (props.invert ? colors.background : colors.white)};
