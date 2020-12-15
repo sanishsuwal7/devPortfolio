@@ -15,7 +15,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.mdx
   const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
-  const markdownRef = useRef(null)
 
   useEffect(() => {
     const links = document.querySelectorAll("section a")
@@ -34,6 +33,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       <Section>
         <header>
           <Hero
+            id="title"
             style={{
               marginTop: sizing.paddingExterior.base,
               marginBottom: 0,
@@ -52,7 +52,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             {post.frontmatter.date}
           </HeroP>
         </header>
-        <MDXRenderer ref={markdownRef}>{post.body}</MDXRenderer>
+        <MDXRenderer>{post.body}</MDXRenderer>
         <hr
           style={{
             marginBottom: sizing.paddingExterior.base,

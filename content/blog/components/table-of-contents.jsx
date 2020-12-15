@@ -1,5 +1,4 @@
-import React, { useEffect, useState, useRef } from "react"
-import { AnchorLink } from "gatsby-plugin-anchor-links"
+import React, { useEffect, useState } from "react"
 import { navigate } from "@reach/router"
 import kebab from "lodash/kebabCase"
 import styled from "styled-components"
@@ -12,20 +11,20 @@ const Menu = styled.div`
   }
 `
 
-export default function Table(props) {
+export default function Table() {
   const [allTitles, setAllTitles] = useState(null)
+  const [hasNavigated, setHasNavigated] = useState(null)
 
   useEffect(() => {
     const titles = document.querySelectorAll("h3")
-    console.log(titles)
     const indexArr = Object.values(titles).map((el, i) => {
-      console.log(el)
       return (
         <div
           className="anchorLink"
           onClick={() => {
-            console.log(window.location.pathname)
-            el.scrollIntoView()
+            setHasNavigated(true)
+            navigate("#" + kebab(el.innerText.split(" ").slice(1, 5)))
+            //el.scrollIntoView()
           }}
           key={`titles-index-${i}`}
         >
@@ -35,6 +34,19 @@ export default function Table(props) {
     })
     setAllTitles(indexArr)
   }, [])
+
+  useEffect(() => {
+    const goToTitle = () => {
+      console.log("navigate done")
+      setHasNavigated(false)
+      navigate("#title", { replace: true })
+      window.removeEventListener("hashchange", goToTitle)
+    }
+    if (hasNavigated) {
+      window.addEventListener("hashchange", goToTitle)
+      return () => console.log("cleanup has changedd")
+    }
+  }, [hasNavigated])
   return <Menu style={{ display: "grid" }}>{allTitles}</Menu>
 }
 
