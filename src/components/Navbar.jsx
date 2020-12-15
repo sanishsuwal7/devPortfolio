@@ -181,13 +181,14 @@ export default function Navbar(props) {
         <ul id="menu" className={`${!open ? "hide" : ""}`}>
           {["about", "blog"].map((node, i) => {
             return (
-              <Link to={`/${node}`} tabIndex={"0"}>
+              <Link key={`navlink-${i}`} to={`/${node}`} tabIndex={"0"}>
                 <li>{node}</li>
               </Link>
             )
           })}
           {["projects", "contact"].map((link, i) => (
             <AnchorLink
+              key={`navlink-${i}-2`}
               tabIndex={"0"}
               to={`/#${link}`}
               onKeyDown={e => {

@@ -20,7 +20,7 @@ const SocialIcons = styled.div`
   }
 `
 
-export default function Social({ c = colors.accent, h = "white", p }) {
+export default function Social({ c = colors.accent, h = "white", p = null }) {
   return (
     <SocialIcons c={c} h={h} p={p}>
       <a href={`https://github.com/aaspinwall`} target="blank">
