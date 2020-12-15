@@ -10,8 +10,7 @@ const Menu = styled.div`
     font-size: 1.2rem;
   }
 `
-
-export default function Table() {
+const Table = () => {
   const [allTitles, setAllTitles] = useState(null)
   const [hasNavigated, setHasNavigated] = useState(null)
 
@@ -37,18 +36,18 @@ export default function Table() {
 
   useEffect(() => {
     const goToTitle = () => {
-      console.log("navigate done")
       setHasNavigated(false)
       navigate("#title", { replace: true })
       window.removeEventListener("hashchange", goToTitle)
     }
     if (hasNavigated) {
       window.addEventListener("hashchange", goToTitle)
-      return () => console.log("cleanup has changedd")
     }
   }, [hasNavigated])
   return <Menu style={{ display: "grid" }}>{allTitles}</Menu>
 }
+
+export default Table
 
 export const H1 = ({ children: text, id: directID, ...props }) => {
   const id = directID || kebab(text.split(" ").slice(1, 5))
