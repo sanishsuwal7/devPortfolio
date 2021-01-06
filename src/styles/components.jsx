@@ -131,8 +131,12 @@ export const Space = styled.div`
 `
 
 export const Wrapper = styled.div`
+  .line-numbers .line-numbers-rows {
+    top: 1rem;
+    left: 1rem !important;
+  }
   .gatsby-highlight pre[class*="language-"] {
-    padding: 0 3.8rem 1rem;
+    padding: 1rem 3.8rem 1rem;
     width: clamp(200px, 80vw, 900px);
   }
   .gatsby-highlight {

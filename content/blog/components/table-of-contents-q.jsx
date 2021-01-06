@@ -22,7 +22,7 @@ const Table = () => {
           className="anchorLink"
           onClick={() => {
             setHasNavigated(true)
-            navigate("#" + kebab(el.innerText.split(" ")))
+            navigate("#" + kebab(el.innerText.split(" ").slice(1, 5)))
             //el.scrollIntoView()
           }}
           key={`titles-index-${i}`}
@@ -50,7 +50,7 @@ const Table = () => {
 export default Table
 
 export const H1 = ({ children: text, id: directID, ...props }) => {
-  const id = directID || kebab(text.split(" "))
+  const id = directID || kebab(text.split(" ").slice(1, 5))
   return (
     <div>
       <h3 id={id}>{text}</h3>

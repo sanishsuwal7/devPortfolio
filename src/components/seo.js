@@ -8,7 +8,7 @@ const SEO = ({
   lang,
   meta,
   title,
-  thumb = "logo.png",
+  thumb,
   keywords = "javascript, css, html, gatsby, nextjs",
 }) => {
   const { site } = useStaticQuery(
@@ -53,7 +53,7 @@ const SEO = ({
         {
           property: `og:image`,
           itemprop: "image",
-          content: `https://www.aaspinwall.com/img/${thumb}`,
+          content: `https://www.aaspinwall.com/img/${thumb || "logo.png"}`,
         },
         {
           property: `og:description`,
