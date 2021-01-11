@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../templates/layout"
 import PropTypes from "prop-types"
 import { Hero, Section, Markdown } from "../styles/components"
+import Social from "../components/ui/Social"
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
@@ -15,7 +16,7 @@ export const AboutPageTemplate = ({ title, content }) => {
     <Section>
       <Hero>{title}</Hero>
       <MDXRenderer>{body}</MDXRenderer>
-      <Button to={`https://calendly.com/aaspinwall/15`}>Get in touch</Button>
+      <Social inline={true} />
     </Section>
   )
 }

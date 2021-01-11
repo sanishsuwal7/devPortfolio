@@ -12,7 +12,8 @@ import Social from "../../Social"
 import styled from "styled-components"
 
 const Section = styled(S)`
-  max-width: 675px;
+  max-width: ${props => (props.inline ? "inherit" : "675px")};
+  padding: ${props => (props.inline ? "0" : "auto")};
   h2 {
     font-family: Montserrat;
     font-weight: bold;
@@ -21,27 +22,13 @@ const Section = styled(S)`
 const Hero = styled(H)`
   font-size: 2.3rem !important;
 `
-const Sub = styled(Hero)`
-  font-size: 1.2rem;
-  font-weight: bold;
-`
-const Email = styled.a`
-  font-size: 1.3rem;
-  margin: 2rem 0;
-  :hover {
-    filter: brightness(1.2);
-  }
-  cursor: pointer;
-`
 
-const P = styled.p``
-
-const Soc = () => {
+const Soc = props => {
   return (
     <>
-      <Section>
+      <Section inline={props}>
         <Hero>Let's have a chat</Hero>
-        <P>I'd love to hear from you ☁️</P>
+        <p>I'd love to hear from you ☁️</p>
         <Social c={"black"} h={colors.accent} />
         <Button
           to="https://calendly.com/aaspinwall/15"

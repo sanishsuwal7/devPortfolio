@@ -69,7 +69,7 @@ export default function Footer() {
           <Heading>Links</Heading>
           <Grid>
             <To text="About" link="/about"></To>
-            <To text="Blog" link="/profg"></To>
+            <To text="Blog" link="/blog"></To>
             <To text="Projects" link="/#projects"></To>
             <To text="Contact" link="/#contact"></To>
           </Grid>

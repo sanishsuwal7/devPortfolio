@@ -335,7 +335,7 @@ export const Bio = styled.div`
   }
   #bioText {
     grid-area: text;
-    max-width: 40rem;
+
     margin: auto;
   }
   #bioImage {
@@ -400,7 +400,7 @@ export const Projects = styled.div`
     :hover,
     :focus {
       transform: translate(0, -2%);
-      box-shadow: 0px 40px 8px -10px grey;
+      box-shadow: 0px 40px 8px -10px#585858;
       outline: ${colors.contrast};
       cursor: pointer;
     } */

@@ -24,9 +24,9 @@ import styled, { keyframes } from "styled-components"
 import { fadeIn } from "react-animations"
 
 import Clouds from "../components/Clouds"
-import SkillClouds from "../components/SkillClouds"
 import Layout from "../templates/layout"
 import Social from "../components/Social"
+import Featured from "../components/Featured"
 import SkillIcons from "../components/SkillIcons"
 
 import Steam from "../draw/steam/steam_1.svg"
@@ -114,7 +114,6 @@ const Index = ({ data }) => {
           </ImageFull>
 
           <div id="bioText">
-            {/* TODO Add skill icons */}
             <SkillIcons />
 
             {features.map(feature => {
@@ -134,41 +133,48 @@ const Index = ({ data }) => {
     )
   }
   const getProjects = projects => {
-    return projects.map((project, i) => {
-      const { action, body, link, tags, title, image } = project
+    return (
+      <>
+        <h1>{highlightWords("**Projects")}</h1>
+        {projects.map((project, i) => {
+          const { action, body, link, tags, title, image } = project
 
-      return (
-        <Projects>
-          <SectionTag className="latest" style={{ gridArea: "top" }}>
-            LATEST WORK
-          </SectionTag>
-          <Header style={{ gridArea: "title" }}>{highlightWords(title)}</Header>
-          <Tags>
-            {tags.map(li => (
-              <li>{li}</li>
-            ))}
-          </Tags>
-          <Paragraph style={{ gridArea: "text" }}>{body}</Paragraph>
-          <Button style={{ gridArea: "button" }}>
-            {slidingButton(action, link)}
-          </Button>
-          <ProjectImage style={{ gridArea: "image" }}>
-            <Link
-              to={link}
-              onKeyDown={e => {
-                if (e.keyCode === 13) navigate(link)
-              }}
-            >
-              <Img
-                fluid={image.childImageSharp.fluid}
-                className="imageFluidContainer"
-                /* imgStyle={{ borderRadius: "40px" }} */
-              />
-            </Link>
-          </ProjectImage>
-        </Projects>
-      )
-    })
+          return (
+            <Projects>
+              <SectionTag className="latest" style={{ gridArea: "top" }}>
+                LATEST WORK
+              </SectionTag>
+              <Header style={{ gridArea: "title" }}>
+                {highlightWords(title)}
+              </Header>
+              <Tags>
+                {tags.map(li => (
+                  <li>{li}</li>
+                ))}
+              </Tags>
+              <Paragraph style={{ gridArea: "text" }}>{body}</Paragraph>
+              <Button style={{ gridArea: "button" }}>
+                {slidingButton(action, link)}
+              </Button>
+              <ProjectImage style={{ gridArea: "image" }}>
+                <Link
+                  to={link}
+                  onKeyDown={e => {
+                    if (e.keyCode === 13) navigate(link)
+                  }}
+                >
+                  <Img
+                    fluid={image.childImageSharp.fluid}
+                    className="imageFluidContainer"
+                    /* imgStyle={{ borderRadius: "40px" }} */
+                  />
+                </Link>
+              </ProjectImage>
+            </Projects>
+          )
+        })}
+      </>
+    )
   }
 
   const HeroSection = styled(Section)`
@@ -197,7 +203,7 @@ const Index = ({ data }) => {
       :hover,
       :focus {
         transform: translate(0, -2%);
-        box-shadow: 0px 40px 8px -10px grey;
+        box-shadow: 0px 40px 8px -10px#585858;
         cursor: pointer;
       }
     }
@@ -286,22 +292,6 @@ const Index = ({ data }) => {
             />
           )
         })}
-        {wordArray.map(() => {
-          return
-          function randomizeValue(min, max) {
-            const rand = Math.random() * (max - min) + min
-            return rand.toString()
-          }
-          return (
-            <SkillClouds
-              roll={`${randomizeValue(120, 300)}s`}
-              top={`${randomizeValue(12, 90)}vh`}
-              pulse={`${randomizeValue(7, 12)}s`}
-              size={`${randomizeValue(0.3, 1.2)}rem`}
-              offset={`${randomizeValue(-10, 90)}vw`}
-            />
-          )
-        })}
       </>
     )
   }
@@ -318,6 +308,10 @@ const Index = ({ data }) => {
         <HeroSection invert={true}>{getTop()}</HeroSection>
       </div>
       <Section id="bio">{getBio(content.bio)}</Section>
+      <Section>
+        <h1>{highlightWords("**Featured")}</h1>
+        <Featured />
+      </Section>
       <Section id="projects">{getProjects(content.projects)}</Section>
       <Section id="contact">{getContact(content.contact)}</Section>
     </Layout>
