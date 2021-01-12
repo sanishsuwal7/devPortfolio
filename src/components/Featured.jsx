@@ -5,8 +5,6 @@ import { Img } from "gatsby-image"
 
 import styled from "styled-components"
 
-const Card = styled.div``
-
 const FeaturedProjects = styled.div`
   display: flex;
   gap: 2rem;
@@ -14,14 +12,21 @@ const FeaturedProjects = styled.div`
   > div {
     flex: auto;
     display: grid;
-    grid-template-rows: 3rem 200px 1fr;
-    gap: 2rem;
+    grid-template-rows: auto 200px auto auto;
+    gap: 1rem;
+    padding: 1rem 0;
   }
+
   @media only screen and (min-width: 62em) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     > div {
       flex: 1;
+      gap: 1.3rem;
+      grid-template-rows: 100px 200px 200px 1fr;
+    }
+    p {
+      max-width: 200px;
     }
   }
 `
@@ -29,18 +34,23 @@ const FeaturedProjects = styled.div`
 const ProjectImage = styled.div`
   h3 {
     margin: 0;
+    max-width: 95%;
+  }
+  a {
+    margin: 0;
   }
 
-  span {
+  p {
     color: #585858;
-    max-width: 200px;
+    overflow: hidden;
+    margin: 1rem 0;
   }
 
   .imageFluidContainer {
     max-width: 200px;
     border-radius: 40px;
     transition: transform 0.3s ease-in-out, box-shadow 0.2s ease-in-out;
-    border: 2px solid#585858;
+    border: 1px solid#585858;
     :hover,
     :focus {
       transform: translate(0, -2%);
@@ -91,15 +101,20 @@ const Featured = () => {
     return (
       <FeaturedProjects id="deck">
         {featuredPosts.map(el => (
-          <ProjectImage tabIndex={0}>
-            <Link to={`/${el.slug}`}>
+          <ProjectImage>
+            <div>
               <h3>{el.title}</h3>
+              <span>Blog</span>
+            </div>
+
+            <Link to={`/${el.slug}`}>
               <img
                 src={`/img/${el.thumb ? el.thumb : "logo.png"}`}
                 className="imageFluidContainer"
               />
-              <span>{el.description}</span>
             </Link>
+            <p>{el.description}</p>
+            <Link to={`/${el.slug}`}>Read more</Link>
           </ProjectImage>
         ))}
       </FeaturedProjects>

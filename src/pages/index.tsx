@@ -308,7 +308,7 @@ const Index = ({ data }) => {
         <HeroSection invert={true}>{getTop()}</HeroSection>
       </div>
       <Section id="bio">{getBio(content.bio)}</Section>
-      <Section>
+      <Section id="featured">
         <h1>{highlightWords("**Featured")}</h1>
         <Featured />
       </Section>

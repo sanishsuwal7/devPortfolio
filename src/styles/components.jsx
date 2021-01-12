@@ -12,7 +12,7 @@ export const colors = {
 
 export const sizing = {
   paddingExterior: {
-    base: "3.2rem 2rem 3.2rem",
+    base: "1.2rem 2rem 1.2rem",
     tablet: "3.2rem 3rem 3.2rem",
     desktop: "3.2rem 0 3.2rem",
   },
