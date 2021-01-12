@@ -3,7 +3,7 @@ export const c = {
   accent: "#ff715b",
   green: "#0dab76",
   faded: "#b7b4b9",
-  white: "#fdfffc",
+  white: "#ffff",
   grey: "#c7c7c7",
   contrast: "#f9efe7",
 }
