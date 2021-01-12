@@ -1,14 +1,15 @@
 import React from "react"
 import useIsDev from "../utils/hooks/useIsDev"
 import { Link, graphql, useStaticQuery, navigate } from "gatsby"
-import { Img } from "gatsby-image"
-
+import { Box } from "@chakra-ui/core"
+import { AiOutlineArrowRight } from "react-icons/ai"
 import styled from "styled-components"
 
 const FeaturedProjects = styled.div`
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
+
   > div {
     flex: auto;
     display: grid;
@@ -17,17 +18,42 @@ const FeaturedProjects = styled.div`
     padding: 1rem 0;
   }
 
+  div:last-child {
+    display: none;
+  }
+
   @media only screen and (min-width: 62em) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     > div {
       flex: 1;
       gap: 1.3rem;
-      grid-template-rows: 100px 200px 200px 1fr;
+      grid-template-rows: 5rem 200px 200px 1fr;
     }
     p {
       max-width: 200px;
     }
+    div:last-child {
+      display: grid;
+    }
+  }
+`
+
+const GotoBlog = styled(Box)`
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  font-family: Muli;
+  margin: 1rem auto 0;
+  span {
+    font-weight: bold;
+  }
+  > *:last-child {
+    margin-left: 0.5rem;
+  }
+  @media only screen and (min-width: 62em) {
+    justify-content: flex-end;
+    margin: 2rem auto 0;
   }
 `
 
@@ -99,25 +125,33 @@ const Featured = () => {
 
   if (isDev) {
     return (
-      <FeaturedProjects id="deck">
-        {featuredPosts.map(el => (
-          <ProjectImage>
-            <div>
-              <h3>{el.title}</h3>
-              <span>Blog</span>
-            </div>
+      <>
+        <FeaturedProjects id="deck">
+          {featuredPosts.map(el => (
+            <ProjectImage>
+              <div className="top">
+                <h3>{el.title}</h3>
+                <span>Blog</span>
+              </div>
 
-            <Link to={`/${el.slug}`}>
-              <img
-                src={`/img/${el.thumb ? el.thumb : "logo.png"}`}
-                className="imageFluidContainer"
-              />
-            </Link>
-            <p>{el.description}</p>
-            <Link to={`/${el.slug}`}>Read more</Link>
-          </ProjectImage>
-        ))}
-      </FeaturedProjects>
+              <Link to={`/${el.slug}`}>
+                <img
+                  src={`/img/${el.thumb ? el.thumb : "logo.png"}`}
+                  className="imageFluidContainer"
+                />
+              </Link>
+              <p>{el.description}</p>
+              <Link to={`/${el.slug}`}>Read more</Link>
+            </ProjectImage>
+          ))}
+        </FeaturedProjects>
+        <Link to="/blog">
+          <GotoBlog>
+            <span>More blog posts</span>
+            <AiOutlineArrowRight />
+          </GotoBlog>
+        </Link>
+      </>
     )
   }
 }
