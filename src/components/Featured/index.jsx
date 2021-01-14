@@ -50,12 +50,13 @@ const Featured = () => {
 
             <Link to={`/${el.slug}`}>
               <img
+                alt="Blog post image"
                 src={`/img/${el.thumb ? el.thumb : "logo.png"}`}
                 className="imageFluidContainer"
               />
             </Link>
             <p>{el.description}</p>
-            <Link to={`/${el.slug}`}>Read more</Link>
+            <Link to={`/${el.slug}`}>Read the full post</Link>
           </ProjectImage>
         ))}
       </FeaturedProjects>

@@ -108,6 +108,7 @@ const Index = ({ data }) => {
           <h1 style={{ height: "3rem" }}>{highlightWords(title)}</h1>
           <ImageFull id="bioImage">
             <Img
+              alt="a picture of alejandro"
               fluid={image.childImageSharp.fluid}
               style={{ gridArea: "image", maxWidth: "320px", margin: "auto" }}
             />
@@ -125,7 +126,7 @@ const Index = ({ data }) => {
               )
             })}
             <ReadMore>
-              <Link to="/about">Read more...</Link>
+              <Link to="/about">Keep reading my bio</Link>
             </ReadMore>
           </div>
         </div>
@@ -166,6 +167,7 @@ const Index = ({ data }) => {
                   <Img
                     fluid={image.childImageSharp.fluid}
                     className="imageFluidContainer"
+                    alt="project image"
                     /* imgStyle={{ borderRadius: "40px" }} */
                   />
                 </Link>

@@ -139,12 +139,12 @@ const Prof = ({ data }) => {
           <span id="sprinters" className="y">
             Sprinters
           </span>
-          <img src={msglen} />
+          <img alt="word cloud" src={msglen} />
         </Graph>
         <MDXRenderer>{tweet}</MDXRenderer>
 
         <div className="center">
-          <img src={twImg} />
+          <img alt="a snapshot of a tweet" src={twImg} />
         </div>
 
         <MDXRenderer>{words}</MDXRenderer>
@@ -183,7 +183,7 @@ const Prof = ({ data }) => {
         <Graph className="center">
           <span className="y">Number of posts</span>
           <span className="x">Sentiment score</span>
-          <img src={sentimentPlot} />
+          <img alt="graph showing sentiment" src={sentimentPlot} />
         </Graph>
 
         <NerdBox>
@@ -227,7 +227,7 @@ const Prof = ({ data }) => {
         <Graph className="center">
           <span className="x">Time</span>
           <span className="y">Number of posts</span>
-          <img src={timePlot} />
+          <img alt="graph showing number of posts" src={timePlot} />
         </Graph>
         <MDXRenderer>{conclusion}</MDXRenderer>
       </Section>
