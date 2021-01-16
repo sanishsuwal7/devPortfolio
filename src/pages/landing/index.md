@@ -19,13 +19,15 @@ bio:
         electric engineering, automation, video production, feature film
         post-production, VR games, and 3D sound.
 projects:
-  - title: Gleefactor
+  - title: Glee Factor
     body: I took their existing wordpress site and turned it into a headless CMS with React on the frontend. The site features e-commerce, downloads and a seamless bilingual experience.
     image: glee.png
     action: View project
     link: /projects/gleefactor/overview/
     tags:
       - React
+      - Typescript
+      - Redux
       - Gatsbyjs
       - Wordpress
       - Google Pay

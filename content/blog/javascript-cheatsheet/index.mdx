@@ -218,6 +218,50 @@ console.log(`${first} loves ${emoji}`)
 //Paul loves 🍰
 ```
 
+<H1 id="operators">
+  {" "}
+  Q: What is the difference between the && and || operators?
+</H1>
+
+`||` returns the first falsy value. If there are none, it returns the last element.
+
+Think about it as detectives inside an interrogation room `|`🕵️‍♀️🕵️‍♂️`|`
+They're trying to find **true** statements 🔍
+
+`&&` returns the first truthy value. If there are none, it returns the last element.
+
+Think about this one as the superhero 🦸‍♀️ with the && printed on their costume. They're looking for the **false** statements and bringing them to justice 🚔
+
+See them in action:
+
+```js
+const isFrench = true
+
+const greeting = str => console.log(str)
+
+// If statement
+if (isFrench) {
+  greeting("bonjour! if 🥐")
+} else {
+  greeting("hi! if 🍞")
+}
+// bonjour! if 🥐
+
+// Ternary operator
+isFrench ? greeting("bonjour! ? 🥐") : greeting("hi! ? 🍞")
+// bonjour! ? 🥐
+
+// Or operator
+!isFrench || greeting("bonjour! || 🥐")
+isFrench || greeting("hi! || 🍞")
+// bonjour! || 🥐
+
+// And operator
+isFrench && greeting("bonjour! && 🥐")
+!isFrench && greeting("hi! && 🍞")
+// bonjour! && 🥐
+```
+
 <H1 id="references">References:</H1>
 
 This cheatsheet is based on [Dylan Israel's](https://twitter.com/pizzapokerguy?lang=en) awesome [Scrimba Frontend Interview Tips](https://scrimba.com/learn/frontendinterview/).

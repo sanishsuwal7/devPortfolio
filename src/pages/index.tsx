@@ -99,7 +99,7 @@ const Index = ({ data }) => {
     )
   }
 
-  const getBio = bio => {
+  const BioSection = ({ bio }) => {
     const { title, features, image } = bio
 
     return (
@@ -133,7 +133,7 @@ const Index = ({ data }) => {
       </Bio>
     )
   }
-  const getProjects = projects => {
+  const ProjectsSection = ({ projects }) => {
     return (
       <>
         <h1>{highlightWords("**Projects")}</h1>
@@ -220,7 +220,7 @@ const Index = ({ data }) => {
     }
   `
 
-  const getContact = contact => {
+  const ContactSection = ({ contact }) => {
     const { action, title } = contact
 
     return (
@@ -235,7 +235,13 @@ const Index = ({ data }) => {
           contact@aaspinwall.com
         </Email>
 
-        <Button style={{ gridArea: "button", marginTop: "1rem" }}>
+        <Button
+          style={{
+            gridArea: "button",
+            marginTop: "1rem",
+            marginBottom: "3rem",
+          }}
+        >
           {slidingButton(
             action,
             "/",
@@ -309,13 +315,19 @@ const Index = ({ data }) => {
       >
         <HeroSection invert={true}>{getTop()}</HeroSection>
       </div>
-      <Section id="bio">{getBio(content.bio)}</Section>
+      <Section id="bio">
+        <BioSection bio={content.bio} />
+      </Section>
       <Section id="featured">
         <h1>{highlightWords("**Featured")}</h1>
         <Featured />
       </Section>
-      <Section id="projects">{getProjects(content.projects)}</Section>
-      <Section id="contact">{getContact(content.contact)}</Section>
+      <Section id="projects">
+        <ProjectsSection projects={content.projects} />
+      </Section>
+      <Section id="contact">
+        <ContactSection contact={content.contact} />
+      </Section>
     </Layout>
   )
 }

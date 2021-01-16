@@ -53,7 +53,7 @@ export const Button = styled.div`
   position: relative;
   display: block;
   width: 100%;
-  height: 20vh;
+  height: 150px;
   padding-bottom: 2rem;
   div,
   a {
@@ -183,6 +183,10 @@ export const Wrapper = styled.div`
   a {
     color: ${colors.accent};
     font-weight: bold;
+    transition: filter 0.4s ease-in-out;
+    :hover {
+      filter: brightness(0.9);
+    }
   }
 
   ul {
@@ -365,7 +369,7 @@ export const Projects = styled.div`
   display: flex;
   justify-content: space-between;
   flex-flow: column;
-  margin-bottom: 20vh;
+  margin-bottom: clamp(50px, 20vh, 120px);
 
   p {
     font-size: 1.3rem;
