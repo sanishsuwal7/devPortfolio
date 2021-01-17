@@ -1,10 +1,10 @@
 ---
-title: Javascript cheatsheet
+title: JavaScript cheatsheet
 draft: false
 date: 2020-12-10T18:44:42.151Z
-description: "A cheatsheet for javascript interviews. Based on Dylan Israel’s awesome Scrimba Frontend Interview Tips, I wrote a few code examples to help with these concepts."
+description: "A cheatsheet for JavaScript interviews. Based on Dylan Israel’s awesome Scrimba Frontend Interview Tips, I wrote a few code examples to help with these concepts."
 internal: false
-keywords: "javascript, interviews, cs, cheatsheet, scrimba"
+keywords: "JavaScript, interviews, cs, cheatsheet, scrimba"
 thumb: smwyg.jpg
 featured: true
 ---
@@ -37,7 +37,7 @@ console.log(firstNameLet) // ReferenceError: firstNameLet is not defined
 A: A set of unique values that evaluate to false.
 
 <!-- prettier-ignore-start -->
-```javascript
+```JavaScript
 const falsy = [
   null, 0, undefined, false, NaN, "", -0, 0n
   ]
@@ -52,7 +52,7 @@ A: **const and let** use a block scope (anything between curly brackets) while *
 
 **const** stores values that will not be reassigned. They can be mutated.
 
-```javascript
+```JavaScript
 const user = { name: "Alejandro" }
 user.name = "Alex"
 console.log(user) // { name: 'Alex' }

@@ -102,7 +102,7 @@ export default function SkillIcons() {
   return (
     <Wrapper>
       <AllTags>
-        <li>Javascript</li>
+        <li>JavaScript</li>
         <li>Python</li>
         <li className="frontend">React</li>
         <li className="backend">Node.js</li>

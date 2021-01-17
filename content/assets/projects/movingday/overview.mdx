@@ -8,7 +8,7 @@ details:
   stack: React Styled-Components Firebase Netlify
   code: https://github.com/aaspinwall/movingday-backend
   live: https://movingday.netlify.app/
-keywords: movingday, montreal, react, javascript, google maps
+keywords: movingday, montreal, react, JavaScript, google maps
 ---
 
 ![Results page](screen.png "Results page")
@@ -23,7 +23,7 @@ My goal was to **learn to use third party APIs** and to make a robust **full sta
 
 # Web Stack and Explanation
 
-To maximize my learning-to-production ratio, I wanted to have a **javascript-based** stack. I chose **React** for the fronted because I was already familiar with it. I wanted to push myself even within a familiar environment so after developing the initial version, refactored the code using hooks. This was the first time I used hooks with **Redux** and also the first time I would be using a **store persistor.**
+To maximize my learning-to-production ratio, I wanted to have a **JavaScript-based** stack. I chose **React** for the fronted because I was already familiar with it. I wanted to push myself even within a familiar environment so after developing the initial version, refactored the code using hooks. This was the first time I used hooks with **Redux** and also the first time I would be using a **store persistor.**
 
 I used a **firebase realtime database** to store the scraped data and to eventually provide a public facing API.
 

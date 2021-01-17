@@ -16,7 +16,7 @@ You might be a good candidate deep inside, but if you don't play the game and sh
 
 Big ints break
 
-```javascript
+```JavaScript
 // 🚨Big numbers can break your code 🚨
 function add(a, b) {
   return a + b

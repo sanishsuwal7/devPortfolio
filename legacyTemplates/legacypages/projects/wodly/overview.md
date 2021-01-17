@@ -7,7 +7,7 @@ details:
   stack: React Styled-Components Firebase AWS
   live: https://wodly.netlify.app/workouts
 
-keywords: react, firebase, javascript
+keywords: react, firebase, JavaScript
 ---
 
 ![Workout display](workout.png "Workout display")

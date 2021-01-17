@@ -46,7 +46,7 @@ const BlogIndex = ({ data }: PageProps<Data>) => {
     <Layout>
       <SEO
         title="Blog"
-        keywords={"blog, data analysis, javascript, react, nodejs, graphql"}
+        keywords={"blog, data analysis, JavaScript, react, nodejs, graphql"}
       />
       <Section>
         {posts.map(({ node }) => {

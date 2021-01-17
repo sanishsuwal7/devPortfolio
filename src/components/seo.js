@@ -9,7 +9,7 @@ const SEO = ({
   meta,
   title,
   thumb,
-  keywords = "javascript, css, html, gatsby, nextjs",
+  keywords = "JavaScript, css, html, gatsby, nextjs",
 }) => {
   const { site } = useStaticQuery(
     graphql`

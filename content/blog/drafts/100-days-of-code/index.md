@@ -24,7 +24,7 @@ Twitter is social media. That comes with all the benefits of the dev community b
 
 **Before**
 
-My Javascript fundamentals were okay but I struggled mostly with destructuring variables. **Create React App was my one and only solution**, I used Redux whenever I felt that props had to go somewhere beyond direct children and was very new to React Hooks. I had a fobia of databases. I had recently ditched a project because I couldn't implement data relationships. **Authentication was a pain for me**, my irrational fear of getting hacked slowed me down because I was second guessing every decision. Finally, forms in general. I knew how to handle them, but dreaded working with them (the irony).
+My JavaScript fundamentals were okay but I struggled mostly with destructuring variables. **Create React App was my one and only solution**, I used Redux whenever I felt that props had to go somewhere beyond direct children and was very new to React Hooks. I had a fobia of databases. I had recently ditched a project because I couldn't implement data relationships. **Authentication was a pain for me**, my irrational fear of getting hacked slowed me down because I was second guessing every decision. Finally, forms in general. I knew how to handle them, but dreaded working with them (the irony).
 
 **After**
 

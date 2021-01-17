@@ -11,7 +11,7 @@ details:
   stack: Gatsby Styled-Components Chakra-UI Netlify
   code: https://github.com/aaspinwall/festival-gatsby
   live: https://www.ingcreatives.com/
-keywords: ing, ingcreatives, gatsby, shopify, javascript
+keywords: ing, ingcreatives, gatsby, shopify, JavaScript
 ---
 
 ![Results page](screen.png "Results page")

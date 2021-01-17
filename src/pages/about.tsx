@@ -36,7 +36,7 @@ const AboutPage = ({ data }) => {
     <Layout>
       <SEO
         title={"About Alejandro Aspinwall"}
-        keywords={"software engineer, javascript, nodejs, nextjs"}
+        keywords={"software engineer, JavaScript, nodejs, nextjs"}
       />
       <AboutPageTemplate title={title} content={{ body }} />
     </Layout>

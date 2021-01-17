@@ -4,7 +4,7 @@ draft: false
 date: 2020-12-03T17:55:46.594Z
 description: "Getting started with graphQL and FaunaDB"
 internal: false
-keywords: "javascript, faunadb, cs, cheatsheet, graphql"
+keywords: "JavaScript, faunadb, cs, cheatsheet, graphql"
 ---
 
 I love Gatsby, you can probably tell from some of my twitter posts.
