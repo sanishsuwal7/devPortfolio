@@ -19,31 +19,21 @@ bio:
         electric engineering, automation, video production, feature film
         post-production, VR games, and 3D sound.
 projects:
+  - title: Refy
+    body: Assembled and lead a team of 8 developers to create core features and integrate third party APIs. Implemented CI/CD pipeline with Typescript type-checking, database migration, code linting and preview deploys.
+    image: refy.png
+    action: View project
+    link: /projects/refy/overview/
   - title: Glee Factor
     body: I took their existing wordpress site and turned it into a headless CMS with React on the frontend. The site features e-commerce, downloads and a seamless bilingual experience.
     image: glee.png
     action: View project
     link: /projects/gleefactor/overview/
-    tags:
-      - React
-      - Typescript
-      - Redux
-      - Gatsbyjs
-      - Wordpress
-      - Google Pay
-      - MDX
-      - Netlify
   - title: ING Creatives
     body: I built the latest version of the site to improve speed and performance. It features statically generated pages, cloud image resizing and a custom CMS.
     image: ing.png
     action: View project
     link: /projects/ing/overview/
-    tags:
-      - React
-      - Gatsbyjs
-      - Shopify
-      - Netlify
-      - Image CDN
   - title: Moving day
     body:
       Looking for an apartment in Montreal is quite a pain. Since Kijiji doesn't
@@ -51,40 +41,20 @@ projects:
     image: movingday.png
     action: View project
     link: /projects/movingday/overview/
-    tags:
-      - React
-      - Redux
-      - Styled-components
-      - Netlify
-      - Walkscore API
-      - Google Maps API
-      - Firebase
   - title: Wodly
     image: wodly.png
     action: View project
-    tags:
-      - React
-      - Redux
-      - Styled-components
-      - Firebase
-      - AWS Amplify
     link: /projects/wodly/overview/
     body:
       Save your home workouts and display them in a friendly manner. Share with
       your friends!
-  - title: My Nomnoms
-    link: /projects/mynomnoms/overview/
-    action: View project
-    image: mynomnoms.png
-    tags:
-      - React
-      - Styled-components
-      - PWA
-      - Netlify
-      - Cloud image resizing
-    body:
-      A web application that displays your meals with recipes and portion sizes.
-      Developed in collaboration with nutrition experts.
+  # - title: My Nomnoms
+  #   link: /projects/mynomnoms/overview/
+  #   action: View project
+  #   image: mynomnoms.png
+  #   body:
+  #     A web application that displays your meals with recipes and portion sizes.
+  #     Developed in collaboration with nutrition experts.
 
 contact:
   title: Let's have a **chat**

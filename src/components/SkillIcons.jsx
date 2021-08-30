@@ -98,27 +98,35 @@ const AllTags = styled(Tags)`
   }
 `
 
+const skills = [
+  { name: "Typescript" },
+  { name: "React", type: "frontend" },
+  { name: "Node.js", type: "backend" },
+  { name: "HTML", type: "frontend" },
+  { name: "CSS", type: "frontend" },
+  { name: "AWS", type: "devOps" },
+  { name: "Gatsby", type: "frontend" },
+  { name: "Next.js", type: "frontend" },
+  { name: "MongoDB", type: "db" },
+  { name: "GraphQL", type: "backend" },
+  { name: "Apollo GraphQL", type: "backend" },
+  { name: "PostgreSQL", type: "db" },
+  { name: "Nexus", type: "backend" },
+  { name: "FaunaDB", type: "db" },
+  { name: "Firebase", type: "backend" },
+  { name: "Wordpress", type: "cms" },
+  { name: "Shopify", type: "cms" },
+]
+
 export default function SkillIcons() {
   return (
     <Wrapper>
       <AllTags>
         <li>JavaScript</li>
         <li>Python</li>
-        <li className="frontend">React</li>
-        <li className="backend">Node.js</li>
-        <li className="frontend">HTML</li>
-        <li className="frontend">CSS</li>
-        <li className="devOps">AWS</li>
-        <li className="frontend">Gatsby</li>
-        <li className="frontend">Next.js</li>
-        <li className="db">MongoDB</li>
-        <li className="backend">GraphQL</li>
-        <li className="db">SQL</li>
-        <li className="db">MongoDB</li>
-        <li className="db">FaunaDB</li>
-        <li className="backend">Firebase</li>
-        <li className="cms">Wordpress</li>
-        <li className="cms">Shopify</li>
+        {skills.map(s => (
+          <li className={s.type}>{s.name}</li>
+        ))}
       </AllTags>
     </Wrapper>
   )

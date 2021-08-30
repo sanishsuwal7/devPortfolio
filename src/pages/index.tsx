@@ -1,8 +1,10 @@
 // Gatsby supports TypeScript natively!
 import React from "react"
 import { graphql, navigate, Link } from "gatsby"
+import { highlightWords } from "../utils/highlightWords"
 import Img from "gatsby-image"
 import SEO from "../components/seo"
+import FeaturedProjectsV2 from "../components/projects"
 
 import {
   Section as S,
@@ -137,22 +139,16 @@ const Index = ({ data }) => {
     return (
       <>
         <h1>{highlightWords("**Projects")}</h1>
+
         {projects.map((project, i) => {
-          const { action, body, link, tags, title, image } = project
+          const { action, body, link, title, image } = project
 
           return (
             <Projects>
-              <SectionTag className="latest" style={{ gridArea: "top" }}>
+              {/* <SectionTag className="latest" style={{ gridArea: "top" }}>
                 LATEST WORK
-              </SectionTag>
-              <Header style={{ gridArea: "title" }}>
-                {highlightWords(title)}
-              </Header>
-              <Tags>
-                {tags.map(li => (
-                  <li>{li}</li>
-                ))}
-              </Tags>
+              </SectionTag> */}
+              <FeaturedProjectsV2 project={project} />
               <Paragraph style={{ gridArea: "text" }}>{body}</Paragraph>
               <Button style={{ gridArea: "button" }}>
                 {slidingButton(action, link)}
@@ -168,7 +164,6 @@ const Index = ({ data }) => {
                     fluid={image.childImageSharp.fluid}
                     className="imageFluidContainer"
                     alt="project image"
-                    /* imgStyle={{ borderRadius: "40px" }} */
                   />
                 </Link>
               </ProjectImage>
@@ -250,20 +245,6 @@ const Index = ({ data }) => {
         </Button>
       </div>
     )
-  }
-
-  const highlightWords = title => {
-    return title.split(" ").map(el => {
-      if (el.includes("**")) {
-        const reg = /\*/g
-        return (
-          <div className="highlight">
-            <div>{el.replace(reg, "")}</div>
-            <div></div>
-          </div>
-        )
-      } else return <div>{el}</div>
-    })
   }
 
   const slidingButton = (action: string, link: string = "/", alt?) => {
@@ -350,7 +331,6 @@ export const pageQuery = graphql`
             action
             body
             link
-            tags
             title
             image {
               childImageSharp {

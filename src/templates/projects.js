@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import Layout from "../templates/layout"
+import Layout from "./layout"
 import PropTypes from "prop-types"
 import { Section } from "../styles/components"
 import { MDXRenderer } from "gatsby-plugin-mdx"
@@ -15,6 +15,7 @@ export const Project = ({ data }) => {
   const { stack, code, live, type } = details
 
   const [remarkDescription, setDescription] = useState(description)
+  const [showMore, setShowMore] = useState(false)
 
   useEffect(() => {
     setDescription(remark(description))
@@ -35,11 +36,25 @@ export const Project = ({ data }) => {
         </div>
         <div>
           <h3>Stack</h3>
-          <div>
-            {stack.split(" ").map(e => (
-              <div>{e}</div>
-            ))}
-          </div>
+          {showMore ? (
+            <div>
+              {stack.split(" ").map(e => (
+                <div>{e.replaceAll("_", " ")}</div>
+              ))}
+            </div>
+          ) : (
+            <>
+              {stack
+                .split(" ")
+                .filter((e, i) => i < 7)
+                .map(e => (
+                  <div>{e.replaceAll("_", " ")}</div>
+                ))}
+              {stack.split(" ").length > 7 && (
+                <div onClick={() => setShowMore(true)}>...show more</div>
+              )}
+            </>
+          )}
         </div>
         {code !== " " ? (
           <div>
