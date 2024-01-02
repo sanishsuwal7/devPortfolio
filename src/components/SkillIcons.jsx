@@ -124,8 +124,10 @@ export default function SkillIcons() {
       <AllTags>
         <li>JavaScript</li>
         <li>Python</li>
-        {skills.map(s => (
-          <li className={s.type}>{s.name}</li>
+        {skills.map((s, i) => (
+          <li key={`skill-i-${i}`} className={s.type}>
+            {s.name}
+          </li>
         ))}
       </AllTags>
     </Wrapper>

@@ -1,10 +1,10 @@
 import React from "react"
 import { colors as c } from "../styles/components"
-import { Link } from "gatsby"
-import { Box } from "@chakra-ui/core"
 
 import Sc from "../components/Social"
 import styled from "styled-components"
+import Link from "next/link"
+import { Box } from "@chakra-ui/react"
 
 const Foot = styled.footer`
   position: relative;
@@ -40,7 +40,7 @@ const Heading = styled.div`
   margin-bottom: 0.5rem;
 `
 
-const To = ({ text, link }) => <Link to={link}>{text}</Link>
+const To = ({ text, link }) => <Link href={link}>{text}</Link>
 
 const Logo = styled(Link)`
   color: white !important;
@@ -58,7 +58,7 @@ export default function Footer() {
     <Foot>
       <div id="footWrap">
         <Div maxW="200px" color={c.faded}>
-          <Logo to="/">Alejandro Aspinwall</Logo>
+          <Logo href="/">Alejandro Aspinwall</Logo>
           <div style={{ fontSize: "0.8rem", marginTop: "0.5rem" }}>
             © {new Date().getFullYear()}, Built and designed by Alejandro
             Aspinwall
@@ -77,7 +77,7 @@ export default function Footer() {
 
         <Div w="200px">
           <Heading>Get in touch</Heading>
-          <Div display="grid">
+          <Div display={"flex"} flexDirection={"column"}>
             <Social c={"white"} h={"white"} p={"0rem 1rem 2rem 0px"} />
           </Div>
         </Div>

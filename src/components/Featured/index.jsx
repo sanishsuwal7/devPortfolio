@@ -1,7 +1,8 @@
 import React from "react"
-import { Link, graphql, useStaticQuery } from "gatsby"
-import { FeaturedProjects, GotoBlog, ProjectImage } from "./elements"
+
+import Link from "next/link"
 import { AiOutlineArrowRight } from "react-icons/ai"
+import { FeaturedProjects, GotoBlog, ProjectImage } from "./elements"
 
 const Featured = () => {
   const {
@@ -41,23 +42,25 @@ const Featured = () => {
   return (
     <>
       <FeaturedProjects id="deck">
-        {featuredPosts.map(el => (
-          <ProjectImage>
-            <div className="top">
-              <h3>{el.title}</h3>
-              <span>Blog</span>
-            </div>
+        {featuredPosts.map((el, i) => (
+          <React.Fragment key={i}>
+            <ProjectImage>
+              <div className="top">
+                <h3>{el.title}</h3>
+                <span>Blog</span>
+              </div>
 
-            <Link to={`/${el.slug}`}>
-              <img
-                alt="Blog post image"
-                src={`/img/${el.thumb ? el.thumb : "logo.png"}`}
-                className="imageFluidContainer"
-              />
-            </Link>
-            <p>{el.description}</p>
-            <Link to={`/${el.slug}`}>Read the full post</Link>
-          </ProjectImage>
+              <Link href={`/${el.slug}`}>
+                <img
+                  alt="Blog post image"
+                  src={`/img/${el.thumb ? el.thumb : "logo.png"}`}
+                  className="imageFluidContainer"
+                />
+              </Link>
+              <p>{el.description}</p>
+              <Link href={`/${el.slug}`}>Read the full post</Link>
+            </ProjectImage>
+          </React.Fragment>
         ))}
       </FeaturedProjects>
       <Link to="/blog">

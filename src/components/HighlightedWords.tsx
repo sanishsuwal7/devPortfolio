@@ -1,11 +1,11 @@
 import React from "react"
 
-export const highlightWords = title => {
-  return title.split(" ").map(el => {
+export const HighlightedWords = ({ title }: { title: string }) => {
+  return title.split(" ").map((el, i) => {
     if (el.includes("**")) {
       const reg = /\*/g
       return (
-        <div className="highlight">
+        <div key={`highlightwords-${i}`} className="highlight">
           <div>{el.replace(reg, "")}</div>
           <div></div>
         </div>

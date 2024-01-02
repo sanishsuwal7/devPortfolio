@@ -49,7 +49,7 @@ export const SectionTag = styled.div`
   letter-spacing: 0.1rem;
 `
 
-export const Button = styled.div`
+export const StyledButton = styled.div`
   position: relative;
   display: block;
   width: 100%;
@@ -201,6 +201,7 @@ export const Wrapper = styled.div`
 
   h1 {
     font-weight: 400;
+    font-size: 2.5rem;
   }
 
   .inh {
@@ -392,22 +393,6 @@ export const Projects = styled.div`
     border-radius: 40px;
     grid-area: image;
     max-width: 500px;
-
-/*     > img {
-      padding: 0;
-      margin: 0;
-      border: 0;
-      border-radius: 40px;
-      max-height: 100%;
-    }
-    transition: transform 0.3s ease-in-out, box-shadow 0.2s ease-in-out;
-    :hover,
-    :focus {
-      transform: translate(0, -2%);
-      box-shadow: 0px 40px 8px -10px#585858;
-      outline: ${colors.contrast};
-      cursor: pointer;
-    } */
   }
 
   @media only screen and (max-width: 400px) {
@@ -439,7 +424,7 @@ export const Projects = styled.div`
   }
 `
 
-export const Hero = styled.h1`
+export const Hero = styled.h1<{ invert: boolean }>`
   color: ${props => (props.invert ? colors.white : colors.background)};
   font-size: 2.5rem;
   font-weight: normal;

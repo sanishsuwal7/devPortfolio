@@ -1,6 +1,6 @@
 import React from "react"
 import { highlightWords } from "../utils/highlightWords"
-import { StaticQuery, graphql } from "gatsby"
+// import { StaticQuery, graphql } from "gatsby"
 import { fadeIn } from "react-animations"
 import styled, { keyframes } from "styled-components"
 
@@ -19,63 +19,41 @@ import {
   CupContainer,
   colors,
 } from "../styles/components"
+import { HighlightedWords } from "./HighlightedWords"
 const FadeIn = keyframes`${fadeIn}`
 const Section = styled(S)`
   animation: 1s ${FadeIn};
 `
+type Props = {
+  project: {
+    action: string
+    body: string
+    link: string
+    tags: string[]
+    title: string
+    image: string
+  }
+}
+export default function ProjectsV2({ project }: Props) {
+  const { action, body, link, tags, title, image, children } = project
 
-export default function ProjectsV2({ project }) {
-  const { action, body, link, tags, title, image } = project
   return (
-    <StaticQuery
-      query={graphql`
-        {
-          allMdx(filter: { slug: { regex: "/overview/" } }) {
-            nodes {
-              slug
-              frontmatter {
-                title
-                role
-                details {
-                  stack
-                }
-              }
-            }
-          }
-        }
-      `}
-      render={data => {
-        return (
-          <>
-            {data.allMdx.nodes
-              .filter(
-                n => n.slug.replaceAll("/", "") === link.replaceAll("/", "")
-              )
-              .map(n => {
-                const { details, title, role } = n.frontmatter
-
-                const [name, desc] = title.split(":")
-
-                return (
-                  <>
-                    <SectionTag className="latest" style={{ gridArea: "top" }}>
-                      {role || `FULL STACK DEVELOPER`}
-                    </SectionTag>
-                    <Header style={{ gridArea: "title" }}>
-                      {highlightWords(name)}
-                    </Header>
-                    <Tags>
-                      {details.stack.split(" ").map(li => (
-                        <li>{li.replaceAll("_", " ")}</li>
-                      ))}
-                    </Tags>
-                  </>
-                )
-              })}
-          </>
-        )
-      }}
-    />
+    <>
+      <>
+        <SectionTag className="latest" style={{ gridArea: "top" }}>
+          {role || `FULL STACK DEVELOPER`}
+        </SectionTag>
+        <Header style={{ gridArea: "title" }}>
+          <HighlightedWords title={title} />
+        </Header>
+        <Tags>
+          {details.stack.split(" ").map((li, i) => (
+            <li key={i}>{li.replaceAll("_", " ")}</li>
+          ))}
+        </Tags>
+      </>
+      {/* {children} */}
+    </>
   )
 }
 
@@ -101,7 +79,9 @@ const ProjectImage = styled.div`
   .imageFluidContainer {
     max-width: 500px;
     border-radius: 40px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.2s ease-in-out;
+    transition:
+      transform 0.3s ease-in-out,
+      box-shadow 0.2s ease-in-out;
     :hover,
     :focus {
       transform: translate(0, -2%);

@@ -1,12 +1,12 @@
-import React, { useEffect, useRef, useState } from "react"
 import delay from "lodash/debounce"
+import Link from "next/link"
+import { useEffect, useState } from "react"
 import { GiHamburgerMenu } from "react-icons/gi"
-import { Link, graphql, useStaticQuery, navigate } from "gatsby"
 import styled from "styled-components"
 import { colors } from "../styles/components"
-import { AnchorLink } from "gatsby-plugin-anchor-links"
+import { useRouter } from "next/navigation"
 
-const Container = styled.nav`
+const Container = styled.nav<{ invert: boolean }>`
   * {
     color: ${props => (props.invert ? colors.white : colors.background)};
   }
@@ -110,10 +110,11 @@ const Container = styled.nav`
   }
 `
 
-export default function Navbar(props) {
+export default function Navbar({ invert }: { invert?: boolean }) {
   const [hidenav, setHidenav] = useState(true)
   const [buffer, setBuffer] = useState(null)
   const [open, setOpen] = useState(false)
+  const { push } = useRouter()
 
   const delayedFunc = delay(() => {
     const height = window.pageYOffset
@@ -133,28 +134,6 @@ export default function Navbar(props) {
     return () => window.removeEventListener("scroll", scroller)
   }, [])
 
-  const data = useStaticQuery(graphql`
-    query {
-      allSitePage(
-        filter: { component: { regex: "/pages/" }, componentChunkName: {} }
-      ) {
-        nodes {
-          path
-        }
-      }
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
-  const {
-    allSitePage: { nodes },
-    site: { siteMetadata },
-  } = data
-
   const delayedHide = delay(() => setHidenav(true), 1000)
 
   const hasLeft = () => {
@@ -171,7 +150,7 @@ export default function Navbar(props) {
       onMouseOver={() => setHidenav(false)}
       onMouseLeave={hasLeft}
     >
-      <Link to="/">
+      <Link href="/">
         <Logo>Alejandro Aspinwall</Logo>
       </Link>
       <div id="burger" onClick={() => setOpen(!open)}>
@@ -181,22 +160,22 @@ export default function Navbar(props) {
         <ul id="menu" className={`${!open ? "hide" : ""}`}>
           {["about", "blog"].map((node, i) => {
             return (
-              <Link key={`navlink-${i}`} to={`/${node}`} tabIndex={"0"}>
+              <Link key={`navlink-${i}`} href={`/${node}`} tabIndex={0}>
                 <li>{node}</li>
               </Link>
             )
           })}
           {["projects", "contact"].map((link, i) => (
-            <AnchorLink
+            <Link
               key={`navlink-${i}-2`}
-              tabIndex={"0"}
-              to={`/#${link}`}
+              tabIndex={0}
+              href={`/#${link}`}
               onKeyDown={e => {
-                if (e.keyCode === 13) navigate(`/#${link}`)
+                if (e.keyCode === 13) push(`/#${link}`)
               }}
             >
               <li>{link}</li>
-            </AnchorLink>
+            </Link>
           ))}
         </ul>
       }

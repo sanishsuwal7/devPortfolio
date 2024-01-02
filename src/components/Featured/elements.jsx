@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/core"
+import { Box } from "@chakra-ui/react"
 import styled from "styled-components"
 
 export const FeaturedProjects = styled.div`
@@ -71,7 +71,9 @@ export const ProjectImage = styled.div`
   .imageFluidContainer {
     max-width: 200px;
     border-radius: 40px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.2s ease-in-out;
+    transition:
+      transform 0.3s ease-in-out,
+      box-shadow 0.2s ease-in-out;
     border: 1px solid#585858;
     :hover,
     :focus {
