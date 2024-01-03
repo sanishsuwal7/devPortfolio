@@ -40,18 +40,23 @@ const Index = () => {
           </div>
         </HeroSection>
       </div>
+
       <Section id="bio">
         <BioSection bio={content.bio} />
       </Section>
-      <Section id="featured">
+
+      {/* Hiding featured section during refactor */}
+      {/* <Section id="featured">
         <h1>
           <HighlightedWords title={'**Featured'} />
         </h1>
-        {/* <Featured /> */}
-      </Section>
+        <Featured />
+      </Section> */}
+
       <Section id="projects">
         <ProjectsSection projects={content.projects} />
       </Section>
+
       <Section id="contact">
         <ContactSection contact={content.contact} />
       </Section>

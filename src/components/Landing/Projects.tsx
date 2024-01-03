@@ -29,7 +29,9 @@ export const ProjectsSection = ({ projects }) => {
               <SectionTag className="latest" style={{ gridArea: 'top' }}>
                 LATEST WORK
               </SectionTag>
+              
               <Paragraph style={{ gridArea: 'text' }}>{body}</Paragraph>
+
               <StyledButton style={{ gridArea: 'button' }}>
                 <SlidingButton action={action} link={link} />
               </StyledButton>
