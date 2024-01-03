@@ -1,5 +1,5 @@
-import { Box } from "@chakra-ui/react"
-import styled from "styled-components"
+import { Box } from '@chakra-ui/react';
+import styled from 'styled-components';
 
 export const FeaturedProjects = styled.div`
   display: flex;
@@ -33,7 +33,7 @@ export const FeaturedProjects = styled.div`
       display: grid;
     }
   }
-`
+`;
 
 export const GotoBlog = styled(Box)`
   display: flex;
@@ -51,7 +51,7 @@ export const GotoBlog = styled(Box)`
     justify-content: flex-end;
     margin: 2rem auto 0;
   }
-`
+`;
 
 export const ProjectImage = styled.div`
   h3 {
@@ -82,4 +82,4 @@ export const ProjectImage = styled.div`
       cursor: pointer;
     }
   }
-`
+`;

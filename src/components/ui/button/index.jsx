@@ -1,11 +1,8 @@
-import React from "react"
-import { Link } from "gatsby"
-import styled from "styled-components"
-import { c } from "../../styles/"
-import { Button as B } from "@chakra-ui/core"
+import { Button as B } from '@chakra-ui/react';
+import { Link } from 'gatsby';
 
 const Button = ({ children, to, ...props }) => {
-  const external = to.includes("http")
+  const external = to.includes('http');
   return (
     <B {...props}>
       {external ? (
@@ -16,7 +13,7 @@ const Button = ({ children, to, ...props }) => {
         <Link to={to}>{children}</Link>
       )}
     </B>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;

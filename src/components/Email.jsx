@@ -1,12 +1,12 @@
-import React from "react"
-import styled from "styled-components"
+import React from 'react';
+import styled from 'styled-components';
 
 export default function Email() {
   return (
     <EmailWrapper>
       <div>contact@aaspinwall.com</div>
     </EmailWrapper>
-  )
+  );
 }
 
 const EmailWrapper = styled.div`
@@ -18,4 +18,4 @@ const EmailWrapper = styled.div`
   padding: 1rem;
   border: 2px solid blue;
   font-weight: bold;
-`
+`;

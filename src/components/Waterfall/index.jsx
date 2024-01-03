@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react"
-import { graphql, useStaticQuery } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import React, { useState, useEffect } from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
-const Waterfall = ({ size = "md" }) => {
+const Waterfall = ({ size = 'md' }) => {
   const data = useStaticQuery(graphql`
     query MyQuery {
       lg: allFile(filter: { relativePath: { eq: "images/waterfall.jpg" } }) {
@@ -42,24 +42,24 @@ const Waterfall = ({ size = "md" }) => {
         }
       }
     }
-  `)
+  `);
 
   const getSize = {
     sm: data.sm,
     md: data.md,
     lg: data.lg,
-  }
-  const image = getSize[size].nodes[0]
-  const imageData = getImage(image)
-  console.log(imageData)
+  };
+  const image = getSize[size].nodes[0];
+  const imageData = getImage(image);
+  console.log(imageData);
 
   return (
     <GatsbyImage
       image={imageData}
-      style={{ maxWidth: "1100px", margin: "auto", width: "100%" }}
+      style={{ maxWidth: '1100px', margin: 'auto', width: '100%' }}
       alt="waterfall"
     />
-  )
-}
+  );
+};
 
-export default Waterfall
+export default Waterfall;

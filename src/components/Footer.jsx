@@ -1,10 +1,10 @@
-import React from "react"
-import { colors as c } from "../styles/components"
+import React from 'react';
+import { colors as c } from '../styles/components';
 
-import Sc from "../components/Social"
-import styled from "styled-components"
-import Link from "next/link"
-import { Box } from "@chakra-ui/react"
+import Sc from '../components/Social';
+import styled from 'styled-components';
+import Link from 'next/link';
+import { Box } from '@chakra-ui/react';
 
 const Foot = styled.footer`
   position: relative;
@@ -23,35 +23,35 @@ const Foot = styled.footer`
       padding: 1rem 0;
     }
   }
-`
+`;
 
-const Social = styled(Sc)``
+const Social = styled(Sc)``;
 
 const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0 0.5rem;
-`
+`;
 
 const Heading = styled.div`
   display: block;
   font-weight: bold;
   color: ${c.grey};
   margin-bottom: 0.5rem;
-`
+`;
 
-const To = ({ text, link }) => <Link href={link}>{text}</Link>
+const To = ({ text, link }) => <Link href={link}>{text}</Link>;
 
 const Logo = styled(Link)`
   color: white !important;
   font-size: 1.4rem !important;
   line-height: 2rem !important;
-  font-family: "Montserrat" !important;
+  font-family: 'Montserrat' !important;
   margin-bottom: 1rem !important;
   padding-bottom: 1rem !important;
-`
+`;
 
-const Div = Box
+const Div = Box;
 
 export default function Footer() {
   return (
@@ -59,7 +59,7 @@ export default function Footer() {
       <div id="footWrap">
         <Div maxW="200px" color={c.faded}>
           <Logo href="/">Alejandro Aspinwall</Logo>
-          <div style={{ fontSize: "0.8rem", marginTop: "0.5rem" }}>
+          <div style={{ fontSize: '0.8rem', marginTop: '0.5rem' }}>
             © {new Date().getFullYear()}, Built and designed by Alejandro
             Aspinwall
           </div>
@@ -77,11 +77,11 @@ export default function Footer() {
 
         <Div w="200px">
           <Heading>Get in touch</Heading>
-          <Div display={"flex"} flexDirection={"column"}>
-            <Social c={"white"} h={"white"} p={"0rem 1rem 2rem 0px"} />
+          <Div display={'flex'} flexDirection={'column'}>
+            <Social c={'white'} h={'white'} p={'0rem 1rem 2rem 0px'} />
           </Div>
         </Div>
       </div>
     </Foot>
-  )
+  );
 }

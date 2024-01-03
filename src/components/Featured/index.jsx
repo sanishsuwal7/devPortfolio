@@ -1,8 +1,8 @@
-import React from "react"
+import React from 'react';
 
-import Link from "next/link"
-import { AiOutlineArrowRight } from "react-icons/ai"
-import { FeaturedProjects, GotoBlog, ProjectImage } from "./elements"
+import Link from 'next/link';
+import { AiOutlineArrowRight } from 'react-icons/ai';
+import { FeaturedProjects, GotoBlog, ProjectImage } from './elements';
 
 const Featured = () => {
   const {
@@ -29,15 +29,15 @@ const Featured = () => {
         }
       }
     }
-  `)
+  `);
 
-  const featuredPosts = Object.values(edges).map(el => {
+  const featuredPosts = Object.values(edges).map((el) => {
     return {
       ...el.node.frontmatter,
       excerpt: el.node.excerpt,
       slug: el.node.slug,
-    }
-  })
+    };
+  });
 
   return (
     <>
@@ -53,7 +53,7 @@ const Featured = () => {
               <Link href={`/${el.slug}`}>
                 <img
                   alt="Blog post image"
-                  src={`/img/${el.thumb ? el.thumb : "logo.png"}`}
+                  src={`/img/${el.thumb ? el.thumb : 'logo.png'}`}
                   className="imageFluidContainer"
                 />
               </Link>
@@ -70,7 +70,7 @@ const Featured = () => {
         </GotoBlog>
       </Link>
     </>
-  )
-}
+  );
+};
 
-export default Featured
+export default Featured;

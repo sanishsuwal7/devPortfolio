@@ -1,15 +1,15 @@
-import React from "react"
-import "../styles/styles.css"
+import React from 'react';
+import '../styles/styles.css';
 //import Bio from "../components/bio"
-import SEO from "../components/seo"
-import { Wrapper, Space } from "../styles/components"
-import Navbar from "../components/Navbar"
-import Footer from "../components/Footer"
-import { Link, graphql, useStaticQuery } from "gatsby"
+import SEO from '../components/seo';
+import { Wrapper, Space } from '../styles/components';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import { Link, graphql, useStaticQuery } from 'gatsby';
 
 interface Props {
-  children: any
-  invert?: boolean
+  children: any;
+  invert?: boolean;
 }
 
 export default function Layout({ children, invert }: Props) {
@@ -28,12 +28,12 @@ export default function Layout({ children, invert }: Props) {
         }
       }
     }
-  `)
+  `);
 
   const {
     allSitePage: { nodes },
     site: { siteMetadata },
-  } = data
+  } = data;
 
   return (
     <Wrapper>
@@ -41,5 +41,5 @@ export default function Layout({ children, invert }: Props) {
       {children}
       <Footer />
     </Wrapper>
-  )
+  );
 }

@@ -1,22 +1,22 @@
-import styled from "styled-components"
+import styled from 'styled-components';
 
 export const colors = {
-  background: "#121e27",
-  accent: "#ff715b",
-  green: "#0dab76",
-  faded: "#b7b4b9",
-  white: "#ffff",
-  grey: "#c7c7c7",
-  contrast: "#f9efe7",
-}
+  background: '#121e27',
+  accent: '#ff715b',
+  green: '#0dab76',
+  faded: '#b7b4b9',
+  white: '#ffff',
+  grey: '#c7c7c7',
+  contrast: '#f9efe7',
+};
 
 export const sizing = {
   paddingExterior: {
-    base: "1.2rem 2rem 1.2rem",
-    tablet: "3.2rem 3rem 3.2rem",
-    desktop: "3.2rem 0 3.2rem",
+    base: '1.2rem 2rem 1.2rem',
+    tablet: '3.2rem 3rem 3.2rem',
+    desktop: '3.2rem 0 3.2rem',
   },
-}
+};
 
 export const ThumbnailImg = styled.img`
   width: 50px;
@@ -24,7 +24,7 @@ export const ThumbnailImg = styled.img`
   border-radius: 30px;
   object-fit: cover;
   margin-right: 1rem;
-`
+`;
 export const ImageFull = styled.div`
   /* max-width: 30rem;
   margin: auto; */
@@ -36,18 +36,18 @@ export const ImageFull = styled.div`
   @media only screen and (min-width: 768px) {
     margin: 0;
   }
-`
+`;
 
-export const Header = styled.h1``
+export const Header = styled.h1``;
 
-export const Paragraph = styled.p``
+export const Paragraph = styled.p``;
 
 export const SectionTag = styled.div`
   font-family: Muli;
   margin: 0 0 1rem;
   padding: 0;
   letter-spacing: 0.1rem;
-`
+`;
 
 export const StyledButton = styled.div`
   position: relative;
@@ -68,7 +68,7 @@ export const StyledButton = styled.div`
     }
   }
   > *:nth-child(1) {
-    background: ${props => (props.invert ? colors.green : colors.accent)};
+    background: ${(props) => (props.invert ? colors.green : colors.accent)};
     color: ${colors.white};
     z-index: 100;
     transform: translate3d(-8px, -8px, 0px) scale3d(1, 1, 1) rotateX(0deg)
@@ -82,7 +82,7 @@ export const StyledButton = styled.div`
   }
   > *:nth-child(2) {
     z-index: 0;
-    border: 2px ${props => (props.invert ? colors.white : colors.background)}
+    border: 2px ${(props) => (props.invert ? colors.white : colors.background)}
       solid;
     position: absolute;
     color: transparent;
@@ -96,7 +96,7 @@ export const StyledButton = styled.div`
   :focus {
     outline: none;
   }
-`
+`;
 
 export const Tags = styled.ul`
   display: flex;
@@ -125,17 +125,19 @@ export const Tags = styled.ul`
     max-width: 80%;
     display: none;
   }
-`
+`;
 export const Space = styled.div`
   padding: ${sizing.paddingExterior.base};
-`
+`;
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div``;
+
+export const WrapperUnused = styled.div`
   .line-numbers .line-numbers-rows {
     top: 1rem;
     left: 1rem !important;
   }
-  .gatsby-highlight pre[class*="language-"] {
+  .gatsby-highlight pre[class*='language-'] {
     padding: 1rem 3.8rem 1rem;
     width: clamp(200px, 80vw, 900px);
   }
@@ -207,8 +209,6 @@ export const Wrapper = styled.div`
   .inh {
     color: inherit;
   }
-  .logo {
-  }
   .highlight {
     position: relative;
     z-index: 100;
@@ -237,16 +237,16 @@ export const Wrapper = styled.div`
       animation: sw 0.4s ease-in-out;
     }
   }
-`
+`;
 
 export const Section = styled.section`
   max-width: 1100px;
   margin: auto;
-  background: ${props => (props.invert ? colors.background : colors.white)};
-  color: ${props => (props.invert ? colors.white : colors.background)};
+  background: ${(props) => (props.invert ? colors.background : colors.white)};
+  color: ${(props) => (props.invert ? colors.white : colors.background)};
 
-  padding: ${props =>
-    props.top ? "12vh 3rem 22vh" : sizing.paddingExterior.base};
+  padding: ${(props) =>
+    props.top ? '12vh 3rem 22vh' : sizing.paddingExterior.base};
 
   .marquee {
     min-height: 65vh;
@@ -269,7 +269,7 @@ export const Section = styled.section`
     margin: auto;
     padding: auto 2rem;
   }
-`
+`;
 export const CupContainer = styled.div`
   position: absolute;
   display: flex;
@@ -325,14 +325,14 @@ export const CupContainer = styled.div`
     margin: 1rem 0 3rem;
     top: 2rem;
   }
-`
+`;
 
 export const Bio = styled.div`
   #bioContainer {
     grid-template-areas:
-      "header "
-      "image"
-      "text";
+      'header '
+      'image'
+      'text';
     display: grid;
     h1 {
       grid-area: header;
@@ -350,8 +350,8 @@ export const Bio = styled.div`
     #bioContainer {
       align-items: center;
       grid-template-areas:
-        "header header"
-        "image text";
+        'header header'
+        'image text';
       grid-template-columns: 1fr 2fr;
     }
     #bioImage {
@@ -363,7 +363,7 @@ export const Bio = styled.div`
       padding: 2rem 2rem 2rem 0;
     }
   }
-`
+`;
 
 export const Projects = styled.div`
   position: relative;
@@ -412,20 +412,20 @@ export const Projects = styled.div`
     display: grid;
     grid-template-columns: 3fr 2fr;
     grid-template-areas:
-      "top top"
-      "title image"
-      "tags image"
-      "button image"
-      "text image";
+      'top top'
+      'title image'
+      'tags image'
+      'button image'
+      'text image';
     .projectImage {
       margin: auto;
       background: transparent;
     }
   }
-`
+`;
 
 export const Hero = styled.h1<{ invert: boolean }>`
-  color: ${props => (props.invert ? colors.white : colors.background)};
+  color: ${(props) => (props.invert ? colors.white : colors.background)};
   font-size: 2.5rem;
   font-weight: normal;
   max-width: 60rem;
@@ -433,9 +433,9 @@ export const Hero = styled.h1<{ invert: boolean }>`
   @media only screen and (min-width: 768px) {
     font-size: 4rem;
   }
-`
+`;
 export const HeroP = styled.p`
   color: ${colors.grey};
   font-size: 1.2rem;
   max-width: 30rem;
-`
+`;

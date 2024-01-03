@@ -1,10 +1,10 @@
-import Link from "next/link"
+import Link from 'next/link';
 
 type Props = {
-  action: string
-  link: string
-  alt?: () => void
-}
+  action: string;
+  link: string;
+  alt?: () => void;
+};
 export const SlidingButton = ({ action, alt, link }: Props) => {
   return [0, 0].map((e, i) =>
     alt ? (
@@ -21,5 +21,5 @@ export const SlidingButton = ({ action, alt, link }: Props) => {
         {action}
       </Link>
     ),
-  )
-}
+  );
+};

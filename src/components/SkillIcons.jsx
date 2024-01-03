@@ -1,6 +1,6 @@
-import React from "react"
-import styled from "styled-components"
-import { Tags } from "../styles/components"
+import React from 'react';
+import styled from 'styled-components';
+import { Tags } from '../styles/components';
 
 const Wrapper = styled.div`
   display: flex;
@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   > div {
     padding: 0 1rem 0 0;
   }
-`
+`;
 const AllTags = styled(Tags)`
   width: 100%;
   justify-content: center !important;
@@ -54,7 +54,7 @@ const AllTags = styled(Tags)`
   .backend {
     :hover {
       ::after {
-        content: "Backend";
+        content: 'Backend';
         background: #728e39;
         color: white;
       }
@@ -63,7 +63,7 @@ const AllTags = styled(Tags)`
   .frontend {
     :hover {
       ::after {
-        content: "Frontend";
+        content: 'Frontend';
         background: yellow;
         color: black;
       }
@@ -72,7 +72,7 @@ const AllTags = styled(Tags)`
   .devOps {
     :hover {
       ::after {
-        content: "DevOps";
+        content: 'DevOps';
         background: #870687;
         color: white;
       }
@@ -81,7 +81,7 @@ const AllTags = styled(Tags)`
   .db {
     :hover {
       ::after {
-        content: "Database";
+        content: 'Database';
         background: #ff91a4;
         color: white;
       }
@@ -90,33 +90,33 @@ const AllTags = styled(Tags)`
   .cms {
     :hover {
       ::after {
-        content: "CMS";
+        content: 'CMS';
         background: #6161ff;
         color: white;
       }
     }
   }
-`
+`;
 
 const skills = [
-  { name: "Typescript" },
-  { name: "React", type: "frontend" },
-  { name: "Node.js", type: "backend" },
-  { name: "HTML", type: "frontend" },
-  { name: "CSS", type: "frontend" },
-  { name: "AWS", type: "devOps" },
-  { name: "Gatsby", type: "frontend" },
-  { name: "Next.js", type: "frontend" },
-  { name: "MongoDB", type: "db" },
-  { name: "GraphQL", type: "backend" },
-  { name: "Apollo GraphQL", type: "backend" },
-  { name: "PostgreSQL", type: "db" },
-  { name: "Nexus", type: "backend" },
-  { name: "FaunaDB", type: "db" },
-  { name: "Firebase", type: "backend" },
-  { name: "Wordpress", type: "cms" },
-  { name: "Shopify", type: "cms" },
-]
+  { name: 'Typescript' },
+  { name: 'React', type: 'frontend' },
+  { name: 'Node.js', type: 'backend' },
+  { name: 'HTML', type: 'frontend' },
+  { name: 'CSS', type: 'frontend' },
+  { name: 'AWS', type: 'devOps' },
+  { name: 'Gatsby', type: 'frontend' },
+  { name: 'Next.js', type: 'frontend' },
+  { name: 'MongoDB', type: 'db' },
+  { name: 'GraphQL', type: 'backend' },
+  { name: 'Apollo GraphQL', type: 'backend' },
+  { name: 'PostgreSQL', type: 'db' },
+  { name: 'Nexus', type: 'backend' },
+  { name: 'FaunaDB', type: 'db' },
+  { name: 'Firebase', type: 'backend' },
+  { name: 'Wordpress', type: 'cms' },
+  { name: 'Shopify', type: 'cms' },
+];
 
 export default function SkillIcons() {
   return (
@@ -131,5 +131,5 @@ export default function SkillIcons() {
         ))}
       </AllTags>
     </Wrapper>
-  )
+  );
 }

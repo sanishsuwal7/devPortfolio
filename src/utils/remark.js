@@ -1,6 +1,7 @@
-import remark from "remark"
-import remarkHTML from "remark-html"
+import remark from 'remark';
+import remarkHTML from 'remark-html';
 
-const toHTML = value => remark().use(remarkHTML).processSync(value).toString()
+const toHTML = (value) =>
+  remark().use(remarkHTML).processSync(value).toString();
 
-export default toHTML
+export default toHTML;

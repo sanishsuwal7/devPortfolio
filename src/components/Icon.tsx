@@ -1,12 +1,12 @@
-import React, { useState } from "react"
-import { FaReact } from "react-icons/fa"
-import styled from "styled-components"
+import React, { useState } from 'react';
+import { FaReact } from 'react-icons/fa';
+import styled from 'styled-components';
 
-export default function Icon({ speed, type = "react" }) {
+export default function Icon({ speed, type = 'react' }) {
   const icons = {
     react: <FaReact />,
-  }
-  return <Wrapper speed={speed}>{icons[type]}</Wrapper>
+  };
+  return <Wrapper speed={speed}>{icons[type]}</Wrapper>;
 }
 
 const Wrapper = styled.div`
@@ -22,6 +22,6 @@ const Wrapper = styled.div`
       }
     }
     font-size: 2rem;
-    animation: example ${props => props.speed} linear infinite;
+    animation: example ${(props) => props.speed} linear infinite;
   }
-`
+`;

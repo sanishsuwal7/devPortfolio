@@ -1,16 +1,16 @@
-import React, { useRef } from "react"
-import styled from "styled-components"
+import React, { useRef } from 'react';
+import styled from 'styled-components';
 
 export default function Clouds({ roll, top, pulse, size, offset }) {
-  const thisCloud = useRef()
+  const thisCloud = useRef();
 
   function randomizeValue(min, max) {
-    const rand = Math.random() * (max - min) + min
-    return Math.floor(rand)
+    const rand = Math.random() * (max - min) + min;
+    return Math.floor(rand);
   }
 
-  const index = randomizeValue(3, 5)
-  const cloud = `/cloud_${index}.svg`
+  const index = randomizeValue(3, 5);
+  const cloud = `/cloud_${index}.svg`;
 
   return (
     <SVGcontainer
@@ -23,16 +23,16 @@ export default function Clouds({ roll, top, pulse, size, offset }) {
     >
       <img src={cloud} />
     </SVGcontainer>
-  )
+  );
 }
 
 export const SVGcontainer = styled.div`
   position: absolute;
 
-  width: ${props => props.size};
-  top: ${props => props.top};
+  width: ${(props) => props.size};
+  top: ${(props) => props.top};
   overflow: hidden;
-  left: ${props => props.offset};
+  left: ${(props) => props.offset};
 
   @keyframes pulse {
     0%,
@@ -70,8 +70,8 @@ export const SVGcontainer = styled.div`
   }
 
   animation:
-    pulse ${props => props.pulse} ease-in-out infinite alternate,
-    roll ${props => props.roll} linear forwards;
+    pulse ${(props) => props.pulse} ease-in-out infinite alternate,
+    roll ${(props) => props.roll} linear forwards;
 
   svg {
     z-index: -999;
@@ -80,4 +80,4 @@ export const SVGcontainer = styled.div`
       fill: white;
     }
   }
-`
+`;

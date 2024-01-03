@@ -1,14 +1,14 @@
-import delay from "lodash/debounce"
-import Link from "next/link"
-import { useEffect, useState } from "react"
-import { GiHamburgerMenu } from "react-icons/gi"
-import styled from "styled-components"
-import { colors } from "../styles/components"
-import { useRouter } from "next/navigation"
+import delay from 'lodash/debounce';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import styled from 'styled-components';
+import { colors } from '../styles/components';
+import { useRouter } from 'next/navigation';
 
 const Container = styled.nav<{ invert: boolean }>`
   * {
-    color: ${props => (props.invert ? colors.white : colors.background)};
+    color: ${(props) => (props.invert ? colors.white : colors.background)};
   }
   position: absolute;
   left: 0;
@@ -108,41 +108,41 @@ const Container = styled.nav<{ invert: boolean }>`
   .invisible {
     animation: fadeOut 0.7s forwards;
   }
-`
+`;
 
 export default function Navbar({ invert }: { invert?: boolean }) {
-  const [hidenav, setHidenav] = useState(true)
-  const [buffer, setBuffer] = useState(null)
-  const [open, setOpen] = useState(false)
-  const { push } = useRouter()
+  const [hidenav, setHidenav] = useState(true);
+  const [buffer, setBuffer] = useState(null);
+  const [open, setOpen] = useState(false);
+  const { push } = useRouter();
 
   const delayedFunc = delay(() => {
-    const height = window.pageYOffset
-    setHidenav(true)
-    setBuffer(height)
-  }, 2000)
+    const height = window.pageYOffset;
+    setHidenav(true);
+    setBuffer(height);
+  }, 2000);
 
   useEffect(() => {
     let scroller = () => {
-      setHidenav(false)
-      delayedFunc()
-    }
-    setBuffer(window.pageYOffset)
+      setHidenav(false);
+      delayedFunc();
+    };
+    setBuffer(window.pageYOffset);
 
-    window.addEventListener("scroll", scroller)
+    window.addEventListener('scroll', scroller);
 
-    return () => window.removeEventListener("scroll", scroller)
-  }, [])
+    return () => window.removeEventListener('scroll', scroller);
+  }, []);
 
-  const delayedHide = delay(() => setHidenav(true), 1000)
+  const delayedHide = delay(() => setHidenav(true), 1000);
 
   const hasLeft = () => {
-    delayedHide()
-  }
+    delayedHide();
+  };
 
   const Logo = styled.div`
     display: inline;
-  `
+  `;
 
   return (
     <Container
@@ -157,21 +157,21 @@ export default function Navbar({ invert }: { invert?: boolean }) {
         <GiHamburgerMenu />
       </div>
       {
-        <ul id="menu" className={`${!open ? "hide" : ""}`}>
-          {["about", "blog"].map((node, i) => {
+        <ul id="menu" className={`${!open ? 'hide' : ''}`}>
+          {['about', 'blog'].map((node, i) => {
             return (
               <Link key={`navlink-${i}`} href={`/${node}`} tabIndex={0}>
                 <li>{node}</li>
               </Link>
-            )
+            );
           })}
-          {["projects", "contact"].map((link, i) => (
+          {['projects', 'contact'].map((link, i) => (
             <Link
               key={`navlink-${i}-2`}
               tabIndex={0}
               href={`/#${link}`}
-              onKeyDown={e => {
-                if (e.keyCode === 13) push(`/#${link}`)
+              onKeyDown={(e) => {
+                if (e.keyCode === 13) push(`/#${link}`);
               }}
             >
               <li>{link}</li>
@@ -180,5 +180,5 @@ export default function Navbar({ invert }: { invert?: boolean }) {
         </ul>
       }
     </Container>
-  )
+  );
 }

@@ -1,18 +1,18 @@
 // import SEO from "../components/seo"
 
-import { Section as S } from "../../styles/components"
+import { Section as S } from '../../styles/components';
 
-import { fadeIn } from "react-animations"
-import styled, { keyframes } from "styled-components"
+import { fadeIn } from 'react-animations';
+import styled, { keyframes } from 'styled-components';
 
-export const FadeIn = keyframes`${fadeIn}`
+export const FadeIn = keyframes`${fadeIn}`;
 
 export const Section = styled(S)`
   animation: 1s ${FadeIn};
-`
+`;
 export const HeroSection = styled(Section)<{ invert: boolean }>`
   max-width: 100vw;
-`
+`;
 
 export const Email = styled.a`
   font-size: 1.3rem;
@@ -24,7 +24,7 @@ export const Email = styled.a`
     filter: brightness(1.2);
   }
   cursor: pointer;
-`
+`;
 
 export const ProjectImage = styled.div`
   grid-area: image;
@@ -42,7 +42,7 @@ export const ProjectImage = styled.div`
       cursor: pointer;
     }
   }
-`
+`;
 export const ReadMore = styled.div`
   font-family: Muli;
   transition: 0.8s ease-in-out;
@@ -51,4 +51,4 @@ export const ReadMore = styled.div`
     font-weight: bold;
     filter: brightness(0.8);
   }
-`
+`;

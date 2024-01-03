@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from 'react';
 
 const useIsDev = () => {
-  const [isDev, setisDev] = useState(process.env.GATSBY_STATE === "development")
+  const [isDev, setisDev] = useState(
+    process.env.GATSBY_STATE === 'development',
+  );
   useEffect(() => {
-    setisDev(process.env.GATSBY_STATE === "development")
-  }, [])
-  return isDev
-}
-export default useIsDev
+    setisDev(process.env.GATSBY_STATE === 'development');
+  }, []);
+  return isDev;
+};
+export default useIsDev;

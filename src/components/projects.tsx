@@ -1,8 +1,8 @@
-import React from "react"
-import { highlightWords } from "../utils/highlightWords"
+import React from 'react';
+import { highlightWords } from '../utils/highlightWords';
 // import { StaticQuery, graphql } from "gatsby"
-import { fadeIn } from "react-animations"
-import styled, { keyframes } from "styled-components"
+import { fadeIn } from 'react-animations';
+import styled, { keyframes } from 'styled-components';
 
 import {
   Section as S,
@@ -18,48 +18,48 @@ import {
   Header,
   CupContainer,
   colors,
-} from "../styles/components"
-import { HighlightedWords } from "./HighlightedWords"
-const FadeIn = keyframes`${fadeIn}`
+} from '../styles/components';
+import { HighlightedWords } from './HighlightedWords';
+const FadeIn = keyframes`${fadeIn}`;
 const Section = styled(S)`
   animation: 1s ${FadeIn};
-`
+`;
 type Props = {
   project: {
-    action: string
-    body: string
-    link: string
-    tags: string[]
-    title: string
-    image: string
-  }
-}
+    action: string;
+    body: string;
+    link: string;
+    tags: string[];
+    title: string;
+    image: string;
+  };
+};
 export default function ProjectsV2({ project }: Props) {
-  const { action, body, link, tags, title, image, children } = project
+  const { action, body, link, tags, title, image, children } = project;
 
   return (
     <>
       <>
-        <SectionTag className="latest" style={{ gridArea: "top" }}>
+        <SectionTag className="latest" style={{ gridArea: 'top' }}>
           {role || `FULL STACK DEVELOPER`}
         </SectionTag>
-        <Header style={{ gridArea: "title" }}>
+        <Header style={{ gridArea: 'title' }}>
           <HighlightedWords title={title} />
         </Header>
         <Tags>
-          {details.stack.split(" ").map((li, i) => (
-            <li key={i}>{li.replaceAll("_", " ")}</li>
+          {details.stack.split(' ').map((li, i) => (
+            <li key={i}>{li.replaceAll('_', ' ')}</li>
           ))}
         </Tags>
       </>
       {/* {children} */}
     </>
-  )
+  );
 }
 
 const HeroSection = styled(Section)`
   max-width: 100vw;
-`
+`;
 
 const Email = styled.a`
   font-size: 1.3rem;
@@ -71,7 +71,7 @@ const Email = styled.a`
     filter: brightness(1.2);
   }
   cursor: pointer;
-`
+`;
 
 const ProjectImage = styled.div`
   grid-area: image;
@@ -89,7 +89,7 @@ const ProjectImage = styled.div`
       cursor: pointer;
     }
   }
-`
+`;
 const ReadMore = styled.div`
   font-family: Muli;
   transition: 0.8s ease-in-out;
@@ -98,4 +98,4 @@ const ReadMore = styled.div`
     font-weight: bold;
     filter: brightness(0.8);
   }
-`
+`;

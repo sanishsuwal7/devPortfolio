@@ -1,25 +1,25 @@
-import React, { useEffect, useRef } from "react"
-import { Link, graphql } from "gatsby"
-import { Space } from "../styles/components"
-import Bio from "../components/bio"
-import Layout from "../templates/layout"
-import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
-import { sizing } from "../styles/components"
+import React, { useEffect, useRef } from 'react';
+import { Link, graphql } from 'gatsby';
+import { Space } from '../styles/components';
+import Bio from '../components/bio';
+import Layout from '../templates/layout';
+import SEO from '../components/seo';
+import { rhythm, scale } from '../utils/typography';
+import { sizing } from '../styles/components';
 
-import { MDXRenderer } from "gatsby-plugin-mdx"
-import Social from "../components/ui/Social"
-import { Hero, Note, HeroP, Section } from "../components/ui/screens/blog"
+import { MDXRenderer } from 'gatsby-plugin-mdx';
+import Social from '../components/ui/Social';
+import { Hero, Note, HeroP, Section } from '../components/ui/screens/blog';
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
-  const post = data.mdx
-  const siteTitle = data.site.siteMetadata.title
-  const { previous, next } = pageContext
+  const post = data.mdx;
+  const siteTitle = data.site.siteMetadata.title;
+  const { previous, next } = pageContext;
 
   useEffect(() => {
-    const links = document.querySelectorAll("section a")
-    links.forEach(el => (el.target = "blank"))
-  }, [])
+    const links = document.querySelectorAll('section a');
+    links.forEach((el) => (el.target = 'blank'));
+  }, []);
 
   return (
     <Layout title={siteTitle}>
@@ -93,10 +93,10 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         <Social />
       </Section>
     </Layout>
-  )
-}
+  );
+};
 
-export default BlogPostTemplate
+export default BlogPostTemplate;
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -119,4 +119,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

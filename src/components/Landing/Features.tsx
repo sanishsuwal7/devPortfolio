@@ -1,4 +1,4 @@
-type Props = { features: { body: string; header: string }[] }
+type Props = { features: { body: string; header: string }[] };
 export const Features = ({ features }: Props) => {
   return features.map((feature, i) => {
     return (
@@ -6,6 +6,6 @@ export const Features = ({ features }: Props) => {
         <h3>{feature.header}</h3>
         <p>{feature.body}</p>
       </div>
-    )
-  })
-}
+    );
+  });
+};
