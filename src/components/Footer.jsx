@@ -46,7 +46,6 @@ const Logo = styled(Link)`
   color: white !important;
   font-size: 1.4rem !important;
   line-height: 2rem !important;
-  font-family: 'Montserrat' !important;
   margin-bottom: 1rem !important;
   padding-bottom: 1rem !important;
 `;

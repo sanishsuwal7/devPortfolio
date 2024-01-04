@@ -28,9 +28,9 @@ export const ContactSection = ({ contact }) => {
         }}
       >
         <SlidingButton
-          action={action}
+          buttonText={action}
           link="/"
-          alt={() =>
+          onClick={() =>
             (window.location.href = 'https://calendly.com/aaspinwall/15')
           }
         />

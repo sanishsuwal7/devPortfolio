@@ -9,6 +9,4 @@ export default function ReadTime({ text }) {
   return <ReadTimeWrapper>{readTime + ' minute read'}</ReadTimeWrapper>;
 }
 
-export const ReadTimeWrapper = styled.div`
-  font-family: Montserrat;
-`;
+export const ReadTimeWrapper = styled.div``;

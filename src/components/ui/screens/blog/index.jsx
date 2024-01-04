@@ -1,9 +1,7 @@
 import {
   Hero as H,
-  Section as S,
-  Markdown,
   HeroP as HP,
-  colors,
+  Section as S,
 } from '../../../../styles/components';
 
 import styled from 'styled-components';
@@ -11,7 +9,6 @@ import styled from 'styled-components';
 export const Section = styled(S)`
   max-width: 675px;
   h2 {
-    font-family: Montserrat;
     font-weight: bold;
   }
   ul {

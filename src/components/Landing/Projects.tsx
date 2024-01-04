@@ -30,7 +30,8 @@ export const ProjectsSection = ({ projects }: Props) => {
 
       <div>
         {projects.map((project, i) => {
-          const { action, body, link, title, image, role, keywords } = project;
+          const { buttonText, body, link, title, image, role, keywords } =
+            project;
 
           const tags = keywords || defaultKeywords;
 
@@ -54,7 +55,7 @@ export const ProjectsSection = ({ projects }: Props) => {
               <Paragraph style={{ gridArea: 'text' }}>{body}</Paragraph>
 
               <StyledButton style={{ gridArea: 'button' }}>
-                <SlidingButton action={action} link={link} />
+                <SlidingButton buttonText={buttonText} link={link} />
               </StyledButton>
 
               <ProjectImage style={{ gridArea: 'image' }}>

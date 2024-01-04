@@ -6,8 +6,7 @@ body {
   /* max-width: 80rem; */
   margin: auto;
   overflow-x: hidden;
-  font-family: "Montserrat" !important;
-}
+  }
 
 ::-webkit-scrollbar {
   background-color: transparent;
@@ -20,8 +19,7 @@ body {
 }
 
 .topButton,
-.anchorLink {
-  font-family: Montserrat;
+.anchorLink {  
   font-weight: bold;
 }
 
@@ -52,7 +50,6 @@ button,
 small,
 a,
 nav {
-  font-family: Montserrat;
   text-decoration: none;
   box-shadow: none;
 }

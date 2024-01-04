@@ -55,6 +55,7 @@ export const StyledButton = styled.div`
   width: 100%;
   height: 150px;
   padding-bottom: 2rem;
+
   div,
   a {
     position: absolute;
@@ -67,6 +68,7 @@ export const StyledButton = styled.div`
       margin-top: 2rem;
     }
   }
+
   > *:nth-child(1) {
     background: ${(props) => (props.invert ? colors.green : colors.accent)};
     color: ${colors.white};
@@ -74,11 +76,6 @@ export const StyledButton = styled.div`
     transform: translate3d(-8px, -8px, 0px) scale3d(1, 1, 1) rotateX(0deg)
       rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
     transition: transform 0.2s ease-in-out;
-    :hover,
-    :focus {
-      transform: translate3d(2px, 2px, 2px);
-      cursor: pointer;
-    }
   }
   > *:nth-child(2) {
     z-index: 0;
@@ -87,6 +84,13 @@ export const StyledButton = styled.div`
     position: absolute;
     color: transparent;
   }
+
+  > *:nth-child(1):hover,
+  :focus {
+    transform: translate3d(2px, 2px, 2px);
+    cursor: pointer;
+  }
+
   @media only screen and (max-width: 400px) {
     div,
     a {
@@ -177,7 +181,6 @@ export const WrapperUnused = styled.div`
 
   .topButton,
   .anchorLink {
-    font-family: Montserrat;
     font-weight: bold;
   }
 
