@@ -3,7 +3,6 @@ import {
   Paragraph,
   Projects,
   SectionTag,
-  StyledButton,
   Tags,
 } from '@/styles/components';
 
@@ -54,9 +53,9 @@ export const ProjectsSection = ({ projects }: Props) => {
 
               <Paragraph style={{ gridArea: 'text' }}>{body}</Paragraph>
 
-              <StyledButton style={{ gridArea: 'button' }}>
+              <div style={{ gridArea: 'button' }}>
                 <SlidingButton buttonText={buttonText} link={link} />
-              </StyledButton>
+              </div>
 
               <ProjectImage style={{ gridArea: 'image' }}>
                 <Link href={link}>

@@ -1,9 +1,9 @@
-import { Hero, CupContainer, StyledButton } from '@/styles/components';
+import { CupContainer, Hero } from '@/styles/components';
 import { Email } from '.';
 import { HighlightedWords } from '../HighlightedWords';
+import { SlidingButton } from './Buttons';
 import Cup from './cup.svg';
 import Steam from './steam_1.svg';
-import { SlidingButton } from './Buttons';
 
 export const ContactSection = ({ contact }) => {
   const { action, title } = contact;
@@ -20,7 +20,7 @@ export const ContactSection = ({ contact }) => {
         contact@aaspinwall.com
       </Email>
 
-      <StyledButton
+      <div
         style={{
           gridArea: 'button',
           marginTop: '1rem',
@@ -28,13 +28,10 @@ export const ContactSection = ({ contact }) => {
         }}
       >
         <SlidingButton
-          buttonText={action}
-          link="/"
-          onClick={() =>
-            (window.location.href = 'https://calendly.com/aaspinwall/15')
-          }
+          buttonText={'Get in touch'}
+          link="https://calendly.com/aaspinwall/15"
         />
-      </StyledButton>
+      </div>
     </div>
   );
 };
