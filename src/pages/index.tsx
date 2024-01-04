@@ -27,6 +27,7 @@ const Index = () => {
           background: colors.background,
         }}
       >
+        {/* Make this section a bit more concise and easier to read */}
         <HeroSection invert={true}>
           <div>
             <MakeClouds cloudCount={30} mult={1} />

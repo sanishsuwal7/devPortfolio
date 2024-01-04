@@ -1,35 +1,56 @@
 import {
+  Header,
   Paragraph,
   Projects,
   SectionTag,
   StyledButton,
+  Tags,
 } from '@/styles/components';
 
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { ProjectImage } from '.';
 
+import { content } from '../../../content';
 import { HighlightedWords } from '../HighlightedWords';
 import { SlidingButton } from './Buttons';
 
-export const ProjectsSection = ({ projects }) => {
-  const { push } = useRouter();
+type Props = { projects: typeof content.projects };
+
+/*
+ * We're hardcoding the keywords for now, but we can make this dynamic later
+ */
+const defaultKeywords = ['nextjs', 'typescript', 'react'];
+
+export const ProjectsSection = ({ projects }: Props) => {
   return (
     <>
       <h1>
         <HighlightedWords title="**Projects" />
       </h1>
 
-      <Projects>
+      <div>
         {projects.map((project, i) => {
-          const { action, body, link, title, image } = project;
+          const { action, body, link, title, image, role, keywords } = project;
+
+          const tags = keywords || defaultKeywords;
 
           return (
-            <div key={`projects-${i}`}>
+            <Projects key={`projects-${i}`}>
               <SectionTag className="latest" style={{ gridArea: 'top' }}>
-                LATEST WORK
+                {role || `Personal Project`}
               </SectionTag>
-              
+              <Header>
+                <HighlightedWords title={title} />
+              </Header>
+
+              {tags && (
+                <Tags>
+                  {tags.map((keyword, i) => (
+                    <li key={`keyword-element-${i}`}>{keyword}</li>
+                  ))}
+                </Tags>
+              )}
+
               <Paragraph style={{ gridArea: 'text' }}>{body}</Paragraph>
 
               <StyledButton style={{ gridArea: 'button' }}>
@@ -45,10 +66,10 @@ export const ProjectsSection = ({ projects }) => {
                   />
                 </Link>
               </ProjectImage>
-            </div>
+            </Projects>
           );
         })}
-      </Projects>
+      </div>
     </>
   );
 };
