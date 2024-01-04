@@ -8,7 +8,7 @@ export const HighlightedWords = ({ title }: { title: string }) => {
       return (
         <div key={`highlightwords-${i}`} className={styles.highlight}>
           <div>{text.replace(reg, '')}</div>
-          <div></div>
+          <div className={styles.highlighUnderline}></div>
         </div>
       );
     }
