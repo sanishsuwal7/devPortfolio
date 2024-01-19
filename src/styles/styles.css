@@ -1,9 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700;900&family=Muli:wght@300;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700;900&family=Muli:wght@300;400;700;900&family=Montserrat:wght@300;400;700;900&display=swap");
 
 body {
   color: #121e27;
   background: white;
-  /* max-width: 80rem; */
   margin: auto;
   overflow-x: hidden;
   }
@@ -21,6 +20,7 @@ body {
 .topButton,
 .anchorLink {  
   font-weight: bold;
+  font-family: Montserrat;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -68,3 +68,79 @@ p {
   font-weight: 300;
 }
 
+.backend,
+.devOps,
+.db,
+.cms,
+.frontend {
+  position: relative;
+}
+
+.backend:hover::after {
+  content: 'Backend';
+  background: #728e39;
+  color: white;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 0.35rem;
+  animation: fadeIn 0.4s ease-in-out;
+  z-index: 999;
+}
+
+.frontend:hover::after {
+  content: 'Frontend';
+  background: yellow;
+  color: black;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 0.35rem;
+  animation: fadeIn 0.4s ease-in-out;
+  z-index: 999;
+}
+
+.devOps:hover::after {
+  content: 'DevOps';
+  background: #870687;
+  color: white;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 0.35rem;
+  animation: fadeIn 0.4s ease-in-out;
+  z-index: 999;
+}
+
+.db:hover::after {
+  content: 'Database';
+  background: #ff91a4;
+  color: white;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 0.35rem;
+  animation: fadeIn 0.4s ease-in-out;
+  z-index: 999;
+}
+
+.cms:hover::after {
+  content: 'CMS';
+  background: #6161ff;
+  color: white;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 0.35rem;
+  animation: fadeIn 0.4s ease-in-out;
+  z-index: 999;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

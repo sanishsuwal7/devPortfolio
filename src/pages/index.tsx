@@ -14,7 +14,7 @@ import { useLogger } from '@/hooks/useLogger';
 import { content } from '../../content';
 
 const Index = () => {
-  const _ = useLogger();
+  useLogger();
 
   const { title, subtitle, action } = content.mainpitch;
 

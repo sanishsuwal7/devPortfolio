@@ -381,9 +381,10 @@ export const Hero = styled.h1<{ invert: boolean }>`
   max-width: 60rem;
 
   @media only screen and (min-width: 768px) {
-    font-size: 4rem;
+    font-size: 4rem !important;
   }
 `;
+
 export const HeroP = styled.p`
   color: ${colors.grey};
   font-size: 1.2rem;

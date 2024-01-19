@@ -10,6 +10,7 @@ export const Section = styled(S)`
   max-width: 675px;
   h2 {
     font-weight: bold;
+    font-family: Montserrat;
   }
   ul {
     display: grid;

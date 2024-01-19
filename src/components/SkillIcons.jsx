@@ -34,68 +34,6 @@ const AllTags = styled(Tags)`
       opacity: 1;
     }
   }
-  .backend,
-  .devOps,
-  .db,
-  .cms,
-  .frontend {
-    :hover {
-      ::after {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        color: black;
-        padding: 0.35rem;
-        animation: fadeIn 0.4s ease-in-out;
-        z-index: 999;
-      }
-    }
-  }
-  .backend {
-    :hover {
-      ::after {
-        content: 'Backend';
-        background: #728e39;
-        color: white;
-      }
-    }
-  }
-  .frontend {
-    :hover {
-      ::after {
-        content: 'Frontend';
-        background: yellow;
-        color: black;
-      }
-    }
-  }
-  .devOps {
-    :hover {
-      ::after {
-        content: 'DevOps';
-        background: #870687;
-        color: white;
-      }
-    }
-  }
-  .db {
-    :hover {
-      ::after {
-        content: 'Database';
-        background: #ff91a4;
-        color: white;
-      }
-    }
-  }
-  .cms {
-    :hover {
-      ::after {
-        content: 'CMS';
-        background: #6161ff;
-        color: white;
-      }
-    }
-  }
 `;
 
 const skills = [
