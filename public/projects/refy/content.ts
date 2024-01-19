@@ -1,4 +1,4 @@
-import { Content } from '..';
+import { Content } from '@/content';
 
 export const content: Content = {
   title: 'Refy: AI powered mortgage broker',
