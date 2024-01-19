@@ -8,6 +8,7 @@ export type Content = {
   title: string;
   featuredImage: string;
   description: string;
+  seo?: string;
   details: {
     type: string;
     stack: string;

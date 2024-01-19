@@ -12,22 +12,28 @@ import { ContactSection } from '@/components/Landing/Contact';
 import { ProjectsSection } from '@/components/Landing/Projects';
 import { useLogger } from '@/hooks/useLogger';
 import { content } from '../../content';
+import { SEO } from '@/components/SEO';
 
 const Index = () => {
   useLogger();
 
-  const { title, subtitle, action } = content.mainpitch;
+  const { title, subtitle } = content.mainpitch;
 
   return (
     <>
-      {/* <SEO title="Alejandro Aspinwall | Software Engineer" /> */}
+      <SEO
+        title="Alejandro Aspinwall | Software Engineer"
+        description={''}
+        lang={''}
+        thumb={''}
+        keywords={[]}
+      />
       <div
         style={{
           padding: '0 clamp(1rem, 7vw, 200px)',
           background: colors.background,
         }}
       >
-        {/* Make this section a bit more concise and easier to read */}
         <HeroSection invert={true}>
           <div>
             <MakeClouds cloudCount={30} mult={1} />

@@ -68,13 +68,14 @@ const ProjectPage = ({ mdxSource, content }: PageProps) => {
     featuredImage,
     details: { type, stack, code, live },
     keywords,
+    seo,
   } = content;
   return (
     <Section top={true}>
       <SEO
         title={title}
         thumb={featuredImage}
-        description={description}
+        description={seo || description}
         keywords={keywords}
         lang={'english'}
       />

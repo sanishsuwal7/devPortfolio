@@ -158,7 +158,7 @@ export default function Navbar({ invert }: { invert?: boolean }) {
       </div>
       {
         <ul id="menu" className={`${!open ? 'hide' : ''}`}>
-          {['about', 'blog'].map((node, i) => {
+          {['about' /*  'blog' */].map((node, i) => {
             return (
               <Link key={`navlink-${i}`} href={`/${node}`} tabIndex={0}>
                 <li>{node}</li>
