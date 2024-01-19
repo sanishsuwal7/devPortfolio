@@ -189,7 +189,7 @@ export const WrapperUnused = styled.div`
   }
 `;
 
-export const Section = styled.section`
+export const Section = styled.section<{ invert?: boolean; top?: boolean }>`
   max-width: 1100px;
   margin: auto;
   background: ${(props) => (props.invert ? colors.background : colors.white)};
