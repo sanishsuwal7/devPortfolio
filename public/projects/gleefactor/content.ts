@@ -1,4 +1,4 @@
-import { Content } from '@/content';
+import { Content } from '@/content/projects';
 
 export const content: Content = {
   title: 'Glee Factor: A work-culture management firm',

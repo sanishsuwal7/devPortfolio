@@ -9,12 +9,14 @@ import { MakeClouds } from '@/components/Landing/Clouds';
 import { ContactSection } from '@/components/Landing/Contact';
 import { ProjectsSection } from '@/components/Landing/Projects';
 import { useLogger } from '@/hooks/useLogger';
-import { content } from '../../content';
+import { landingPage } from '@/content/landing';
 import { SEO } from '@/components/SEO';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 
 const Index = ({
   mainpitch,
+  bio,
+  projects,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   useLogger();
 
@@ -50,7 +52,7 @@ const Index = ({
       </div>
 
       <Section id="bio">
-        <BioSection bio={content.bio} />
+        <BioSection bio={bio} />
       </Section>
 
       {/* Hiding featured section during refactor */}
@@ -62,7 +64,7 @@ const Index = ({
       </Section> */}
 
       <Section id="projects">
-        <ProjectsSection projects={content.projects} />
+        <ProjectsSection projects={projects} />
       </Section>
 
       <Section id="contact">
@@ -74,7 +76,7 @@ const Index = ({
 
 export const getStaticProps = (async () => {
   return {
-    props: { ...content },
+    props: { ...landingPage },
   };
 }) satisfies GetStaticProps;
 

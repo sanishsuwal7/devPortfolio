@@ -1,6 +1,6 @@
-import { content as data } from '../src/content';
+import { content as projectData } from './projects';
 
-export const content = {
+export const landingPage = {
   title: 'Landing page title from local markdown',
   internal: true,
   mainpitch: {
@@ -25,14 +25,14 @@ export const content = {
       image: 'refy.png',
       buttonText: 'View project',
       link: '/projects/refy/',
-      ...data.refy,
+      ...projectData.refy,
     },
     {
       body: 'I took their existing wordpress site and turned it into a headless CMS with React on the frontend. The site features e-commerce, downloads and a seamless bilingual experience.',
       image: 'glee.png',
       buttonText: 'View project',
       link: '/projects/gleefactor/',
-      ...data.gleefactor,
+      ...projectData.gleefactor,
       title: 'Glee Factor',
     },
     {
@@ -40,7 +40,7 @@ export const content = {
       image: 'ing.png',
       buttonText: 'View project',
       link: '/projects/ing/',
-      ...data.ing,
+      ...projectData.ing,
       title: 'ING Creatives',
     },
     {
@@ -48,7 +48,7 @@ export const content = {
       image: 'movingday.png',
       buttonText: 'View project',
       link: '/projects/movingday/',
-      ...data.movingday,
+      ...projectData.movingday,
       title: 'Moving day',
     },
     {
@@ -56,7 +56,7 @@ export const content = {
       image: 'wodly.png',
       buttonText: 'View project',
       link: '/projects/wodly/',
-      ...data.wodly,
+      ...projectData.wodly,
     },
   ],
   contact: {

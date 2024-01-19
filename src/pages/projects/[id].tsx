@@ -1,7 +1,7 @@
 import Icon from '@/components/Icon';
 import ReadTime from '@/components/ReadTime';
 import { SEO } from '@/components/SEO';
-import { Content, content } from '@/content';
+import { Content, content } from '@/content/projects';
 import { Section } from '@/styles/components';
 import fs from 'fs';
 import matter from 'gray-matter';

@@ -9,11 +9,11 @@ import {
 import Link from 'next/link';
 import { ProjectImage } from '.';
 
-import { content } from '../../../content';
+import { landingPage } from '../../content/landing';
 import { HighlightedWords } from '../HighlightedWords';
 import { SlidingButton } from './Buttons';
 
-type Props = { projects: typeof content.projects };
+type Props = { projects: typeof landingPage.projects };
 
 export const ProjectsSection = ({ projects }: Props) => {
   return (
