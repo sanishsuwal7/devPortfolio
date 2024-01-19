@@ -1,54 +1,86 @@
-import { useRouter } from 'next/router';
-import { content } from '../../content/movingday/content';
-
 import Icon from '@/components/Icon';
+import ReadTime from '@/components/ReadTime';
+import { SEO } from '@/components/SEO';
+import { Content, content } from '@/content';
 import { Section } from '@/styles/components';
 import fs from 'fs';
 import matter from 'gray-matter';
+import { GetStaticPaths, GetStaticProps } from 'next';
 import path from 'path';
 import { useState } from 'react';
-import styled from 'styled-components';
 import { remark } from 'remark';
 import html from 'remark-html';
-import ReadTime from '@/components/ReadTime';
+import styled from 'styled-components';
 
 type PageProps = {
   mdxSource: string;
+  content?: Content;
 };
 
-export async function getServerSideProps() {
-  const filePath = path.join(
-    process.cwd(),
-    'content/projects/movingday/overview.md',
-  );
-  const fileContents = fs.readFileSync(filePath, 'utf8');
-  const matterResult = matter(fileContents);
+export const getStaticProps = (async ({ params }) => {
+  if (
+    typeof params?.id === 'string' &&
+    Object.keys(content).includes(params?.id)
+  ) {
+    const { id } = params;
+    const pageContent = content[id as keyof typeof content] as Content;
 
-  // Use remark to convert markdown into HTML string
-  const processedContent = await remark()
-    .use(html)
-    .process(matterResult.content);
-  const mdxSource = processedContent.toString();
+    const filePath = path.join(
+      process.cwd(),
+      `public/projects/${id}/overview.md`,
+    );
+    const fileContents = fs.readFileSync(filePath, 'utf8');
+    const matterResult = matter(fileContents);
 
-  return { props: { mdxSource } };
-}
+    // Use remark to convert markdown into HTML string
+    const processedContent = await remark()
+      .use(html)
+      .process(matterResult.content);
+    const mdxSource = processedContent.toString();
 
-const ProjectPage = ({ mdxSource }: PageProps) => {
+    return { props: { mdxSource, content: pageContent } };
+  }
+  return {
+    props: {
+      // redirect to 404
+      notFound: true,
+      mdxSource: '',
+    },
+    notFound: true,
+  };
+}) satisfies GetStaticProps;
+
+export const getStaticPaths = (async () => {
+  return {
+    paths: Object.keys(content).map((contentkey) => ({
+      params: { id: contentkey },
+    })),
+    fallback: true, // false or "blocking"
+  };
+}) satisfies GetStaticPaths;
+
+const ProjectPage = ({ mdxSource, content }: PageProps) => {
   const [showMore, setShowMore] = useState(false);
-  const router = useRouter();
+  if (!content) return null;
   const {
     title,
     description,
     featuredImage,
     details: { type, stack, code, live },
     keywords,
-    role,
   } = content;
   return (
     <Section top={true}>
-      <h1>{title.split(':')[0]}</h1>
+      <SEO
+        title={title}
+        thumb={featuredImage}
+        description={description}
+        keywords={keywords}
+        lang={'english'}
+      />
+      <h1>{title}</h1>
       <ReadTime text={mdxSource} />
-      <div dangerouslySetInnerHTML={{ __html: description }} />
+      <p dangerouslySetInnerHTML={{ __html: description }} />
       <Icon speed={'4s'} />
 
       <ProjectDetails>
@@ -78,12 +110,12 @@ const ProjectPage = ({ mdxSource }: PageProps) => {
             </>
           )}
         </div>
-        {code !== ' ' ? (
+        {code && (
           <div>
             <h3>Code</h3>
             <a href={code}>Github</a>
           </div>
-        ) : null}
+        )}
         <div>
           <h3>Live</h3>
           <a href={live} target={'blank'}>
@@ -96,8 +128,6 @@ const ProjectPage = ({ mdxSource }: PageProps) => {
         className="post-body"
         dangerouslySetInnerHTML={{ __html: mdxSource }}
       />
-
-      <span>Post: {router.query.id}</span>
     </Section>
   );
 };

@@ -9,4 +9,7 @@ export default function ReadTime({ text }: { text: string }) {
   return <ReadTimeWrapper>{readTime + ' minute read'}</ReadTimeWrapper>;
 }
 
-export const ReadTimeWrapper = styled.div``;
+export const ReadTimeWrapper = styled.div`
+  margin-bottom: 1rem;
+  font-weight: 600;
+`;

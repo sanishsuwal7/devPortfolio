@@ -1,24 +1,8 @@
-import React from 'react';
-import { highlightWords } from '../utils/highlightWords';
 // import { StaticQuery, graphql } from "gatsby"
 import { fadeIn } from 'react-animations';
 import styled, { keyframes } from 'styled-components';
 
-import {
-  Section as S,
-  Hero,
-  Tags,
-  Button,
-  HeroP,
-  ImageFull,
-  Bio,
-  Projects,
-  SectionTag,
-  Paragraph,
-  Header,
-  CupContainer,
-  colors,
-} from '../styles/components';
+import { Header, Section as S, SectionTag, Tags } from '../styles/components';
 import { HighlightedWords } from './HighlightedWords';
 const FadeIn = keyframes`${fadeIn}`;
 const Section = styled(S)`
