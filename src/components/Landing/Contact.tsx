@@ -5,12 +5,12 @@ import { SlidingButton } from './Buttons';
 import Cup from './cup.svg';
 import Steam from './steam_1.svg';
 
-export const ContactSection = ({ contact }) => {
-  const { action, title } = contact;
-
+export const ContactSection = () => {
   return (
     <div id="contactBox">
-      <Hero invert={false}>{<HighlightedWords title={title} />}</Hero>
+      <Hero invert={false}>
+        {<HighlightedWords title={"Let's have a **chat**"} />}
+      </Hero>
       <CupContainer>
         <div className="steam">
           <Steam />

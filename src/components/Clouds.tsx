@@ -1,10 +1,10 @@
 import React, { useRef } from 'react';
 import styled from 'styled-components';
 
-export default function Clouds({ roll, top, pulse, size, offset }) {
+export default function Clouds({ roll, top, pulse, size, offset }: any) {
   const thisCloud = useRef();
 
-  function randomizeValue(min, max) {
+  function randomizeValue(min: number, max: number) {
     const rand = Math.random() * (max - min) + min;
     return Math.floor(rand);
   }
@@ -14,6 +14,7 @@ export default function Clouds({ roll, top, pulse, size, offset }) {
 
   return (
     <SVGcontainer
+      //@ts-ignore
       ref={thisCloud}
       roll={roll}
       top={top}
@@ -26,7 +27,7 @@ export default function Clouds({ roll, top, pulse, size, offset }) {
   );
 }
 
-export const SVGcontainer = styled.div`
+export const SVGcontainer = styled.div<any>`
   position: absolute;
 
   width: ${(props) => props.size};

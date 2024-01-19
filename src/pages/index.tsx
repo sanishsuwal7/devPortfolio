@@ -1,5 +1,3 @@
-// import SEO from "../components/seo"
-
 import { Hero, HeroP, colors } from '../styles/components';
 
 import Social from '../components/Social';
@@ -13,11 +11,14 @@ import { ProjectsSection } from '@/components/Landing/Projects';
 import { useLogger } from '@/hooks/useLogger';
 import { content } from '../../content';
 import { SEO } from '@/components/SEO';
+import { GetStaticProps, InferGetStaticPropsType } from 'next';
 
-const Index = () => {
+const Index = ({
+  mainpitch,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   useLogger();
 
-  const { title, subtitle } = content.mainpitch;
+  const { title, subtitle } = mainpitch;
 
   return (
     <>
@@ -65,10 +66,16 @@ const Index = () => {
       </Section>
 
       <Section id="contact">
-        <ContactSection contact={content.contact} />
+        <ContactSection />
       </Section>
     </>
   );
 };
+
+export const getStaticProps = (async () => {
+  return {
+    props: { ...content },
+  };
+}) satisfies GetStaticProps;
 
 export default Index;

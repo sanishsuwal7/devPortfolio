@@ -15,11 +15,6 @@ import { SlidingButton } from './Buttons';
 
 type Props = { projects: typeof content.projects };
 
-/*
- * We're hardcoding the keywords for now, but we can make this dynamic later
- */
-const defaultKeywords = ['nextjs', 'typescript', 'react'];
-
 export const ProjectsSection = ({ projects }: Props) => {
   return (
     <>
@@ -32,7 +27,7 @@ export const ProjectsSection = ({ projects }: Props) => {
           const { buttonText, body, link, title, image, role, keywords } =
             project;
 
-          const tags = keywords || defaultKeywords;
+          const tags = keywords;
 
           return (
             <Projects key={`projects-${i}`}>

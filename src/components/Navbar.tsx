@@ -119,6 +119,7 @@ export default function Navbar({ invert }: { invert?: boolean }) {
   const delayedFunc = delay(() => {
     const height = window.pageYOffset;
     setHidenav(true);
+    //@ts-ignore
     setBuffer(height);
   }, 2000);
 
@@ -127,6 +128,7 @@ export default function Navbar({ invert }: { invert?: boolean }) {
       setHidenav(false);
       delayedFunc();
     };
+    //@ts-ignore
     setBuffer(window.pageYOffset);
 
     window.addEventListener('scroll', scroller);
