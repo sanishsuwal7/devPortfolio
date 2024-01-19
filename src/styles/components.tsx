@@ -94,7 +94,6 @@ export const WrapperUnused = styled.div`
   }
   .gatsby-highlight {
     margin: 1rem auto;
-    /* width: clamp(200px, 80vw, 900px); */
     width: 100%;
     overflow: auto;
   }
@@ -231,44 +230,6 @@ export const CupContainer = styled.div`
   z-index: 800;
   transform: translate(-100%, 0);
 
-  svg {
-    height: 7rem;
-    :first-child {
-      @keyframes float {
-        from {
-          filter: opacity(0);
-          transform: translate(0, -10px) rotate(-7deg);
-        }
-        50% {
-          transform: translate(-2px, -20px) rotate(-2deg);
-          filter: opacity(1);
-        }
-        to {
-          transform: translate(5px, -50px) rotate(3deg);
-          filter: opacity(0);
-        }
-      }
-      animation: float 7s ease-in-out infinite;
-    }
-    :nth-child(2) {
-      transition: transform 0.4s ease-in-out;
-      @keyframes ring {
-        from {
-          transform: translateX(0) rotate(0);
-        }
-        50% {
-          transform: translateX(-10px) rotate(-2deg);
-        }
-        to {
-          transform: translateX(10px) rotate(2deg);
-        }
-      }
-      :hover,
-      :focus {
-        animation: ring 1s ease-in-out alternate infinite;
-      }
-    }
-  }
   @media only screen and (max-width: 400px) {
     position: relative;
     height: 12rem;

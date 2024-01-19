@@ -11,9 +11,13 @@ export const ContactSection = ({ contact }) => {
   return (
     <div id="contactBox">
       <Hero invert={false}>{<HighlightedWords title={title} />}</Hero>
-      <CupContainer className="cup">
-        <Steam />
-        <Cup />
+      <CupContainer>
+        <div className="steam">
+          <Steam />
+        </div>
+        <div className="cup">
+          <Cup />
+        </div>
       </CupContainer>
 
       <Email href={'mailto:contact@aaspinwall.com'}>

@@ -10,6 +10,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import { remark } from 'remark';
 import html from 'remark-html';
+import ReadTime from '@/components/ReadTime';
 
 type PageProps = {
   mdxSource: string;
@@ -46,6 +47,7 @@ const ProjectPage = ({ mdxSource }: PageProps) => {
   return (
     <Section top={true}>
       <h1>{title.split(':')[0]}</h1>
+      <ReadTime text={mdxSource} />
       <div dangerouslySetInnerHTML={{ __html: description }} />
       <Icon speed={'4s'} />
 
@@ -103,9 +105,6 @@ const ProjectPage = ({ mdxSource }: PageProps) => {
 export default ProjectPage;
 
 const Body = styled.div`
-  display: flex;
-  flex-flow: column;
-  gap: 1rem;
   .gif {
     float: left;
     margin: 0 2rem 0 0;
@@ -123,6 +122,7 @@ const ProjectDetails = styled.div`
   flex-flow: column;
   h3 {
     margin: 1rem 0 1rem;
+    font-family: Montserrat;
   }
   @media only screen and (min-width: 768px) {
     flex-flow: row;

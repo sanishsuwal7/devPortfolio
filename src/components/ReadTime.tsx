@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export default function ReadTime({ text }) {
+export default function ReadTime({ text }: { text: string }) {
   if (typeof text === 'number') {
     return <ReadTimeWrapper>{text + ' minute read'}</ReadTimeWrapper>;
   }
