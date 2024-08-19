@@ -17,15 +17,22 @@ To get started with this portfolio, clone the repository and install the depende
 ```bash
 # Clone the repository
 git clone https://github.com/aaspinwall/devPortfolio.git
+```
 
 # Navigate into the project directory
-cd developer-portfolio
+```bash
+cd devPortfolio
+```
 
 # Install dependencies
+```bash
 yarn install
+```
 
 # Start the development server
+```bash
 yarn dev
+```
 
 # Scripts
 `yarn dev` Runs the app in development mode with hot-code reloading.
