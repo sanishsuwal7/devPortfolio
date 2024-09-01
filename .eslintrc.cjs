@@ -39,5 +39,7 @@ module.exports = {
   },
   rules: {
     'rule-name': 'off', // Disable specific rule
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-uses-react": "off",
   },
 };
