@@ -20,10 +20,10 @@ const nextConfig = {
       use: ['@svgr/webpack'],
     });
 
-    // config.output = {
-    //   ...config.output, // Preserve existing output settings
-    //   export: true,    // Add or modify the export property
-    // };
+    config.output = {
+      ...config.output, // Preserve existing output settings
+      export: true,    // Add or modify the export property
+    };
     return config;
   },
 };
