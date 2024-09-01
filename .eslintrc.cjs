@@ -7,7 +7,6 @@ module.exports = {
   extends: [
     'next/core-web-vitals',
     'plugin:react/recommended',
-    'plugin:prettier/recommended',
     'prettier',
   ],
   overrides: [
