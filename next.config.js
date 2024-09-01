@@ -19,12 +19,6 @@ const nextConfig = {
       test: /\.svg$/,
       use: ['@svgr/webpack'],
     });
-
-    config.output = {
-      ...config.output,
-      export: true,
-    };
-
     return config;
   },
 };
