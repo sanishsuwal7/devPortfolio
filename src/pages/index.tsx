@@ -25,7 +25,7 @@ const Index = ({
   return (
     <>
       <SEO
-        title="Alejandro Aspinwall | Software Engineer"
+        title="Sanish Suwal | Software Engineer"
         description={''}
         lang={''}
         thumb={''}
