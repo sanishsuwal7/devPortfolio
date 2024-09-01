@@ -16,6 +16,8 @@ const nextConfig = {
       use: ['@svgr/webpack'],
     });
 
+    this.experimental.webpackBuildWorker = true;
+
     // Injecting output and value properties
     config.output = {
       ...config.output, // Preserve existing output settings
