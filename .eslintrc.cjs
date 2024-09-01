@@ -38,4 +38,7 @@ module.exports = {
       version: '^17.0.2',
     },
   },
+  rules: {
+    'rule-name': 'off', // Disable specific rule
+  },
 };
