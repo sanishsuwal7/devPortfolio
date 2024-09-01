@@ -16,6 +16,12 @@ const nextConfig = {
       use: ['@svgr/webpack'],
     });
 
+    // Injecting output and value properties
+    config.output = {
+      ...config.output, // Preserve existing output settings
+      export: true,    // Add or modify the export property
+    };
+
     return config;
   },
 };
