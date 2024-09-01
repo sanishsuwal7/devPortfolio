@@ -10,19 +10,15 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
+  experimental: {
+    webpackBuildWorker: true,  // Enable the Webpack build worker
+  },
+
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
       use: ['@svgr/webpack'],
     });
-
-    this.experimental.webpackBuildWorker = true;
-
-    // Injecting output and value properties
-    config.output = {
-      ...config.output, // Preserve existing output settings
-      export: true,    // Add or modify the export property
-    };
 
     return config;
   },
