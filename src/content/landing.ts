@@ -4,9 +4,9 @@ export const landingPage = {
   title: 'Landing page title from local markdown',
   internal: true,
   mainpitch: {
-    title: 'Hi, I’m Alejandro | **Software** **Engineer**',
+    title: 'Hi, I’m Sanish | **Software** **Engineer**',
     subtitle:
-      "I love exploring and creating 🚀 I'm a lifelong learner 🎓 and I might have a thing for traditional Neapolitan Pizza 🍕",
+      "I love travelling and creating 🚀 I'm a lifelong learner 🎓 and I might have a thing for traditional Neapolitan Pizza 🍕",
     buttonText: 'Book a call',
   },
   bio: {
@@ -15,48 +15,38 @@ export const landingPage = {
     features: [
       {
         header: 'I love building stuff 📱',
-        body: 'I started playing with computers when I was 11 years-old. Since then I have been tinkering with all sorts of technologies that in some way or another led me to work on music, photography, sound engineering, electric engineering, automation, video production, feature film post-production, VR games, and 3D sound.',
+        body: 'I started playing with computers when I was 8 years-old. What started as an obsession of playing video games in some way or another led me to software engineering and AI research.',
       },
     ],
   },
   projects: [
     {
-      body: 'Assembled and lead a team of 8 developers to create core features and integrate third party APIs. Implemented CI/CD pipeline with Typescript type-checking, database migration, code linting and preview deploys.',
+      body: 'Led the design and implementation of an Ant Colony Optimization algorithm for the Vehicle Routing Problem, resulting in improved route optimization and enhanced performance.',
       image: 'refy.png',
       buttonText: 'View project',
       link: '/projects/refy/',
       ...projectData.refy,
     },
     {
-      body: 'I took their existing wordpress site and turned it into a headless CMS with React on the frontend. The site features e-commerce, downloads and a seamless bilingual experience.',
+      body: 'Pioneered the integration of Deep Convolutional Generative Adversarial Networks using the Celeb dataset to generate artificial human faces, enhancing model training efficiency.',
       image: 'glee.png',
       buttonText: 'View project',
       link: '/projects/gleefactor/',
       ...projectData.gleefactor,
-      title: 'Glee Factor',
     },
     {
-      body: 'I built the latest version of the site to improve speed and performance. It features statically generated pages, cloud image resizing and a custom CMS.',
+      body: 'Developed Convolutional Neural Networks and a Django-powered system to automate and improve facial recognition-based student attendance tracking, simplifying the process and increasing accuracy.',
       image: 'ing.png',
       buttonText: 'View project',
       link: '/projects/ing/',
       ...projectData.ing,
-      title: 'ING Creatives',
     },
     {
-      body: "Looking for an apartment in Montreal is quite a pain. Since Kijiji doesn't provide a public API, I made one that runs on a local server.",
+      body: 'Developed AI algorithms for predicting cardiovascular disease risk, integrating them into React Native and Django frameworks to enhance diagnostic accuracy and improve user engagement across mobile and web platforms.',
       image: 'movingday.png',
       buttonText: 'View project',
       link: '/projects/movingday/',
       ...projectData.movingday,
-      title: 'Moving day',
-    },
-    {
-      body: 'Save your home workouts and display them in a friendly manner. Share with your friends!',
-      image: 'wodly.png',
-      buttonText: 'View project',
-      link: '/projects/wodly/',
-      ...projectData.wodly,
     },
   ],
   contact: {

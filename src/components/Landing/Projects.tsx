@@ -48,12 +48,12 @@ export const ProjectsSection = ({ projects }: Props) => {
 
               <Paragraph style={{ gridArea: 'text' }}>{body}</Paragraph>
 
-              <div style={{ gridArea: 'button' }}>
+              {/* <div style={{ gridArea: 'button' }}>
                 <SlidingButton buttonText={buttonText} link={link} />
-              </div>
+              </div> */}
 
               <ProjectImage style={{ gridArea: 'image' }}>
-                <Link href={link}>
+                <Link href={""}>
                   <img
                     className="imageFluidContainer"
                     alt="project image"

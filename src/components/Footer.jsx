@@ -57,10 +57,9 @@ export default function Footer() {
     <Foot>
       <div id="footWrap">
         <Div maxW="200px" color={c.faded}>
-          <Logo href="/">Alejandro Aspinwall</Logo>
+          <Logo href="/">Sanish Suwal</Logo>
           <div style={{ fontSize: '0.8rem', marginTop: '0.5rem' }}>
-            © {new Date().getFullYear()}, Built and designed by Alejandro
-            Aspinwall
+            © {new Date().getFullYear()}, Built and designed by Sanish Suwal
           </div>
         </Div>
 

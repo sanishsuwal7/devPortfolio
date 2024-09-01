@@ -20,8 +20,8 @@ export const ContactSection = () => {
         </div>
       </CupContainer>
 
-      <Email href={'mailto:contact@aaspinwall.com'}>
-        contact@aaspinwall.com
+      <Email href={'mailto:sanish.suwal7@gmail.com'}>
+        sanish.suwal7@gmail.com
       </Email>
 
       <div
@@ -31,10 +31,10 @@ export const ContactSection = () => {
           marginBottom: '3rem',
         }}
       >
-        <SlidingButton
+        {/* <SlidingButton
           buttonText={'Get in touch'}
           link="https://calendly.com/aaspinwall/15"
-        />
+        /> */}
       </div>
     </div>
   );

@@ -153,7 +153,7 @@ export default function Navbar({ invert }: { invert?: boolean }) {
       onMouseLeave={hasLeft}
     >
       <Link href="/">
-        <Logo>Alejandro Aspinwall</Logo>
+        <Logo>Sanish Suwal</Logo>
       </Link>
       <div id="burger" onClick={() => setOpen(!open)}>
         <GiHamburgerMenu />

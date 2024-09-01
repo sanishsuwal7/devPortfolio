@@ -1,17 +1,16 @@
 import { Content } from '@/content/projects';
 
 export const content: Content = {
-  title: 'ING Creatives: Your place to learn',
+  title: 'Attendance Management System',
   featuredImage: 'overview.png',
   description:
-    'Ing creatives is an e-learning platform that provides professional resources in areas ranging from branding, design, product design, UI/UX, marketing, to advertising and social media, among others.',
-  seo: 'Ing creatives is an e-learning platform. For this project I created a custom CMS and a CI/CD pipeline that generates static pages using Gatsbyjs',
+    'Attendance management system that uses facial recognition to automate and improve student attendance tracking. The project integrates Convolutional Neural Networks and a Django-powered system to simplify the process and increase accuracy.',
   details: {
     type: 'E-learning platform',
     stack: 'Gatsby Styled-Components Chakra-UI Netlify',
     live: 'https://www.ingcreatives.com/',
     code: 'https://github.com/aaspinwall/festival-gatsby',
   },
-  keywords: ['ing', 'ingcreatives', 'gatsby', 'shopify', 'JavaScript'],
+  keywords: ['Convolution Nurual Networks', 'Facial Recognition', 'Attendance Tracking', 'Django'],
   role: 'FULL STACK DEVELOPER / TECH LEAD',
 };

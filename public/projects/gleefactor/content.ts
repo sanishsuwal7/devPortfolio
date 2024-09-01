@@ -1,25 +1,17 @@
 import { Content } from '@/content/projects';
 
 export const content: Content = {
-  title: 'Glee Factor: A work-culture management firm',
+  title: 'Fake Face Generation',
   featuredImage: 'overview.png',
   description:
-    'Gleefactor is a work culture management firm that helps organizations transform their cultures by enabling teams to adopt and activate new behaviours through play. **The goal was to create a fast website that would drive conversions** from social media and search engine traffic.',
-  seo: 'I created a fast website that would drive conversions from social media and search engine traffic. Using pre-rendered static pages with Gatsbyjs',
+    'Implementing a Generative Adversarial Network (GAN) to generate fake faces. The project uses a dataset of 70,000 images of celebrities to train the model.',
   details: {
     type: 'E-learning platform',
     stack: 'Gatsby Typescript Styled-Components AWS-Lambda Netlify',
     live: 'https://gleefactor.com/',
     code: ' ',
   },
-  keywords: [
-    'gleefactor',
-    'gatsby',
-    'typescript',
-    'redux',
-    'wordpress',
-    'JavaScript',
-    'google pay',
+  keywords: ['Generative Adversarial Networks', 'Deep Learning', 'AI',
   ],
-  role: 'FULL STACK DEVELOPER / TECH LEAD',
+  role: 'ACADEMIC PROJECT',
 };
